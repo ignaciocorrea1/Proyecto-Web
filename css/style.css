@@ -434,6 +434,94 @@ hr {
     margin-left: 80px;
 }
 
+/* Modals menu.hmtl */
+
+.modal {
+    margin-top: 11.8vh;
+}
+
+.modal .modal-header .btn-close {
+    font-size: 1.1rem;
+}
+/*
+.modal .modal-header .btn-close:hover {
+    color: #61888C !important;
+}*/
+
+.modal .modal-body .modal-body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+}
+
+.modal .modal-body .modal-body-container img {
+    width: 20.833vw;
+    border-radius: 30px;
+    height: 50vh;
+}
+
+.modal .modal-body .modal-body-container .modal-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    height: 50vh;
+}
+
+.modal .modal-body .modal-body-container .modal-desc h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.modal .modal-body .modal-body-container .modal-desc p {
+    text-align: justify;
+    font-weight: 400;
+}
+
+.modal .modal-body .modal-body-container .modal-desc .modal-buttons {
+    text-align: right;
+}
+
+.modal .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos, .modal-carro-mas {
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.modal .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos:hover{
+    color: #61888C;
+}
+
+.modal .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-mas:hover{
+    color: #61888C;
+}
+
+.modal .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-contador {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.4rem;
+}
+
+.modal .modal-footer {
+    padding-right: 1rem;
+}
+
+.modal .modal-footer .modal-button-add {
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 0.3rem 1.4rem 0.3rem 1.4rem;
+    font-weight: 700;
+}
+
+.modal .modal-footer .modal-button-add:hover{
+    border: 3px solid #61888C;
+    color: #61888C;
+}
+
 /* Main carrito */
 
 .carro-container {
