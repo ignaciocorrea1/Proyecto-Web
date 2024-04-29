@@ -5,16 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link bootstrap -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <!-- Link style -->
+    <!-- Link style y responsive style-->
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/responsive.css">
     <!-- Link iconos -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -82,7 +76,7 @@
         <!-- Inicio carousel -->
         <div
           id="carouselExampleCaptions"
-          class="carousel slide col-lg-6 col-md-12"
+          class="carousel slide"
           data-ride="carousel"
         >
           <div class="carousel-inner">
@@ -119,13 +113,12 @@
           </button>
         </div>
         <!-- Fin carousel -->
-        <div class="delivery col-lg-6 col-md-12">
-          <p>
-            <span class="pide-tu">Pide tu </span
-            ><button class="btn-sesion btndelivery">
-              <span class="btn-text">Delivery</span>
-            </button>
-          </p>
+
+        <!-- Realiza tu compra aqui -->
+        <div class="compra">
+          <span class="text-compra">Haz tu compra ahora y lleva a casa los mejores sabores.</span>
+          <a href="/menu.html"><button class="btn-compra"><span class="text-btn-compra">¡Compra aqui!</span></button>
+          </a>
         </div>
       </section>
       <!-- Section 2 -->
@@ -236,9 +229,11 @@
         </div>
         <div class="group-3">
           <h4>Redes sociales</h4>
-          <a href="#" class="fa-brands fa-instagram"></a>
-          <a href="#" class="fa-brands fa-facebook"> </a>
-          <a href="#" class="fa-brands fa-twitter"> </a>
+          <div class="social-links">
+            <a href="#" class=""><img src="/images/instagram.svg" alt=""></a>
+            <a href="#" class=""><img src="/images/square-facebook.svg" alt=""></a>
+            <a href="#" class=""><img src="/images/x-twitter.svg" alt=""></a>
+          </div>
         </div>
       </div>
       <div class="footer-copy">

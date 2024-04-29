@@ -1,0 +1,232 @@
+/* Responsive */
+
+/*  Breakpoints
+    Tablet = 768px
+    Celulares = 480px
+*/
+
+/* Header */
+@media screen and (max-width: 768px) {
+    .navbar .navbar-icon img {
+        width: 13.3vw; 
+        height: 15.7vh;
+    }
+}
+
+/* Main inicio - Section-1 */
+
+@media screen and (max-width: 768px) {
+    .section-1{
+        display: flex;
+        flex-direction: column;
+        height: 110vh;
+    }
+
+    .section-1 .carousel .carousel-item{
+        height: 60vh;
+        width: 100vw;
+    }
+
+    .section-1 .compra {
+        height: 50vh;
+        width: 100%;
+    }
+
+    .section-1 .compra .text-compra {
+        padding: 0em 1em 0.5em 1em;
+    }
+}
+
+/* Main inicio - section-2 */
+
+@media screen and (max-width: 768px) {
+    h1 {
+        text-align: center;
+    }
+
+    .section-2 .products {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .section-2 .products .card {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        height: 70vh;
+        width: 40vw;
+    }
+
+    .section-2 .products .card .text-section {
+        margin-top: 0;
+    }
+
+    .section-2 .products .card img {
+        margin: auto;
+        width: 20vw;
+        height: 40vh;
+    }
+
+    .section-2 .products .card .text-section h3 {
+        font-size: 1.175em;
+    }
+
+    .section-2 .products .card .text-section p {
+        font-size: 0.84em;
+    }
+
+    .section-2 .products .card .price-section {
+        margin-top: 0.5em;
+    }
+}
+
+/* Main menú - group-b - group-c */
+
+@media screen and (max-width: 768px) {
+    .group-b .menu-container, .group-c .menu-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-container .product {
+        width: 30vw;
+        height: 18vh;
+    }
+
+    .menu-container .product img {
+        width: 11vw;
+        height: 14vh;
+    }
+}
+
+/* Main menú - modal */
+
+@media screen and (max-width: 768px) {
+    .modal {
+        margin-top: 1em;
+        height: 100vh;
+    }
+    
+    .modal .modal-body .modal-body-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .modal .modal-body .modal-body-container img {
+        width: 25vw;
+        height: 40vh;
+    }
+}
+
+/* Main únete - form */
+
+@media screen and (max-width: 768px) {
+    .form-container form, .form-container form .form-input {
+        width: 50vw;
+    }
+
+    .form-container form .form-submit {
+        width: 28vw;
+        margin-left: 12.5vw;
+    }
+}
+
+/* Main carrito */
+
+@media screen and (max-width: 768px) {
+    .carro-container img {
+        margin: auto;
+    }
+
+    .carro-container  .carro-inf {
+        display: flex;
+        flex-direction: column;
+        gap: 1em
+    }
+
+
+    .carro-container .carro-desc {
+        margin-bottom: 1.9em;
+    }
+
+    .carro-container .carro-desc h2 {
+        margin-bottom: 0.6em;
+    }
+
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+        width: 5vw;
+    }
+
+    .carro-pay-container .carro-pagar {  
+        font-size: 1.575em;
+    }
+
+    .carro-end-container .option-1 {
+        width: 37.5vw;
+    }
+
+    .carro-end-container .option-2 {
+        width: 30vw;
+    }
+}
+
+/* Main ingreso */
+
+@media screen and (max-width: 768px) {
+    .form-login-container form,
+    .form-login-container form .form-datos .form-input {
+        width: 50vw;
+    }
+
+    .form-login-container form .form-question {
+        width: 55vw;
+    }
+
+    .form-login-container form .form-question a{
+        font-size: 0.6em;
+    }
+
+    .form-login-container form .form-submit {
+        width: 35vw;
+        font-size: 1em;
+    }
+}
+
+/* Footer */
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-container .group-1 img {
+        width: 21vw;
+    }
+
+    .footer-container .group-2 h4 {
+        width: 50vw;
+        text-align: center;
+    }
+
+    .footer-container .group-2 p {
+        width: 50vw;
+        text-align: justify;
+    }
+
+    .footer-container .group-3 a img{
+        width: 2.9vw;
+    }
+}
