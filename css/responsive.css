@@ -5,21 +5,62 @@
     Celulares = 480px
 */
 
-/* Header */
+/* Breakpoint = 768px */
 @media screen and (max-width: 768px) {
+    /* Header */
     .navbar .navbar-icon img {
         width: 13.3vw; 
         height: 15.7vh;
     }
-}
 
-/* Main inicio - Section-1 */
+    /* Carro desplegable */
+    .offcanvas .offcanvas-body .products .product .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-desc .product-remove {
+        font-size: 0.85em;
+    }
 
-@media screen and (max-width: 768px) {
-    .section-1{
+    .offcanvas .offcanvas-body .products .product .product-desc img{
+        width: 9vw;
+        height: 10vh;
+    }
+    
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+        font-size: 1.15em;
+    }
+
+    /* Footer */
+    .footer-container {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        height: 110vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-container .group-1 img {
+        width: 20vw;
+    }
+
+    .footer-container .group-2 h4 {
+        width: 50vw;
+        text-align: center;
+    }
+
+    .footer-container .group-2 p {
+        width: 50vw;
+        text-align: justify;
+    }
+
+    .footer-container .group-3 a img{
+        width: 2.9vw;
+    }
+
+    /* Main index.html - Section-1 */
+    .section-1{
+        grid-template-columns: 1fr;
+        height: 100vh;
     }
 
     .section-1 .carousel .carousel-item{
@@ -28,18 +69,14 @@
     }
 
     .section-1 .compra {
-        height: 50vh;
+        height: 40vh;
         width: 100%;
     }
 
     .section-1 .compra .text-compra {
         padding: 0em 1em 0.5em 1em;
     }
-}
-
-/* Main inicio - section-2 */
-
-@media screen and (max-width: 768px) {
+    /* Main index.html - section-2 */
     h1 {
         text-align: center;
     }
@@ -55,8 +92,8 @@
         display: flex;
         flex-direction: column;
         margin: auto;
-        height: 70vh;
-        width: 40vw;
+        height: 75vh;
+        width: 50vw;
     }
 
     .section-2 .products .card .text-section {
@@ -65,7 +102,7 @@
 
     .section-2 .products .card img {
         margin: auto;
-        width: 20vw;
+        width: 22vw;
         height: 40vh;
     }
 
@@ -80,11 +117,8 @@
     .section-2 .products .card .price-section {
         margin-top: 0.5em;
     }
-}
 
-/* Main menú - group-b - group-c */
-
-@media screen and (max-width: 768px) {
+    /* Main menú.html - group-b - group-c */
     .group-b .menu-container, .group-c .menu-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -98,20 +132,22 @@
     }
 
     .menu-container .product img {
-        width: 11vw;
+        width: 12vw;
         height: 14vh;
     }
-}
 
-/* Main menú - modal */
+    .menu-container .product figcaption {
+        font-size: 0.859em;
+        font-weight: 700;
+    }
 
-@media screen and (max-width: 768px) {
+    /* Main menú.html - modal */
     .modal {
         margin-top: 1em;
         height: 100vh;
     }
     
-    .modal .modal-body .modal-body-container {
+    .modal .modal-content .modal-body .modal-body-container {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -119,16 +155,14 @@
         height: 100vh;
     }
 
-    .modal .modal-body .modal-body-container img {
+    .modal .modal-content .modal-body .modal-body-container img {
         width: 25vw;
-        height: 40vh;
+        height: 35vh;
     }
-}
 
-/* Main únete - form */
-
-@media screen and (max-width: 768px) {
-    .form-container form, .form-container form .form-input {
+    /* Main únete.html - form */
+    .form-container form, 
+    .form-container form .form-input {
         width: 50vw;
     }
 
@@ -136,11 +170,43 @@
         width: 28vw;
         margin-left: 12.5vw;
     }
-}
 
-/* Main carrito */
+    /* Main contrasenia.html y seguimiento.html */
+    .form-forgot-container p,
+    .form-seguimiento-container p {
+        max-width: 80vw;
+    }
 
-@media screen and (max-width: 768px) {
+    .form-forgot-container form .form-input,
+    .form-seguimiento-container form .form-input {
+        width: 50vw;
+        height: 3vh;
+    }
+
+    .form-forgot-container form .form-submit,
+    .form-seguimiento-container form .form-submit,
+    .form-seguimiento-container .form-submit {
+        width: 25vw;
+        height: 6vh;
+    }
+
+    /* Main seguimiento-2.html */
+    .seguimiento-container-1 .steps .steps-desc .union {
+        width: 4vw;
+        height: 55vh;
+        margin-top: 2vh;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle {
+        width: 7vw;
+        height: 10vh;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.8em;
+    }
+
+    /* Main carrito.html */
     .carro-container img {
         margin: auto;
     }
@@ -166,8 +232,12 @@
         width: 5vw;
     }
 
-    .carro-pay-container .carro-pagar {  
-        font-size: 1.575em;
+    .carro-container .carro-inf .carro-desc h2,
+    .carro-pay-container .carro-pagar,
+    .carro-container .carro-total,
+    .carro-container .carro-total h2,
+    .carro-container .carro-eliminar {
+        font-size: 1.1em;
     }
 
     .carro-end-container .option-1 {
@@ -177,11 +247,82 @@
     .carro-end-container .option-2 {
         width: 30vw;
     }
-}
 
-/* Main ingreso */
+    /* Main pago.html */
+    .pago-container-1 .steps .steps-desc .union {
+        width: 78vw;
+        height: 4vh;
+    }
 
-@media screen and (max-width: 768px) {
+    .pago-container-1 .steps .steps-desc .circle {
+        width: 5vw;
+        height: 8vh;
+    }
+    
+    .pago-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.8em;
+    }
+
+    .pago-container-2 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    /* Resumen del pedido */
+
+    .pago-container-2 .pago-resumen {
+        width: 50vw;
+        height: 70vh;
+        margin-bottom: 10vh;
+        margin-right: 18vw;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc img {
+        width: 15vw;
+        height: 20vh;
+        margin-bottom: 2em;
+    }
+
+    /* Primer paso del pago */
+
+    .pago-container-2 .pago-datos form .form-input {
+        width: 50vw;
+    }
+    .pago-container-2 .pago-datos form .form-submit {
+        width: 20vw;
+    }   
+    
+    /* Segundo paso del pago */
+
+    .pago-container-2 .pago-metodo{
+        margin-right: 18vw;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago {
+        width: 60vw;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago-cont {
+        margin-left: 15vw;
+        width: 30vw;
+    }
+
+    /* Tercer paso del pago */
+
+    .pago-container-2 .pago-details {
+        margin-right: 18vw;
+    }
+
+    .pago-container-2 .pago-details .button-pagar {
+        width: 20vw;
+    }    
+
+    /* Main ingreso.html */
+
     .form-login-container form,
     .form-login-container form .form-datos .form-input {
         width: 50vw;
@@ -199,34 +340,19 @@
         width: 35vw;
         font-size: 1em;
     }
-}
 
-/* Footer */
-
-@media screen and (max-width: 768px) {
-    .footer-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    /* Main historial.html */
+    
+    .historial-detail-container .table-detail th,
+    .historial-detail-container .table-detail td{
+        padding-left: 1.1em;
+        padding-right: 1.1em;
     }
 
-    .footer-container .group-1 img {
-        width: 21vw;
-    }
-
-    .footer-container .group-2 h4 {
-        width: 50vw;
-        text-align: center;
-    }
-
-    .footer-container .group-2 p {
-        width: 50vw;
-        text-align: justify;
-    }
-
-    .footer-container .group-3 a img{
-        width: 2.9vw;
+    /* Main detalle.html */
+    .detail-container img {
+        width: 38vw;
+        height: 50vh;
     }
 }
+

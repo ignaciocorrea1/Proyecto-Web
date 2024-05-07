@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
     <!-- Link style y responsive style-->
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/responsive.css">
@@ -20,7 +20,7 @@
       <!-- Inicio navbar -->
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-icon" href="/index.html">
+          <a class="navbar-icon" href="/vistas/index.html">
             <img
               src="/images/Logo.png"
               width="30"
@@ -42,35 +42,110 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Inicio Links de acceso -->
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="/index.html">INICIO</a>
+                <a class="nav-link" href="/vistas/index.html">INICIO</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/menu.html">MENÚ</a>
+                <a class="nav-link" href="/vistas/menu.html">MENÚ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/unete.html">ÚNETE</a>
+                <a class="nav-link" href="/vistas/unete.html">ÚNETE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/vistas/seguimiento.html">SEGUIMIENTO</a>
               </li>
             </ul>
+            <!-- Fin Links de acceso -->
+
+            <!-- Inicio carrito mas icono para el login -->
             <div class="right-side">
-              <a class="icon" href="/carrito.html">
-                <span class="material-symbols-outlined icon"
-                  >shopping_cart</span
-                >
-              </a>
-              <a href="/ingreso.html"
-                ><button class="btn-sesion" type="button">
-                  Iniciar sesión
-                </button></a
-              >
+              <span class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                shopping_cart
+              </span>
+              <div class="dropdown drop-login">
+                <button class="dropdown-toggle drop-button" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="material-symbols-outlined acc">account_circle</span>
+                </button>
+                <div class="drop-menu">
+                  <ul class="dropdown-menu drop-options" aria-labelledby="dropdownMenu2">
+                    <li>
+                      <a href="/vistas/ingreso.html">Iniciar sesión</a>
+                    </li>
+                    <li>
+                      <a href="/vistas/historial.html">Historial</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+            <!-- Fin carrito mas icono para el login -->
           </div>
         </div>
       </nav>
       <!-- Fin navbar -->
     </header>
     <main class="container-fluid">
+      <!-- Inicio offcanva -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carro de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="products">
+              <div class="product">
+                <div class="product-desc">
+                  <h2>Nombre Producto</h2>
+                  <img src="/images/producto.jpg" alt="Cargando imagen...">
+                  <button class="product-remove">Eliminar</button>
+                </div>
+                <div class="product-desc-2">
+                  <div class="product-price">
+                    <span class="precio">Precio:</span>
+                    <span class="precio-2">$999</span>
+                  </div>
+                  <div class="product-add">
+                    <button class="product-menos">-</button>
+                    <span class="product-contador">1</span>
+                    <button class="product-mas">+</button>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="product">
+                <div class="product-desc">
+                  <h2>Nombre Producto</h2>
+                  <img src="/images/producto2.jpg" alt="Cargando imagen...">
+                  <button class="product-remove">Eliminar</button>
+                </div>
+                <div class="product-desc-2">
+                  <div class="product-price">
+                    <span class="precio">Precio:</span>
+                    <span class="precio-2">$999</span>
+                  </div>
+                  <div class="product-add">
+                    <button class="product-menos">-</button>
+                    <span class="product-contador">1</span>
+                    <button class="product-mas">+</button>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="product-buttons">
+              <a href="/vistas/carrito.html">
+                <button class="product-carro">Ir al carro</button>
+              </a>
+              <a href="/vistas/pago.html">
+                <button class="product-pago">Iniciar pago</button>
+              </a>
+            </div>
+        </div>
+      </div>
+      <!-- Fin offcanva -->
+      
       <!-- Section 1 -->
       <section class="section-1">
         <!-- Inicio carousel -->
@@ -117,7 +192,8 @@
         <!-- Realiza tu compra aqui -->
         <div class="compra">
           <span class="text-compra">Haz tu compra ahora y lleva a casa los mejores sabores.</span>
-          <a href="/menu.html"><button class="btn-compra"><span class="text-btn-compra">¡Compra aqui!</span></button>
+          <a href="/vistas/menu.html">
+            <button class="btn-compra">¡Compra aqui!</button>
           </a>
         </div>
       </section>
@@ -126,6 +202,7 @@
         <h1>NUESTROS PRODUCTOS MÁS DESTACADOS</h1>
         <!-- Inicio cards -->
         <div class="products">
+          <!-- Producto 1 -->
           <div class="card">
             <img
               src="/images/card1.jpg"
@@ -142,11 +219,11 @@
               </div>
               <div class="price-section">
                 <span>Precio</span>
-                <a href="#" class="btn">Compra ahora</a>
+                <a href="#" class="btn">Agregar</a>
               </div>
             </div>
           </div>
-
+          <!-- Producto 2 -->
           <div class="card">
             <img
               src="/images/card1.jpg"
@@ -163,11 +240,11 @@
               </div>
               <div class="price-section">
                 <span>Precio</span>
-                <a href="#" class="btn">Compra ahora</a>
+                <a href="#" class="btn">Agregar</a>
               </div>
             </div>
           </div>
-
+          <!-- Producto 3 -->
           <div class="card">
             <img
               src="/images/card1.jpg"
@@ -184,11 +261,11 @@
               </div>
               <div class="price-section">
                 <span>Precio</span>
-                <a href="#" class="btn">Compra ahora</a>
+                <a href="#" class="btn">Agregar</a>
               </div>
             </div>
           </div>
-
+          <!-- Producto 4 -->
           <div class="card">
             <img
               src="/images/card1.jpg"
@@ -205,7 +282,7 @@
               </div>
               <div class="price-section">
                 <span>Precio</span>
-                <a href="#" class="btn">Compra ahora</a>
+                <a href="#" class="btn">Agregar</a>
               </div>
             </div>
           </div>
@@ -215,9 +292,11 @@
     </main>
     <footer class="container-fluid">
       <div class="footer-container">
+        <!-- Logo -->
         <div class="group-1">
           <img src="/images/Logo.png" alt="Cargando imagen..." />
         </div>
+        <!-- Sobre nosotros -->
         <div class="group-2">
           <h4>Sobre Nosotros</h4>
           <p>
@@ -227,19 +306,21 @@
             molestias! Adipisci enim odit eum.
           </p>
         </div>
+        <!-- Redes sociales -->
         <div class="group-3">
           <h4>Redes sociales</h4>
           <div class="social-links">
-            <a href="#" class=""><img src="/images/instagram.svg" alt=""></a>
-            <a href="#" class=""><img src="/images/square-facebook.svg" alt=""></a>
-            <a href="#" class=""><img src="/images/x-twitter.svg" alt=""></a>
+            <a href="#" class=""><img src="/images/rrss/instagram.svg" alt=""></a>
+            <a href="#" class=""><img src="/images/rrss/square-facebook.svg" alt=""></a>
+            <a href="#" class=""><img src="/images/rrss/x-twitter.svg" alt=""></a>
           </div>
         </div>
       </div>
+      <!-- Copy -->
       <div class="footer-copy">
         <small>&copy; 2024. Coffe Kong - Todos los derechos reservados.</small>
       </div>
     </footer>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
   </body>
 </html>
