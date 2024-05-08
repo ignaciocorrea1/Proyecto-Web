@@ -318,6 +318,11 @@ footer {
     width: 50vw;
 }
 
+.section-1 .carousel .carousel-item img {
+    height: 60vh;
+    width: 50vw;
+}
+
 .section-1 .compra {
     display: flex;
     flex-direction: column;
@@ -671,7 +676,7 @@ hr {
     display: flex;
     justify-content: center;
     margin: auto;
-    width: 40vw;
+    width: 100vw;
     height: 60vh;
 }
 
@@ -1199,7 +1204,7 @@ hr {
 
 .form-login-container form .form-submit {
     width: 15vw;
-    height: 7vh;
+    height: 6vh;
     font-size: 1.25rem;
     font-weight: 600;
     color: white;
@@ -1250,6 +1255,7 @@ hr {
     font-size: 0.9em;
     font-weight: 600;
     padding: 0.5em 0.7em 0 0;
+    margin-left: auto;
 }
 
 .detail-header a:hover {
