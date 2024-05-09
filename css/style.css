@@ -59,12 +59,12 @@ body{
     color: #BFA980;
     font-weight: 900;
     font-size: 1.18rem;
-    text-align: center;/*para el responsive*/
+    text-align: center;
 }
 
 .navbar .right-side {
     display: flex;
-    justify-content: end; /*para el responsive*/
+    justify-content: end;
     align-items: center;
     margin-right: 1em;
     color: #BFA980;
@@ -174,14 +174,14 @@ body{
     color: #436A6F;
 }
 
-.offcanvas .offcanvas-body .product-buttons{
+.offcanvas .offcanvas-body .product-buttons {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .offcanvas .offcanvas-body .product-buttons .product-carro,
-.offcanvas .offcanvas-body .product-buttons .product-pago{
+.offcanvas .offcanvas-body .product-buttons .product-pago {
     background-color: #BFA980;
     border: 0.218em solid #436A6F;
     border-radius: 1.25em;
@@ -195,7 +195,7 @@ body{
     border: 0.218em solid white;
 }
 
-.navbar .right-side .drop-button{
+.navbar .right-side .drop-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,7 +204,7 @@ body{
     background-color: #61888C;
 }
 
-.navbar .right-side .drop-button .acc{
+.navbar .right-side .drop-button .acc {
     font-size: 1.875rem;
     color: #BFA980;
     margin-right: 0;
@@ -223,7 +223,7 @@ body{
     justify-content: center;
 }
 
-.navbar .right-side .drop-menu .drop-options li a{
+.navbar .right-side .drop-menu .drop-options li a {
     text-decoration: none;
     color: white
 }
@@ -266,7 +266,7 @@ footer {
     text-align: justify;
 }
 
-.footer-container .group-3{
+.footer-container .group-3 {
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -321,11 +321,13 @@ footer {
 .section-1 .carousel .carousel-item img {
     height: 60vh;
     width: 50vw;
+    object-fit: cover;
 }
 
 .section-1 .compra {
     display: flex;
     flex-direction: column;
+    height: 60vh;
     width: 50vw;
     margin: auto;
     justify-content: center;
@@ -363,7 +365,6 @@ h1 {
     margin-bottom: 2.25em;
     margin-left: 0.8em;
     color: #BFA980;
-    
 }
 
 .section-2 .products {
@@ -371,14 +372,13 @@ h1 {
     grid-template-columns: repeat(2, minmax(32vw, 32vw));
     gap: 6.25em;
     justify-content: center;
-    
 }
 
 .section-2 .products .card {
     display: flex;
     flex-direction: row;
-    width: 32vw;
-    height: 44vh;
+    width: 30vw;
+    height: 45vh;
     border: 0.188em solid #436A6F;
     border-radius: 1.875rem;
     background-color: #B0BCA6;
@@ -391,20 +391,25 @@ h1 {
     border-radius: 1.875rem;
 }
 
+.section-2 .products .card-body {
+    width: 15vw;
+    height: 42vh;
+}
+
 .section-2 .products .card .text-section {
     text-align: center;
     color: white;
 }
 
 .section-2 .products .card .text-section h3{
-    font-size: 1.875rem;
+    font-size: 1.775rem;
     margin-bottom: 0.5em;
     font-weight: 700;   
 }
 
 .section-2 .products .card .text-section p{
     text-align: justify;  
-    font-size: 0.938rem; 
+    font-size: 0.8rem; 
     font-weight: 550;;
 }
 
@@ -412,7 +417,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3em;
+    margin-top: 3vh;
     padding: 0.625rem;
     text-align: center;
     color: white;
@@ -578,7 +583,7 @@ hr {
     padding: 0.625rem;
 }
 
-.form-container form legend{
+.form-container form legend {
     color: #436A6F;
     font-size: 1.563em;
     font-weight: 600;
@@ -669,7 +674,7 @@ hr {
 }
 
 .seguimiento-container-1 {
-    margin-bottom: 10em;
+    margin-bottom: 10vw;
 }
 
 .seguimiento-container-1 .steps {
@@ -746,17 +751,17 @@ hr {
     margin-left: 5em;
 }
 
-.table-detail th{
+.table-detail th {
     padding-right: 5em;
     padding-bottom: 1em;
     color: #436A6F;
 }
 
-.table-detail .dos-p{
+.table-detail .dos-p {
     padding-right: 2em;
 }
 
-.table-detail td{
+.table-detail td {
     padding-bottom: 1em;
     width: 10vw;
     color: #436A6F;
@@ -878,28 +883,28 @@ hr {
     color: #436A6F;
 }
 
-.carro-pay-container {
+.carro-pay .carro-pay-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.carro-pay-container .carro-pagar{
+.carro-pay .carro-pay-container .carro-pagar {
     color: #BFA980;
     font-size: 1.875em;
     font-weight: 600;
     padding: 1.25em;
 }
 
-.carro-end-container {
+.carro-end .carro-end-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 3.125em;
 }
 
-.carro-end-container .option-1,
-.carro-end-container .option-2{
+.carro-end .carro-end-container .option-1,
+.carro-end .carro-end-container .option-2 {
     width: 16vw;
     height: 5.7vh;
     border: 0.188em solid #61888C;
@@ -909,8 +914,8 @@ hr {
     font-weight: 400;
 }
 
-.carro-end-container .option-1:hover,
-.carro-end-container .option-2:hover{ 
+.carro-end .carro-end-container .option-1:hover,
+.carro-end .carro-end-container .option-2:hover{ 
     border: 0.188em solid white;
 }
 
@@ -926,12 +931,12 @@ hr {
     height: 20vh;
 }
 
-.pago-container-1 .steps .steps-desc{
+.pago-container-1 .steps .steps-desc {
     display: flex;
     justify-content: space-between;
 }
 
-.pago-container-1 .steps .steps-desc .union{
+.pago-container-1 .steps .steps-desc .union {
     position: absolute;
     z-index: 0;
     width: 79vw;
@@ -1112,7 +1117,7 @@ hr {
     overflow-y: scroll;
 }
 
-.pago-container-2 .pago-resumen h2{
+.pago-container-2 .pago-resumen h2 {
     font-size: 1.6em;
     text-align: center;
     font-weight: 600;
@@ -1156,7 +1161,7 @@ hr {
     align-items: center;
     width: 28vw;
     margin: auto;
-    margin-top: 5em;
+    margin-top: 10vh;
     padding: 0.625rem;
 }
 
@@ -1220,7 +1225,7 @@ hr {
 
 /* Main historial.html */
 
-.historial-detail-container .table-detail{
+.historial-detail-container .table-detail {
     margin: auto;
     text-align: center;
 }
@@ -1239,6 +1244,14 @@ hr {
 
 .historial-detail-container .table-detail td a:hover{
     color: white;
+}
+
+.historial-detail-container .table-detail th,
+.historial-detail-container .table-detail td {
+    padding-top: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
+    border-bottom: 0.12em solid #436A6F;
 }
 
 /* Main detalles.html */
