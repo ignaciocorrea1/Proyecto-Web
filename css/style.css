@@ -36,7 +36,7 @@ body{
 
 .navbar .navbar-icon img {
     width: 7.5vw; 
-    height: 15.9vh;
+    height: 14vh;
     margin-right: 0.625rem;
 }
 
@@ -258,7 +258,7 @@ footer {
 
 .footer-container .group-1 img {
     width: 11vw;
-    height: 24vh;
+    height: 20vh;
 }
 
 .footer-container .group-2 p {
@@ -465,14 +465,14 @@ h1 {
 
 .menu-container .product img {
     width: 6.5vw;
-    height: 14vh;
+    height: 13vh;
     border-radius: 50%;
     border: 0.25em solid #61888C;
 }
 
 .menu-container .product figcaption {
     color: #BFA980;
-    font-size: 1.125em;
+    font-size: 1.225em;
     font-weight: 600;
 }
 
@@ -515,9 +515,9 @@ hr {
 }
 
 .modal .modal-content .modal-body .modal-body-container img {
-    width: 18vw;
+    width: 14vw;
     border-radius: 1.875rem;
-    height: 50vh;
+    height: 35vh;
 }
 
 .modal .modal-content .modal-body .modal-body-container .modal-desc {
@@ -599,7 +599,7 @@ hr {
 
 .form-container form .form-input {
     width: 28vw;
-    height: 3vh;
+    height: 5vh;
     border: 0.188em solid #436A6F;
     border-radius: 1.875rem;
     background-color: #F3EAC9;
@@ -659,8 +659,8 @@ hr {
 /* Provisorio para poder seguir a seguimiento-2, ya que el 
    input original esta dentro del form*/
 .form-seguimiento-container .form-submit {
-    width: 15vw;
-    height: 6vh;
+    width: 10vw;
+    height: 4vh;
     font-size: 1.25rem;
     font-weight: 600;
     color: white;
@@ -749,7 +749,7 @@ hr {
 
 .seguimiento-container-2 h2 {
     margin-left: 1em;
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 700;
     color: #BFA980;
 }
@@ -779,7 +779,7 @@ hr {
 .seguimiento-container-2 .table-detail th,
 .seguimiento-container-2 .table-detail .dos-p,
 .seguimiento-container-2 .table-detail td {
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 /* Main carrito */
@@ -794,8 +794,8 @@ hr {
 }
 
 .carro-container img {
-    width: 15vh;
-    height: 15vh;
+    width: 13vh;
+    height: 13vh;
     border-radius: 50%;
     border: 0.25em solid #61888C;
 }
@@ -826,7 +826,7 @@ hr {
 
 .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos {
     width: 2.5vw;
-    height: 6vh;
+    height: 4vh;
     background-color: #F3EAC9;
     border: 0.15em solid #61888C;
     color: #BFA980;
@@ -841,7 +841,7 @@ hr {
     justify-content: center;
     align-items: center;
     width: 2.5vw;
-    height: 6vh;
+    height: 4vh;
     background-color: #F3EAC9;
     border-top: 0.15em solid #61888C;
     border-bottom: 0.15em solid #61888C;
@@ -851,7 +851,7 @@ hr {
 
 .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
     width: 2.5vw;
-    height: 6vh;
+    height: 4vh;
     background-color: #F3EAC9;
     border: 0.15em solid #61888C;
     color: #BFA980;
@@ -904,7 +904,7 @@ hr {
 
 .carro-pay .carro-pay-container .carro-pagar {
     color: #BFA980;
-    font-size: 1.875em;
+    font-size: 1.475em;
     font-weight: 600;
     padding: 1.25em;
 }
@@ -918,8 +918,8 @@ hr {
 
 .carro-end .carro-end-container .option-1,
 .carro-end .carro-end-container .option-2 {
-    width: 16vw;
-    height: 5.7vh;
+    width: 14vw;
+    height: 5vh;
     border: 0.188em solid #61888C;
     border-radius: 1.25rem;
     background-color: #436A6F;
@@ -1037,7 +1037,7 @@ hr {
 
 .pago-container-2 .pago-datos form .form-submit {
     width: 12vw;
-    height: 6vh;
+    height: 4vh;
     border: 0.158em solid #436A6F;
     border-radius: 0.6em;
     color: white;
@@ -1068,7 +1068,7 @@ hr {
     text-align: center;
     margin-bottom: 1em;
     width: 30vw;
-    height: 10vh;
+    height: 8vh;
 }
 
 .pago-container-2 .pago-metodo .m-pago:hover{
@@ -1079,7 +1079,7 @@ hr {
 
 .pago-container-2 .pago-metodo .m-pago-cont {
     width: 12vw;
-    height: 6vh;
+    height: 4vh;
     font-weight: 600;
     margin: auto;
     margin-left: 9vw;
@@ -1104,7 +1104,7 @@ hr {
 
 .pago-container-2 .pago-details .button-pagar {
     width: 12vw;
-    height: 6vh;
+    height: 4vh;
     font-weight: 600;
     margin-top: 1em;
     color: white;
@@ -1151,8 +1151,8 @@ hr {
 }
 
 .pago-container-2 .pago-resumen .product .product-desc img {
-    width: 10vw;
-    height: 20vh;
+    width: 7vw;
+    height: 14vh;
     border: 0.218em solid #436A6F;
     border-radius: 50%;
 }
@@ -1194,7 +1194,7 @@ hr {
 
 .form-login-container form .form-datos .form-input {
     width: 28vw;
-    height: 3vh;
+    height: 5vh;
     border: 0.188em solid #436A6F;
     border-radius: 1.875rem;
     background-color: #F3EAC9;
@@ -1223,7 +1223,7 @@ hr {
 
 .form-login-container form .form-submit {
     width: 15vw;
-    height: 6vh;
+    height: 5vh;
     font-size: 1.25rem;
     font-weight: 600;
     color: white;
@@ -1297,8 +1297,8 @@ hr {
 }
 
 .detail-container img {
-    width: 20vw;
-    height: 42vh;
+    width: 10vw;
+    height: 20vh;
     border-radius: 50%;
     border: 0.418em solid #436A6F;
 }
