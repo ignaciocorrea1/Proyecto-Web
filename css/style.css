@@ -321,7 +321,6 @@ footer {
 .section-1 .carousel .carousel-item img {
     height: 60vh;
     width: 50vw;
-    object-fit: cover;
 }
 
 .section-1 .compra {
@@ -387,11 +386,14 @@ h1 {
 .section-2 .products .card img {
     width: 15vw;
     height: 42vh;
-    padding: 0.625rem;
+    padding: 1.4em 0 0.3em 1em;
     border-radius: 1.875rem;
 }
 
 .section-2 .products .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 15vw;
     height: 42vh;
 }
@@ -489,6 +491,11 @@ hr {
     border: 0.2em solid #436A6F;
 }
 
+.modal .modal-content .modal-header .modal-title {
+    margin: auto;
+    margin-left: 0;
+}
+
 .modal .modal-content .modal-header .modal-title,
 .modal .modal-content .modal-body .modal-body-container .modal-desc h2,
 .modal .modal-content .modal-body .modal-body-container .modal-desc p {
@@ -508,7 +515,7 @@ hr {
 }
 
 .modal .modal-content .modal-body .modal-body-container img {
-    width: 20.833vw;
+    width: 18vw;
     border-radius: 1.875rem;
     height: 50vh;
 }
@@ -626,6 +633,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .form-forgot-container p,
@@ -670,7 +678,7 @@ hr {
 
 .seguimiento-container-1 h1 {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 .seguimiento-container-1 {
@@ -741,7 +749,7 @@ hr {
 
 .seguimiento-container-2 h2 {
     margin-left: 1em;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 700;
     color: #BFA980;
 }
@@ -766,6 +774,12 @@ hr {
     width: 10vw;
     color: #436A6F;
     text-align: center;
+}
+
+.seguimiento-container-2 .table-detail th,
+.seguimiento-container-2 .table-detail .dos-p,
+.seguimiento-container-2 .table-detail td {
+    font-size: 1.3em;
 }
 
 /* Main carrito */
@@ -865,7 +879,6 @@ hr {
     font-size: 0.85em;
     font-weight: 800;
     color: #BFA980;
-    margin-bottom: 1.25em;
 }
 
 .carro-container .carro-eliminar {
@@ -1194,6 +1207,7 @@ hr {
     justify-content: space-between;
     width: 28vw;
     padding: 0 0.313rem 0.938rem 1.563rem;
+    margin-bottom: 2vh;
 }
 
 .form-login-container form .form-question a {

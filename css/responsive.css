@@ -1,27 +1,2885 @@
 /* Responsive */
 
 /* Breakpoint 1328px */
+@media screen and (max-width: 1328px) {
+    /* Header */
+    .navbar .navbar-icon {
+        font-size: 1.8em;
+    }
 
+    .navbar .navbar-icon img {
+        width: 8vw; 
+        height: 12vh;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        font-size: 1.1em;
+        padding-right: 1vw;
+        padding-left: 1vw;
+    }
+
+    .navbar .right-side .carro,
+    .navbar .right-side .drop-button .acc {
+        font-size: 1.7em;
+    }
+
+    .navbar .right-side .drop-login .drop-menu .drop-options li a {
+        font-size: 0.96em;
+    }
+
+    /* Carro desplegado */
+
+    .offcanvas .offcanvas-header .offcanvas-title {
+        font-size: 1.5em;
+    }
+    
+    .offcanvas .offcanvas-body .products .product .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+        font-size: 1em;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc img{
+        width: 6vw;
+        height: 8vh;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+        font-size: 1.1em;
+    }
+
+    .offcanvas .offcanvas-body .product-buttons .product-carro,
+    .offcanvas .offcanvas-body .product-buttons .product-pago {
+        width: 13vw;
+        height: 5vh;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1em;
+    }
+
+    /* Footer */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .footer-container .group-1 img {
+        width: 14vw;
+        height: 18vh;
+    }
+
+    .footer-container .group-2 h4,
+    .footer-container .group-3 h4 {
+        text-align: center;
+        width: 50vw;
+        font-size: 1.6em;
+    }
+
+
+    .footer-container .group-2 p{
+        width: 50vw;
+        font-size: 1.1em;
+    }
+
+    .footer-container .group-3 a img{
+        width: 2vw;
+    }
+
+    .footer-copy {
+        font-size: 1em;
+    }
+
+    /* Main index.html - section-1 */
+    .section-1{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 50vh;
+        width: 100%;
+    }
+
+    .section-1 .carousel .carousel-item,
+    .section-1 .carousel .carousel-item img {
+        width: 55vw;
+    }
+
+    .section-1 .compra {
+        width: 45vw;
+    }
+
+    .section-1 .compra .text-compra,
+    .section-1 .btn-compra {
+        font-size: 1.7em;
+    }
+    
+    /* Main index.html - section-2 */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .section-2 .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-2 .products .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        width: 30vw;
+        height: 60vh;
+    }
+
+    .section-2 .products .card img {
+        width: 15vw;
+        height: 25vh;
+        margin-top: 2vh;
+        padding-bottom: 0;
+    }
+
+    .section-2 .products .card-body {
+        width: 30vw;
+        height: 20vh;
+    }
+
+    .section-2 .products .card .text-section h3 {
+        font-size: 1.4em;
+    }
+
+    .section-2 .products .card .text-section p {
+        font-size: 1rem; 
+    }
+
+    .section-2 .products .card .price-section,
+    .section-2 .products .card .price-section .btn {
+        font-size: 1.1em;
+    }
+
+    /* Main menu.html */
+    .group-b .menu-container,
+    .group-c .menu-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-left: 10vw;
+    }
+    
+    .menu-container .product {
+        width: 15vw;
+        height: 18vh;
+    }
+
+    .menu-container .product img {
+        width: 9vw;
+        height: 13vh;
+    }
+
+    .menu-container .product figcaption {
+        width: 40vw;
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    /* Main menu.html - modal */
+    .modal {
+        margin-top: 2vh;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .modal .modal-content .modal-header {
+        height: 10vh;
+    }
+
+    .modal .modal-content .modal-header .modal-title {
+        margin: 0;
+    }
+
+    .modal .modal-content .modal-header .btn-close {
+        font-size: 1.2em;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container img {
+        width: 18vw;
+        height: 30vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
+        font-size: 1.4em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc p {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
+    .modal .modal-content .modal-footer .modal-button-add {
+        font-size: 1.4em;
+    }
+    
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-contador, 
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-mas {
+        font-size: 1.6em;
+    }
+
+    /* Main unete.html */
+    .form-container,
+    .form-container form .form-input {
+        width: 40vw;
+    }
+
+    .form-container form .form-input {
+        font-size: 1.2em;
+        height: 6vh;
+    }
+    
+    .form-container form legend {
+        font-size: 1.65em;
+    }
+
+    .form-container form .form-submit {
+        width: 20vw;
+        margin-left: 10vw;
+        font-size: 1.2em;
+    }
+
+    /* Main seguimiento.html y contrasenia.html */
+    .form-forgot-container p,
+    .form-seguimiento-container p {
+        max-width: 60vw;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .form-forgot-container form .form-input,
+    .form-seguimiento-container form .form-input {
+        font-size: 1em;
+        height: 6vh;
+        width: 60vw;
+    }
+
+    .form-forgot-container form .form-submit,
+    .form-seguimiento-container form .form-submit,
+    .form-seguimiento-container .form-submit {
+        font-size: 1.2em;
+        width: 15vw;
+        height: 5vh;
+    }
+
+    /* Main seguimiento-2.html */
+    .seguimiento-container-1 h1 {
+        font-size: 1.5em;
+    }
+
+    .seguimiento-container-1 .steps {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .union {
+        width: 3.8vw;
+        height: 57vh;
+        margin-top: 0.8vh;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle {
+        width: 6vw;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 1.1em;
+    }
+
+    .seguimiento-container-2 h2 {
+        font-size: 1.5em;
+        margin-bottom: 8vh;
+    }
+
+    .seguimiento-container-2 .table-detail {
+        margin: auto;
+    }
+
+    .table-detail th,
+    .table-detail .dos-p,
+    .table-detail td {
+        font-size: 1.2em;
+    }
+
+    /* Main carrito.html */
+    .carro-container img {
+        margin: auto;
+        width: 9vw;
+        height: 13vh;
+    }
+
+    .carro-container  .carro-inf {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .carro-container .carro-inf .carro-desc h2 {
+        font-size: 1.3em;
+    }
+
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+        font-size: 1em;
+        width: 4vw;
+        height: 5vh;
+        margin-bottom: 3vh;
+    }
+
+    .carro-container .carro-total h2 {
+        font-size: 1em;
+        margin-bottom: 0.5vh;
+    }
+
+    .carro-container .carro-total span {
+        font-size: 1em;
+    }
+
+    .carro-container .carro-eliminar {
+        font-size: 1.5em;
+    }
+
+    .carro-pay .carro-pay-container .carro-pagar {
+        font-size: 1.4em;
+    }
+
+    .carro-end .carro-end-container .option-1,
+    .carro-end .carro-end-container .option-2 {
+        font-size: 1.2em;
+        width: 25vw;
+    }
+
+    /* Main pago.html */
+    .pago-container-1 .steps {
+        width: 95vw;
+        height: 30vh;
+    }
+
+    .pago-container-1 .steps .steps-desc .union {
+        height: 4vh;
+        width: 92vw;
+        margin-left: 1.5vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle {
+        width: 6vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.9em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail-2{
+        margin-left: 4vw;
+    }
+    
+    .pago-container-1 .steps .steps-desc-2 .step-detail-1{
+        margin-left: 0.5vw;
+    }
+
+    .pago-datos {
+        font-size: 1.7em;
+        margin-bottom: 5vh;
+    }
+
+    .pago-container-2 {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    /* Resumen del pedido */
+    .pago-container-2 .pago-resumen {
+        width: 50vw;
+        margin-bottom: 10vh;
+    }
+
+    .pago-container-2 .pago-resumen h2 {
+        font-size: 1.4em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc h3 {
+        font-size: 1.3em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc img {
+        width: 11vw;
+        height: 15vh;
+        margin-bottom: 4vw;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .pago-total {
+        font-size: 1.2em;
+    }
+
+    /* Primer paso del pago */
+    .pago-container-2 .pago-datos form {
+        margin: auto;
+        margin-right: 2vw;
+    }
+
+    .pago-container-2 .pago-datos form .form-input {
+        width: 40vw;
+        font-size: 0.6em;
+    }
+
+    .pago-container-2 .pago-datos form .form-submit {
+        width: 15vw;
+        height: 5vh;
+        font-size: 0.75em;
+    }
+
+    /* Segundo paso del pago */
+    .pago-container-2 .pago-metodo .pago-option {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago {
+        width: 50vw;
+        font-size: 1.1em;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago-cont {
+        width: 15vw;
+        margin-left: 17.5vw;
+        font-size: 1.2em;
+    }
+
+    /* Tercer paso del pago */
+    .pago-container-2 .pago-details .table-detail {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-details .table-detail th,
+    .pago-container-2 .pago-details .table-detail .dos-p,
+    .pago-container-2 .pago-details .table-detail td {
+        font-size: 1.2em;
+    }
+
+    .pago-container-2 .pago-details .button-pagar {
+        width: 15vw;
+        font-size: 1.2em;
+    }
+
+    /* Main ingreso.html */
+    .form-login-container {
+        margin-top: 4vh;
+    }
+
+    .form-login-container form legend {
+        font-size: 1.9em;
+    }
+
+    .form-login-container form .form-datos .form-input {
+        width: 40vw;
+        height: 6vh;
+        font-size: 1em;
+    }
+
+    .form-login-container form .form-question {
+        font-size: 1em;
+        width: 40vw;
+    }
+
+    .form-login-container form .form-submit {
+        width: 18vw;
+        height: 5.5vh;
+        font-size: 1.1em;
+    }
+
+    /* Main historial.html */
+    .historial-detail-container .table-detail {
+        margin: auto;
+    }
+
+    .historial-detail-container .table-detail th,
+    .historial-detail-container .table-detail td{
+        padding-left: 1.2em;
+        padding-right: 1.2em;
+        font-size: 1.2em;
+    }
+
+    /* Main detalle.html */
+    .detail-header h1 {
+        font-size: 1.5em;
+    }
+
+    .detail-header a {
+        font-size: 0.95em;
+    }
+
+    .detail-container {
+        margin-top: 10vh;
+    }
+
+    .detail-container img {
+        width: 14vw;
+        height: 20vh;
+        border: 0.218em solid #436A6F;
+    }
+
+    .detail-container .table-detail {
+        margin: auto;
+        margin-top: 10vh;
+    }
+
+    .detail-container .table-detail th,
+    .detail-container .table-detail .dos-p,
+    .detail-container .table-detail td {
+        font-size: 1.1em;
+    }
+}
 
 /* Breakpoint 1024px */
+@media screen and (max-width: 1024px) {
+    /* Header */
+    .navbar .navbar-icon {
+        font-size: 1.6em;
+    }
 
+    .navbar .navbar-icon img {
+        width: 12.2vw; 
+        height: 14vh;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        font-size: 1em;
+    }
+
+    .navbar .right-side .carro,
+    .navbar .right-side .drop-button .acc {
+        font-size: 1.5em;
+    }
+
+    .navbar .right-side .drop-login .drop-menu .drop-options li a {
+        font-size: 0.96em;
+    }
+
+    .navbar .navbar-toggler {
+        font-size: 1.2em;
+    }
+
+    /* Carro desplegado */
+
+    .offcanvas .offcanvas-header .offcanvas-title {
+        font-size: 1.5em;
+    }
+    
+    .offcanvas .offcanvas-body .products .product .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+        font-size: 0.9em;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc img{
+        width: 6vw;
+        height: 8vh;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+        font-size: 1.07em;
+    }
+
+    .offcanvas .offcanvas-body .product-buttons .product-carro,
+    .offcanvas .offcanvas-body .product-buttons .product-pago {
+        width: 13vw;
+        height: 5vh;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1em;
+    }
+
+    /* Footer */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .footer-container .group-1 img {
+        width: 16vw;
+        height: 18vh;
+    }
+
+    .footer-container .group-2 h4,
+    .footer-container .group-3 h4 {
+        text-align: center;
+        width: 50vw;
+        font-size: 1.4em;
+    }
+
+
+    .footer-container .group-2 p{
+        width: 50vw;
+        font-size: 1em;
+    }
+
+    .footer-container .group-3 a img{
+        width: 2.7vw;
+    }
+
+    .footer-copy {
+        font-size: 1em;
+    }
+
+    /* Main index.html - section-1 */
+    .section-1{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 50vh;
+        width: 100%;
+    }
+
+    .section-1 .carousel .carousel-item,
+    .section-1 .carousel .carousel-item img {
+        width: 55vw;
+    }
+
+    .section-1 .compra {
+        width: 45vw;
+    }
+
+    .section-1 .compra .text-compra,
+    .section-1 .btn-compra {
+        font-size: 1.5em;
+    }
+    
+    /* Main index.html - section-2 */
+    h1 {
+        font-size: 1.7em;
+    }
+
+    .section-2 .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-2 .products .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        width: 40vw;
+        height: 60vh;
+    }
+
+    .section-2 .products .card img {
+        width: 15vw;
+        height: 25vh;
+        margin-top: 2vh;
+        padding-bottom: 0;
+    }
+
+    .section-2 .products .card-body {
+        width: 40vw;
+        height: 20vh;
+    }
+
+    .section-2 .products .card .text-section h3 {
+        font-size: 1.3em;
+    }
+
+    .section-2 .products .card .text-section p {
+        font-size: 0.9rem; 
+    }
+
+    .section-2 .products .card .price-section,
+    .section-2 .products .card .price-section .btn {
+        font-size: 1em;
+    }
+
+    /* Main menu.html */
+    .group-b .menu-container,
+    .group-c .menu-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-left: 5vw;
+    }
+    
+    .menu-container .product {
+        width: 40vw;
+        height: 15vh;
+    }
+
+    .menu-container .product img {
+        width: 10vw;
+        height: 13vh;
+    }
+
+    .menu-container .product figcaption {
+        width: 40vw;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    /* Main menu.html - modal */
+    .modal {
+        margin-top: 2vh;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .modal .modal-content .modal-header {
+        height: 10vh;
+    }
+
+    .modal .modal-content .modal-header .modal-title {
+        margin: 0;
+    }
+
+    .modal .modal-content .modal-header .btn-close {
+        font-size: 1em;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container img {
+        width: 20vw;
+        height: 31vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
+        font-size: 1.4em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc p {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
+    .modal .modal-content .modal-footer .modal-button-add {
+        font-size: 1.3em;
+    }
+    
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-contador, 
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-mas {
+        font-size: 1.45em;
+    }
+
+    /* Main unete.html */
+    .form-container,
+    .form-container form .form-input {
+        width: 50vw;
+    }
+
+    .form-container form .form-input {
+        font-size: 1em;
+        height: 4vh;
+    }
+    
+    .form-container form legend {
+        font-size: 1.45em;
+    }
+
+    .form-container form .form-submit {
+        width: 20vw;
+        margin-left: 15vw;
+        font-size: 1em;
+    }
+
+    /* Main seguimiento.html y contrasenia.html */
+    .form-forgot-container p,
+    .form-seguimiento-container p {
+        max-width: 80vw;
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+    .form-forgot-container form .form-input,
+    .form-seguimiento-container form .form-input {
+        font-size: 0.9em;
+        height: 5vh;
+        width: 60vw;
+    }
+
+    .form-forgot-container form .form-submit,
+    .form-seguimiento-container form .form-submit,
+    .form-seguimiento-container .form-submit {
+        font-size: 1em;
+        width: 15vw;
+        height: 5vh;
+    }
+
+    /* Main seguimiento-2.html */
+    .seguimiento-container-1 h1 {
+        font-size: 1.5em;
+    }
+
+    .seguimiento-container-1 .steps {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .union {
+        width: 3.8vw;
+        height: 57vh;
+        margin-top: 0.8vh;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle {
+        width: 6vw;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 1em;
+    }
+
+    .seguimiento-container-2 h2 {
+        font-size: 1.4em;
+        margin-bottom: 8vh;
+    }
+
+    .seguimiento-container-2 .table-detail {
+        margin: auto;
+    }
+
+    .table-detail th,
+    .table-detail .dos-p,
+    .table-detail td {
+        font-size: 1.1em;
+    }
+
+    /* Main carrito.html */
+    .carro-container img {
+        margin: auto;
+        width: 9vw;
+        height: 12vh;
+    }
+
+    .carro-container  .carro-inf {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .carro-container .carro-inf .carro-desc h2 {
+        font-size: 1.2em;
+    }
+
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+        font-size: 1em;
+        width: 4vw;
+        height: 5vh;
+        margin-bottom: 3vh;
+    }
+
+    .carro-container .carro-total h2 {
+        font-size: 0.9em;
+        margin-bottom: 0.5vh;
+    }
+
+    .carro-container .carro-total span {
+        font-size: 0.9em;
+    }
+
+    .carro-container .carro-eliminar {
+        font-size: 1.4em;
+    }
+
+    .carro-pay .carro-pay-container .carro-pagar {
+        font-size: 1.3em;
+    }
+
+    .carro-end .carro-end-container .option-1,
+    .carro-end .carro-end-container .option-2 {
+        font-size: 1.2em;
+        width: 25vw;
+    }
+
+    /* Main pago.html */
+    .pago-container-1 .steps {
+        width: 95vw;
+        height: 30vh;
+    }
+
+    .pago-container-1 .steps .steps-desc .union {
+        height: 4vh;
+        width: 92vw;
+        margin-left: 1.5vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle {
+        width: 6vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.9em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail-2{
+        margin-left: 4vw;
+    }
+    
+    .pago-container-1 .steps .steps-desc-2 .step-detail-1{
+        margin-left: 0.5vw;
+    }
+
+    .pago-datos {
+        font-size: 1.7em;
+        margin-bottom: 5vh;
+    }
+
+    .pago-container-2 {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    /* Resumen del pedido */
+    .pago-container-2 .pago-resumen {
+        width: 50vw;
+        margin-bottom: 10vh;
+    }
+
+    .pago-container-2 .pago-resumen h2 {
+        font-size: 1.3em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc h3 {
+        font-size: 1.1em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc img {
+        width: 11vw;
+        height: 15vh;
+        margin-bottom: 4vw;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .pago-total {
+        font-size: 1.1em;
+    }
+
+    /* Primer paso del pago */
+    .pago-container-2 .pago-datos form {
+        margin: auto;
+        margin-right: 2vw;
+    }
+
+    .pago-container-2 .pago-datos form .form-input {
+        width: 40vw;
+        font-size: 0.6em;
+    }
+
+    .pago-container-2 .pago-datos form .form-submit {
+        width: 15vw;
+        height: 5vh;
+        font-size: 0.75em;
+    }
+
+    /* Segundo paso del pago */
+    .pago-container-2 .pago-metodo .pago-option {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago {
+        width: 50vw;
+        font-size: 1em;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago-cont {
+        width: 15vw;
+        margin-left: 17.5vw;
+        font-size: 1em;
+    }
+
+    /* Tercer paso del pago */
+    .pago-container-2 .pago-details .table-detail {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-details .table-detail th,
+    .pago-container-2 .pago-details .table-detail .dos-p,
+    .pago-container-2 .pago-details .table-detail td {
+        font-size: 1.1em;
+    }
+
+    .pago-container-2 .pago-details .button-pagar {
+        width: 15vw;
+        font-size: 1.1em;
+    }
+
+    /* Main ingreso.html */
+    .form-login-container {
+        margin-top: 4vh;
+    }
+
+    .form-login-container form legend {
+        font-size: 1.9em;
+    }
+
+    .form-login-container form .form-datos .form-input {
+        width: 45vw;
+        font-size: 1em;
+    }
+
+    .form-login-container form .form-question {
+        font-size: 1em;
+        width: 45vw;
+    }
+
+    .form-login-container form .form-submit {
+        width: 18vw;
+        height: 5.5vh;
+        font-size: 1.1em;
+    }
+
+    /* Main historial.html */
+    .historial-detail-container .table-detail {
+        margin: auto;
+    }
+
+    .historial-detail-container .table-detail th,
+    .historial-detail-container .table-detail td{
+        padding-left: 1.1em;
+        padding-right: 1.1em;
+        font-size: 1.1em;
+    }
+
+    /* Main detalle.html */
+    .detail-header h1 {
+        font-size: 1.4em;
+    }
+
+    .detail-header a {
+        font-size: 0.95em;
+    }
+
+    .detail-container {
+        margin-top: 10vh;
+    }
+
+    .detail-container img {
+        width: 15vw;
+        height: 20vh;
+        border: 0.218em solid #436A6F;
+    }
+
+    .detail-container .table-detail {
+        margin: auto;
+        margin-top: 10vh;
+    }
+
+    .detail-container .table-detail th,
+    .detail-container .table-detail .dos-p,
+    .detail-container .table-detail td {
+        font-size: 1.05em;
+    }
+}
 
 /* Breakpoin 960px */
+@media screen and (max-width: 960px) {
+    /* Header */
+    .navbar .navbar-icon {
+        font-size: 1.8em;
+    }
 
+    .navbar .navbar-icon img {
+        width: 13vw; 
+        height: 14vh;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        font-size: 1em;
+    }
+
+    .navbar .right-side .carro,
+    .navbar .right-side .drop-button .acc {
+        font-size: 1.65em;
+    }
+
+    .navbar .right-side .drop-login .drop-menu .drop-options li a {
+        font-size: 0.95em;
+    }
+
+    .navbar .navbar-toggler {
+        font-size: 1.2em;
+    }
+
+    /* Carro desplegado */
+
+    .offcanvas .offcanvas-header .offcanvas-title {
+        font-size: 1.5em;
+    }
+    
+    .offcanvas .offcanvas-body .products .product .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+        font-size: 0.9em;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc img{
+        width: 8vw;
+        height: 11vh;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+        font-size: 1.07em;
+    }
+
+    .offcanvas .offcanvas-body .product-buttons .product-carro,
+    .offcanvas .offcanvas-body .product-buttons .product-pago {
+        width: 15vw;
+        height: 5vh;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 0.9em;
+    }
+
+    /* Footer */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .footer-container .group-1 img {
+        width: 16vw;
+        height: 20vh;
+    }
+
+    .footer-container .group-2 h4,
+    .footer-container .group-3 h4 {
+        text-align: center;
+        width: 50vw;
+        font-size: 1.2em;
+    }
+
+
+    .footer-container .group-2 p{
+        width: 50vw;
+        font-size: 0.8em;
+    }
+
+    .footer-container .group-3 a img{
+        width: 2.7vw;
+    }
+
+    .footer-copy {
+        font-size: 0.9em;
+    }
+
+    /* Main index.html - section-1 */
+    .section-1{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 110vh;
+        width: 100%;
+    }
+
+    .section-1 .carousel .carousel-item {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .section-1 .carousel .carousel-item img {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .section-1 .compra {
+        height: 50vh;
+        width: 100%;
+    }
+
+    .section-1 .compra .text-compra,
+    .section-1 .btn-compra {
+        font-size: 1.6em;
+    }
+    
+    /* Main index.html - section-2 */
+    h1 {
+        font-size: 1.55em;
+        text-align: center;
+    }
+
+    .section-2 .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-2 .products .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        width: 40vw;
+        height: 55vh;
+    }
+
+    .section-2 .products .card img {
+        width: 18vw;
+        height: 25vh;
+        margin-top: 2vh;
+        padding-bottom: 0;
+    }
+
+    .section-2 .products .card-body {
+        width: 40vw;
+        height: 20vh;
+    }
+
+    .section-2 .products .card .text-section h3 {
+        font-size: 1.3em;
+    }
+
+    .section-2 .products .card .text-section p {
+        font-size: 0.9rem; 
+    }
+
+
+    .section-2 .products .card .price-section,
+    .section-2 .products .card .price-section .btn {
+        font-size: 1em;
+    }
+
+    /* Main menu.html */
+    .group-b .menu-container,
+    .group-c .menu-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-left: 5vw;
+    }
+    
+    .menu-container .product {
+        width: 40vw;
+        height: 15vh;
+    }
+
+    .menu-container .product img {
+        width: 10vw;
+        height: 13vh;
+    }
+
+    .menu-container .product figcaption {
+        width: 40vw;
+        font-size: 0.95em;
+        text-align: center;
+    }
+
+    /* Main menu.html - modal */
+    .modal {
+        margin-top: 2vh;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .modal .modal-content .modal-header {
+        height: 10vh;
+    }
+
+    .modal .modal-content .modal-header .modal-title {
+        margin: 0;
+    }
+
+    .modal .modal-content .modal-header .btn-close {
+        font-size: 0.8em;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container img {
+        width: 18vw;
+        height: 29vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc p {
+        font-size: 0.85em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
+    .modal .modal-content .modal-footer .modal-button-add {
+        font-size: 1.1em;
+    }
+    
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-contador, 
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-mas {
+        font-size: 1.25em;
+    }
+
+    /* Main unete.html */
+    .form-container,
+    .form-container form .form-input {
+        width: 50vw;
+    }
+
+    .form-container form .form-input {
+        font-size: 0.85em;
+        height: 3vh;
+    }
+    
+    .form-container form legend {
+        font-size: 1.35em;
+    }
+
+    .form-container form .form-submit {
+        width: 20vw;
+        margin-left: 15vw;
+        font-size: 0.95em;
+    }
+
+    /* Main seguimiento.html y contrasenia.html */
+    .form-forgot-container p,
+    .form-seguimiento-container p {
+        max-width: 80vw;
+        font-size: 0.95em;
+        text-align: center;
+    }
+
+    .form-forgot-container form .form-input,
+    .form-seguimiento-container form .form-input {
+        font-size: 0.9em;
+        height: 2vh;
+        width: 60vw;
+    }
+
+    .form-forgot-container form .form-submit,
+    .form-seguimiento-container form .form-submit,
+    .form-seguimiento-container .form-submit {
+        font-size: 0.95em;
+        width: 18vw;
+        height: 5vh;
+    }
+
+    /* Main seguimiento-2.html */
+    .seguimiento-container-1 h1 {
+        font-size: 1.2em;
+    }
+
+    .seguimiento-container-1 .steps {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .union {
+        width: 3.8vw;
+        height: 57vh;
+        margin-top: 0.8vh;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle {
+        width: 6vw;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.8em;
+    }
+
+    .seguimiento-container-2 h2 {
+        font-size: 1.2em;
+        margin-bottom: 8vh;
+    }
+
+    .seguimiento-container-2 .table-detail {
+        margin: auto;
+    }
+
+    .table-detail th,
+    .table-detail .dos-p,
+    .table-detail td {
+        font-size: 0.95em;
+    }
+
+    /* Main carrito.html */
+    .carro-container img {
+        margin: auto;
+        width: 9vw;
+        height: 13vh;
+    }
+
+    .carro-container  .carro-inf {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .carro-container .carro-inf .carro-desc h2 {
+        font-size: 1.05em;
+    }
+
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+        font-size: 1em;
+        width: 5vw;
+        height: 5vh;
+        margin-bottom: 3vh;
+    }
+
+    .carro-container .carro-total h2 {
+        font-size: 0.75em;
+        margin-bottom: 0.5vh;
+    }
+
+    .carro-container .carro-total span {
+        font-size: 0.75em;
+    }
+
+    .carro-container .carro-eliminar {
+        font-size: 1.2em;
+    }
+
+    .carro-pay .carro-pay-container .carro-pagar {
+        font-size: 1.2em;
+    }
+
+    .carro-end .carro-end-container .option-1,
+    .carro-end .carro-end-container .option-2 {
+        font-size: 0.9em;
+        width: 25vw;
+    }
+
+    /* Main pago.html */
+    .pago-container-1 .steps {
+        width: 95vw;
+        height: 30vh;
+    }
+
+    .pago-container-1 .steps .steps-desc .union {
+        height: 4vh;
+        width: 92vw;
+        margin-left: 1.5vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle {
+        width: 6vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.7em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail-2{
+        margin-left: 3vw;
+    }
+    
+    .pago-container-1 .steps .steps-desc-2 .step-detail-1{
+        margin-left: 1vw;
+    }
+
+    .pago-datos {
+        font-size: 1.3em;
+        margin-bottom: 5vh;
+    }
+
+    .pago-container-2 {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    /* Resumen del pedido */
+    .pago-container-2 .pago-resumen {
+        width: 40vw;
+        margin-bottom: 10vh;
+    }
+
+    .pago-container-2 .pago-resumen h2 {
+        font-size: 1.2em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc h3 {
+        font-size: 1em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc img {
+        width: 11vw;
+        height: 15vh;
+        margin-bottom: 4vw;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .pago-total {
+        font-size: 0.9em;
+    }
+
+    /* Primer paso del pago */
+    .pago-container-2 .pago-datos form {
+        margin: auto;
+        margin-right: 2vw;
+    }
+
+    .pago-container-2 .pago-datos form .form-input {
+        width: 35vw;
+        font-size: 0.6em;
+    }
+
+    .pago-container-2 .pago-datos form .form-submit {
+        width: 15vw;
+        height: 5vh;
+        font-size: 0.75em;
+    }
+
+    /* Segundo paso del pago */
+    .pago-container-2 .pago-metodo .pago-option {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago {
+        width: 50vw;
+        font-size: 0.9em;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago-cont {
+        width: 15vw;
+        margin-left: 17.5vw;
+        font-size: 0.95em;
+    }
+
+    /* Tercer paso del pago */
+    .pago-container-2 .pago-details .table-detail {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-details .table-detail th,
+    .pago-container-2 .pago-details .table-detail .dos-p,
+    .pago-container-2 .pago-details .table-detail td {
+        font-size: 0.85em;
+    }
+
+    .pago-container-2 .pago-details .button-pagar {
+        width: 15vw;
+        font-size: 0.95em;
+    }
+
+    /* Main ingreso.html */
+    .form-login-container {
+        margin-top: 4vh;
+    }
+
+    .form-login-container form legend {
+        font-size: 1.7em;
+    }
+
+    .form-login-container form .form-datos .form-input {
+        width: 45vw;
+        font-size: 0.8em;
+    }
+
+    .form-login-container form .form-question {
+        font-size: 0.75em;
+        width: 45vw;
+    }
+
+    .form-login-container form .form-submit {
+        width: 18vw;
+        height: 5.5vh;
+        font-size: 0.9em;
+    }
+
+    /* Main historial.html */
+    .historial-detail-container .table-detail {
+        margin: auto;
+    }
+
+    .historial-detail-container .table-detail th,
+    .historial-detail-container .table-detail td{
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        font-size: 0.9em;
+    }
+
+    /* Main detalle.html */
+    .detail-header h1 {
+        font-size: 1.3em;
+    }
+
+    .detail-header a {
+        font-size: 0.75em;
+    }
+
+    .detail-container {
+        margin-top: 10vh;
+    }
+
+    .detail-container img {
+        width: 14vw;
+        height: 20vh;
+        border: 0.218em solid #436A6F;
+    }
+
+    .detail-container .table-detail {
+        margin: auto;
+        margin-top: 10vh;
+    }
+
+    .detail-container .table-detail th,
+    .detail-container .table-detail .dos-p,
+    .detail-container .table-detail td {
+        font-size: 0.85em;
+    }
+}
 
 /* Breakpoint 768px */
+@media screen and (max-width: 768px) {
+    /* Header */
+    .navbar .navbar-icon {
+        font-size: 1.5em;
+    }
+
+    .navbar .navbar-icon img {
+        width: 15vw; 
+        height: 13vh;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        font-size: 0.9em;
+    }
+
+    .navbar .right-side .carro,
+    .navbar .right-side .drop-button .acc {
+        font-size: 1.55em;
+    }
+
+    .navbar .right-side .drop-login .drop-menu .drop-options li a {
+        font-size: 0.85em;
+    }
+
+    .navbar .navbar-toggler {
+        font-size: 1.1em;
+    }
+
+    /* Carro desplegado */
+
+    .offcanvas .offcanvas-header .offcanvas-title {
+        font-size: 1.5em;
+    }
+    
+    .offcanvas .offcanvas-body .products .product .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+        font-size: 0.9em;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc img{
+        width: 8vw;
+        height: 10vh;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+        font-size: 1.07em;
+    }
+
+    .offcanvas .offcanvas-body .product-buttons .product-carro,
+    .offcanvas .offcanvas-body .product-buttons .product-pago {
+        width: 22vw;
+        height: 5vh;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 0.8em;
+    }
+
+    /* Footer */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .footer-container .group-1 img {
+        width: 20vw;
+        height: 20vh;
+    }
+
+    .footer-container .group-2 h4,
+    .footer-container .group-3 h4 {
+        text-align: center;
+        width: 60vw;
+        font-size: 1.3em;
+    }
+
+
+    .footer-container .group-2 p{
+        width: 60vw;
+        font-size: 0.8em;
+    }
+
+    .footer-container .group-3 a img{
+        width: 3vw;
+    }
+
+    .footer-copy {
+        font-size: 0.9em;
+    }
+
+    /* Main index.html - section-1 */
+    .section-1{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .section-1 .carousel .carousel-item {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .section-1 .carousel .carousel-item img {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .section-1 .compra {
+        height: 40vh;
+        width: 100%;
+    }
+
+    .section-1 .compra .text-compra,
+    .section-1 .btn-compra {
+        font-size: 1.35em;
+    }
+    
+    /* Main index.html - section-2 */
+    h1 {
+        font-size: 1.35em;
+        text-align: center;
+    }
+
+    .section-2 .products {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .section-2 .products .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        width: 50vw;
+        height: 70vh;
+    }
+
+    .section-2 .products .card img {
+        width: 20vw;
+        height: 25vh;
+        margin-top: 2vh;
+        padding-bottom: 0;
+    }
+
+    .section-2 .products .card-body {
+        height: 40vh;
+        width: 50vw;
+    }
+
+    .section-2 .products .card .text-section h3 {
+        font-size: 1.2em;
+    }
+
+    .section-2 .products .card .text-section p {
+        font-size: 0.8rem; 
+    }
+
+    .section-2 .products .card .price-section,
+    .section-2 .products .card .price-section .btn {
+        font-size: 0.9em;
+    }
+
+    /* Main menu.html */
+    .group-b .menu-container,
+    .group-c .menu-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-left: 5vw;
+    }
+    
+    .menu-container .product {
+        width: 40vw;
+        height: 15vh;
+    }
+
+    .menu-container .product img {
+        width: 11vw;
+        height: 12vh;
+    }
+
+    .menu-container .product figcaption {
+        width: 40vw;
+        font-size: 0.89em;
+        text-align: center;
+    }
+
+    /* Main menu.html - modal */
+    .modal {
+        margin-top: 2vh;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .modal .modal-content .modal-header {
+        height: 10vh;
+    }
+
+    .modal .modal-content .modal-header .modal-title {
+        margin: 0;
+    }
+
+    .modal .modal-content .modal-header .btn-close {
+        font-size: 0.8em;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container img {
+        width: 26vw;
+        height: 35vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc p {
+        font-size: 0.85em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
+    .modal .modal-content .modal-footer .modal-button-add {
+        font-size: 1em;
+    }
+    
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-contador, 
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-mas {
+        font-size: 1.15em;
+    }
+
+    /* Main unete.html */
+    .form-container,
+    .form-container form .form-input {
+        width: 60vw;
+    }
+
+    .form-container form .form-input {
+        font-size: 0.85em;
+        height: 3vh;
+    }
+    
+    .form-container form legend {
+        font-size: 1.3em;
+    }
+
+    .form-container form .form-submit {
+        width: 30vw;
+        margin-left: 15vw;
+        font-size: 0.9em;
+    }
+
+    /* Main seguimiento.html y contrasenia.html */
+    .form-forgot-container p,
+    .form-seguimiento-container p {
+        max-width: 80vw;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .form-forgot-container form .form-input,
+    .form-seguimiento-container form .form-input {
+        font-size: 0.8em;
+        height: 2vh;
+        width: 60vw;
+    }
+
+    .form-forgot-container form .form-submit,
+    .form-seguimiento-container form .form-submit,
+    .form-seguimiento-container .form-submit {
+        font-size: 0.9em;
+        width: 24vw;
+        height: 5vh;
+    }
+
+    /* Main seguimiento-2.html */
+    .seguimiento-container-1 h1 {
+        font-size: 1.2em;
+    }
+
+    .seguimiento-container-1 .steps {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .union {
+        width: 4.5vw;
+        height: 57vh;
+        margin-top: 0.8vh;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle {
+        width: 7.5vw;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.8em;
+    }
+
+    .seguimiento-container-2 h2 {
+        font-size: 1.2em;
+        margin-bottom: 8vh;
+    }
+
+    .seguimiento-container-2 .table-detail {
+        margin: auto;
+    }
+
+    .table-detail th,
+    .table-detail .dos-p,
+    .table-detail td {
+        font-size: 0.9em;
+    }
+
+    /* Main carrito.html */
+    .carro-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carro-container img {
+        margin: auto;
+        width: 14vw;
+        height: 16vh;
+
+    }
+
+    .carro-container  .carro-inf {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .carro-container .carro-inf .carro-desc h2 {
+        font-size: 1em;
+    }
+
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+        font-size: 0.9em;
+        width: 6vw;
+        height: 5vh;
+        margin-bottom: 3vh;
+    }
+
+    .carro-container .carro-total h2 {
+        font-size: 0.8em;
+        margin-bottom: 0.5vh;
+    }
+
+    .carro-container .carro-total span {
+        font-size: 0.8em;
+        margin-bottom: 4vw;
+    }
+
+    .carro-container .carro-eliminar {
+        font-size: 1.2em;
+    }
+
+    .carro-pay .carro-pay-container .carro-pagar {
+        font-size: 1.1em;
+    }
+
+    .carro-end .carro-end-container .option-1,
+    .carro-end .carro-end-container .option-2 {
+        font-size: 0.8em;
+        width: 35vw;
+    }
+
+    /* Main pago.html */
+    .pago-container-1 .steps {
+        width: 95vw;
+        height: 30vh;
+    }
+
+    .pago-container-1 .steps .steps-desc .union {
+        height: 4vh;
+        width: 92vw;
+        margin-left: 1.5vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle {
+        width: 8vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.65em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail-2{
+        margin-left: 3vw;
+    }
+    
+    .pago-container-1 .steps .steps-desc-2 .step-detail-1{
+        margin-left: 2vw;
+    }
+
+    .pago-datos {
+        font-size: 1.3em;
+        margin-bottom: 5vh;
+    }
+
+    .pago-container-2 {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    /* Resumen del pedido */
+    .pago-container-2 .pago-resumen {
+        width: 50vw;
+        margin-bottom: 10vh;
+    }
+
+    .pago-container-2 .pago-resumen h2 {
+        font-size: 1.2em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc h3 {
+        font-size: 1em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc img {
+        width: 13vw;
+        height: 16vh;
+        margin-bottom: 4vw;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .pago-total {
+        font-size: 0.9em;
+    }
+
+    /* Primer paso del pago */
+    .pago-container-2 .pago-datos form {
+        margin: auto;
+        margin-right: 2vw;
+    }
+
+    .pago-container-2 .pago-datos form .form-input {
+        width: 50vw;
+        font-size: 0.6em;
+    }
+
+    .pago-container-2 .pago-datos form .form-submit {
+        width: 25vw;
+        height: 5vh;
+        font-size: 0.75em;
+    }
+
+    /* Segundo paso del pago */
+    .pago-container-2 .pago-metodo .pago-option {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago {
+        width: 60vw;
+        font-size: 0.9em;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago-cont {
+        width: 25vw;
+        margin-left: 17.5vw;
+        font-size: 0.95em;
+    }
+
+    /* Tercer paso del pago */
+    .pago-container-2 .pago-details .table-detail {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-details .table-detail th,
+    .pago-container-2 .pago-details .table-detail .dos-p,
+    .pago-container-2 .pago-details .table-detail td {
+        font-size: 0.85em;
+    }
+
+    .pago-container-2 .pago-details .button-pagar {
+        width: 25vw;
+        font-size: 0.95em;
+    }
+
+    /* Main ingreso.html */
+    .form-login-container {
+        margin-top: 4vh;
+    }
+
+    .form-login-container form legend {
+        font-size: 1.7em;
+    }
+
+    .form-login-container form .form-datos .form-input {
+        width: 58vw;
+        font-size: 0.8em;
+    }
+
+    .form-login-container form .form-question {
+        font-size: 0.75em;
+        width: 58vw;
+    }
+
+    .form-login-container form .form-submit {
+        width: 25vw;
+        height: 5.5vh;
+        font-size: 0.9em;
+    }
+
+    /* Main historial.html */
+    .historial-detail-container .table-detail {
+        margin: auto;
+    }
+
+    .historial-detail-container .table-detail th,
+    .historial-detail-container .table-detail td{
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+        font-size: 0.85em;
+    }
+
+    /* Main detalle.html */
+    .detail-header h1 {
+        font-size: 1em;
+    }
+
+    .detail-header a {
+        font-size: 0.75em;
+    }
+
+    .detail-container {
+        margin-top: 10vh;
+    }
+
+    .detail-container img {
+        width: 18vw;
+        height: 20vh;
+        border: 0.218em solid #436A6F;
+    }
+
+    .detail-container .table-detail {
+        margin: auto;
+        margin-top: 10vh;
+    }
+
+    .detail-container .table-detail th,
+    .detail-container .table-detail .dos-p,
+    .detail-container .table-detail td {
+        font-size: 0.85em;
+    }
+}
+
+/* Breakpoint 576px */
+@media screen and (max-width: 576px) {
+    /* Header */
+    .navbar .navbar-icon {
+        font-size: 1.25em;
+    }
+
+    .navbar .navbar-icon img {
+        width: 15vw; 
+        height: 11vh;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        font-size: 0.75em;
+    }
+
+    .navbar .right-side .carro,
+    .navbar .right-side .drop-button .acc {
+        font-size: 1.35em;
+    }
+
+    .navbar .right-side .drop-login .drop-menu .drop-options li a {
+        font-size: 0.85em;
+    }
+
+    .navbar .navbar-toggler {
+        font-size: 0.9em;
+    }
+
+    /* Carro desplegado */
+
+    .offcanvas .offcanvas-header .offcanvas-title {
+        font-size: 1.4em;
+    }
+    
+    .offcanvas .offcanvas-body .products .product .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+        font-size: 0.85em;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc img{
+        width: 12vw;
+        height: 9vh;
+    }
+
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+        font-size: 1em;
+    }
+
+    .offcanvas .offcanvas-body .product-buttons .product-carro,
+    .offcanvas .offcanvas-body .product-buttons .product-pago {
+        width: 25vw;
+        height: 5vh;
+        font-size: 0.8em;
+    }
+
+    /* Footer */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .footer-container .group-1 img {
+        width: 25vw;
+        height: 20vh;
+    }
+
+    .footer-container .group-2 h4,
+    .footer-container .group-3 h4 {
+        text-align: center;
+        width: 65vw;
+        font-size: 1.1em;
+    }
+
+
+    .footer-container .group-2 p{
+        width: 65vw;
+        font-size: 0.8em;
+    }
+
+    .footer-container .group-3 a img{
+        width: 4vw;
+    }
+
+    .footer-copy {
+        font-size: 0.8em;
+    }
+
+    /* Main index.html - section-1 */
+    .section-1{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 90vh;
+        width: 100%;
+    }
+
+    .section-1 .carousel .carousel-item {
+        height: 55vh;
+        width: 100%;
+    }
+
+    .section-1 .carousel .carousel-item img {
+        height: 55vh;
+        width: 100%;
+    }
+
+    .section-1 .compra {
+        height: 35vh;
+        width: 100%;
+    }
+
+    .section-1 .compra .text-compra,
+    .section-1 .btn-compra {
+        font-size: 1.2em;
+    }
+    
+    /* Main index.html - section-2 */
+    h1 {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .section-2 .products {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .section-2 .products .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        width: 60vw;
+        height: 65vh;
+    }
+
+    .section-2 .products .card img {
+        width: 20vw;
+        height: 25vh;
+        margin-top: 2vh;
+        padding-bottom: 0;
+    }
+
+    .section-2 .products .card-body {
+        height: 20vh;
+        width: 60vw;
+    }
+
+    .section-2 .products .card .text-section h3 {
+        font-size: 1.2em;
+    }
+
+    .section-2 .products .card .text-section p {
+        font-size: 0.8rem; 
+    }
+
+    .section-2 .products .card .price-section,
+    .section-2 .products .card .price-section .btn {
+        font-size: 0.9em;
+    }
+
+    /* Main menu.html */
+    .group-b .menu-container,
+    .group-c .menu-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-left: 5vw;
+    }
+    
+    .menu-container .product {
+        width: 40vw;
+        height: 10vh;
+    }
+
+    .menu-container .product img {
+        width: 14vw;
+        height: 11vh;
+    }
+
+    .menu-container .product figcaption {
+        width: 40vw;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    /* Main menu.html - modal */
+    .modal {
+        margin-top: 2vh;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .modal .modal-content .modal-header {
+        height: 10vh;
+    }
+
+    .modal .modal-content .modal-header .btn-close {
+        font-size: 0.9em;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container img {
+        width: 35vw;
+        height: 30vh;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc p {
+        font-size: 0.9em;
+        margin-bottom: 0;
+    }
+
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
+    .modal .modal-content .modal-footer .modal-button-add {
+        font-size: 1em;
+    }
+    
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-contador, 
+    .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-mas {
+        font-size: 1.2em;
+    }
+
+    /* Main unete.html */
+    .form-container,
+    .form-container form .form-input {
+        width: 70vw;
+    }
+
+    .form-container form .form-input {
+        font-size: 0.85em;
+        height: 3vh;
+    }
+    
+    .form-container form legend {
+        font-size: 1.2em;
+    }
+
+    .form-container form .form-submit {
+        width: 35vw;
+        margin-left: 17.5vw;
+        font-size: 0.85em;
+    }
+
+    /* Main seguimiento.html y contrasenia.html */
+    .form-forgot-container p,
+    .form-seguimiento-container p {
+        max-width: 90vw;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .form-forgot-container form .form-input,
+    .form-seguimiento-container form .form-input {
+        font-size: 0.85em;
+        height: 2vh;
+        width: 80vw;
+    }
+
+    .form-forgot-container form .form-submit,
+    .form-seguimiento-container form .form-submit,
+    .form-seguimiento-container .form-submit {
+        font-size: 0.9em;
+        width: 30vw;
+        height: 5vh;
+    }
+
+    /* Main seguimiento-2.html */
+    .seguimiento-container-1 h1 {
+        font-size: 1.1em;
+    }
+
+    .seguimiento-container-1 .steps {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .union {
+        width: 7vw;
+        height: 57vh;
+        margin-top: 0.8vh;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle {
+        width: 11vw;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .seguimiento-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.8em;
+    }
+
+    .seguimiento-container-2 h2 {
+        font-size: 1.2em;
+        margin-bottom: 8vh;
+    }
+
+    .seguimiento-container-2 .table-detail {
+        margin: auto;
+    }
+
+    .seguimiento-container-2 .table-detail th,
+    .seguimiento-container-2 .table-detail .dos-p,
+    .seguimiento-container-2 .table-detail td {
+        font-size: 0.85em;
+    }
+
+    /* Main carrito.html */
+    .carro-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carro-container img {
+        margin: auto;
+        width: 19vw;
+        height: 15vh;
+
+    }
+
+    .carro-container  .carro-inf {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .carro-container .carro-inf .carro-desc h2 {
+        font-size: 1em;
+    }
+
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+        font-size: 0.9em;
+        width: 8vw;
+        height: 5vh;
+        margin-bottom: 3vh;
+    }
+
+    .carro-container .carro-total h2 {
+        font-size: 0.7em;
+        margin-bottom: 0.5vh;
+    }
+
+    .carro-container .carro-total span {
+        font-size: 0.7em;
+        margin-bottom: 4vw;
+    }
+
+    .carro-container .carro-eliminar {
+        font-size: 1.2em;
+    }
+
+    .carro-pay .carro-pay-container .carro-pagar {
+        font-size: 1.1em;
+    }
+
+    .carro-end .carro-end-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .carro-end .carro-end-container .option-1,
+    .carro-end .carro-end-container .option-2 {
+        font-size: 0.8em;
+        width: 50vw;
+    }
+
+    /* Main pago.html */
+    .pago-container-1 .steps {
+        width: 95vw;
+        height: 30vh;
+    }
+
+    .pago-container-1 .steps .steps-desc .union {
+        height: 4vh;
+        width: 92vw;
+        margin-left: 1.5vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle {
+        width: 11vw;
+    }
+
+    .pago-container-1 .steps .steps-desc .circle .done {
+        font-size: 1.5em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail {
+        font-size: 0.6em;
+    }
+
+    .pago-container-1 .steps .steps-desc-2 .step-detail-2{
+        margin-left: 6vw;
+    }
+    
+    .pago-container-1 .steps .steps-desc-2 .step-detail-1{
+        margin-left: 2vw;
+    }
+
+    .pago-datos {
+        font-size: 1.3em;
+        margin-bottom: 5vh;
+    }
+
+    .pago-container-2 {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    /* Resumen del pedido */
+    .pago-container-2 .pago-resumen {
+        width: 70vw;
+        margin-bottom: 10vh;
+    }
+
+    .pago-container-2 .pago-resumen h2 {
+        font-size: 1.2em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc h3 {
+        font-size: 1em;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc img {
+        width: 25vw;
+        height: 20vh;
+        margin-bottom: 4vw;
+    }
+
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .pago-total {
+        font-size: 0.8em;
+    }
+
+    /* Primer paso del pago */
+    .pago-container-2 .pago-datos form {
+        margin: auto;
+        margin-right: 4vw;
+    }
+
+    .pago-container-2 .pago-datos form .form-input {
+        width: 60vw;
+        font-size: 0.7em;
+    }
+
+    .pago-container-2 .pago-datos form .form-submit {
+        width: 30vw;
+        height: 5vh;
+        font-size: 0.75em;
+    }
+
+    /* Segundo paso del pago */
+    .pago-container-2 .pago-metodo .pago-option {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago {
+        width: 70vw;
+        font-size: 0.85em;
+    }
+
+    .pago-container-2 .pago-metodo .m-pago-cont {
+        width: 30vw;
+        margin-left: 20vw;
+        font-size: 0.95em;
+    }
+
+    /* Tercer paso del pago */
+    .pago-container-2 .pago-details .table-detail {
+        margin: auto;
+    }
+
+    .pago-container-2 .pago-details .table-detail th,
+    .pago-container-2 .pago-details .table-detail .dos-p,
+    .pago-container-2 .pago-details .table-detail td {
+        font-size: 0.85em;
+    }
+
+    .pago-container-2 .pago-details .button-pagar {
+        width: 30vw;
+        font-size: 0.95em;
+    }
+
+    /* Main ingreso.html */
+    .form-login-container {
+        margin-top: 4vh;
+    }
+
+    .form-login-container form legend {
+        font-size: 1.7em;
+    }
+
+    .form-login-container form .form-datos .form-input {
+        width: 60vw;
+        font-size: 0.8em;
+    }
+
+    .form-login-container form .form-question {
+        font-size: 0.8em;
+        width: 60vw;
+    }
+
+    .form-login-container form .form-submit {
+        width: 30vw;
+        height: 5.5vh;
+        font-size: 0.9em;
+    }
+
+    /* Main historial.html */
+    .historial-detail-container .table-detail {
+        margin: auto;
+    }
+
+    .historial-detail-container .table-detail th,
+    .historial-detail-container .table-detail td{
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+        font-size: 0.9em;
+    }
+
+    /* Main detalle.html */
+    .detail-header h1 {
+        font-size: 1em;
+    }
+
+    .detail-header a {
+        font-size: 0.75em;
+    }
+
+    .detail-container {
+        margin-top: 10vh;
+    }
+
+    .detail-container img {
+        width: 22vw;
+        height: 19vh;
+        border: 0.218em solid #436A6F;
+    }
+
+    .detail-container .table-detail {
+        margin: auto;
+        margin-top: 10vh;
+    }
+
+    .detail-container .table-detail th,
+    .detail-container .table-detail .dos-p,
+    .detail-container .table-detail td {
+        font-size: 0.9em;
+    }
+}
 
 
 /* Breakpoint 480px */
 @media screen and (max-width: 480px) {
     /* Header */
     .navbar .navbar-icon {
-        font-size: 1.15em;
+        font-size: 1.25em;
     }
 
     .navbar .navbar-icon img {
-        width: 19vw; 
-        height: 14vh;
+        width: 20vw; 
+        height: 11vh;
     }
 
     .navbar .navbar-nav .nav-link {
@@ -55,8 +2913,8 @@
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc img{
-        width: 15vw;
-        height: 10vh;
+        width: 12vw;
+        height: 9vh;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
@@ -67,7 +2925,7 @@
 
     .offcanvas .offcanvas-body .product-buttons .product-carro,
     .offcanvas .offcanvas-body .product-buttons .product-pago {
-        width: 32vw;
+        width: 35vw;
         height: 5vh;
         font-size: 0.8em;
     }
@@ -77,7 +2935,6 @@
         display: flex;
         flex-direction: column;
         align-items: center; 
-        width: 100%;
     }
 
     .footer-container .group-1 img {
@@ -174,10 +3031,6 @@
 
     .section-2 .products .card .text-section p {
         font-size: 0.8rem; 
-    }
-
-    .section-2 .products .card .price-section {
-        margin-top: 10vh;
     }
 
     .section-2 .products .card .price-section,
@@ -283,6 +3136,7 @@
     .form-container form .form-submit {
         width: 45vw;
         margin-left: 17.5vw;
+        font-size: 0.85em;
     }
 
     /* Main seguimiento.html y contrasenia.html */
@@ -308,10 +3162,6 @@
         height: 5vh;
     }
 
-    .form-forgot-container form {
-        text-align: center;
-    }
-
     /* Main seguimiento-2.html */
     .seguimiento-container-1 h1 {
         font-size: 1.1em;
@@ -323,7 +3173,7 @@
     }
 
     .seguimiento-container-1 .steps .steps-desc .union {
-        width: 6vw;
+        width: 7vw;
         height: 57vh;
         margin-top: 0.8vh;
     }
@@ -615,8 +3465,8 @@
     }
 
     .navbar .navbar-icon img {
-        width: 22vw; 
-        height: 12vh;
+        width: 20vw; 
+        height: 8vh;
     }
 
     .navbar .navbar-nav .nav-link {
@@ -672,7 +3522,6 @@
         display: flex;
         flex-direction: column;
         align-items: center; 
-        width: 100%;
     }
 
     .footer-container .group-1 img {
@@ -747,37 +3596,33 @@
         justify-content: space-around;
         align-items: center;
         margin: auto;
-        width: 90vw;
-        height: 72vh;
+        width: 70vw;
+        height: 55vh;
     }
 
     .section-2 .products .card img {
-        width: 45vw;
-        height: 28vh;
+        width: 35vw;
+        height: 20vh;
         margin-top: 2vh;
         padding-bottom: 0;
     }
 
     .section-2 .products .card-body {
         height: 30vh;
-        width: 90vw;
+        width: 70vw;
     }
 
     .section-2 .products .card .text-section h3 {
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
     .section-2 .products .card .text-section p {
-        font-size: 0.7rem; 
-    }
-
-    .section-2 .products .card .price-section{
-        margin-top: 10vh;
+        font-size: 0.6rem; 
     }
 
     .section-2 .products .card .price-section,
     .section-2 .products .card .price-section .btn {
-        font-size: 0.9em;
+        font-size: 0.75em;
     }
 
     /* Main menu.html */
@@ -878,6 +3723,7 @@
     .form-container form .form-submit {
         width: 45vw;
         margin-left: 17.5vw;
+        font-size: 0.75em;
     }
 
     /* Main seguimiento.html y contrasenia.html */
@@ -903,10 +3749,6 @@
         height: 4.5vh;
     }
 
-    .form-forgot-container form {
-        text-align: center;
-    }
-
     /* Main seguimiento-2.html */
     .seguimiento-container-1 h1 {
         font-size: 1em;
@@ -918,7 +3760,7 @@
     }
 
     .seguimiento-container-1 .steps .steps-desc .union {
-        width: 7vw;
+        width: 9vw;
         height: 58vh;
     }
 
@@ -946,7 +3788,7 @@
     .table-detail th,
     .table-detail .dos-p,
     .table-detail td {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 
     /* Main carrito.html */
@@ -1004,7 +3846,7 @@
     .carro-end .carro-end-container {
         display: flex;
         flex-direction: column;
-        gap: 2em;
+        gap: 1em;
     }
 
     .carro-end .carro-end-container .option-1,
