@@ -136,10 +136,10 @@
     }
 
     .section-2 .products .card img {
-        width: 15vw;
+        width: 13vw;
         height: 25vh;
         margin-top: 2vh;
-        padding-bottom: 0;
+        padding: 0;
     }
 
     .section-2 .products .card-body {
@@ -152,7 +152,7 @@
     }
 
     .section-2 .products .card .text-section p {
-        font-size: 1rem; 
+        font-size: 1em; 
     }
 
     .section-2 .products .card .price-section,
@@ -272,7 +272,7 @@
     .form-forgot-container form .form-input,
     .form-seguimiento-container form .form-input {
         font-size: 1em;
-        height: 6vh;
+        height: 5vh;
         width: 60vw;
     }
 
@@ -286,7 +286,7 @@
 
     /* Main seguimiento-2.html */
     .seguimiento-container-1 h1 {
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 
     .seguimiento-container-1 .steps {
@@ -423,7 +423,7 @@
 
     /* Resumen del pedido */
     .pago-container-2 .pago-resumen {
-        width: 50vw;
+        width: 35vw;
         margin-bottom: 10vh;
     }
 
@@ -436,25 +436,25 @@
     }
 
     .pago-container-2 .pago-resumen .product .product-desc img {
-        width: 11vw;
-        height: 15vh;
+        width: 9vw;
+        height: 14vh;
         margin-bottom: 4vw;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     /* Primer paso del pago */
     .pago-container-2 .pago-datos form {
         margin: auto;
-        margin-right: 2vw;
+        margin-right: 1vw;
     }
 
     .pago-container-2 .pago-datos form .form-input {
-        width: 40vw;
+        width: 35vw;
         font-size: 0.6em;
     }
 
@@ -470,13 +470,14 @@
     }
 
     .pago-container-2 .pago-metodo .m-pago {
-        width: 50vw;
+        width: 40vw;
         font-size: 1.1em;
     }
 
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 15vw;
-        margin-left: 17.5vw;
+        height: 5vh;
+        margin-left: 12.5vw;
         font-size: 1.2em;
     }
 
@@ -488,11 +489,12 @@
     .pago-container-2 .pago-details .table-detail th,
     .pago-container-2 .pago-details .table-detail .dos-p,
     .pago-container-2 .pago-details .table-detail td {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     .pago-container-2 .pago-details .button-pagar {
         width: 15vw;
+        height: 5vh;
         font-size: 1.2em;
     }
 
@@ -531,7 +533,7 @@
     .historial-detail-container .table-detail td{
         padding-left: 1.2em;
         padding-right: 1.2em;
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     /* Main detalle.html */
@@ -548,14 +550,14 @@
     }
 
     .detail-container img {
-        width: 14vw;
-        height: 20vh;
+        width: 12vw;
+        height: 19vh;
         border: 0.218em solid #436A6F;
     }
 
     .detail-container .table-detail {
         margin: auto;
-        margin-top: 10vh;
+        margin-top: 5vh;
     }
 
     .detail-container .table-detail th,
@@ -578,7 +580,7 @@
     }
 
     .navbar .navbar-nav .nav-link {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     .navbar .right-side .carro,
@@ -604,11 +606,11 @@
     .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc img{
-        width: 6vw;
+        width: 7vw;
         height: 8vh;
     }
 
@@ -664,27 +666,29 @@
     .section-1{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        height: 50vh;
+        height: 40vh;
         width: 100%;
     }
 
     .section-1 .carousel .carousel-item,
     .section-1 .carousel .carousel-item img {
         width: 55vw;
+        height: 40vh;
     }
 
     .section-1 .compra {
         width: 45vw;
+        height: 40vh;
     }
 
     .section-1 .compra .text-compra,
     .section-1 .btn-compra {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
     
     /* Main index.html - section-2 */
     h1 {
-        font-size: 1.7em;
+        font-size: 1.5em;
     }
 
     .section-2 .products {
@@ -719,7 +723,7 @@
     }
 
     .section-2 .products .card .text-section p {
-        font-size: 0.9rem; 
+        font-size: 1em; 
     }
 
     .section-2 .products .card .price-section,
@@ -746,11 +750,12 @@
     .menu-container .product img {
         width: 10vw;
         height: 13vh;
+        padding: 0;
     }
 
     .menu-container .product figcaption {
         width: 40vw;
-        font-size: 1em;
+        font-size: 1.15em;
         text-align: center;
     }
 
@@ -898,7 +903,7 @@
     .carro-container img {
         margin: auto;
         width: 9vw;
-        height: 12vh;
+        height: 11vh;
     }
 
     .carro-container  .carro-inf {
@@ -916,7 +921,7 @@
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 1em;
         width: 4vw;
-        height: 5vh;
+        height: 4.5vh;
         margin-bottom: 3vh;
     }
 
@@ -939,7 +944,7 @@
 
     .carro-end .carro-end-container .option-1,
     .carro-end .carro-end-container .option-2 {
-        font-size: 1.2em;
+        font-size: 1.05em;
         width: 25vw;
     }
 
@@ -990,7 +995,7 @@
 
     /* Resumen del pedido */
     .pago-container-2 .pago-resumen {
-        width: 50vw;
+        width: 40vw;
         margin-bottom: 10vh;
     }
 
@@ -1003,15 +1008,15 @@
     }
 
     .pago-container-2 .pago-resumen .product .product-desc img {
-        width: 11vw;
-        height: 15vh;
+        width: 9vw;
+        height: 12vh;
         margin-bottom: 4vw;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     /* Primer paso del pago */
@@ -1027,8 +1032,8 @@
 
     .pago-container-2 .pago-datos form .form-submit {
         width: 15vw;
-        height: 5vh;
-        font-size: 0.75em;
+        height: 4.5vh;
+        font-size: 0.6em;
     }
 
     /* Segundo paso del pago */
@@ -1043,6 +1048,7 @@
 
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 15vw;
+        height: 4.5vh;
         margin-left: 17.5vw;
         font-size: 1em;
     }
@@ -1055,11 +1061,12 @@
     .pago-container-2 .pago-details .table-detail th,
     .pago-container-2 .pago-details .table-detail .dos-p,
     .pago-container-2 .pago-details .table-detail td {
-        font-size: 1.1em;
+        font-size: 1.05em;
     }
 
     .pago-container-2 .pago-details .button-pagar {
         width: 15vw;
+        height: 4.5vh;
         font-size: 1.1em;
     }
 
@@ -1097,7 +1104,7 @@
     .historial-detail-container .table-detail td{
         padding-left: 1.1em;
         padding-right: 1.1em;
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     /* Main detalle.html */
@@ -1114,14 +1121,14 @@
     }
 
     .detail-container img {
-        width: 15vw;
-        height: 20vh;
+        width: 13vw;
+        height: 17vh;
         border: 0.218em solid #436A6F;
     }
 
     .detail-container .table-detail {
         margin: auto;
-        margin-top: 10vh;
+        margin-top: 5vh;
     }
 
     .detail-container .table-detail th,
@@ -1135,7 +1142,7 @@
 @media screen and (max-width: 960px) {
     /* Header */
     .navbar .navbar-icon {
-        font-size: 1.8em;
+        font-size: 1.7em;
     }
 
     .navbar .navbar-icon img {
@@ -1170,12 +1177,12 @@
     .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc img{
         width: 8vw;
-        height: 11vh;
+        height: 9vh;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
@@ -1209,13 +1216,13 @@
     .footer-container .group-3 h4 {
         text-align: center;
         width: 50vw;
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
 
     .footer-container .group-2 p{
         width: 50vw;
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     .footer-container .group-3 a img{
@@ -1223,29 +1230,29 @@
     }
 
     .footer-copy {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     /* Main index.html - section-1 */
     .section-1{
         display: grid;
         grid-template-columns: 1fr;
-        height: 110vh;
+        height: 100vh;
         width: 100%;
     }
 
     .section-1 .carousel .carousel-item {
-        height: 60vh;
+        height: 55vh;
         width: 100%;
     }
 
     .section-1 .carousel .carousel-item img {
-        height: 60vh;
+        height: 55vh;
         width: 100%;
     }
 
     .section-1 .compra {
-        height: 50vh;
+        height: 45vh;
         width: 100%;
     }
 
@@ -1272,14 +1279,14 @@
         align-items: center;
         margin: auto;
         width: 40vw;
-        height: 55vh;
+        height: 65vh;
     }
 
     .section-2 .products .card img {
         width: 18vw;
         height: 25vh;
         margin-top: 2vh;
-        padding-bottom: 0;
+        padding: 0;
     }
 
     .section-2 .products .card-body {
@@ -1292,7 +1299,7 @@
     }
 
     .section-2 .products .card .text-section p {
-        font-size: 0.9rem; 
+        font-size: 0.9em; 
     }
 
 
@@ -1324,14 +1331,14 @@
 
     .menu-container .product figcaption {
         width: 40vw;
-        font-size: 0.95em;
+        font-size: 1.1em;
         text-align: center;
     }
 
     /* Main menu.html - modal */
     .modal {
         margin-top: 2vh;
-        height: 100vh;
+        height: 95vh;
         width: 100%;
     }
 
@@ -1352,12 +1359,12 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 80vh;
+        height: 60vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container img {
-        width: 18vw;
-        height: 29vh;
+        width: 17vw;
+        height: 27vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
@@ -1413,7 +1420,7 @@
     .form-forgot-container form .form-input,
     .form-seguimiento-container form .form-input {
         font-size: 0.9em;
-        height: 2vh;
+        height: 5vh;
         width: 60vw;
     }
 
@@ -1427,7 +1434,7 @@
 
     /* Main seguimiento-2.html */
     .seguimiento-container-1 h1 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     .seguimiento-container-1 .steps {
@@ -1442,7 +1449,7 @@
     }
 
     .seguimiento-container-1 .steps .steps-desc .circle {
-        width: 6vw;
+        width: 7vw;
     }
 
     .seguimiento-container-1 .steps .steps-desc .circle .done {
@@ -1450,11 +1457,11 @@
     }
 
     .seguimiento-container-1 .steps .steps-desc-2 .step-detail {
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
 
     .seguimiento-container-2 h2 {
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin-bottom: 8vh;
     }
 
@@ -1472,7 +1479,7 @@
     .carro-container img {
         margin: auto;
         width: 9vw;
-        height: 13vh;
+        height: 12vh;
     }
 
     .carro-container  .carro-inf {
@@ -1490,7 +1497,7 @@
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 1em;
         width: 5vw;
-        height: 5vh;
+        height: 4vh;
         margin-bottom: 3vh;
     }
 
@@ -1564,7 +1571,7 @@
 
     /* Resumen del pedido */
     .pago-container-2 .pago-resumen {
-        width: 40vw;
+        width: 45vw;
         margin-bottom: 10vh;
     }
 
@@ -1578,7 +1585,7 @@
 
     .pago-container-2 .pago-resumen .product .product-desc img {
         width: 11vw;
-        height: 15vh;
+        height: 14vh;
         margin-bottom: 4vw;
     }
 
@@ -1595,7 +1602,7 @@
     }
 
     .pago-container-2 .pago-datos form .form-input {
-        width: 35vw;
+        width: 40vw;
         font-size: 0.6em;
     }
 
@@ -1617,6 +1624,7 @@
 
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 15vw;
+        height: 5vh;
         margin-left: 17.5vw;
         font-size: 0.95em;
     }
@@ -1629,11 +1637,12 @@
     .pago-container-2 .pago-details .table-detail th,
     .pago-container-2 .pago-details .table-detail .dos-p,
     .pago-container-2 .pago-details .table-detail td {
-        font-size: 0.85em;
+        font-size: 1em;
     }
 
     .pago-container-2 .pago-details .button-pagar {
         width: 15vw;
+        height: 5vh;
         font-size: 0.95em;
     }
 
@@ -1652,7 +1661,7 @@
     }
 
     .form-login-container form .form-question {
-        font-size: 0.75em;
+        font-size: 0.85em;
         width: 45vw;
     }
 
@@ -1671,7 +1680,7 @@
     .historial-detail-container .table-detail td{
         padding-left: 0.8em;
         padding-right: 0.8em;
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     /* Main detalle.html */
@@ -1680,7 +1689,7 @@
     }
 
     .detail-header a {
-        font-size: 0.75em;
+        font-size: 0.85em;
     }
 
     .detail-container {
@@ -1689,19 +1698,19 @@
 
     .detail-container img {
         width: 14vw;
-        height: 20vh;
+        height: 18vh;
         border: 0.218em solid #436A6F;
     }
 
     .detail-container .table-detail {
         margin: auto;
-        margin-top: 10vh;
+        margin-top: 5vh;
     }
 
     .detail-container .table-detail th,
     .detail-container .table-detail .dos-p,
     .detail-container .table-detail td {
-        font-size: 0.85em;
+        font-size: 0.95em;
     }
 }
 
@@ -1744,12 +1753,12 @@
     .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc img{
-        width: 8vw;
-        height: 10vh;
+        width: 9vw;
+        height: 9vh;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
@@ -1789,7 +1798,7 @@
 
     .footer-container .group-2 p{
         width: 60vw;
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     .footer-container .group-3 a img{
@@ -1797,24 +1806,24 @@
     }
 
     .footer-copy {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     /* Main index.html - section-1 */
     .section-1{
         display: grid;
         grid-template-columns: 1fr;
-        height: 100vh;
+        height: 90vh;
         width: 100%;
     }
 
     .section-1 .carousel .carousel-item {
-        height: 60vh;
+        height: 50vh;
         width: 100%;
     }
 
     .section-1 .carousel .carousel-item img {
-        height: 60vh;
+        height: 50vh;
         width: 100%;
     }
 
@@ -1825,12 +1834,12 @@
 
     .section-1 .compra .text-compra,
     .section-1 .btn-compra {
-        font-size: 1.35em;
+        font-size: 1.4em;
     }
     
     /* Main index.html - section-2 */
     h1 {
-        font-size: 1.35em;
+        font-size: 1.45em;
         text-align: center;
     }
 
@@ -1853,11 +1862,11 @@
         width: 20vw;
         height: 25vh;
         margin-top: 2vh;
-        padding-bottom: 0;
+        padding: 0;
     }
 
     .section-2 .products .card-body {
-        height: 40vh;
+        height: 33vh;
         width: 50vw;
     }
 
@@ -1866,12 +1875,12 @@
     }
 
     .section-2 .products .card .text-section p {
-        font-size: 0.8rem; 
+        font-size: 0.9em; 
     }
 
     .section-2 .products .card .price-section,
     .section-2 .products .card .price-section .btn {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     /* Main menu.html */
@@ -1891,20 +1900,20 @@
     }
 
     .menu-container .product img {
-        width: 11vw;
+        width: 12vw;
         height: 12vh;
     }
 
     .menu-container .product figcaption {
         width: 40vw;
-        font-size: 0.89em;
+        font-size: 1em;
         text-align: center;
     }
 
     /* Main menu.html - modal */
     .modal {
         margin-top: 2vh;
-        height: 100vh;
+        height: 95vh;
         width: 100%;
     }
 
@@ -1917,7 +1926,7 @@
     }
 
     .modal .modal-content .modal-header .btn-close {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     .modal .modal-content .modal-body .modal-body-container {
@@ -1925,12 +1934,12 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 80vh;
+        height: 60vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container img {
-        width: 26vw;
-        height: 35vh;
+        width: 20vw;
+        height: 24vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
@@ -1939,19 +1948,19 @@
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc p {
-        font-size: 0.85em;
+        font-size: 0.9em;
         margin-bottom: 0;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
     .modal .modal-content .modal-footer .modal-button-add {
-        font-size: 1em;
+        font-size: 1.1em;
     }
     
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-contador, 
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-mas {
-        font-size: 1.15em;
+        font-size: 1.2em;
     }
 
     /* Main unete.html */
@@ -1979,14 +1988,14 @@
     .form-forgot-container p,
     .form-seguimiento-container p {
         max-width: 80vw;
-        font-size: 0.9em;
+        font-size: 0.95em;
         text-align: center;
     }
 
     .form-forgot-container form .form-input,
     .form-seguimiento-container form .form-input {
         font-size: 0.8em;
-        height: 2vh;
+        height: 5vh;
         width: 60vw;
     }
 
@@ -2000,7 +2009,7 @@
 
     /* Main seguimiento-2.html */
     .seguimiento-container-1 h1 {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .seguimiento-container-1 .steps {
@@ -2027,7 +2036,7 @@
     }
 
     .seguimiento-container-2 h2 {
-        font-size: 1.2em;
+        font-size: 1.4em;
         margin-bottom: 8vh;
     }
 
@@ -2035,10 +2044,10 @@
         margin: auto;
     }
 
-    .table-detail th,
-    .table-detail .dos-p,
-    .table-detail td {
-        font-size: 0.9em;
+    .seguimiento-container-2 .table-detail th,
+    .seguimiento-container-2 .table-detail .dos-p,
+    .seguimiento-container-2 .table-detail td {
+        font-size: 1em;
     }
 
     /* Main carrito.html */
@@ -2052,7 +2061,7 @@
     .carro-container img {
         margin: auto;
         width: 14vw;
-        height: 16vh;
+        height: 15vh;
 
     }
 
@@ -2063,7 +2072,7 @@
     }
 
     .carro-container .carro-inf .carro-desc h2 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
@@ -2071,7 +2080,7 @@
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 0.9em;
         width: 6vw;
-        height: 5vh;
+        height: 4vh;
         margin-bottom: 3vh;
     }
 
@@ -2090,13 +2099,13 @@
     }
 
     .carro-pay .carro-pay-container .carro-pagar {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     .carro-end .carro-end-container .option-1,
     .carro-end .carro-end-container .option-2 {
-        font-size: 0.8em;
-        width: 35vw;
+        font-size: 0.9em;
+        width: 30vw;
     }
 
     /* Main pago.html */
@@ -2120,7 +2129,7 @@
     }
 
     .pago-container-1 .steps .steps-desc-2 .step-detail {
-        font-size: 0.65em;
+        font-size: 0.7em;
     }
 
     .pago-container-1 .steps .steps-desc-2 .step-detail-2{
@@ -2155,12 +2164,12 @@
     }
 
     .pago-container-2 .pago-resumen .product .product-desc h3 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc img {
         width: 13vw;
-        height: 16vh;
+        height: 13vh;
         margin-bottom: 4vw;
     }
 
@@ -2177,8 +2186,8 @@
     }
 
     .pago-container-2 .pago-datos form .form-input {
-        width: 50vw;
-        font-size: 0.6em;
+        width: 55vw;
+        font-size: 0.65em;
     }
 
     .pago-container-2 .pago-datos form .form-submit {
@@ -2199,6 +2208,7 @@
 
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 25vw;
+        height: 5vh;
         margin-left: 17.5vw;
         font-size: 0.95em;
     }
@@ -2211,11 +2221,12 @@
     .pago-container-2 .pago-details .table-detail th,
     .pago-container-2 .pago-details .table-detail .dos-p,
     .pago-container-2 .pago-details .table-detail td {
-        font-size: 0.85em;
+        font-size: 0.95em;
     }
 
     .pago-container-2 .pago-details .button-pagar {
         width: 25vw;
+        height: 5vh;
         font-size: 0.95em;
     }
 
@@ -2234,7 +2245,7 @@
     }
 
     .form-login-container form .form-question {
-        font-size: 0.75em;
+        font-size: 0.85em;
         width: 58vw;
     }
 
@@ -2251,18 +2262,18 @@
 
     .historial-detail-container .table-detail th,
     .historial-detail-container .table-detail td{
-        padding-left: 0.6em;
-        padding-right: 0.6em;
-        font-size: 0.85em;
+        padding-left: 0.9em;
+        padding-right: 0.9em;
+        font-size: 1em;
     }
 
     /* Main detalle.html */
     .detail-header h1 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .detail-header a {
-        font-size: 0.75em;
+        font-size: 0.85em;
     }
 
     .detail-container {
@@ -2271,19 +2282,19 @@
 
     .detail-container img {
         width: 18vw;
-        height: 20vh;
+        height: 19vh;
         border: 0.218em solid #436A6F;
     }
 
     .detail-container .table-detail {
         margin: auto;
-        margin-top: 10vh;
+        margin-top: 5vh;
     }
 
     .detail-container .table-detail th,
     .detail-container .table-detail .dos-p,
     .detail-container .table-detail td {
-        font-size: 0.85em;
+        font-size: 0.9em;
     }
 }
 
@@ -2291,7 +2302,7 @@
 @media screen and (max-width: 576px) {
     /* Header */
     .navbar .navbar-icon {
-        font-size: 1.25em;
+        font-size: 1.35em;
     }
 
     .navbar .navbar-icon img {
@@ -2300,12 +2311,12 @@
     }
 
     .navbar .navbar-nav .nav-link {
-        font-size: 0.75em;
+        font-size: 0.85em;
     }
 
     .navbar .right-side .carro,
     .navbar .right-side .drop-button .acc {
-        font-size: 1.35em;
+        font-size: 1.55em;
     }
 
     .navbar .right-side .drop-login .drop-menu .drop-options li a {
@@ -2326,7 +2337,7 @@
     .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
-        font-size: 0.85em;
+        font-size: 0.95em;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc img{
@@ -2369,7 +2380,7 @@
 
     .footer-container .group-2 p{
         width: 65vw;
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
 
     .footer-container .group-3 a img{
@@ -2377,40 +2388,40 @@
     }
 
     .footer-copy {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     /* Main index.html - section-1 */
     .section-1{
         display: grid;
         grid-template-columns: 1fr;
-        height: 90vh;
+        height: 75vh;
         width: 100%;
     }
 
     .section-1 .carousel .carousel-item {
-        height: 55vh;
+        height: 45vh;
         width: 100%;
     }
 
     .section-1 .carousel .carousel-item img {
-        height: 55vh;
+        height: 45vh;
         width: 100%;
     }
 
     .section-1 .compra {
-        height: 35vh;
+        height: 30vh;
         width: 100%;
     }
 
     .section-1 .compra .text-compra,
     .section-1 .btn-compra {
-        font-size: 1.2em;
+        font-size: 1.25em;
     }
     
     /* Main index.html - section-2 */
     h1 {
-        font-size: 1.3em;
+        font-size: 1.35em;
         text-align: center;
     }
 
@@ -2431,13 +2442,13 @@
 
     .section-2 .products .card img {
         width: 20vw;
-        height: 25vh;
+        height: 20vh;
         margin-top: 2vh;
-        padding-bottom: 0;
+        padding: 0;
     }
 
     .section-2 .products .card-body {
-        height: 20vh;
+        height: 33vh;
         width: 60vw;
     }
 
@@ -2446,12 +2457,12 @@
     }
 
     .section-2 .products .card .text-section p {
-        font-size: 0.8rem; 
+        font-size: 0.95em; 
     }
 
     .section-2 .products .card .price-section,
     .section-2 .products .card .price-section .btn {
-        font-size: 0.9em;
+        font-size: 0.95em;
     }
 
     /* Main menu.html */
@@ -2471,20 +2482,20 @@
     }
 
     .menu-container .product img {
-        width: 14vw;
-        height: 11vh;
+        width: 15vw;
+        height: 10vh;
     }
 
     .menu-container .product figcaption {
         width: 40vw;
-        font-size: 0.9em;
+        font-size: 1em;
         text-align: center;
     }
 
     /* Main menu.html - modal */
     .modal {
         margin-top: 2vh;
-        height: 100vh;
+        height: 95vh;
         width: 100%;
     }
 
@@ -2493,7 +2504,7 @@
     }
 
     .modal .modal-content .modal-header .btn-close {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .modal .modal-content .modal-body .modal-body-container {
@@ -2501,12 +2512,12 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 80vh;
+        height: 60vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container img {
-        width: 35vw;
-        height: 30vh;
+        width: 25vw;
+        height: 25vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
@@ -2515,13 +2526,13 @@
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc p {
-        font-size: 0.9em;
+        font-size: 0.95em;
         margin-bottom: 0;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
     .modal .modal-content .modal-footer .modal-button-add {
-        font-size: 1em;
+        font-size: 1.2em;
     }
     
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
@@ -2562,7 +2573,7 @@
     .form-forgot-container form .form-input,
     .form-seguimiento-container form .form-input {
         font-size: 0.85em;
-        height: 2vh;
+        height: 5vh;
         width: 80vw;
     }
 
@@ -2576,7 +2587,7 @@
 
     /* Main seguimiento-2.html */
     .seguimiento-container-1 h1 {
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
 
     .seguimiento-container-1 .steps {
@@ -2603,7 +2614,7 @@
     }
 
     .seguimiento-container-2 h2 {
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin-bottom: 8vh;
     }
 
@@ -2614,7 +2625,7 @@
     .seguimiento-container-2 .table-detail th,
     .seguimiento-container-2 .table-detail .dos-p,
     .seguimiento-container-2 .table-detail td {
-        font-size: 0.85em;
+        font-size: 0.95em;
     }
 
     /* Main carrito.html */
@@ -2639,7 +2650,7 @@
     }
 
     .carro-container .carro-inf .carro-desc h2 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
@@ -2647,17 +2658,17 @@
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 0.9em;
         width: 8vw;
-        height: 5vh;
+        height: 4vh;
         margin-bottom: 3vh;
     }
 
     .carro-container .carro-total h2 {
-        font-size: 0.7em;
+        font-size: 0.8em;
         margin-bottom: 0.5vh;
     }
 
     .carro-container .carro-total span {
-        font-size: 0.7em;
+        font-size: 0.8em;
         margin-bottom: 4vw;
     }
 
@@ -2666,7 +2677,7 @@
     }
 
     .carro-pay .carro-pay-container .carro-pagar {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     .carro-end .carro-end-container {
@@ -2677,8 +2688,8 @@
 
     .carro-end .carro-end-container .option-1,
     .carro-end .carro-end-container .option-2 {
-        font-size: 0.8em;
-        width: 50vw;
+        font-size: 0.9em;
+        width: 40vw;
     }
 
     /* Main pago.html */
@@ -2702,7 +2713,7 @@
     }
 
     .pago-container-1 .steps .steps-desc-2 .step-detail {
-        font-size: 0.6em;
+        font-size: 0.7em;
     }
 
     .pago-container-1 .steps .steps-desc-2 .step-detail-2{
@@ -2737,19 +2748,19 @@
     }
 
     .pago-container-2 .pago-resumen .product .product-desc h3 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc img {
-        width: 25vw;
-        height: 20vh;
+        width: 21vw;
+        height: 15vh;
         margin-bottom: 4vw;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     /* Primer paso del pago */
@@ -2781,6 +2792,7 @@
 
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 30vw;
+        height: 5vh;
         margin-left: 20vw;
         font-size: 0.95em;
     }
@@ -2793,11 +2805,12 @@
     .pago-container-2 .pago-details .table-detail th,
     .pago-container-2 .pago-details .table-detail .dos-p,
     .pago-container-2 .pago-details .table-detail td {
-        font-size: 0.85em;
+        font-size: 0.95em;
     }
 
     .pago-container-2 .pago-details .button-pagar {
         width: 30vw;
+        height: 5vh;
         font-size: 0.95em;
     }
 
@@ -2833,18 +2846,18 @@
 
     .historial-detail-container .table-detail th,
     .historial-detail-container .table-detail td{
-        padding-left: 0.7em;
-        padding-right: 0.7em;
+        padding-left: 1.2em;
+        padding-right: 1.2em;
         font-size: 0.9em;
     }
 
     /* Main detalle.html */
     .detail-header h1 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .detail-header a {
-        font-size: 0.75em;
+        font-size: 0.85em;
     }
 
     .detail-container {
@@ -2853,13 +2866,13 @@
 
     .detail-container img {
         width: 22vw;
-        height: 19vh;
+        height: 17vh;
         border: 0.218em solid #436A6F;
     }
 
     .detail-container .table-detail {
         margin: auto;
-        margin-top: 10vh;
+        margin-top: 5vh;
     }
 
     .detail-container .table-detail th,
@@ -2874,7 +2887,7 @@
 @media screen and (max-width: 480px) {
     /* Header */
     .navbar .navbar-icon {
-        font-size: 1.25em;
+        font-size: 1.35em;
     }
 
     .navbar .navbar-icon img {
@@ -2888,11 +2901,11 @@
 
     .navbar .right-side .carro,
     .navbar .right-side .drop-button .acc {
-        font-size: 1.45em;
+        font-size: 1.55em;
     }
 
     .navbar .right-side .drop-login .drop-menu .drop-options li a {
-        font-size: 0.85em;
+        font-size: 0.9em;
     }
 
     .navbar .navbar-toggler {
@@ -2909,12 +2922,12 @@
     .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc img{
         width: 12vw;
-        height: 9vh;
+        height: 8vh;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
@@ -2946,13 +2959,13 @@
     .footer-container .group-3 h4 {
         text-align: center;
         width: 70vw;
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
 
     .footer-container .group-2 p{
         width: 70vw;
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
 
     .footer-container .group-3 a img{
@@ -2960,19 +2973,19 @@
     }
 
     .footer-copy {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     /* Main index.html - section-1 */
     .section-1{
         display: grid;
         grid-template-columns: 1fr;
-        height: 80vh;
+        height: 70vh;
         width: 100%;
     }
 
     .section-1 .carousel .carousel-item {
-        height: 50vh;
+        height: 40vh;
         width: 100%;
     }
 
@@ -2984,7 +2997,6 @@
     .section-1 .compra {
         height: 30vh;
         width: 100%;
-        padding-bottom: 10vh;
     }
 
     .section-1 .compra .text-compra,
@@ -3010,18 +3022,18 @@
         align-items: center;
         margin: auto;
         width: 75vw;
-        height: 75vh;
+        height: 65vh;
     }
 
     .section-2 .products .card img {
-        width: 35vw;
-        height: 30vh;
+        width: 30vw;
+        height: 20vh;
         margin-top: 2vh;
-        padding-bottom: 0;
+        padding: 0;
     }
 
     .section-2 .products .card-body {
-        height: 20vh;
+        height: 25vh;
         width: 75vw;
     }
 
@@ -3030,12 +3042,12 @@
     }
 
     .section-2 .products .card .text-section p {
-        font-size: 0.8rem; 
+        font-size: 0.95em; 
     }
 
     .section-2 .products .card .price-section,
     .section-2 .products .card .price-section .btn {
-        font-size: 0.9em;
+        font-size: 0.95em;
     }
 
     /* Main menu.html */
@@ -3061,14 +3073,14 @@
 
     .menu-container .product figcaption {
         width: 40vw;
-        font-size: 0.85em;
+        font-size: 0.95em;
         text-align: center;
     }
 
     /* Main menu.html - modal */
     .modal {
         margin-top: 2vh;
-        height: 100vh;
+        height: 95vh;
         width: 100%;
     }
 
@@ -3089,33 +3101,33 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 80vh;
+        height: 60vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container img {
-        width: 40vw;
+        width: 30vw;
         height: 35vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
-        font-size: 1.1em;
+        font-size: 1.2em;
         margin-bottom: 0;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc p {
-        font-size: 0.8em;
+        font-size: 0.9em;
         margin-bottom: 0;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
     .modal .modal-content .modal-footer .modal-button-add {
-        font-size: 0.9em;
+        font-size: 1.1em;
     }
     
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-contador, 
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-mas {
-        font-size: 1.15em;
+        font-size: 1.3em;
     }
 
     /* Main unete.html */
@@ -3143,14 +3155,14 @@
     .form-forgot-container p,
     .form-seguimiento-container p {
         max-width: 90vw;
-        font-size: 0.8em;
+        font-size: 0.9em;
         text-align: center;
     }
 
     .form-forgot-container form .form-input,
     .form-seguimiento-container form .form-input {
         font-size: 0.8em;
-        height: 2vh;
+        height: 5vh;
         width: 80vw;
     }
 
@@ -3164,7 +3176,7 @@
 
     /* Main seguimiento-2.html */
     .seguimiento-container-1 h1 {
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
 
     .seguimiento-container-1 .steps {
@@ -3191,7 +3203,7 @@
     }
 
     .seguimiento-container-2 h2 {
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin-bottom: 8vh;
     }
 
@@ -3199,10 +3211,10 @@
         margin: auto;
     }
 
-    .table-detail th,
-    .table-detail .dos-p,
-    .table-detail td {
-        font-size: 0.85em;
+    .seguimiento-container-2 .table-detail th,
+    .seguimiento-container-2 .table-detail .dos-p,
+    .seguimiento-container-2 .table-detail td {
+        font-size: 1em;
     }
 
     /* Main carrito.html */
@@ -3216,7 +3228,7 @@
     .carro-container img {
         margin: auto;
         width: 20vw;
-        height: 15vh;
+        height: 13vh;
 
     }
 
@@ -3227,7 +3239,7 @@
     }
 
     .carro-container .carro-inf .carro-desc h2 {
-        font-size: 0.95em;
+        font-size: 1em;
     }
 
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
@@ -3235,7 +3247,7 @@
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 0.9em;
         width: 8vw;
-        height: 5vh;
+        height: 4vh;
         margin-bottom: 3vh;
     }
 
@@ -3266,7 +3278,7 @@
     .carro-end .carro-end-container .option-1,
     .carro-end .carro-end-container .option-2 {
         font-size: 0.8em;
-        width: 60vw;
+        width: 50vw;
     }
 
     /* Main pago.html */
@@ -3290,7 +3302,7 @@
     }
 
     .pago-container-1 .steps .steps-desc-2 .step-detail {
-        font-size: 0.6em;
+        font-size: 0.7em;
     }
 
     .pago-container-1 .steps .steps-desc-2 .step-detail-2{
@@ -3316,7 +3328,7 @@
 
     /* Resumen del pedido */
     .pago-container-2 .pago-resumen {
-        width: 90vw;
+        width: 80vw;
         margin-bottom: 10vh;
     }
 
@@ -3325,19 +3337,19 @@
     }
 
     .pago-container-2 .pago-resumen .product .product-desc h3 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc img {
         width: 25vw;
-        height: 20vh;
+        height: 15vh;
         margin-bottom: 4vw;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     /* Primer paso del pago */
@@ -3369,6 +3381,7 @@
 
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 40vw;
+        height: 5vh;
         margin-left: 25vw;
         font-size: 0.95em;
     }
@@ -3381,11 +3394,12 @@
     .pago-container-2 .pago-details .table-detail th,
     .pago-container-2 .pago-details .table-detail .dos-p,
     .pago-container-2 .pago-details .table-detail td {
-        font-size: 0.85em;
+        font-size: 0.95em;
     }
 
     .pago-container-2 .pago-details .button-pagar {
         width: 30vw;
+        height: 5vh;
         font-size: 0.95em;
     }
 
@@ -3404,7 +3418,7 @@
     }
 
     .form-login-container form .form-question {
-        font-size: 0.8em;
+        font-size: 0.9em;
         width: 90vw;
     }
 
@@ -3423,16 +3437,16 @@
     .historial-detail-container .table-detail td{
         padding-left: 0.6em;
         padding-right: 0.6em;
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
 
     /* Main detalle.html */
     .detail-header h1 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .detail-header a {
-        font-size: 0.75em;
+        font-size: 0.85em;
     }
 
     .detail-container {
@@ -3441,19 +3455,19 @@
 
     .detail-container img {
         width: 25vw;
-        height: 20vh;
+        height: 17vh;
         border: 0.218em solid #436A6F;
     }
 
     .detail-container .table-detail {
         margin: auto;
-        margin-top: 10vh;
+        margin-top: 5vh;
     }
 
     .detail-container .table-detail th,
     .detail-container .table-detail .dos-p,
     .detail-container .table-detail td {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 }
 
@@ -3496,12 +3510,12 @@
     .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
-        font-size: 0.7em;
+        font-size: 0.9em;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc img{
         width: 18vw;
-        height: 9vh;
+        height: 8vh;
     }
 
     .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
@@ -3526,7 +3540,7 @@
 
     .footer-container .group-1 img {
         width: 40vw;
-        height: 20vh;
+        height: 18vh;
     }
 
     .footer-container .group-2 h4,
@@ -3547,36 +3561,35 @@
     }
 
     .footer-copy {
-        font-size: 0.6em;
+        font-size: 0.75em;
     }
 
     /* Main index.html - section-1 */
     .section-1{
         display: grid;
         grid-template-columns: 1fr;
-        height: 70vh;
-        width: 100%;
-    }
-
-    .section-1 .carousel .carousel-item {
         height: 50vh;
         width: 100%;
     }
 
+    .section-1 .carousel .carousel-item {
+        height: 25vh;
+        width: 100%;
+    }
+
     .section-1 .carousel .carousel-item img {
-        height: 40vh;
+        height: 25vh;
         width: 100%;
     }
 
     .section-1 .compra {
-        height: 20vh;
+        height: 25vh;
         width: 100%;
-        padding-bottom: 10vh;
     }
 
     .section-1 .compra .text-compra,
     .section-1 .btn-compra {
-        font-size: 0.9em;
+        font-size: 0.85em;
     }
     
     /* Main index.html - section-2 */
@@ -3597,12 +3610,13 @@
         align-items: center;
         margin: auto;
         width: 70vw;
-        height: 55vh;
+        height: 50vh;
     }
 
     .section-2 .products .card img {
-        width: 35vw;
-        height: 20vh;
+        width: 20vw;
+        height: 10vh;
+        border-radius: 0.5em;
         margin-top: 2vh;
         padding-bottom: 0;
     }
@@ -3617,12 +3631,12 @@
     }
 
     .section-2 .products .card .text-section p {
-        font-size: 0.6rem; 
+        font-size: 0.65rem; 
     }
 
     .section-2 .products .card .price-section,
     .section-2 .products .card .price-section .btn {
-        font-size: 0.75em;
+        font-size: 0.8em;
     }
 
     /* Main menu.html */
@@ -3648,13 +3662,13 @@
 
     .menu-container .product figcaption {
         width: 40vw;
-        font-size: 0.8em;
+        font-size: 0.9em;
         text-align: center;
     }
 
     /* Main menu.html - modal */
     .modal {
-        margin-top: 2vh;
+        margin-top: 10vh;
         height: 100vh;
         width: 100%;
     }
@@ -3676,16 +3690,16 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 80vh;
+        height: 40vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container img {
-        width: 45vw;
-        height: 30vh;
+        width: 30vw;
+        height: 15vh;
     }
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc h2 {
-        font-size: 1em;
+        font-size: 0.9em;
         margin-bottom: 0;
     }
 
@@ -3696,7 +3710,7 @@
 
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-desc-down .precio,
     .modal .modal-content .modal-footer .modal-button-add {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
     
     .modal .modal-content .modal-body .modal-body-container .modal-desc .modal-buttons .modal-carro-menos,
@@ -3737,7 +3751,7 @@
     .form-forgot-container form .form-input,
     .form-seguimiento-container form .form-input {
         font-size: 0.7em;
-        height: 2vh;
+        height: 4.5vh;
         width: 80vw;
     }
 
@@ -3751,7 +3765,7 @@
 
     /* Main seguimiento-2.html */
     .seguimiento-container-1 h1 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .seguimiento-container-1 .steps {
@@ -3773,11 +3787,11 @@
     }
 
     .seguimiento-container-1 .steps .steps-desc-2 .step-detail {
-        font-size: 0.6em;
+        font-size: 0.7em;
     }
 
     .seguimiento-container-2 h2 {
-        font-size: 1em;
+        font-size: 1.1em;
         margin-bottom: 8vh;
     }
 
@@ -3785,10 +3799,10 @@
         margin: auto;
     }
 
-    .table-detail th,
-    .table-detail .dos-p,
-    .table-detail td {
-        font-size: 0.7em;
+    .seguimiento-container-2 .table-detail th,
+    .seguimiento-container-2 .table-detail .dos-p,
+    .seguimiento-container-2 .table-detail td {
+        font-size: 0.8em;
     }
 
     /* Main carrito.html */
@@ -3813,7 +3827,7 @@
     }
 
     .carro-container .carro-inf .carro-desc h2 {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
@@ -3821,7 +3835,7 @@
     .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 0.9em;
         width: 10vw;
-        height: 5vh;
+        height: 4vh;
         margin-bottom: 3vh;
     }
 
@@ -3851,7 +3865,7 @@
 
     .carro-end .carro-end-container .option-1,
     .carro-end .carro-end-container .option-2 {
-        font-size: 0.7em;
+        font-size: 0.75em;
         width: 60vw;
     }
 
@@ -3876,7 +3890,7 @@
     }
 
     .pago-container-1 .steps .steps-desc-2 .step-detail {
-        font-size: 0.5em;
+        font-size: 0.6em;
     }
 
     .pago-container-1 .steps .steps-desc-2 .step-detail-2{
@@ -3907,23 +3921,23 @@
     }
 
     .pago-container-2 .pago-resumen h2 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc h3 {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc img {
         width: 25vw;
-        height: 15vh;
+        height: 10vh;
         margin-bottom: 4vw;
     }
 
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
     .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
 
     /* Primer paso del pago */
@@ -3950,11 +3964,12 @@
 
     .pago-container-2 .pago-metodo .m-pago {
         width: 90vw;
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
 
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 40vw;
+        height: 5vh;
         margin-left: 25vw;
         font-size: 0.7em;
     }
@@ -3967,12 +3982,13 @@
     .pago-container-2 .pago-details .table-detail th,
     .pago-container-2 .pago-details .table-detail .dos-p,
     .pago-container-2 .pago-details .table-detail td {
-        font-size: 0.7em;
+        font-size: 0.75em;
     }
 
     .pago-container-2 .pago-details .button-pagar {
         width: 30vw;
-        font-size: 0.8em;
+        height: 5vh;
+        font-size: 0.7em;
     }
 
     /* Main ingreso.html */
@@ -3990,7 +4006,7 @@
     }
 
     .form-login-container form .form-question {
-        font-size: 0.6em;
+        font-size: 0.7em;
         width: 90vw;
     }
 
@@ -4018,7 +4034,7 @@
     }
 
     .detail-header a {
-        font-size: 0.55em;
+        font-size: 0.65em;
     }
 
     .detail-container {
