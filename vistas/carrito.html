@@ -154,15 +154,15 @@
             <div class="carro-desc">
               <h2>Nombre producto</h2>
               <div class="carro-buttons">
-                <button class="carro-menos">-</button>
-                <span class="carro-contador">1</span>
-                <button class="carro-mas">+</button>
+                <button class="carro-menos" id="carro-mes" onclick="menos('carro-contador-1', 'precio-1')">-</button>
+                <span class="carro-contador" id="carro-contador-1">1</span>
+                <button class="carro-mas" id="carro-mas" onclick="mas('carro-contador-1', 'precio-1')">+</button>
               </div>
             </div>
           </div>
           <div class="carro-total">
             <h2>Total</h2>
-            <span>$999</span>
+            <span id="precio-1">10</span>
           </div>
           <button class="carro-eliminar">Eliminar</button>
         </div>
@@ -176,15 +176,15 @@
             <div class="carro-desc">
               <h2>Nombre producto</h2>
               <div class="carro-buttons">
-                <button class="carro-menos">-</button>
-                <span class="carro-contador">1</span>
-                <button class="carro-mas">+</button>
+                <button class="carro-menos" id="carro-mes" onclick="menos('carro-contador-2', 'precio-2')">-</button>
+                <span class="carro-contador" id="carro-contador-2">1</span>
+                <button class="carro-mas" id="carro-mas" onclick="mas('carro-contador-2', 'precio-2')">+</button>
               </div>
             </div>
           </div>
           <div class="carro-total">
             <h2>Total</h2>
-            <span>$999</span>
+            <span id="precio-2">10</span>
           </div>
           <button class="carro-eliminar">Eliminar</button>
         </div>
@@ -194,7 +194,7 @@
       <section class="carro-pay">
         <div class="carro-pay-container">
           <span class="carro-pagar">Total a pagar</span>
-          <span class="carro-pagar">$1.998</span>
+          <span class="carro-pagar" id="total-pago">$1.998</span>
         </div>
       </section>
       <hr />
@@ -237,6 +237,9 @@
         <small>&copy; 2024. Coffe Kong - Todos los derechos reservados.</small>
       </div>
     </footer>
+    <!-- Js propio -->
+    <script src="/js/index.js"></script>
+    <!-- Js de BootStrap -->
     <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
   </body>
 </html>
