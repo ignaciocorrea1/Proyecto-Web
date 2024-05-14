@@ -1,142 +1,143 @@
 [
     {
         "id": "1",
-        "nombre": "Te chai",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/te-chai.png"
+        "nombre": "Té chai",
+        "descripcion": "Exquisito Té directo del sur de la india. ",
+        "precio": "2900",
+        "imagen": "/images/bebidas/te-chai.png"
     },
     {
         "id": "2",
-        "nombre": "Te bergamota",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/te-bergamota.png"
+        "nombre": "Té bergamota",
+        "descripcion": "",
+        "precio": "2790",
+        "imagen": "/images/bebidas/te-bergamota.png"
     },
     {
         "id": "3",
         "nombre": "Café irlandes",
         "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/irlandes.png"
+        "precio": "4690",
+        "imagen": "/images/bebidas/irlandes.png"
     },
     {
         "id": "4",
         "nombre": "Frappe",
         "descripcion": "lorem",
         "precio": "999",
-        "imagen": "/images/frappe.png"
+        "imagen": "/images/bebidas/frappe.png"
     },
     {
         "id": "5",
         "nombre": "Expresso",
         "descripcion": "lorem",
         "precio": "999",
-        "imagen": "/images/expresso.png"
+        "imagen": "/images/bebidas/expresso.png"
     },
     {
         "id": "6",
         "nombre": "Café + galletas",
         "descripcion": "lorem",
         "precio": "999",
-        "imagen": "/images/cafe+galletas.png"
+        "imagen": "/images/bebidas/cafe+galletas.png"
     },
     {
         "id": "7",
         "nombre": "Capuchino",
         "descripcion": "lorem",
         "precio": "999",
-        "imagen": "/images/capuchino.png"
+        "imagen": "/images/bebidas/capuchino.png"
     },
     {
         "id": "8",
         "nombre": "Café latte",
         "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/latte.png"
+        "precio": "2800",
+        "imagen": "/images/bebidas/latte.png"
     },
     {
         "id": "9",
         "nombre": "Jugo natural",
         "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/jugos.png"
+        "precio": "3400",
+        "imagen": "/images/bebidas/jugos.png"
     },
     {
         "id": "10",
         "nombre": "Café amaretto",
         "descripcion": "lorem",
         "precio": "999",
-        "imagen": "/images/amaretto.png"
+        "imagen": "/images/bebidas/amaretto.png"
     },
+    
     {
         "id": "11",
         "nombre": "Cachitos de manjar",
         "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/cachitos.png"
+        "precio": "1790",
+        "imagen": "/images/comida/cachitos.png"
     },
     {
         "id": "12",
         "nombre": "Chaparritas",
         "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/chaparritas.png"
+        "precio": "2190",
+        "imagen": "/images/comida/chaparritas.png"
     },
     {
         "id": "13",
         "nombre": "Cocadas",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/cocadas.png"
+        "descripcion": "Bolita horneada de coco rallado y leche condensada",
+        "precio": "400",
+        "imagen": "/images/comida/cocadas.png"
     },
     {
         "id": "14",
         "nombre": "Donas",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/donas.png"
+        "descripcion": "Deliciosas donas artesanales elaborados con ingredientes frescos y de alta calidad",
+        "precio": "2090",
+        "imagen": "/images/comida/donas.png"
     },
     {
         "id": "15",
         "nombre": "Rellenitos",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/rellenitos.png"
+        "descripcion": "",
+        "precio": "1500",
+        "imagen": "/images/comida/rellenitos.png"
     },
     {
         "id": "16",
         "nombre": "Roscas",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/roscas.png"
+        "descripcion": "Exquisitas roscas artesanales, fusionando tradicion y calidad con ingredientes frescos",
+        "precio": "990",
+        "imagen": "/images/comida/roscas.png"
     },
     {
         "id": "17",
         "nombre": "Sandwich",
-        "descripcion": "lorem",
+        "descripcion": "Sandwich de pollo, lechucha, tomate y salsa a eleccion",
         "precio": "999",
-        "imagen": "/images/sandwich.png"
+        "imagen": "/images/comida/sandwich.png"
     },
     {
         "id": "18",
         "nombre": "Pie de limon",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/piedelimon.png"
+        "descripcion": "Clásica tarta de crema de limón terminada con merengue italiano",
+        "precio": "3200",
+        "imagen": "/images/comida/piedelimon.png"
     },
     {
         "id": "19",
         "nombre": "Cheescake",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/cheescake.png"
+        "descripcion": "Suave tarta de queso horneada, saborizada naturalmente con fruta, decorada con diferentes salsas",
+        "precio": "3200",
+        "imagen": "/images/comida/cheescake.png"
     },
     {
         "id": "20",
         "nombre": "Kuchen de nuez",
-        "descripcion": "lorem",
-        "precio": "999",
-        "imagen": "/images/amaretto.png"
+        "descripcion": "Kuchen relleno con dulce de nueces, terminado con manjar fresco y nueces confitadas",
+        "precio": "$2990",
+        "imagen": "/images/comida/kuchen-nuez.png"
     }
 ]

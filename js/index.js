@@ -1,3 +1,5 @@
+
+
 // Funciones para los contadores
 
 // Funcion para quitarle 1 al contador y restarle al precio
