@@ -10,7 +10,7 @@ function menos(idCont, idPrecio) {
     let prod = document.querySelector("#" + idPrecio);
     let precio = parseInt(prod.textContent);
 
-    // Validar si el contador es mayor a 10
+    // Validar si el contador es mayor a 1
     if (cont > 1) {
         cont--;
 
@@ -20,7 +20,7 @@ function menos(idCont, idPrecio) {
 
         // Asignacion de valores
         contador.textContent = cont.toString();
-        prod.textContent = total.toString();
+        // prod.textContent = total.toString();
     }
     else {
         alert("El minimo es 1");
@@ -46,13 +46,14 @@ function mas(idCont, idPrecio) {
 
         // Asignacion de valores
         contador.textContent = cont.toString();
-        prod.textContent = total.toString();
+        // prod.textContent = total.toString();
     }
     else {
         alert("El maximo es 10");
     };
 };
 
+// Funciones del carrito
 
 
 
