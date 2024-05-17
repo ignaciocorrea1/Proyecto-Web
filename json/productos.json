@@ -4,139 +4,140 @@
         "nombre": "Te chai",
         "descripcion": "lorem",
         "precio": "10",
-        "imagen": "/images/te-chai.png"
+        "imagen": "/images/bebidas/te-chai.png"
     },
     {
         "id": "2",
-        "nombre": "Te bergamota",
+        "nombre": "Té bergamota",
         "descripcion": "lorem",
         "precio": "20",
-        "imagen": "/images/te-bergamota.png"
+        "imagen": "/images/bebidas/te-bergamota.png"
     },
     {
         "id": "3",
         "nombre": "Café irlandes",
         "descripcion": "lorem",
         "precio": "30",
-        "imagen": "/images/irlandes.png"
+        "imagen": "/images/bebidas/irlandes.png"
     },
     {
         "id": "4",
         "nombre": "Frappe",
         "descripcion": "lorem",
         "precio": "40",
-        "imagen": "/images/frappe.png"
+        "imagen": "/images/bebidas/frappe.png"
     },
     {
         "id": "5",
         "nombre": "Expresso",
         "descripcion": "lorem",
         "precio": "50",
-        "imagen": "/images/expresso.png"
+        "imagen": "/images/bebidas/expresso.png"
     },
     {
         "id": "6",
         "nombre": "Café + galletas",
         "descripcion": "lorem",
         "precio": "60",
-        "imagen": "/images/cafe+galletas.png"
+        "imagen": "/images/bebidas/cafe+galletas.png"
     },
     {
         "id": "7",
         "nombre": "Capuchino",
         "descripcion": "lorem",
         "precio": "70",
-        "imagen": "/images/capuchino.png"
+        "imagen": "/images/bebidas/capuchino.png"
     },
     {
         "id": "8",
         "nombre": "Café latte",
         "descripcion": "lorem",
         "precio": "80",
-        "imagen": "/images/latte.png"
+        "imagen": "/images/bebidas/latte.png"
     },
     {
         "id": "9",
         "nombre": "Jugo natural",
         "descripcion": "lorem",
         "precio": "90",
-        "imagen": "/images/jugos.png"
+        "imagen": "/images/bebidas/jugos.png"
     },
     {
         "id": "10",
         "nombre": "Café amaretto",
         "descripcion": "lorem",
         "precio": "100",
-        "imagen": "/images/amaretto.png"
+        "imagen": "/images/comida/amaretto.png"
     },
+    
     {
         "id": "11",
         "nombre": "Cachitos de manjar",
         "descripcion": "lorem",
         "precio": "110",
-        "imagen": "/images/cachitos.png"
+        "imagen": "/images/comida/cachitos.png"
     },
     {
         "id": "12",
         "nombre": "Chaparritas",
         "descripcion": "lorem",
         "precio": "120",
-        "imagen": "/images/chaparritas.png"
+        "imagen": "/images/comida/chaparritas.png"
     },
     {
         "id": "13",
         "nombre": "Cocadas",
         "descripcion": "lorem",
         "precio": "130",
-        "imagen": "/images/cocadas.png"
+        "imagen": "/images/comida/cocadas.png"
     },
     {
         "id": "14",
         "nombre": "Donas",
         "descripcion": "lorem",
         "precio": "140",
-        "imagen": "/images/donas.png"
+        "imagen": "/images/comida/donas.png"
     },
     {
         "id": "15",
         "nombre": "Rellenitos",
         "descripcion": "lorem",
         "precio": "150",
-        "imagen": "/images/rellenitos.png"
+        "imagen": "/images/comida/rellenitos.png"
     },
     {
         "id": "16",
         "nombre": "Roscas",
         "descripcion": "lorem",
         "precio": "160",
-        "imagen": "/images/roscas.png"
+        "imagen": "/images/comida/roscas.png"
     },
     {
         "id": "17",
         "nombre": "Sandwich",
         "descripcion": "lorem",
         "precio": "170",
-        "imagen": "/images/sandwich.png"
+        "imagen": "/images/comida/sandwich.png"
     },
     {
         "id": "18",
         "nombre": "Pie de limon",
         "descripcion": "lorem",
         "precio": "180",
-        "imagen": "/images/piedelimon.png"
+        "imagen": "/images/comida/piedelimon.png"
     },
     {
         "id": "19",
         "nombre": "Cheescake",
         "descripcion": "lorem",
         "precio": "190",
-        "imagen": "/images/cheescake.png"
+        "imagen": "/images/comida/cheescake.png"
     },
     {
         "id": "20",
         "nombre": "Kuchen de nuez",
         "descripcion": "lorem",
         "precio": "200",
-        "imagen": "/images/amaretto.png"
+        "imagen": "/images/comida/amaretto.png"
     }
 ]
