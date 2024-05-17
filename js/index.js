@@ -1,56 +1,103 @@
-// Funciones para los contadores
+// Array de los productos
+let productos = [];
 
-// Funcion para quitarle 1 al contador y restarle al precio
-function menos(idCont, idPrecio) {
-    // Obtencion del numero del contador
-    let contador = document.querySelector("#" + idCont);
-    let cont = parseInt(contador.textContent);
+// Se recuperam los datos de productos.json y se replican en el array
+fetch("/json/productos.json")
+  .then((response) => response.json())
+  .then((data) => {
+    productos = data;
+  });
 
-    // Obtencion del precio
-    let prod = document.querySelector("#" + idPrecio);
-    let precio = parseInt(prod.textContent);
+// Funciones de contadores
 
-    // Validar si el contador es mayor a 1
-    if (cont > 1) {
-        cont--;
+// Funcion que quita 1 al contador y resta al precio
+function menos(idC, idP){
+  // Substring al ultimo digito para poder iterar correctamente a traves de las Id's
+  
+  let id = idC.substring(idC.length - 1); 
 
-        // Calculo del precio total del producto
-        let total = precio * cont;
-        console.log(cont, total);
+  /*
+  let id;
+  
+  if (idC.length == 8) {
+    id = idC.substring(idC.length - 1); 
+  }
+  else {
+    id = idC.substring(idC.length - 2);
+  }
+  */
 
-        // Asignacion de valores
-        contador.textContent = cont.toString();
-        // prod.textContent = total.toString();
+  // Se recupera el contador
+  let contador = document.querySelector("#" + idC);
+  let cont = parseInt(contador.textContent);
+
+  // Se recupera el span
+  let span = document.querySelector("#" + idP);
+  
+  // Variables
+  let total;
+  let precio;
+
+  // Iteracion para recuperar el precio dependiendo la id
+  for (let i = 0; i < productos.length; i++) {
+    if (productos[i].id === id){
+      precio = parseInt(productos[i].precio);
     }
-    else {
-        alert("El minimo es 1");
-    };
+  } 
+
+  // Si el contador es menor a 10 se suma 1
+  if (cont > 1){
+    cont--;
+
+    // Calculo del total
+    total = cont * precio;
+
+    // Variables al HTML
+    contador.textContent = cont.toString();
+    span.innerHTML = '$' + total;
+  }
+  else {
+    alert("El minimo de productos para añadir son 1")
+  }
 };
 
-// Funcion para agregarle 1 al contador y sumarle al precio
-function mas(idCont, idPrecio) {
-    // Obtencion del numero del contadord
-    let contador = document.querySelector("#" + idCont);
-    let cont = parseInt(contador.textContent);
+// Funcion que suma 1 y suma al precio
+function mas(idC, idP){
+  // Substring al ultimo digito para poder iterar correctamente a traves de las Id's
+  let id = idC.substring(idC.length - 1); 
 
-    // Obtencion del precio
-    let prod = document.querySelector("#" + idPrecio);
-    let precio = parseInt(prod.textContent);
+  // Se recupera el contador
+  let contador = document.querySelector("#" + idC);
+  let cont = parseInt(contador.textContent);
 
-    // Validar si el contador es menor a 10
-    if (cont < 10) {
-        cont++;
+  // Se recupera el span
+  let span = document.querySelector("#" + idP);
+  
+  // Variables
+  let total;
+  let precio;
 
-        let total = precio * cont;
-        console.log(cont, total);
-
-        // Asignacion de valores
-        contador.textContent = cont.toString();
-        // prod.textContent = total.toString();
+  // Iteracion para recuperar el precio dependiendo la id
+  for (let i = 0; i < productos.length; i++) {
+    if (productos[i].id === id){
+      precio = parseInt(productos[i].precio);
     }
-    else {
-        alert("El maximo es 10");
-    };
+  } 
+
+  // Si el contador es menor a 10 se suma 1
+  if (cont < 10){
+    cont++;
+
+    // Calculo del total
+    total = cont * precio;
+
+    // Variables al HTML
+    contador.textContent = cont.toString();
+    span.innerHTML = '$' + total;
+  }
+  else {
+    alert("El maximo de productos para añadir son 10")
+  }
 };
 
 // Funciones del carrito

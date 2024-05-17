@@ -154,15 +154,15 @@
             <div class="carro-desc">
               <h2>Nombre producto</h2>
               <div class="carro-buttons">
-                <button class="carro-menos" id="carro-menos" onclick="menos('carro-contador-1', 'precio-1')">-</button>
+                <button onclick="menos('carro-contador-1', 'precio-1')" class="carro-menos" id="carro-menos" >-</button>
                 <span class="carro-contador" id="carro-contador-1">1</span>
-                <button class="carro-mas" id="carro-mas" onclick="mas('carro-contador-1', 'precio-1')">+</button>
+                <button onclick="mas('carro-contador-1', 'precio-1')" class="carro-mas" id="carro-mas" >+</button>
               </div>
             </div>
           </div>
           <div class="carro-total">
             <h2>Total</h2>
-            <span id="precio-1">10</span>
+            <span id="precio-1">$10</span>
           </div>
           <button class="carro-eliminar">Eliminar</button>
         </div>
@@ -176,15 +176,15 @@
             <div class="carro-desc">
               <h2>Nombre producto</h2>
               <div class="carro-buttons">
-                <button class="carro-menos" id="carro-menos" onclick="menos('carro-contador-2', 'precio-2')">-</button>
+                <button onclick="menos('carro-contador-2', 'precio-2')" class="carro-menos" id="carro-menos" >-</button>
                 <span class="carro-contador" id="carro-contador-2">1</span>
-                <button class="carro-mas" id="carro-mas" onclick="mas('carro-contador-2', 'precio-2')">+</button>
+                <button onclick="mas('carro-contador-2', 'precio-2')" class="carro-mas" id="carro-mas" >+</button>
               </div>
             </div>
           </div>
           <div class="carro-total">
             <h2>Total</h2>
-            <span id="precio-2">10</span>
+            <span id="precio-2">$10</span>
           </div>
           <button class="carro-eliminar">Eliminar</button>
         </div>
@@ -237,9 +237,11 @@
         <small>&copy; 2024. Coffe Kong - Todos los derechos reservados.</small>
       </div>
     </footer>
+    <!-- jquery -->
+    <script src="/js/jquery-3.7.1.min.js"></script>
     <!-- Js propio -->
     <script src="/js/index.js"></script>
-    <!-- Js de BootStrap -->
+    <!-- Bootstrap -->
     <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
   </body>
 </html>
