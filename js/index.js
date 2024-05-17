@@ -12,21 +12,16 @@ fetch("/json/productos.json")
 
 // Funcion que quita 1 al contador y resta al precio
 function menos(idC, idP){
-  // Substring al ultimo digito para poder iterar correctamente a traves de las Id's
+  // Obtencion la Id para iterar
+  let id;
   
-  let id = idC.substring(idC.length - 1); 
-
-  
-  /*let id;
-  
-  if (idC.length == 7) {
-    id = idC.substring(idC.length - 1); 
+  if (idC.length == 16) {
+    id = idC.substring(15, 16); 
   }
-  else if (idC.length == 8) {
-    id = idC.substring(idC.length - 2);
-  }*/
+  else if (idC.length == 17) {
+    id = idC.substring(15, 17);
+  }
   
-
   // Se recupera el contador
   let contador = document.querySelector("#" + idC);
   let cont = parseInt(contador.textContent);
@@ -39,11 +34,11 @@ function menos(idC, idP){
   let precio;
 
   // Iteracion para recuperar el precio dependiendo la id
-  for (let i = 0; i < productos.length; i++) {
-    if (productos[i].id === id){
-      precio = parseInt(productos[i].precio);
+  productos.forEach(tmp => {
+    if (tmp.id === id) {
+      precio = parseInt(tmp.precio);
     }
-  } 
+  });
 
   // Si el contador es menor a 10 se suma 1
   if (cont > 1){
@@ -63,9 +58,15 @@ function menos(idC, idP){
 
 // Funcion que suma 1 y suma al precio
 function mas(idC, idP){
-  // Substring al ultimo digito para poder iterar correctamente a traves de las Id's
-  let id = idC.substring(idC.length - 1); 
-
+  // Obtencion la Id para iterar
+  let id;
+  
+  if (idC.length == 16) {
+    id = idC.substring(15, 16); 
+  }
+  else if (idC.length == 17) {
+    id = idC.substring(15, 17);
+  }
   // Se recupera el contador
   let contador = document.querySelector("#" + idC);
   let cont = parseInt(contador.textContent);
@@ -78,14 +79,14 @@ function mas(idC, idP){
   let precio;
 
   // Iteracion para recuperar el precio dependiendo la id
-  for (let i = 0; i < productos.length; i++) {
-    if (productos[i].id === id){
-      precio = parseInt(productos[i].precio);
+  productos.forEach(tmp => {
+    if (tmp.id === id) {
+      precio = parseInt(tmp.precio);
     }
-  } 
+  });
 
   // Si el contador es menor a 10 se suma 1
-  if (cont < 10){
+  if (cont < 100){
     cont++;
 
     // Calculo del total
@@ -148,19 +149,20 @@ function validarFormulario() {
 }
 
 function validarSeguimiento(){
-  let idS = document.getElementById("seguimiento").value;
+  let idS = document.getElementById("i-seguimiento").value;
   if (validarIdSeguimiento(idS)) {
-    document.getElementById("b-seguimiento").innerHTML = 
-    "<a href='/vistas/seguimiento-2.html' id>Buscar</a>"
-
-    idA.setAttribute("href", "/vistas/seguimiento-2.html")
+    document.getElementById("btn-seguimiento").innerHTML = 
+    "<a href='/vistas/seguimiento-2.html' class='a-seguimiento' id='a-seguimiento'>" +
+        "<button onclick='validarSeguimiento()' class='form-submit' id='b-seguimiento'>Buscar</button>"
+    "</a>"
+    
+    // document.getElementById("a-seguimiento").setAttribute("href", "/vistas/seguimiento-2.html")
   }
   else {
-    document.getElementById("seguimiento").style.border = "0.188rem solid red";
+    document.getElementById("i-seguimiento").style.border = "0.188rem solid red";
     document.getElementById("fseguimiento").innerHTML = 
       "<div class='alert alert-danger w-50 mx-auto text-center'> " +
         "Id del seguimiento debe contener solo numeros y estar entre 1 y 4 digitos </div>"
-    
   }
 };
 

@@ -672,8 +672,15 @@ hr {
     border-radius: 1.875rem;
 }
 
+.form-seguimiento-container .form-submit .a-seguimiento {
+    color: white;
+    font-size: 1rem;
+}
+
 .form-forgot-container form .form-submit:hover,
-.form-seguimiento-container form .form-submit:hover{
+.form-seguimiento-container form .form-submit:hover,
+/* Provisorio */
+.form-seguimiento-container .form-submit:hover{
     border: 0.188rem solid white;
 }
 
