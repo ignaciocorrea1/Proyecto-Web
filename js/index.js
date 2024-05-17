@@ -16,16 +16,16 @@ function menos(idC, idP){
   
   let id = idC.substring(idC.length - 1); 
 
-  /*
-  let id;
   
-  if (idC.length == 8) {
+  /*let id;
+  
+  if (idC.length == 7) {
     id = idC.substring(idC.length - 1); 
   }
-  else {
+  else if (idC.length == 8) {
     id = idC.substring(idC.length - 2);
-  }
-  */
+  }*/
+  
 
   // Se recupera el contador
   let contador = document.querySelector("#" + idC);
@@ -102,7 +102,7 @@ function mas(idC, idP){
 
 // Funciones del carrito
 
-// Formulario
+// Validaciones de Formulario
 
 function validarFormulario() {
     let nombres = document.getElementById('nombres').value;
@@ -147,22 +147,42 @@ function validarFormulario() {
     return true; // Todas las validaciones son correctas
 }
 
+function validarSeguimiento(){
+  let idS = document.getElementById("seguimiento").value;
+  if (validarIdSeguimiento(idS)) {
+    document.getElementById("b-seguimiento").innerHTML = 
+    "<a href='/vistas/seguimiento-2.html' id>Buscar</a>"
+
+    idA.setAttribute("href", "/vistas/seguimiento-2.html")
+  }
+  else {
+    document.getElementById("seguimiento").style.border = "0.188rem solid red";
+    document.getElementById("fseguimiento").innerHTML = 
+      "<div class='alert alert-danger w-50 mx-auto text-center'> " +
+        "Id del seguimiento debe contener solo numeros y estar entre 1 y 4 digitos </div>"
+    
+  }
+};
+
 function validarRUT(rut) {
     let re = /^\d{7,8}-[\dkK]$/;
     return re.test(rut);
-}
+};
 
 function validarTexto(texto) {
     let re = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     return re.test(texto);
-}
+};
 
 function validarContrasenia(contrasenia) {
     let re = /^(?=.*\d)(?=.*[a-zA-Z]).{8,}$/;
     return re.test(contrasenia);
-}
+};
 
-
+function validarIdSeguimiento(id) {
+  let re = /^[0-9]\d{0,3}$/;
+  return re.test(id);
+};
 
 
 
