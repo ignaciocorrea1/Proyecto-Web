@@ -151,14 +151,14 @@
           <div class="form-datos">
             <input
               type="email"
-              id="correo"
+              id="correo-l"
               placeholder="Correo electrónico (*)"
               class="form-input"
               required
             />
             <input
               type="password"
-              id="contrasenia"
+              id="contrasenia-l"
               placeholder="Contraseña (*)"
               class="form-input"
               required
@@ -168,7 +168,8 @@
             <a href="/vistas/unete.html">Registrate aqui</a>
             <a href="/vistas/contrasenia.html">¿Has olvidado tu contraseña?</a>
           </div>
-          <input type="submit" value="Iniciar sesión" class="form-submit" />
+          <div id="unete-l"></div>
+          <input onclick="validarLogin()" id="submit-l" type="submit" value="Iniciar sesión" class="form-submit" />
         </form>
       </section>
     </main>
@@ -202,7 +203,8 @@
     <!-- jquery -->
     <script src="/js/jquery-3.7.1.min.js"></script>
     <!-- Js propio -->
-    <script src="/js/index.js"></script>
+    <script src="/js/productos.js"></script>
+    <script src="/js/formularios.js"></script>
     <!-- Bootstrap -->
     <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
   </body>

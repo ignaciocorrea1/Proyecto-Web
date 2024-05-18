@@ -186,6 +186,7 @@ body{
     border: 0.218rem solid #436A6F;
     border-radius: 1.25em;
     color: white;
+    font-size: 0.9em;
     font-weight: 700;
     padding: 0.2em 1em 0.2em 1em;
 }
@@ -282,7 +283,7 @@ footer {
     width: 1.535vw;
 }
 
-/* Chat gpt para poder aplicar un hover sobre la imagen :/ */
+/* Cgpt :/ */
 .footer-container .group-3 img:hover {
     filter: invert(80%) 
             sepia(70%) 
@@ -387,7 +388,7 @@ h1 {
     width: 12vw;
     height: 34vh;
     margin: auto;
-    padding: 1.4em 0 0.3em 1em;
+    padding: 1em 0 0.3em 1em;
     border-radius: 1.875rem;
 }
 
@@ -405,14 +406,14 @@ h1 {
 }
 
 .section-2 .products .card .text-section h3{
-    font-size: 1.775rem;
+    font-size: 1.2em;
     margin-bottom: 0.5em;
     font-weight: 700;   
 }
 
 .section-2 .products .card .text-section p{
     text-align: justify;  
-    font-size: 1.1em; 
+    font-size: 0.9em; 
     font-weight: 550;
 }
 
@@ -424,14 +425,14 @@ h1 {
     padding: 0.625rem;
     text-align: center;
     color: white;
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: 550;
 }
 
 .section-2 .products .card .price-section .btn {
     color: white;
     font-weight: 700;
-    font-size: 1.1em;
+    font-size: 0.9em;
     border: 0.188rem solid #436A6F;
     border-radius: 1.875rem;
     background-color: #BFA980;
@@ -612,10 +613,10 @@ hr {
 
 .form-container form .form-submit {
     width: 10vw;
-    height: 5vh;
+    height: 6vh;
     background-color: #61888C;
     color: white;
-    font-size: 1em;
+    font-size: 0.85em;
     font-weight: 500;
     border: 0.188rem solid #436A6F;
     border-radius: 2.5rem;
@@ -663,18 +664,13 @@ hr {
    input original esta dentro del form*/
 .form-seguimiento-container .form-submit {
     width: 10vw;
-    height: 5vh;
-    font-size: 1rem;
+    height: 6vh;
+    font-size: 0.9em;
     font-weight: 600;
     color: white;
     background-color: #61888C;
     border: 0.188rem solid #436A6F;
     border-radius: 1.875rem;
-}
-
-.form-seguimiento-container .form-submit .a-seguimiento {
-    color: white;
-    font-size: 1rem;
 }
 
 .form-forgot-container form .form-submit:hover,
@@ -836,7 +832,7 @@ hr {
 
 .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos {
     width: 2.5vw;
-    height: 4vh;
+    height: 5vh;
     background-color: #F3EAC9;
     border: 0.15rem solid #61888C;
     color: #BFA980;
@@ -851,7 +847,7 @@ hr {
     justify-content: center;
     align-items: center;
     width: 2.5vw;
-    height: 4vh;
+    height: 5vh;
     background-color: #F3EAC9;
     border-top: 0.15rem solid #61888C;
     border-bottom: 0.15rem solid #61888C;
@@ -861,7 +857,7 @@ hr {
 
 .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
     width: 2.5vw;
-    height: 4vh;
+    height: 5vh;
     background-color: #F3EAC9;
     border: 0.15rem solid #61888C;
     color: #BFA980;
@@ -929,7 +925,7 @@ hr {
 .carro-end .carro-end-container .option-1,
 .carro-end .carro-end-container .option-2 {
     width: 14vw;
-    height: 5vh;
+    height: 6vh;
     border: 0.188rem solid #61888C;
     border-radius: 1.25em;
     background-color: #436A6F;
@@ -963,9 +959,9 @@ hr {
     position: absolute;
     z-index: 0;
     width: 79vw;
-    height: 3vh;
+    height: 4vh;
     margin-top: 2.5vh;
-    margin-left: 0.8vw;
+    margin-left: 0.5vw;
     background-color: #B0BCA6;
     border: 0.3rem solid #436A6F;
 }
@@ -1047,7 +1043,7 @@ hr {
 
 .pago-container-2 .pago-datos form .form-submit {
     width: 12vw;
-    height: 4vh;
+    height: 5vh;
     border: 0.218rem solid #436A6F;
     border-radius: 0.6em;
     color: white;
@@ -1089,7 +1085,7 @@ hr {
 
 .pago-container-2 .pago-metodo .m-pago-cont {
     width: 12vw;
-    height: 4vh;
+    height: 5vh;
     font-weight: 600;
     margin: auto;
     margin-left: 9vw;
@@ -1114,7 +1110,7 @@ hr {
 
 .pago-container-2 .pago-details .button-pagar {
     width: 12vw;
-    height: 4vh;
+    height: 5vh;
     font-weight: 600;
     margin-top: 1em;
     color: white;
@@ -1234,7 +1230,7 @@ hr {
 .form-login-container form .form-submit {
     width: 15vw;
     height: 5vh;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
     color: white;
     background-color: #61888C;

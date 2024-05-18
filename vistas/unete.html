@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
     <!-- Link style y responsive style-->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/responsive.css" />
     <!-- Link iconos -->
     <link
       rel="stylesheet"
@@ -54,22 +54,40 @@
                 <a class="nav-link" href="/vistas/unete.html">ÚNETE</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/vistas/seguimiento.html">SEGUIMIENTO</a>
+                <a class="nav-link" href="/vistas/seguimiento.html"
+                  >SEGUIMIENTO</a
+                >
               </li>
             </ul>
             <!-- Fin Links de acceso -->
 
             <!-- Inicio carrito mas icono para el login -->
             <div class="right-side">
-              <span class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+              <span
+                class="material-symbols-outlined carro"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              >
                 shopping_cart
               </span>
               <div class="dropdown drop-login">
-                <button class="dropdown-toggle drop-button" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="material-symbols-outlined acc">account_circle</span>
+                <button
+                  class="dropdown-toggle drop-button"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span class="material-symbols-outlined acc"
+                    >account_circle</span
+                  >
                 </button>
                 <div class="drop-menu">
-                  <ul class="dropdown-menu drop-options" aria-labelledby="dropdownMenu2">
+                  <ul
+                    class="dropdown-menu drop-options"
+                    aria-labelledby="dropdownMenu2"
+                  >
                     <li>
                       <a href="/vistas/ingreso.html">Iniciar sesión</a>
                     </li>
@@ -88,60 +106,72 @@
     </header>
     <main class="container-fluid">
       <!-- Inicio offcanva -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carro de compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">
+            Carro de compras
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="offcanvas-body">
-            <div class="products">
-              <div class="product">
-                <div class="product-desc">
-                  <h2>Nombre Producto</h2>
-                  <img src="/images/producto.jpg" alt="Cargando imagen...">
-                  <button class="product-remove">Eliminar</button>
+          <div class="products">
+            <div class="product">
+              <div class="product-desc">
+                <h2>Nombre Producto</h2>
+                <img src="/images/producto.jpg" alt="Cargando imagen..." />
+                <button class="product-remove">Eliminar</button>
+              </div>
+              <div class="product-desc-2">
+                <div class="product-price">
+                  <span class="precio">Precio:</span>
+                  <span class="precio-2">$999</span>
                 </div>
-                <div class="product-desc-2">
-                  <div class="product-price">
-                    <span class="precio">Precio:</span>
-                    <span class="precio-2">$999</span>
-                  </div>
-                  <div class="product-add">
-                    <button class="product-menos">-</button>
-                    <span class="product-contador">1</span>
-                    <button class="product-mas">+</button>
-                  </div>
+                <div class="product-add">
+                  <button class="product-menos">-</button>
+                  <span class="product-contador">1</span>
+                  <button class="product-mas">+</button>
                 </div>
               </div>
-              <hr>
-              <div class="product">
-                <div class="product-desc">
-                  <h2>Nombre Producto</h2>
-                  <img src="/images/producto2.jpg" alt="Cargando imagen...">
-                  <button class="product-remove">Eliminar</button>
+            </div>
+            <hr />
+            <div class="product">
+              <div class="product-desc">
+                <h2>Nombre Producto</h2>
+                <img src="/images/producto2.jpg" alt="Cargando imagen..." />
+                <button class="product-remove">Eliminar</button>
+              </div>
+              <div class="product-desc-2">
+                <div class="product-price">
+                  <span class="precio">Precio:</span>
+                  <span class="precio-2">$999</span>
                 </div>
-                <div class="product-desc-2">
-                  <div class="product-price">
-                    <span class="precio">Precio:</span>
-                    <span class="precio-2">$999</span>
-                  </div>
-                  <div class="product-add">
-                    <button class="product-menos">-</button>
-                    <span class="product-contador">1</span>
-                    <button class="product-mas">+</button>
-                  </div>
+                <div class="product-add">
+                  <button class="product-menos">-</button>
+                  <span class="product-contador">1</span>
+                  <button class="product-mas">+</button>
                 </div>
               </div>
-              <hr>
             </div>
-            <div class="product-buttons">
-              <a href="/vistas/carrito.html">
-                <button class="product-carro">Ir al carro</button>
-              </a>
-              <a href="/vistas/pago.html">
-                <button class="product-pago">Iniciar pago</button>
-              </a>
-            </div>
+            <hr />
+          </div>
+          <div class="product-buttons">
+            <a href="/vistas/carrito.html">
+              <button class="product-carro">Ir al carro</button>
+            </a>
+            <a href="/vistas/pago.html">
+              <button class="product-pago">Iniciar pago</button>
+            </a>
+          </div>
         </div>
       </div>
       <!-- Fin offcanva -->
@@ -151,54 +181,61 @@
           <legend>Información Personal</legend>
           <input
             type="text"
-            id="nombres"
+            id="nombres-r"
             placeholder="Nombre(s) (*)"
             class="form-input"
             required
-            />
+          />
           <input
             type="text"
-            id="rut"
+            id="rut-r"
             placeholder="Rut (*)"
             class="form-input"
             required
           />
           <input
             type="text"
-            id="paterno"
+            id="paterno-r"
             placeholder="Apellido Paterno (*)"
             class="form-input"
             required
           />
           <input
             type="text"
-            id="materno"
+            id="materno-r"
             placeholder="Apellido Materno (*)"
             class="form-input"
             required
           />
           <input
             type="email"
-            id="correo"
+            id="correo-r"
             placeholder="Correo electrónico (*)"
             class="form-input"
             required
           />
           <input
             type="password"
-            id="contrasenia"
+            id="contrasenia-r"
             placeholder="Contraseña (*)"
             class="form-input"
             required
           />
           <input
             type="password"
-            id="contrasenia-2"
+            id="contrasenia-2-r"
             placeholder="Confirmar contraseña (*)"
             class="form-input"
             required
           />
-          <input type="submit" value="Registrarme" class="form-submit" />
+          <div id="unete-r"></div>
+          <input
+            onclick="validarRegistro()"
+            id="submit-r"
+            type="submit"
+            value="Registrarme"
+            class="form-submit"
+          />
         </form>
       </section>
     </main>
@@ -219,9 +256,15 @@
         <div class="group-3">
           <h4>Redes sociales</h4>
           <div class="social-links">
-            <a href="#" class=""><img src="/images/rrss/instagram.svg" alt=""></a>
-            <a href="#" class=""><img src="/images/rrss/square-facebook.svg" alt=""></a>
-            <a href="#" class=""><img src="/images/rrss/x-twitter.svg" alt=""></a>
+            <a href="#" class=""
+              ><img src="/images/rrss/instagram.svg" alt=""
+            /></a>
+            <a href="#" class=""
+              ><img src="/images/rrss/square-facebook.svg" alt=""
+            /></a>
+            <a href="#" class=""
+              ><img src="/images/rrss/x-twitter.svg" alt=""
+            /></a>
           </div>
         </div>
       </div>
@@ -232,7 +275,8 @@
     <!-- jquery -->
     <script src="/js/jquery-3.7.1.min.js"></script>
     <!-- Js propio -->
-    <script src="/js/index.js"></script>
+    <script src="/js/productos.js"></script>
+    <script src="/js/formularios.js"></script>
     <!-- Bootstrap -->
     <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
   </body>

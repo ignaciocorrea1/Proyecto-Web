@@ -155,13 +155,14 @@
         <form>
             <input
                 type="email"
-                id="correo-envio"
+                id="correo-c"
                 placeholder="Correo electrónico (*)"
                 class="form-input"
                 required
             />
-            <input type="submit" value="Enviar enlace" class="form-submit"/>
+            <input onclick="validarCambio()" id="submit-c" type="submit" value="Enviar enlace" class="form-submit"/>
         </form>
+        <div id="contenedor-c"></div>
       </section>
     </main>
     <footer class="container-fluid">
@@ -194,7 +195,8 @@
     <!-- jquery -->
     <script src="/js/jquery-3.7.1.min.js"></script>
     <!-- Js propio -->
-    <script src="/js/index.js"></script>
+    <script src="/js/productos.js"></script>
+    <script src="/js/formularios.js"></script>
     <!-- Bootstrap -->
     <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
   </body>
