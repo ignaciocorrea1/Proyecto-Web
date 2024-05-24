@@ -33,21 +33,21 @@
         font-size: 1.5em;
     }
     
-    .offcanvas .offcanvas-body .products .product .product-desc h2,
-    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio-2  {
         font-size: 1em;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc img{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc img{
         width: 6vw;
         height: 8vh;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-container.product .product-container .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-mas{
         font-size: 1.1em;
     }
 
@@ -602,21 +602,21 @@
         font-size: 1.5em;
     }
     
-    .offcanvas .offcanvas-body .products .product .product-desc h2,
-    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio-2  {
         font-size: 1em;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc img{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc img{
         width: 7vw;
         height: 8vh;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-mas{
         font-size: 1.07em;
     }
 
@@ -1173,21 +1173,21 @@
         font-size: 1.5em;
     }
     
-    .offcanvas .offcanvas-body .products .product .product-desc h2,
-    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio-2  {
         font-size: 1em;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc img{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc img{
         width: 8vw;
         height: 9vh;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-mas{
         font-size: 1.07em;
     }
 
@@ -1749,21 +1749,21 @@
         font-size: 1.5em;
     }
     
-    .offcanvas .offcanvas-body .products .product .product-desc h2,
-    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio-2  {
         font-size: 1em;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc img{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc img{
         width: 9vw;
         height: 9vh;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-mas{
         font-size: 1.07em;
     }
 
@@ -2333,21 +2333,21 @@
         font-size: 1.4em;
     }
     
-    .offcanvas .offcanvas-body .products .product .product-desc h2,
-    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio-2  {
         font-size: 0.95em;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc img{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc img{
         width: 12vw;
         height: 9vh;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-mas{
         font-size: 1em;
     }
 
@@ -2918,21 +2918,21 @@
         font-size: 1.4em;
     }
     
-    .offcanvas .offcanvas-body .products .product .product-desc h2,
-    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio-2  {
         font-size: 0.9em;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc img{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc img{
         width: 12vw;
         height: 8vh;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-mas{
         font-size: 1em;
     }
 
@@ -3506,21 +3506,21 @@
         font-size: 1.1em;
     }
     
-    .offcanvas .offcanvas-body .products .product .product-desc h2,
-    .offcanvas .offcanvas-body .products .product .product-desc .product-remove,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-price .precio-2  {
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc h2,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc .product-remove,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-price .precio-2  {
         font-size: 0.9em;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc img{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc img{
         width: 18vw;
         height: 8vh;
     }
 
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-menos,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-contador,
-    .offcanvas .offcanvas-body .products .product .product-desc-2 .product-add .product-mas{
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-menos,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-contador,
+    .offcanvas .offcanvas-body .products .product .product-container .product-desc-2 .product-add .product-mas{
         font-size: 1em;
     }
 

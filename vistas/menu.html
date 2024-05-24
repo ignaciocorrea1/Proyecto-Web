@@ -61,7 +61,7 @@
 
             <!-- Inicio carrito mas icono para el login -->
             <div class="right-side">
-              <span class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+              <span onclick="desplegar()" class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 shopping_cart
               </span>
               <div class="dropdown drop-login">
@@ -94,53 +94,20 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="products">
-              <div class="product">
-                <div class="product-desc">
-                  <h2>Nombre Producto</h2>
-                  <img src="/images/producto.jpg" alt="Cargando imagen...">
-                  <button class="product-remove">Eliminar</button>
-                </div>
-                <div class="product-desc-2">
-                  <div class="product-price">
-                    <span class="precio">Precio:</span>
-                    <span class="precio-2">$999</span>
-                  </div>
-                  <div class="product-add">
-                    <button class="product-menos">-</button>
-                    <span class="product-contador">1</span>
-                    <button class="product-mas">+</button>
-                  </div>
-                </div>
+            <div class="products" id="d-products"> </div>
+            <div class="carro-bottom">
+              <div class="product-total">
+                <span id="producto-total">Total a pagar: $</span>
+                <hr>
               </div>
-              <hr>
-              <div class="product">
-                <div class="product-desc">
-                  <h2>Nombre Producto</h2>
-                  <img src="/images/producto2.jpg" alt="Cargando imagen...">
-                  <button class="product-remove">Eliminar</button>
-                </div>
-                <div class="product-desc-2">
-                  <div class="product-price">
-                    <span class="precio">Precio:</span>
-                    <span class="precio-2">$999</span>
-                  </div>
-                  <div class="product-add">
-                    <button class="product-menos">-</button>
-                    <span class="product-contador">1</span>
-                    <button class="product-mas">+</button>
-                  </div>
-                </div>
+              <div class="product-buttons">
+                <a href="/vistas/carrito.html">
+                  <button class="product-carro">Ir al carro</button>
+                </a>
+                <a href="/vistas/pago.html">
+                  <button class="product-pago">Iniciar pago</button>
+                </a>
               </div>
-              <hr>
-            </div>
-            <div class="product-buttons">
-              <a href="/vistas/carrito.html">
-                <button class="product-carro">Ir al carro</button>
-              </a>
-              <a href="/vistas/pago.html">
-                <button class="product-pago">Iniciar pago</button>
-              </a>
             </div>
         </div>
       </div>
@@ -171,6 +138,7 @@
                     Te chai
                   </h1>
                   <button
+                    onclick="reestablecer('modal-1')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -192,19 +160,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-1">$10</span>
+                          <span class="precio" id="h-precio-1">$10</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-1', 'precio-1')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-1">1</span>
-                          <button onclick="mas('carro-contador-1', 'precio-1')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-1', 'h-precio-1')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-1">1</span>
+                          <button onclick="mas('h-contador-1', 'h-precio-1')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-1')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -236,6 +204,7 @@
                     Te bergamota
                   </h1>
                   <button
+                    onclick="reestablecer('modal-2')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -257,19 +226,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-2">$20</span>
+                          <span class="precio" id="h-precio-2">$20</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-2', 'precio-2')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-2">1</span>
-                          <button onclick="mas('carro-contador-2', 'precio-2')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-2', 'h-precio-2')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-2">1</span>
+                          <button onclick="mas('h-contador-2', 'h-precio-2')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-2')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -301,6 +270,7 @@
                     Café irlandes
                   </h1>
                   <button
+                    onclick="reestablecer('modal-3')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -322,19 +292,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-3">$30</span>
+                          <span class="precio" id="h-precio-3">$30</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-3', 'precio-3')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-3">1</span>
-                          <button onclick="mas('carro-contador-3', 'precio-3')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-3', 'h-precio-3')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-3">1</span>
+                          <button onclick="mas('h-contador-3', 'h-precio-3')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-3')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -366,6 +336,7 @@
                     Frappe
                   </h1>
                   <button
+                    onclick="reestablecer('modal-4')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -387,19 +358,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-4">$40</span>
+                          <span class="precio" id="h-precio-4">$40</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-4', 'precio-4')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-4">1</span>
-                          <button onclick="mas('carro-contador-4', 'precio-4')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-4', 'h-precio-4')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-4">1</span>
+                          <button onclick="mas('h-contador-4', 'h-precio-4')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-4')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -431,6 +402,7 @@
                     Expresso
                   </h1>
                   <button
+                    onclick="reestablecer('modal-5')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -452,19 +424,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-5">$50</span>
+                          <span class="precio" id="h-precio-5">$50</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-5', 'precio-5')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-5">1</span>
-                          <button onclick="mas('carro-contador-5', 'precio-5')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-5', 'h-precio-5')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-5">1</span>
+                          <button onclick="mas('h-contador-5', 'h-precio-5')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-5')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -496,6 +468,7 @@
                     Café + galletas
                   </h1>
                   <button
+                    onclick="reestablecer('modal-6')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -517,19 +490,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-6">$60</span>
+                          <span class="precio" id="h-precio-6">$60</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-6', 'precio-6')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-6">1</span>
-                          <button onclick="mas('carro-contador-6', 'precio-6')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-6', 'h-precio-6')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-6">1</span>
+                          <button onclick="mas('h-contador-6', 'h-precio-6')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-6')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -561,6 +534,7 @@
                     Capuchino
                   </h1>
                   <button
+                    onclick="reestablecer('modal-7')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -582,19 +556,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-7">$70</span>
+                          <span class="precio" id="h-precio-7">$70</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-7', 'precio-7')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-7">1</span>
-                          <button onclick="mas('carro-contador-7', 'precio-7')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-7', 'h-precio-7')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-7">1</span>
+                          <button onclick="mas('h-contador-7', 'h-precio-7')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-7')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -626,6 +600,7 @@
                     Café latte
                   </h1>
                   <button
+                    onclick="reestablecer('modal-8')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -647,19 +622,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-8">$80</span>
+                          <span class="precio" id="h-precio-8">$80</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-8', 'precio-8')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-8">1</span>
-                          <button onclick="mas('carro-contador-8', 'precio-8')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-8', 'h-precio-8')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-8">1</span>
+                          <button onclick="mas('h-contador-8', 'h-precio-8')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-8')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -691,6 +666,7 @@
                     Jugo natural
                   </h1>
                   <button
+                    onclick="reestablecer('modal-9')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -712,19 +688,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-9">$90</span>
+                          <span class="precio" id="h-precio-9">$90</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-9', 'precio-9')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-9">1</span>
-                          <button onclick="mas('carro-contador-9', 'precio-9')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-9', 'h-precio-9')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-9">1</span>
+                          <button onclick="mas('h-contador-9', 'h-precio-9')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-9')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -756,6 +732,7 @@
                     Café amaretto
                   </h1>
                   <button
+                    onclick="reestablecer('modal-10')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -777,19 +754,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-10">$100</span>
+                          <span class="precio" id="h-precio-10">$100</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-10', 'precio-10')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-10">1</span>
-                          <button onclick="mas('carro-contador-10', 'precio-10')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-10', 'h-precio-10')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-10">1</span>
+                          <button onclick="mas('h-contador-10', 'h-precio-10')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-10')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -827,6 +804,7 @@
                     Cachitos de manjar
                   </h1>
                   <button
+                    onclick="reestablecer('modal-11')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -848,19 +826,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-11">$110</span>
+                          <span class="precio" id="h-precio-11">$110</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-11', 'precio-11')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-11">1</span>
-                          <button onclick="mas('carro-contador-11', 'precio-11')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-11', 'h-precio-11')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-11">1</span>
+                          <button onclick="mas('h-contador-11', 'h-precio-11')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-11')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -892,6 +870,7 @@
                     Chaparritas
                   </h1>
                   <button
+                    onclick="reestablecer('modal-12')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -913,19 +892,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-12">$120</span>
+                          <span class="precio" id="h-precio-12">$120</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-12', 'precio-12')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-12">1</span>
-                          <button onclick="mas('carro-contador-12', 'precio-12')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-12', 'h-precio-12')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-12">1</span>
+                          <button onclick="mas('h-contador-12', 'h-precio-12')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-12')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -957,6 +936,7 @@
                     Cocadas
                   </h1>
                   <button
+                    onclick="reestablecer('modal-13')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -978,19 +958,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-13">$130</span>
+                          <span class="precio" id="h-precio-13">$130</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-13', 'precio-13')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-13">1</span>
-                          <button onclick="mas('carro-contador-13', 'precio-13')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-13', 'h-precio-13')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-13">1</span>
+                          <button onclick="mas('h-contador-13', 'h-precio-13')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-13')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -1022,6 +1002,7 @@
                     Donas
                   </h1>
                   <button
+                    onclick="reestablecer('modal-14')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1043,19 +1024,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-14">$140</span>
+                          <span class="precio" id="h-precio-14">$140</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-14', 'precio-14')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-14">1</span>
-                          <button onclick="mas('carro-contador-14', 'precio-14')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-14', 'h-precio-14')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-14">1</span>
+                          <button onclick="mas('h-contador-14', 'h-precio-14')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-14')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -1087,6 +1068,7 @@
                     Rellenitos
                   </h1>
                   <button
+                    onclick="reestablecer('modal-15')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1108,19 +1090,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-15">$150</span>
+                          <span class="precio" id="h-precio-15">$150</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-15', 'precio-15')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-15">1</span>
-                          <button onclick="mas('carro-contador-15', 'precio-15')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-15', 'h-precio-15')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-15">1</span>
+                          <button onclick="mas('h-contador-15', 'h-precio-15')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-15')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -1152,6 +1134,7 @@
                     Roscas
                   </h1>
                   <button
+                    onclick="reestablecer('modal-16')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1173,19 +1156,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-16">$160</span>
+                          <span class="precio" id="h-precio-16">$160</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-16', 'precio-16')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-16">1</span>
-                          <button onclick="mas('carro-contador-16', 'precio-16')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-16', 'h-precio-16')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-16">1</span>
+                          <button onclick="mas('h-contador-16', 'h-precio-16')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-16')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -1217,6 +1200,7 @@
                     Sandwich
                   </h1>
                   <button
+                    onclick="reestablecer('modal-17')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1238,19 +1222,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-17">$170</span>
+                          <span class="precio" id="h-precio-17">$170</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-17', 'precio-17')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-17">1</span>
-                          <button onclick="mas('carro-contador-17', 'precio-17')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-17', 'h-precio-17')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-17">1</span>
+                          <button onclick="mas('h-contador-17', 'h-precio-17')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-17')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -1282,6 +1266,7 @@
                     Pie de limon
                   </h1>
                   <button
+                    onclick="reestablecer('modal-18')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1303,19 +1288,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-18">$180</span>
+                          <span class="precio" id="h-precio-18">$180</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-18', 'precio-18')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-18">1</span>
-                          <button onclick="mas('carro-contador-18', 'precio-18')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-18', 'h-precio-18')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-18">1</span>
+                          <button onclick="mas('h-contador-18', 'h-precio-18')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-18')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -1347,6 +1332,7 @@
                     Cheescake
                   </h1>
                   <button
+                    onclick="reestablecer('modal-19')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1368,19 +1354,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-19">$190</span>
+                          <span class="precio" id="h-precio-19">$190</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-19', 'precio-19')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-19">1</span>
-                          <button onclick="mas('carro-contador-19', 'precio-19')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-19', 'h-precio-19')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-19">1</span>
+                          <button onclick="mas('h-contador-19', 'h-precio-19')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-19')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>
@@ -1412,6 +1398,7 @@
                     kuchen de nuez
                   </h1>
                   <button
+                    onclick="reestablecer('modal-20')" 
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1433,19 +1420,19 @@
                       <div class="modal-desc-down">
                         <div class="modal-price-container">
                           <span class="precio">Precio: </span>
-                          <span class="precio" id="precio-20">$200</span>
+                          <span class="precio" id="h-precio-20">$200</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('carro-contador-20', 'precio-20')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="carro-contador-20">1</span>
-                          <button onclick="mas('carro-contador-20', 'precio-20')" class="modal-carro-mas">+</button>
+                          <button onclick="menos('h-contador-20', 'h-precio-20')" class="modal-carro-menos">-</button>
+                          <span class="modal-carro-contador" id="h-contador-20">1</span>
+                          <button onclick="mas('h-contador-20', 'h-precio-20')" class="modal-carro-mas">+</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="modal-button-add">
+                  <button onclick="agregar('add-20')" type="button" class="modal-button-add">
                     Agregar
                   </button>
                 </div>

@@ -61,7 +61,7 @@
 
             <!-- Inicio carrito mas icono para el login -->
             <div class="right-side">
-              <span class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+              <span onclick="desplegar()" class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 shopping_cart
               </span>
               <div class="dropdown drop-login">
@@ -94,53 +94,20 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="products">
-              <div class="product">
-                <div class="product-desc">
-                  <h2>Nombre Producto</h2>
-                  <img src="/images/bebidas/te-chai.png" alt="Cargando imagen...">
-                  <button class="product-remove">Eliminar</button>
-                </div>
-                <div class="product-desc-2">
-                  <div class="product-price">
-                    <span class="precio">Precio:</span>
-                    <span class="precio-2">$999</span>
-                  </div>
-                  <div class="product-add">
-                    <button class="product-menos">-</button>
-                    <span class="product-contador">1</span>
-                    <button class="product-mas">+</button>
-                  </div>
-                </div>
+            <div class="products" id="d-products"> </div>
+            <div class="carro-bottom">
+              <div class="product-total">
+                <span id="producto-total">Total a pagar: $</span>
+                <hr>
               </div>
-              <hr>
-              <div class="product">
-                <div class="product-desc">
-                  <h2>Nombre Producto</h2>
-                  <img src="/images/bebidas/te-bergamota.png" alt="Cargando imagen...">
-                  <button class="product-remove">Eliminar</button>
-                </div>
-                <div class="product-desc-2">
-                  <div class="product-price">
-                    <span class="precio">Precio:</span>
-                    <span class="precio-2">$999</span>
-                  </div>
-                  <div class="product-add">
-                    <button class="product-menos">-</button>
-                    <span class="product-contador">1</span>
-                    <button class="product-mas">+</button>
-                  </div>
-                </div>
+              <div class="product-buttons">
+                <a href="/vistas/carrito.html">
+                  <button class="product-carro">Ir al carro</button>
+                </a>
+                <a href="/vistas/pago.html">
+                  <button class="product-pago">Iniciar pago</button>
+                </a>
               </div>
-              <hr>
-            </div>
-            <div class="product-buttons">
-              <a href="/vistas/carrito.html">
-                <button class="product-carro">Ir al carro</button>
-              </a>
-              <a href="/vistas/pago.html">
-                <button class="product-pago">Iniciar pago</button>
-              </a>
             </div>
         </div>
       </div>
