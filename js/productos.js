@@ -262,6 +262,7 @@ function reducirTotal(idP) {
   document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
 }
 */
+
 /*
 function reducirTotal(idP) {
   let total = 0;
@@ -286,12 +287,36 @@ function reducirTotal(idP) {
     descuento += tmp.precio - proTotal;
     console.log("Descuento: "+ descuento)
     total += tmp.precio - descuento;
-    console.log("Total: "+ total2)
+    console.log("Total: "+ total)
   });
   document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
 }
 */
+function reducirTotal(idP) {
+  let total = 0;
+  let precio;
+  
+  productos.forEach(tmp => {
+    if (tmp.id === idP) {
+      precio = tmp.precio;
+    }
+  });
 
+  carrito.forEach(tmp => {
+    if (tmp.id === idP) {
+      if (tmp.cantidad > 1) {
+        tmp.cantidad -= 1;
+
+        if (tmp.precio > precio) {
+          tmp.precio -= precio;
+        }
+      }
+    }
+    total += tmp.precio;
+    console.log(tmp.precio, tmp.cantidad, total)
+    document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
+  });
+}
 
 
 
