@@ -1,7 +1,7 @@
 // Array de los productos
 let productos = [];
 
-// Se recuperam los datos de productos.json y se replican en el array
+// Se recuperan los datos de productos.json y se replican en el array
 fetch("/json/productos.json")
   .then((response) => response.json())
   .then((data) => {
@@ -12,89 +12,85 @@ fetch("/json/productos.json")
 
 // Funcion que quita 1 al contador y resta al precio
 function menos(idC, idP){
-  // Obtencion la Id para iterar
+  // Obtencion de la Id para obtner el precio base del producto
   let id = idC.substring(11); 
+  let total;
+  let precio;
   
   // Se recupera el contador
   let contador = document.querySelector("#" + idC);
   let cont = parseInt(contador.textContent);
 
-  // Se recupera el span
+  // Se recupera el precio
   let span = document.querySelector("#" + idP);
   
-  // Variables
-  let total;
-  let precio;
-
-  // Iteracion para recuperar el precio dependiendo la id
+  // Iteracion para recuperar el precio del producto dependiendo la id
   productos.forEach(tmp => {
     if (tmp.id === id) {
       precio = parseInt(tmp.precio);
-    }
+    };
   });
 
-  // Si el contador es menor a 10 se suma 1
+  // Si el contador es mayor a 1 se resta 1
   if (cont > 1){
     cont--;
 
-    // Calculo del total
+    // Calculo del precio total por el producto 
     total = cont * precio;
 
-    // Variables al HTML
+    // Se actualiza el contador y precio en el HTML
     contador.textContent = cont.toString();
     span.innerHTML = '$' + total;
-  }
+  };
 };
 
-// Funcion que suma 1 y suma al precio
+// Funcion que suma 1 al contador y suma al precio
 function mas(idC, idP){
-  // Obtencion la Id para iterar
+  // Obtencion de la Id para obtner el precio base del producto
   let id = idC.substring(11); 
+  let total;
+  let precio;
 
   // Se recupera el contador
   let contador = document.querySelector("#" + idC);
   let cont = parseInt(contador.textContent);
 
-  // Se recupera el span
+  // Se recupera el precio
   let span = document.querySelector("#" + idP);
-  
-  // Variables
-  let total;
-  let precio;
-
-  // Iteracion para recuperar el precio dependiendo la id
+   
+  // Iteracion para recuperar el precio del producto dependiendo la id
   productos.forEach(tmp => {
     if (tmp.id === id) {
       precio = parseInt(tmp.precio);
-    }
+    };
   });
 
-  // Si el contador es menor a 10 se suma 1
+  // Si el contador es menor a 100 se suma 1
   if (cont < 100){
     cont++;
 
-    // Calculo del total
+    // Calculo del precio total por el producto 
     total = cont * precio;
 
-    // Variables al HTML
+    // Se actualiza el contador y precio en el HTML
     contador.textContent = cont.toString();
     span.innerHTML = '$' + total;
-  }
+  };
 };
 
-// Funcion para reestablecer el precio del producto y en 1 el contador sobre el modal
+// Funcion para reestablecer el precio del producto y el contador sobre el modal al cerrarlo por la X
 function reestablecer(idM) {
   // Substring a la id del modal para recuperar el precio y contador asociados a ese modal
   let id = idM.substring(6);
 
-  // La iteracion busca en el json el precio asociado a la id y lo obtenido se setea
+  // La iteracion busca en el json el precio asociado a la id y lo obtenido se setea en el HTML
   productos.forEach((tmp) => {
     if (tmp.id === id) {
       document.querySelector("#h-precio-" + id).textContent = "$" + tmp.precio;
       document.querySelector("#h-contador-" + id).textContent = 1;
-    }
+    };
   });
-}
+};
 
 // Control del cierre del modal haciendo clic fuera de el
 document.addEventListener('DOMContentLoaded', () => {
@@ -109,21 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
       reestablecer(modal.id);
     })
   });
-})
+});
 
 // Funciones del carrito
 
 // Array del carrito
 let carrito = [];
 
-// Funcion para ver si existe el producto en el carrito
+// Funcion para ver si existe el producto en el carrito, devuelve true si lo encuentra
 function exist(id) {
   return carrito.some(tmp => tmp.id === id);
-}
+};
 
-// Funcion para agregar productos al carrito
+// Funcion para agregar productos desde el menu al carrito
 function agregar(idAdd) {
-  // Variables
   let id = idAdd.substring(4);
   let pre;
   let pre2;
@@ -131,7 +126,7 @@ function agregar(idAdd) {
   let nom;
   let img;
 
-  // Iteracion para obtener los datos faltantes del json
+  // Iteracion para obtener los datos faltantes del producto a traves del json
   productos.forEach((tmp) => {
     if (tmp.id === id) {
       nom = tmp.nombre;
@@ -139,32 +134,33 @@ function agregar(idAdd) {
     }
   });
 
-  // Datos que provienen del HTML
+  // Obtencion del precio y la cantidad del producto elegido
   pre = document.querySelector("#h-precio-" + id).textContent;
   pre2 = parseInt(pre.substring(1));
   con = parseInt(document.querySelector("#h-contador-" + id).textContent);
 
   // Condicion que valida la existencia del producto en el carrito
   if (!exist(id)) {
-    // Creacion de un objeto
+    // Si no lo encuentra se crea un producto (Objeto)
     let producto = {
       id: id,
       nombre: nom,
       imagen: img,
       precio: pre2,
-      cantidad: con,
+      cantidad: con
     };
-    // Se añade el objeto al array
+    // Se añade el producto al carrito
     carrito.push(producto);
   } else {
+    // Si existe el producto en el carrito se le suma el precio y la cantidad elegida
     carrito.forEach((tmp) => {
       if (tmp.id === id) {
         tmp.precio += pre2;
         tmp.cantidad += con;
-      }
+      };
     });
-  }
-}
+  };
+};
 
 // Funcion que despliega los productos agregados al carrito
 function desplegar() {
@@ -172,12 +168,12 @@ function desplegar() {
   let contenedor = document.getElementById("d-products");
   contenedor.innerHTML = "";
 
-  // Se recorre el array para desplegar en el html todo lo que este ahi
+  // Se recorre el carrrito para desplegar en el HTML todo lo que este ahi
   carrito.forEach(tmp => {
-    // Se usan template literals para incrustar los datos al HTML de una manera mas eficiente,
-    // tambien se evitan conflictos con las funciones del onclick.
-    // Las plantillas permiten insertar variables y expresiones dentro de las llaves ${} se usan
-    // `` para abrirlas y cerrarlas
+    // Se crea una variable para se usan template literals para incrustar 
+    // los datos al HTML de una manera mas eficiente,tambien se evitan conflictos con 
+    // las funciones del onclick. Las plantillas permiten insertar variables y expresiones 
+    // dentro de las llaves ${} se usan `` para abrirlas y cerrarlas
     let product = `<div class="product-container">
                     <div class="product-desc">
                       <h2>${tmp.nombre}</h2>
@@ -192,11 +188,12 @@ function desplegar() {
                       <div class="product-add">
                         <button onclick="menos('d-contador-${tmp.id}', 'd-precio-${tmp.id}'), reducirTotal('${tmp.id}')" class="product-menos">-</button>
                         <span class='product-contador' id='d-contador-${tmp.id}'>${tmp.cantidad}</span>
-                        <button onclick="mas('d-contador-${tmp.id}', 'd-precio-${tmp.id}')" class="product-mas">+</button>
+                        <button onclick="mas('d-contador-${tmp.id}', 'd-precio-${tmp.id}'), aumentarTotal('${tmp.id}')" class="product-mas">+</button>
                       </div>
                     </div>
                   </div>
                   <hr>`;
+
     // Se crea el contenedor hijo
     let cproduct = document.createElement("div");
     cproduct.setAttribute("class", "product");
@@ -205,103 +202,36 @@ function desplegar() {
     // Se agrega el contenedor hijo al padre
     contenedor.appendChild(cproduct);
 
-    // Desplegar el total inicial
-    totalCarrito()
+    // Obtencion del total inicial
+    totalCarrito();
   });
-}
+};
 
-// Funcion que elimina un producto del carrito
-function eliminar(idE) { 
-  // Se obtiene la id
-  let id;
-  
-  if (idE.length == 12) {
-    id = idE.substring(11, 12);
-  } else if (idE.length == 13) {
-    id = idE.substring(11, 13);
-  }
-  
-  // Se busca la posision del producto en el carrito - devuelve -1 si no se encuentra nada
-  let index = carrito.findIndex(pro => pro.id === id);
-
-  // Si se encuentra se borra
-  if (index !== -1){
-    carrito.splice(index, 1);
-    let producto = document.querySelector("#d-producto-" + id);
-    let contenedor = document.getElementById("d-products");
-    contenedor.removeChild(producto);
-  }
-}
-
-// Funcion que calcula el total de lo que hay en el carrito
+// Funcion que calcula el precio total de los productos que hay en el carrito
 function totalCarrito() {
   let total = 0;
 
+  // Se itera sobre el carrito y se obtiene el precio total de los productos en el carrito
   carrito.forEach(tmp => {
     total += tmp.precio;
   });
+  // El total se pasa al HTML
   document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
-}
-/*
-function reducirTotal(idP) {
-  let total = 0;
-  let precio;
-  let cantidad = parseInt(document.getElementById("d-contador-" + idP).textContent);
+};
 
-  productos.forEach(tmp => {
-    if (tmp.id === idP) {
-      precio = tmp.precio;
-      console.log("Precio del producto: "+ precio)
-    }
-  });
-
-  carrito.forEach(tmp => {
-    total += tmp.precio - precio;
-    console.log("Total: "+ total)
-  });
-  document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
-}
-*/
-
-/*
-function reducirTotal(idP) {
-  let total = 0;
-  let descuento = 0;
-  let proTotal;
-
-  productos.forEach(tmp => {
-    if (tmp.id === idP) {
-      let precio = tmp.precio;
-      let cantidad = parseInt(document.getElementById("d-contador-" + idP).textContent);
-      
-      if (cantidad > 1) {
-        proTotal = precio * cantidad;
-        console.log("Precio del producto: "+ precio)
-        console.log("Cantidad del producto: "+ cantidad)
-        console.log("Total del producto: "+ proTotal)
-      }
-    }
-  });
-
-  carrito.forEach(tmp => {
-    descuento += tmp.precio - proTotal;
-    console.log("Descuento: "+ descuento)
-    total += tmp.precio - descuento;
-    console.log("Total: "+ total)
-  });
-  document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
-}
-*/
+// Funcion que calcula el precio total cuando se descuentan productos desde el carrito
 function reducirTotal(idP) {
   let total = 0;
   let precio;
   
+  // Se itera sobre los productos para obtener el precio base del producto
   productos.forEach(tmp => {
     if (tmp.id === idP) {
-      precio = tmp.precio;
-    }
+      precio = parseInt(tmp.precio);
+    };
   });
 
+  // Se itera sobre el carrito y se reduce el precio y la cantidad del producto en el carrito
   carrito.forEach(tmp => {
     if (tmp.id === idP) {
       if (tmp.cantidad > 1) {
@@ -309,15 +239,67 @@ function reducirTotal(idP) {
 
         if (tmp.precio > precio) {
           tmp.precio -= precio;
-        }
-      }
-    }
+        };
+      };
+    };
+
+    // Se calcula el precio total de los productos en el carrito y se pasa al HTML
     total += tmp.precio;
-    console.log(tmp.precio, tmp.cantidad, total)
     document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
   });
-}
+};
 
+// Funcion que calcula el precio total cuando se aumentan productos desde el carrito
+function aumentarTotal(idP) {
+  let total = 0;
+  let precio;
+  
+  // Se itera sobre los productos para obtener el precio base del producto
+  productos.forEach(tmp => {
+    if (tmp.id === idP) {
+      precio = parseInt(tmp.precio);
+    };
+  });
+
+  // Se itera sobre el carrito y se aumenta el precio y la cantidad del producto en el carrito
+  carrito.forEach(tmp => {
+    if (tmp.id === idP) {
+      if (tmp.cantidad < 100) {
+        tmp.cantidad += 1;
+
+        if (tmp.precio < precio * 100) {
+          tmp.precio += precio;
+        };
+      };
+    };
+
+    // Se calcula el precio total de los productos en el carrito y se pasa al HTML
+    total += tmp.precio;
+    document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
+  });
+};
+
+// Funcion que elimina un producto del carrito
+function eliminar(idE) { 
+  // Se obtiene la id
+  let id = idE.substring(11);
+
+  // Se busca la posicion del producto en el carrito, devuelve -1 si no se encuentra
+  let index = carrito.findIndex(pro => pro.id === id);
+
+  // Si se encuentra se borra del carrito
+  if (index !== -1){
+    carrito.splice(index, 1);
+
+    // Se asigna una variable para el producto asociado a la id para poder borrarlo del HTML
+    let producto = document.querySelector("#d-producto-" + id);
+    let contenedor = document.getElementById("d-products");
+    contenedor.removeChild(producto);
+  };
+  
+  // Se actualiza el total
+  totalCarrito();
+}
 
 
 
