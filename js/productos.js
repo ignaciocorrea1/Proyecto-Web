@@ -119,12 +119,28 @@ function exist(id) {
 
 // Funcion para agregar productos desde el menu al carrito
 function agregar(idAdd) {
-  let id = idAdd.substring(4);
+  let id;
   let pre;
   let pre2;
   let con;
   let nom;
   let img;
+
+  // Saber si el producto que se quiere agregar viene desde el index o el menu
+  if (String(idAdd).includes("i-")) {
+    id = idAdd.substring(6);
+    // Obtencion del precio y la cantidad del producto elegido
+    pre = document.querySelector("#i-precio-" + id).textContent;
+    pre2 = parseInt(pre.substring(1));
+    con = 1;
+  }
+  else {
+    id = idAdd.substring(4);
+    // Obtencion del precio y la cantidad del producto elegido
+    pre = document.querySelector("#h-precio-" + id).textContent;
+    pre2 = parseInt(pre.substring(1));
+    con = parseInt(document.querySelector("#h-contador-" + id).textContent);
+  }
 
   // Iteracion para obtener los datos faltantes del producto a traves del json
   productos.forEach((tmp) => {
@@ -133,11 +149,9 @@ function agregar(idAdd) {
       img = tmp.imagen;
     }
   });
-
-  // Obtencion del precio y la cantidad del producto elegido
-  pre = document.querySelector("#h-precio-" + id).textContent;
-  pre2 = parseInt(pre.substring(1));
-  con = parseInt(document.querySelector("#h-contador-" + id).textContent);
+  
+  // Obtencion del contador de productos del carrito
+  shop_cont = parseInt(document.getElementById("shopping-contador").textContent);
 
   // Condicion que valida la existencia del producto en el carrito
   if (!exist(id)) {
@@ -151,6 +165,8 @@ function agregar(idAdd) {
     };
     // Se añade el producto al carrito
     carrito.push(producto);
+    // Se modifica el contador de productos del carrito
+    document.getElementById("shopping-contador").textContent = shop_cont + 1;
   } else {
     // Si existe el producto en el carrito se le suma el precio y la cantidad elegida
     carrito.forEach((tmp) => {
@@ -295,6 +311,11 @@ function eliminar(idE) {
     let producto = document.querySelector("#d-producto-" + id);
     let contenedor = document.getElementById("d-products");
     contenedor.removeChild(producto);
+
+    // Obtencion del contador de productos del carrito
+    shop_cont = parseInt(document.getElementById("shopping-contador").textContent);
+    // Se modifica el contador de productos del carrito
+    document.getElementById("shopping-contador").textContent = shop_cont - 1;
   };
   
   // Se actualiza el total

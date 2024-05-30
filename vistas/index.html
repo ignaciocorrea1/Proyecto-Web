@@ -61,9 +61,18 @@
 
             <!-- Inicio carrito mas icono para el login -->
             <div class="right-side">
-              <span onclick="desplegar()" class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                shopping_cart
-              </span>
+              <div class="right-side-carro">
+                <span
+                onclick="desplegar()"
+                class="material-symbols-outlined carro"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                >
+                  shopping_cart
+                </span>
+                <span id="shopping-contador">0</span>
+              </div>
               <div class="dropdown drop-login">
                 <button class="dropdown-toggle drop-button" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                   <span class="material-symbols-outlined acc">account_circle</span>
@@ -172,84 +181,84 @@
           <!-- Producto 1 -->
           <div class="card">
             <img
-              src="/images/card1.jpg"
+              src="/images/bebidas/amaretto.png"
               class="card-img-top"
               alt="Cargando imagen..."
             />
             <div class="card-body">
               <div class="text-section">
-                <h3 class="card-title">Producto</h3>
+                <h3 class="card-title">Café amaretto</h3>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Mollitia eligendi velit tempora excepturi.
                 </p>
               </div>
               <div class="price-section">
-                <span>Precio</span>
-                <a href="#" class="btn">Agregar</a>
+                <span id="i-precio-10">$3500</span>
+                <button onclick="agregar('i-add-10')" type="button"  class="btn" id="i-add-10">Agregar</button>
               </div>
             </div>
           </div>
           <!-- Producto 2 -->
           <div class="card">
             <img
-              src="/images/card1.jpg"
+              src="/images/comida/cheescake.png"
               class="card-img-top"
               alt="Cargando imagen..."
             />
             <div class="card-body">
               <div class="text-section">
-                <h3 class="card-title">Producto</h3>
+                <h3 class="card-title">Cheescake</h3>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Mollitia eligendi velit tempora excepturi.
                 </p>
               </div>
               <div class="price-section">
-                <span>Precio</span>
-                <a href="#" class="btn">Agregar</a>
+                <span id="i-precio-19">$3200</span>
+                <button onclick="agregar('i-add-19')" type="button" class="btn" id="i-add-19">Agregar</button>
               </div>
             </div>
           </div>
           <!-- Producto 3 -->
           <div class="card">
             <img
-              src="/images/card1.jpg"
+              src="/images/bebidas/frappe.png"
               class="card-img-top"
               alt="Cargando imagen..."
             />
             <div class="card-body">
               <div class="text-section">
-                <h3 class="card-title">Producto</h3>
+                <h3 class="card-title">Frappé</h3>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Mollitia eligendi velit tempora excepturi.
                 </p>
               </div>
               <div class="price-section">
-                <span>Precio</span>
-                <a href="#" class="btn">Agregar</a>
+                <span id="i-precio-4">$4200</span>
+                <button onclick="agregar('i-add-4')" type="button"  class="btn" id="i-add-4">Agregar</button>
               </div>
             </div>
           </div>
           <!-- Producto 4 -->
           <div class="card">
             <img
-              src="/images/card1.jpg"
+              src="/images/comida/chaparritas.png"
               class="card-img-top"
               alt="Cargando imagen..."
             />
             <div class="card-body">
               <div class="text-section">
-                <h3 class="card-title">Producto</h3>
+                <h3 class="card-title">Chaparritas</h3>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Mollitia eligendi velit tempora excepturi.
                 </p>
               </div>
               <div class="price-section">
-                <span>Precio</span>
-                <a href="#" class="btn">Agregar</a>
+                <span id="i-precio-12">$2190</span>
+                <button onclick="agregar('i-add-12')" type="button"  class="btn" id="i-add-12">Agregar</button>
               </div>
             </div>
           </div>

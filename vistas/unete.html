@@ -63,9 +63,18 @@
 
             <!-- Inicio carrito mas icono para el login -->
             <div class="right-side">
-              <span onclick="desplegar()" class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                shopping_cart
-              </span>
+              <div class="right-side-carro">
+                <span
+                onclick="desplegar()"
+                class="material-symbols-outlined carro"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                >
+                  shopping_cart
+                </span>
+                <span id="shopping-contador">0</span>
+              </div>
               <div class="dropdown drop-login">
                 <button class="dropdown-toggle drop-button" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                   <span class="material-symbols-outlined acc">account_circle</span>

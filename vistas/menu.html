@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
     <!-- Link style y responsive style-->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/responsive.css" />
     <!-- Link iconos -->
     <link
       rel="stylesheet"
@@ -54,22 +54,44 @@
                 <a class="nav-link" href="/vistas/unete.html">ÚNETE</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/vistas/seguimiento.html">SEGUIMIENTO</a>
+                <a class="nav-link" href="/vistas/seguimiento.html"
+                  >SEGUIMIENTO</a
+                >
               </li>
             </ul>
             <!-- Fin Links de acceso -->
 
             <!-- Inicio carrito mas icono para el login -->
             <div class="right-side">
-              <span onclick="desplegar()" class="material-symbols-outlined carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                shopping_cart
-              </span>
+              <div class="right-side-carro">
+                <span
+                onclick="desplegar()"
+                class="material-symbols-outlined carro"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                >
+                  shopping_cart
+                </span>
+                <span id="shopping-contador">0</span>
+              </div>
               <div class="dropdown drop-login">
-                <button class="dropdown-toggle drop-button" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="material-symbols-outlined acc">account_circle</span>
+                <button
+                  class="dropdown-toggle drop-button"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span class="material-symbols-outlined acc"
+                    >account_circle</span
+                  >
                 </button>
                 <div class="drop-menu">
-                  <ul class="dropdown-menu drop-options" aria-labelledby="dropdownMenu2">
+                  <ul
+                    class="dropdown-menu drop-options"
+                    aria-labelledby="dropdownMenu2"
+                  >
                     <li>
                       <a href="/vistas/ingreso.html">Iniciar sesión</a>
                     </li>
@@ -88,27 +110,39 @@
     </header>
     <main class="container-fluid">
       <!-- Inicio offcanva -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carro de compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">
+            Carro de compras
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="offcanvas-body">
-            <div class="products" id="d-products"> </div>
-            <div class="carro-bottom">
-              <div class="product-total">
-                <span id="producto-total">Total a pagar: $</span>
-                <hr>
-              </div>
-              <div class="product-buttons">
-                <a href="/vistas/carrito.html">
-                  <button class="product-carro">Ir al carro</button>
-                </a>
-                <a href="/vistas/pago.html">
-                  <button class="product-pago">Iniciar pago</button>
-                </a>
-              </div>
+          <div class="products" id="d-products"></div>
+          <div class="carro-bottom">
+            <div class="product-total">
+              <span id="producto-total">Total a pagar: $</span>
+              <hr />
             </div>
+            <div class="product-buttons">
+              <a href="/vistas/carrito.html">
+                <button class="product-carro">Ir al carro</button>
+              </a>
+              <a href="/vistas/pago.html">
+                <button class="product-pago">Iniciar pago</button>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Fin offcanva -->
@@ -134,11 +168,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Té chai
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Té chai</h1>
                   <button
-                    onclick="reestablecer('modal-1')" 
+                    onclick="reestablecer('modal-1')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -147,7 +179,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/te-chai.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/te-chai.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -163,16 +198,32 @@
                           <span class="precio" id="h-precio-1">$2900</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-1', 'h-precio-1')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-1">1</span>
-                          <button onclick="mas('h-contador-1', 'h-precio-1')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-1', 'h-precio-1')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-1"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-1', 'h-precio-1')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-1')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-1')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -185,7 +236,10 @@
           <!-- Inicio - Producto - 2 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-2">
             <figure class="product">
-              <img src="/images/bebidas/te-bergamota.png" alt="Cargando imagen..." />
+              <img
+                src="/images/bebidas/te-bergamota.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Té de bergamota</figcaption>
             </figure>
           </a>
@@ -204,7 +258,7 @@
                     Té de bergamota
                   </h1>
                   <button
-                    onclick="reestablecer('modal-2')" 
+                    onclick="reestablecer('modal-2')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -213,7 +267,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/te-bergamota.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/te-bergamota.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -229,16 +286,32 @@
                           <span class="precio" id="h-precio-2">$2790</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-2', 'h-precio-2')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-2">1</span>
-                          <button onclick="mas('h-contador-2', 'h-precio-2')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-2', 'h-precio-2')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-2"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-2', 'h-precio-2')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-2')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-2')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -251,7 +324,10 @@
           <!-- Inicio - Producto - 3 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-3">
             <figure class="product">
-              <img src="/images/bebidas/irlandes.png" alt="Cargando imagen..." />
+              <img
+                src="/images/bebidas/irlandes.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Café irlandes</figcaption>
             </figure>
           </a>
@@ -270,7 +346,7 @@
                     Café irlandes
                   </h1>
                   <button
-                    onclick="reestablecer('modal-3')" 
+                    onclick="reestablecer('modal-3')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -279,7 +355,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/irlandes.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/irlandes.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -295,16 +374,32 @@
                           <span class="precio" id="h-precio-3">$4690</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-3', 'h-precio-3')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-3">1</span>
-                          <button onclick="mas('h-contador-3', 'h-precio-3')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-3', 'h-precio-3')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-3"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-3', 'h-precio-3')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-3')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-3')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -332,11 +427,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Frappé
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Frappé</h1>
                   <button
-                    onclick="reestablecer('modal-4')" 
+                    onclick="reestablecer('modal-4')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -345,7 +438,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/frappe.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/frappe.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -361,16 +457,32 @@
                           <span class="precio" id="h-precio-4">$4200</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-4', 'h-precio-4')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-4">1</span>
-                          <button onclick="mas('h-contador-4', 'h-precio-4')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-4', 'h-precio-4')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-4"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-4', 'h-precio-4')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-4')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-4')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -383,7 +495,10 @@
           <!-- Inicio - Producto - 5 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-5">
             <figure class="product">
-              <img src="/images/bebidas/expresso.png" alt="Cargando imagen..." />
+              <img
+                src="/images/bebidas/expresso.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Expresso</figcaption>
             </figure>
           </a>
@@ -398,11 +513,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Expresso
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Expresso</h1>
                   <button
-                    onclick="reestablecer('modal-5')" 
+                    onclick="reestablecer('modal-5')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -411,7 +524,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/expresso.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/expresso.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -427,16 +543,32 @@
                           <span class="precio" id="h-precio-5">$3100</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-5', 'h-precio-5')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-5">1</span>
-                          <button onclick="mas('h-contador-5', 'h-precio-5')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-5', 'h-precio-5')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-5"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-5', 'h-precio-5')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-5')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-5')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -449,7 +581,10 @@
           <!-- Inicio - Producto - 6 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-6">
             <figure class="product">
-              <img src="/images/bebidas/cafe+galletas.png" alt="Cargando imagen..." />
+              <img
+                src="/images/bebidas/cafe+galletas.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Café + galletas</figcaption>
             </figure>
           </a>
@@ -468,7 +603,7 @@
                     Café + galletas
                   </h1>
                   <button
-                    onclick="reestablecer('modal-6')" 
+                    onclick="reestablecer('modal-6')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -477,7 +612,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/cafe+galletas.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/cafe+galletas.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -493,16 +631,32 @@
                           <span class="precio" id="h-precio-6">$4800</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-6', 'h-precio-6')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-6">1</span>
-                          <button onclick="mas('h-contador-6', 'h-precio-6')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-6', 'h-precio-6')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-6"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-6', 'h-precio-6')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-6')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-6')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -515,7 +669,10 @@
           <!-- Inicio - Producto - 7 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-7">
             <figure class="product">
-              <img src="/images/bebidas/capuchino.png" alt="Cargando imagen..." />
+              <img
+                src="/images/bebidas/capuchino.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Capuchino</figcaption>
             </figure>
           </a>
@@ -530,11 +687,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Capuchino
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Capuchino</h1>
                   <button
-                    onclick="reestablecer('modal-7')" 
+                    onclick="reestablecer('modal-7')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -543,7 +698,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/capuchino.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/capuchino.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -559,16 +717,32 @@
                           <span class="precio" id="h-precio-7">$3000</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-7', 'h-precio-7')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-7">1</span>
-                          <button onclick="mas('h-contador-7', 'h-precio-7')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-7', 'h-precio-7')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-7"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-7', 'h-precio-7')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-7')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-7')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -596,11 +770,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Café latte
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Café latte</h1>
                   <button
-                    onclick="reestablecer('modal-8')" 
+                    onclick="reestablecer('modal-8')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -609,7 +781,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/latte.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/latte.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -625,16 +800,32 @@
                           <span class="precio" id="h-precio-8">$2800</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-8', 'h-precio-8')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-8">1</span>
-                          <button onclick="mas('h-contador-8', 'h-precio-8')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-8', 'h-precio-8')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-8"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-8', 'h-precio-8')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-8')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-8')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -666,7 +857,7 @@
                     Jugo natural
                   </h1>
                   <button
-                    onclick="reestablecer('modal-9')" 
+                    onclick="reestablecer('modal-9')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -675,7 +866,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/jugos.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/jugos.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -691,16 +885,32 @@
                           <span class="precio" id="h-precio-9">$3200</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-9', 'h-precio-9')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-9">1</span>
-                          <button onclick="mas('h-contador-9', 'h-precio-9')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-9', 'h-precio-9')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-9"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-9', 'h-precio-9')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-9')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-9')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -713,7 +923,10 @@
           <!-- Inicio - Producto - 10 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-10">
             <figure class="product">
-              <img src="/images/bebidas/amaretto.png" alt="Cargando imagen..." />
+              <img
+                src="/images/bebidas/amaretto.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Café amaretto</figcaption>
             </figure>
           </a>
@@ -732,7 +945,7 @@
                     Café amaretto
                   </h1>
                   <button
-                    onclick="reestablecer('modal-10')" 
+                    onclick="reestablecer('modal-10')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -741,7 +954,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/bebidas/amaretto.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/bebidas/amaretto.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -757,16 +973,32 @@
                           <span class="precio" id="h-precio-10">$3500</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-10', 'h-precio-10')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-10">1</span>
-                          <button onclick="mas('h-contador-10', 'h-precio-10')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-10', 'h-precio-10')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-10"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-10', 'h-precio-10')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-10')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-10')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -804,7 +1036,7 @@
                     Cachitos de manjar
                   </h1>
                   <button
-                    onclick="reestablecer('modal-11')" 
+                    onclick="reestablecer('modal-11')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -813,7 +1045,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/cachitos.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/cachitos.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -829,16 +1064,32 @@
                           <span class="precio" id="h-precio-11">$1790</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-11', 'h-precio-11')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-11">1</span>
-                          <button onclick="mas('h-contador-11', 'h-precio-11')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-11', 'h-precio-11')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-11"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-11', 'h-precio-11')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-11')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-11')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -851,7 +1102,10 @@
           <!-- Inicio - Producto - 12 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-12">
             <figure class="product">
-              <img src="/images/comida/chaparritas.png" alt="Cargando imagen..." />
+              <img
+                src="/images/comida/chaparritas.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Chaparritas</figcaption>
             </figure>
           </a>
@@ -870,7 +1124,7 @@
                     Chaparritas
                   </h1>
                   <button
-                    onclick="reestablecer('modal-12')" 
+                    onclick="reestablecer('modal-12')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -879,7 +1133,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/chaparritas.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/chaparritas.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -895,16 +1152,32 @@
                           <span class="precio" id="h-precio-12">$2190</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-12', 'h-precio-12')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-12">1</span>
-                          <button onclick="mas('h-contador-12', 'h-precio-12')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-12', 'h-precio-12')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-12"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-12', 'h-precio-12')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-12')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-12')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -932,11 +1205,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Cocadas
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Cocadas</h1>
                   <button
-                    onclick="reestablecer('modal-13')" 
+                    onclick="reestablecer('modal-13')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -945,7 +1216,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/cocadas.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/cocadas.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -961,16 +1235,32 @@
                           <span class="precio" id="h-precio-13">$1000</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-13', 'h-precio-13')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-13">1</span>
-                          <button onclick="mas('h-contador-13', 'h-precio-13')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-13', 'h-precio-13')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-13"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-13', 'h-precio-13')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-13')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-13')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -983,7 +1273,10 @@
           <!-- Inicio - Producto - 14 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-14">
             <figure class="product">
-              <img src="/images/comida/croissant.png" alt="Cargando imagen..." />
+              <img
+                src="/images/comida/croissant.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Croissant</figcaption>
             </figure>
           </a>
@@ -998,11 +1291,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Croissant
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Croissant</h1>
                   <button
-                    onclick="reestablecer('modal-14')" 
+                    onclick="reestablecer('modal-14')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1011,7 +1302,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/croissant.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/croissant.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -1027,16 +1321,32 @@
                           <span class="precio" id="h-precio-14">$1800</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-14', 'h-precio-14')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-14">1</span>
-                          <button onclick="mas('h-contador-14', 'h-precio-14')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-14', 'h-precio-14')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-14"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-14', 'h-precio-14')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-14')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-14')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -1049,7 +1359,10 @@
           <!-- Inicio - Producto - 15 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-15">
             <figure class="product">
-              <img src="/images/comida/chilenitos.png" alt="Cargando imagen..." />
+              <img
+                src="/images/comida/chilenitos.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Chilenitos</figcaption>
             </figure>
           </a>
@@ -1064,11 +1377,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Chilenitos
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Chilenitos</h1>
                   <button
-                    onclick="reestablecer('modal-15')" 
+                    onclick="reestablecer('modal-15')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1077,7 +1388,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/chilenitos.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/chilenitos.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -1093,16 +1407,32 @@
                           <span class="precio" id="h-precio-15">$1500</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-15', 'h-precio-15')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-15">1</span>
-                          <button onclick="mas('h-contador-15', 'h-precio-15')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-15', 'h-precio-15')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-15"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-15', 'h-precio-15')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-15')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-15')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -1130,11 +1460,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Donas
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Donas</h1>
                   <button
-                    onclick="reestablecer('modal-16')" 
+                    onclick="reestablecer('modal-16')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1143,7 +1471,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/donas.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/donas.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -1159,16 +1490,32 @@
                           <span class="precio" id="h-precio-16">$2090</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-16', 'h-precio-16')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-16">1</span>
-                          <button onclick="mas('h-contador-16', 'h-precio-16')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-16', 'h-precio-16')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-16"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-16', 'h-precio-16')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-16')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-16')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -1196,11 +1543,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Sandwich
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Sandwich</h1>
                   <button
-                    onclick="reestablecer('modal-17')" 
+                    onclick="reestablecer('modal-17')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1209,7 +1554,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/sandwich.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/sandwich.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -1225,16 +1573,32 @@
                           <span class="precio" id="h-precio-17">$1500</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-17', 'h-precio-17')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-17">1</span>
-                          <button onclick="mas('h-contador-17', 'h-precio-17')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-17', 'h-precio-17')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-17"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-17', 'h-precio-17')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-17')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-17')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -1247,7 +1611,10 @@
           <!-- Inicio - Producto - 18 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-18">
             <figure class="product">
-              <img src="/images/comida/piedelimon.png" alt="Cargando imagen..." />
+              <img
+                src="/images/comida/piedelimon.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Pie de limon</figcaption>
             </figure>
           </a>
@@ -1266,7 +1633,7 @@
                     Pie de limon
                   </h1>
                   <button
-                    onclick="reestablecer('modal-18')" 
+                    onclick="reestablecer('modal-18')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1275,7 +1642,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/piedelimon.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/piedelimon.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -1291,16 +1661,32 @@
                           <span class="precio" id="h-precio-18">$3200</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-18', 'h-precio-18')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-18">1</span>
-                          <button onclick="mas('h-contador-18', 'h-precio-18')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-18', 'h-precio-18')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-18"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-18', 'h-precio-18')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-18')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-18')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -1313,7 +1699,10 @@
           <!-- Inicio - Producto - 19 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-19">
             <figure class="product">
-              <img src="/images/comida/cheescake.png" alt="Cargando imagen..." />
+              <img
+                src="/images/comida/cheescake.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Cheescake</figcaption>
             </figure>
           </a>
@@ -1328,11 +1717,9 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Cheescake
-                  </h1>
+                  <h1 class="modal-title" id="exampleModalLabel">Cheescake</h1>
                   <button
-                    onclick="reestablecer('modal-19')" 
+                    onclick="reestablecer('modal-19')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1341,7 +1728,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/cheescake.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/cheescake.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -1357,16 +1747,32 @@
                           <span class="precio" id="h-precio-19">$3200</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-19', 'h-precio-19')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-19">1</span>
-                          <button onclick="mas('h-contador-19', 'h-precio-19')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-19', 'h-precio-19')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-19"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-19', 'h-precio-19')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-19')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-19')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -1379,7 +1785,10 @@
           <!-- Inicio - Producto - 20 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-20">
             <figure class="product">
-              <img src="/images/comida/kuchen-nuez.png" alt="Cargando imagen..." />
+              <img
+                src="/images/comida/kuchen-nuez.png"
+                alt="Cargando imagen..."
+              />
               <figcaption>Kuchen de nuez</figcaption>
             </figure>
           </a>
@@ -1398,7 +1807,7 @@
                     Kuchen de nuez
                   </h1>
                   <button
-                    onclick="reestablecer('modal-20')" 
+                    onclick="reestablecer('modal-20')"
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
@@ -1407,7 +1816,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="modal-body-container">
-                    <img src="/images/comida/kuchen-nuez.png" alt="Cargando imagen..." />
+                    <img
+                      src="/images/comida/kuchen-nuez.png"
+                      alt="Cargando imagen..."
+                    />
                     <div class="modal-desc">
                       <h2>Descripción del producto</h2>
                       <p>
@@ -1423,16 +1835,32 @@
                           <span class="precio" id="h-precio-20">$2990</span>
                         </div>
                         <div class="modal-buttons">
-                          <button onclick="menos('h-contador-20', 'h-precio-20')" class="modal-carro-menos">-</button>
-                          <span class="modal-carro-contador" id="h-contador-20">1</span>
-                          <button onclick="mas('h-contador-20', 'h-precio-20')" class="modal-carro-mas">+</button>
+                          <button
+                            onclick="menos('h-contador-20', 'h-precio-20')"
+                            class="modal-carro-menos"
+                          >
+                            -
+                          </button>
+                          <span class="modal-carro-contador" id="h-contador-20"
+                            >1</span
+                          >
+                          <button
+                            onclick="mas('h-contador-20', 'h-precio-20')"
+                            class="modal-carro-mas"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button onclick="agregar('add-20')" type="button" class="modal-button-add">
+                  <button
+                    onclick="agregar('add-20')"
+                    type="button"
+                    class="modal-button-add"
+                  >
                     Agregar
                   </button>
                 </div>
@@ -1441,7 +1869,6 @@
           </div>
           <!-- Fin modal 20 -->
           <!-- Fin - Producto - 20 -->
-          
         </div>
       </section>
     </main>
@@ -1462,9 +1889,15 @@
         <div class="group-3">
           <h4>Redes sociales</h4>
           <div class="social-links">
-            <a href="#" class=""><img src="/images/rrss/instagram.svg" alt=""></a>
-            <a href="#" class=""><img src="/images/rrss/square-facebook.svg" alt=""></a>
-            <a href="#" class=""><img src="/images/rrss/x-twitter.svg" alt=""></a>
+            <a href="#" class=""
+              ><img src="/images/rrss/instagram.svg" alt=""
+            /></a>
+            <a href="#" class=""
+              ><img src="/images/rrss/square-facebook.svg" alt=""
+            /></a>
+            <a href="#" class=""
+              ><img src="/images/rrss/x-twitter.svg" alt=""
+            /></a>
           </div>
         </div>
       </div>

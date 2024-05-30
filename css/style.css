@@ -70,12 +70,36 @@ body{
     color: #BFA980;
 }
 
-.navbar .right-side .carro {
+.navbar .right-side .right-side-carro {
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+
+.navbar .right-side .right-side-carro .carro {
     font-size: 1.815em;
     margin-top: 0.625em;
     margin-bottom: 0.625em;
     margin-right: 0.188em;
     color: #BFA980;
+    position: relative;
+    z-index: 0;
+}
+
+.navbar .right-side .right-side-carro #shopping-contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.6em;
+    height: 1.6em;
+    background-color: #BFA980;
+    border-radius: 50%;
+    color: #436A6F;
+    font-size: 0.6em;
+    font-weight: bold;
+    position: absolute;
+    top: 2vh; 
+    z-index: 1;
 }
 
 /* Carro desplegado */
