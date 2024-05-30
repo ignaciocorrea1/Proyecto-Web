@@ -1,0 +1,82 @@
+<header class="container-fluid">
+    
+    {% load static %}
+    
+    <!-- Inicio navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+        <a class="navbar-icon" href="/vistas/index.html">
+            <img
+            src="{% static '/images/Logo.png' %}"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt="Cargando imagen..."
+            />
+            Coffe Kong
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Inicio Links de acceso -->
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">INICIO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'menu' %}">MENÚ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'unete' %}">ÚNETE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'seguimiento' %}">SEGUIMIENTO</a>
+            </li>
+            </ul>
+            <!-- Fin Links de acceso -->
+
+            <!-- Inicio carrito mas icono para el login -->
+            <div class="right-side">
+            <div class="right-side-carro">
+                <span
+                onclick="desplegar()"
+                class="material-symbols-outlined carro"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                >
+                shopping_cart
+                </span>
+                <span id="shopping-contador">0</span>
+            </div>
+            <div class="dropdown drop-login">
+                <button class="dropdown-toggle drop-button" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="material-symbols-outlined acc">account_circle</span>
+                </button>
+                <div class="drop-menu">
+                <ul class="dropdown-menu drop-options" aria-labelledby="dropdownMenu2">
+                    <li>
+                    <a href="{% url 'ingreso' %}">Iniciar sesión</a>
+                    </li>
+                    <li>
+                    <a href="{% url 'historial' %}">Historial</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+            <!-- Fin carrito mas icono para el login -->
+        </div>
+        </div>
+    </nav>
+    <!-- Fin navbar -->
+</header>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {% load static %}
+
+    <!-- Link bootstrap -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap/bootstrap.min.css' %}" />
+    <!-- Link style y responsive style-->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+    <!-- Link iconos -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Coffe Kong</title>
+  </head>
+  <body>
+
+    {% include "base/header.html" %}
+    
+    <main class="container-fluid">
+      <!-- Inicio offcanva -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carro de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="products" id="d-products"> </div>
+            <div class="carro-bottom">
+              <div class="product-total">
+                <span id="producto-total">Total a pagar: $</span>
+                <hr>
+              </div>
+              <div class="product-buttons">
+                <a href="{% url 'carrito' %}">
+                  <button class="product-carro">Ir al carro</button>
+                </a>
+                <a href="{% url 'pago' %}">
+                  <button class="product-pago">Iniciar pago</button>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- Fin offcanva -->
+      <h1>Carro de compras</h1>
+      <!-- Producto agregado Nro 1 -->
+      <section class="carro-1">
+        <div class="carro-container">
+          <div class="carro-inf">
+            <img src="/images/bebidas/te-chai.png" alt="Cargando imagen..."/>
+            <div class="carro-desc">
+              <h2>Nombre producto</h2>
+              <div class="carro-buttons">
+                <button onclick="menos('carro-contador-1', 'precio-1')" class="carro-menos" id="carro-menos" >-</button>
+                <span class="carro-contador" id="carro-contador-1">1</span>
+                <button onclick="mas('carro-contador-1', 'precio-1')" class="carro-mas" id="carro-mas" >+</button>
+              </div>
+            </div>
+          </div>
+          <div class="carro-total">
+            <h2>Total</h2>
+            <span id="precio-1">$10</span>
+          </div>
+          <button class="carro-eliminar">Eliminar</button>
+        </div>
+      </section>
+      <hr />
+      <!-- Producto agregado Nro 2 -->
+      <section class="carro-2">
+        <div class="carro-container">
+          <div class="carro-inf">
+            <img src="/images/bebidas/te-bergamota.png" alt="Cargando imagen..."/>
+            <div class="carro-desc">
+              <h2>Nombre producto</h2>
+              <div class="carro-buttons">
+                <button onclick="menos('carro-contador-2', 'precio-2')" class="carro-menos" id="carro-menos" >-</button>
+                <span class="carro-contador" id="carro-contador-2">1</span>
+                <button onclick="mas('carro-contador-2', 'precio-2')" class="carro-mas" id="carro-mas" >+</button>
+              </div>
+            </div>
+          </div>
+          <div class="carro-total">
+            <h2>Total</h2>
+            <span id="precio-2">$20</span>
+          </div>
+          <button class="carro-eliminar">Eliminar</button>
+        </div>
+      </section>
+      <hr />
+      <!-- Total a pagar -->
+      <section class="carro-pay">
+        <div class="carro-pay-container">
+          <span class="carro-pagar">Total a pagar</span>
+          <span class="carro-pagar" id="total-pago">$1.998</span>
+        </div>
+      </section>
+      <hr />
+      <!-- Pagar, seguir comprando -->
+      <section class="carro-end">
+        <div class="carro-end-container">
+          <a href="{% url 'menu' %}">
+            <button class="option-1">Seguir Comprando</button>
+          </a>
+          <a href="{% url 'pago' %}">
+            <button class="option-2">Iniciar Pago</button>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    {% include "base/footer.html" %}
+
+    <!-- jquery -->
+    <script src="{% static '/js/jquery-3.7.1.min.js' %}"></script>
+    <!-- Js propio -->
+    <script src="{% static '/js/productos.js' %}"></script>
+    <script src="{% static '/js/formularios.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

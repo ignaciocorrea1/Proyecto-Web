@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {% load static %}
+
+    <!-- Link bootstrap -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap/bootstrap.min.css' %}" />
+    <!-- Link style y responsive style-->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+    <!-- Link iconos -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Coffe Kong</title>
+  </head>
+  <body>
+
+    {% include "base/header.html" %}
+
+    <main class="container-fluid">
+      <!-- Inicio offcanva -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carro de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="products" id="d-products"> </div>
+            <div class="carro-bottom">
+              <div class="product-total">
+                <span id="producto-total">Total a pagar: $</span>
+                <hr>
+              </div>
+              <div class="product-buttons">
+                <a href="{% url 'carrito' %}">
+                  <button class="product-carro">Ir al carro</button>
+                </a>
+                <a href="{% url 'pago' %}">
+                  <button class="product-pago">Iniciar pago</button>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- Fin offcanva -->
+      <section class="seguimiento-container-1">
+        <h1>Seguimiento del pedido</h1>
+        <div class="steps">
+          <div class="steps-desc">
+            <div class="union"></div>
+          
+            <div class="circle circle-1">
+              <span class="material-symbols-outlined done">
+                done
+                </span>
+            </div>
+            
+            <div class="circle circle-2">
+
+            </div>
+            
+            <div class="circle circle-3">
+
+            </div>
+          </div>
+          <div class="steps-desc-2">
+            <span class="step-detail step-detail-1">Pago</span>
+            <span class="step-detail step-detail-2">En despacho hacia destino</span>
+            <span class="step-detail step-detail-3">Entregado</span>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section class="seguimiento-container-2">
+        <h2>Detalle del pedido</h2>
+        <table class="table-detail">
+          <tr>
+            <th>Id del envío</th> <th class="dos-p">:</th> <td>dato</td>
+          </tr>
+          
+          <tr>
+            <th>Fecha</th> <th class="dos-p">:</th> <td>dato</td>
+          </tr>
+
+          <tr>
+            <th>Nombre</th> <th class="dos-p">:</th> <td>dato</td>
+          </tr>
+
+          <tr>
+            <th>Rut</th> <th class="dos-p">:</th> <td>dato</td>
+          </tr>
+
+          <tr>
+            <th>Teléfono</th> <th class="dos-p">:</th> <td>dato</td>
+          </tr>
+
+          <tr>
+            <th>Dirección</th> <th class="dos-p">:</th> <td>dato</td>
+          </tr>
+
+          <tr>
+            <th>Total</th> <th class="dos-p">:</th> <td>dato</td>
+          </tr>
+          
+          <tr>
+            <th>Detalle</th> <th class="dos-p">:</th> <td>dato</td>
+          </tr>
+        </table>
+      </section>
+    </main>
+    
+    {% include "base/footer.html" %}
+
+    <!-- jquery -->
+    <script src="{% static '/js/jquery-3.7.1.min.js' %}"></script>
+    <!-- Js propio -->
+    <script src="{% static '/js/productos.js' %}"></script>
+    <script src="{% static '/js/formularios.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

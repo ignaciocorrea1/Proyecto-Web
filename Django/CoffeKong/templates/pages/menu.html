@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {% load static %}
+
     <!-- Link bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static '/css/bootstrap/bootstrap.min.css' %}" />
     <!-- Link style y responsive style-->
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+    <!-- Link iconos -->
     <!-- Link iconos -->
     <link
       rel="stylesheet"
@@ -16,98 +20,9 @@
     <title>Coffe Kong</title>
   </head>
   <body>
-    <header class="container-fluid">
-      <!-- Inicio navbar -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-icon" href="/vistas/index.html">
-            <img
-              src="/images/Logo.png"
-              width="30"
-              height="30"
-              class="d-inline-block align-top"
-              alt="Cargando imagen..."
-            />
-            Coffe Kong
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- Inicio Links de acceso -->
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/vistas/index.html">INICIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/vistas/menu.html">MENÚ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/vistas/unete.html">ÚNETE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/vistas/seguimiento.html"
-                  >SEGUIMIENTO</a
-                >
-              </li>
-            </ul>
-            <!-- Fin Links de acceso -->
+    
+    {% include "base/header.html" %}
 
-            <!-- Inicio carrito mas icono para el login -->
-            <div class="right-side">
-              <div class="right-side-carro">
-                <span
-                onclick="desplegar()"
-                class="material-symbols-outlined carro"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"
-                >
-                  shopping_cart
-                </span>
-                <span id="shopping-contador">0</span>
-              </div>
-              <div class="dropdown drop-login">
-                <button
-                  class="dropdown-toggle drop-button"
-                  type="button"
-                  id="dropdownMenuButton2"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <span class="material-symbols-outlined acc"
-                    >account_circle</span
-                  >
-                </button>
-                <div class="drop-menu">
-                  <ul
-                    class="dropdown-menu drop-options"
-                    aria-labelledby="dropdownMenu2"
-                  >
-                    <li>
-                      <a href="/vistas/ingreso.html">Iniciar sesión</a>
-                    </li>
-                    <li>
-                      <a href="/vistas/historial.html">Historial</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- Fin carrito mas icono para el login -->
-          </div>
-        </div>
-      </nav>
-      <!-- Fin navbar -->
-    </header>
     <main class="container-fluid">
       <!-- Inicio offcanva -->
       <div
@@ -135,10 +50,10 @@
               <hr />
             </div>
             <div class="product-buttons">
-              <a href="/vistas/carrito.html">
+              <a href="{% url 'carrito' %}">
                 <button class="product-carro">Ir al carro</button>
               </a>
-              <a href="/vistas/pago.html">
+              <a href="{% url 'pago' %}">
                 <button class="product-pago">Iniciar pago</button>
               </a>
             </div>
@@ -153,7 +68,7 @@
           <!-- Inicio - Producto - 1 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-1">
             <figure class="product">
-              <img src="/images/bebidas/te-chai.png" alt="Cargando imagen..." />
+              <img src="{% static '/images/bebidas/te-chai.png' %}" alt="Cargando imagen..." />
               <figcaption>Té chai</figcaption>
             </figure>
           </a>
@@ -180,7 +95,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/te-chai.png"
+                      src="{% static '/images/bebidas/te-chai.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -237,7 +152,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-2">
             <figure class="product">
               <img
-                src="/images/bebidas/te-bergamota.png"
+                src="{% static '/images/bebidas/te-bergamota.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Té de bergamota</figcaption>
@@ -268,7 +183,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/te-bergamota.png"
+                      src="{% static '/images/bebidas/te-bergamota.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -325,7 +240,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-3">
             <figure class="product">
               <img
-                src="/images/bebidas/irlandes.png"
+                src="{% static '/images/bebidas/irlandes.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Café irlandes</figcaption>
@@ -356,7 +271,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/irlandes.png"
+                      src="{% static '/images/bebidas/irlandes.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -412,7 +327,7 @@
           <!-- Inicio - Producto - 4 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-4">
             <figure class="product">
-              <img src="/images/bebidas/frappe.png" alt="Cargando imagen..." />
+              <img src="{% static '/images/bebidas/frappe.png' %}" alt="Cargando imagen..." />
               <figcaption>Frappé</figcaption>
             </figure>
           </a>
@@ -439,7 +354,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/frappe.png"
+                      src="{% static '/images/bebidas/frappe.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -496,7 +411,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-5">
             <figure class="product">
               <img
-                src="/images/bebidas/expresso.png"
+                src="{% static '/images/bebidas/expresso.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Expresso</figcaption>
@@ -525,7 +440,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/expresso.png"
+                      src="{% static '/images/bebidas/expresso.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -582,7 +497,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-6">
             <figure class="product">
               <img
-                src="/images/bebidas/cafe+galletas.png"
+                src="{% static '/images/bebidas/cafe+galletas.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Café + galletas</figcaption>
@@ -613,7 +528,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/cafe+galletas.png"
+                      src="{% static '/images/bebidas/cafe+galletas.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -670,7 +585,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-7">
             <figure class="product">
               <img
-                src="/images/bebidas/capuchino.png"
+                src="{% static '/images/bebidas/capuchino.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Capuchino</figcaption>
@@ -699,7 +614,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/capuchino.png"
+                      src="{% static '/images/bebidas/capuchino.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -755,7 +670,7 @@
           <!-- Inicio - Producto - 8 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-8">
             <figure class="product">
-              <img src="/images/bebidas/latte.png" alt="Cargando imagen..." />
+              <img src="{% static '/images/bebidas/latte.png' %}" alt="Cargando imagen..." />
               <figcaption>Café latte</figcaption>
             </figure>
           </a>
@@ -782,7 +697,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/latte.png"
+                      src="{% static '/images/bebidas/latte.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -838,7 +753,7 @@
           <!-- Inicio - Producto - 9 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-9">
             <figure class="product">
-              <img src="/images/bebidas/jugos.png" alt="Cargando imagen..." />
+              <img src="{% static '/images/bebidas/jugos.png' %}" alt="Cargando imagen..." />
               <figcaption>Jugo natural</figcaption>
             </figure>
           </a>
@@ -867,7 +782,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/jugos.png"
+                      src="{% static '/images/bebidas/jugos.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -924,7 +839,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-10">
             <figure class="product">
               <img
-                src="/images/bebidas/amaretto.png"
+                src="{% static '/images/bebidas/amaretto.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Café amaretto</figcaption>
@@ -955,7 +870,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/bebidas/amaretto.png"
+                      src="{% static '/images/bebidas/amaretto.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1017,7 +932,7 @@
           <!-- Inicio - Producto - 11 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-11">
             <figure class="product">
-              <img src="/images/comida/cachitos.png" alt="Cargando imagen..." />
+              <img src="{% static '/images/comida/cachitos.png' %}" alt="Cargando imagen..." />
               <figcaption>Cachitos de manjar</figcaption>
             </figure>
           </a>
@@ -1046,7 +961,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/cachitos.png"
+                      src="{% static '/images/comida/cachitos.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1103,7 +1018,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-12">
             <figure class="product">
               <img
-                src="/images/comida/chaparritas.png"
+                src="{% static '/images/comida/chaparritas.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Chaparritas</figcaption>
@@ -1134,7 +1049,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/chaparritas.png"
+                      src="{% static '/images/comida/chaparritas.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1190,7 +1105,7 @@
           <!-- Inicio - Producto - 13 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-13">
             <figure class="product">
-              <img src="/images/comida/cocadas.png" alt="Cargando imagen..." />
+              <img src="{% static '/images/comida/cocadas.png' %}" alt="Cargando imagen..." />
               <figcaption>Cocadas</figcaption>
             </figure>
           </a>
@@ -1217,7 +1132,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/cocadas.png"
+                      src="{% static '/images/comida/cocadas.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1274,7 +1189,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-14">
             <figure class="product">
               <img
-                src="/images/comida/croissant.png"
+                src="{% static '/images/comida/croissant.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Croissant</figcaption>
@@ -1303,7 +1218,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/croissant.png"
+                      src="{% static '/images/comida/croissant.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1360,7 +1275,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-15">
             <figure class="product">
               <img
-                src="/images/comida/chilenitos.png"
+                src="{% static '/images/comida/chilenitos.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Chilenitos</figcaption>
@@ -1389,7 +1304,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/chilenitos.png"
+                      src="{% static '/images/comida/chilenitos.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1445,7 +1360,7 @@
           <!-- Inicio - Producto - 16 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-16">
             <figure class="product">
-              <img src="/images/comida/donas.png" alt="Cargando imagen..." />
+              <img src="{% static '/images/comida/donas.png' %}" alt="Cargando imagen..." />
               <figcaption>Donas</figcaption>
             </figure>
           </a>
@@ -1472,7 +1387,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/donas.png"
+                      src="{% static '/images/comida/donas.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1528,7 +1443,7 @@
           <!-- Inicio - Producto - 17 -->
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-17">
             <figure class="product">
-              <img src="/images/comida/sandwich.png" alt="Cargando imagen..." />
+              <img src="{% static '/images/comida/sandwich.png' %}" alt="Cargando imagen..." />
               <figcaption>Sandwich</figcaption>
             </figure>
           </a>
@@ -1555,7 +1470,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/sandwich.png"
+                      src="{% static '/images/comida/sandwich.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1612,7 +1527,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-18">
             <figure class="product">
               <img
-                src="/images/comida/piedelimon.png"
+                src="{% static '/images/comida/piedelimon.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Pie de limon</figcaption>
@@ -1643,7 +1558,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/piedelimon.png"
+                      src="{% static '/images/comida/piedelimon.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1700,7 +1615,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-19">
             <figure class="product">
               <img
-                src="/images/comida/cheescake.png"
+                src="{% static '/images/comida/cheescake.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Cheescake</figcaption>
@@ -1729,7 +1644,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/cheescake.png"
+                      src="{% static '/images/comida/cheescake.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1786,7 +1701,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-20">
             <figure class="product">
               <img
-                src="/images/comida/kuchen-nuez.png"
+                src="{% static '/images/comida/kuchen-nuez.png' %}"
                 alt="Cargando imagen..."
               />
               <figcaption>Kuchen de nuez</figcaption>
@@ -1817,7 +1732,7 @@
                 <div class="modal-body">
                   <div class="modal-body-container">
                     <img
-                      src="/images/comida/kuchen-nuez.png"
+                      src="{% static '/images/comida/kuchen-nuez.png' %}"
                       alt="Cargando imagen..."
                     />
                     <div class="modal-desc">
@@ -1872,45 +1787,15 @@
         </div>
       </section>
     </main>
-    <footer class="container-fluid">
-      <div class="footer-container">
-        <div class="group-1">
-          <img src="/images/Logo.png" alt="Cargando imagen..." />
-        </div>
-        <div class="group-2">
-          <h4>Sobre Nosotros</h4>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-            corporis veniam nulla voluptatem. Saepe quibusdam nobis ea
-            cupiditate laborum placeat, ad sunt explicabo, corrupti quae
-            molestias! Adipisci enim odit eum.
-          </p>
-        </div>
-        <div class="group-3">
-          <h4>Redes sociales</h4>
-          <div class="social-links">
-            <a href="#" class=""
-              ><img src="/images/rrss/instagram.svg" alt=""
-            /></a>
-            <a href="#" class=""
-              ><img src="/images/rrss/square-facebook.svg" alt=""
-            /></a>
-            <a href="#" class=""
-              ><img src="/images/rrss/x-twitter.svg" alt=""
-            /></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copy">
-        <small>&copy; 2024. Coffe Kong - Todos los derechos reservados.</small>
-      </div>
-    </footer>
+    
+    {% include "base/footer.html" %}
+
     <!-- jquery -->
-    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="{% static '/js/jquery-3.7.1.min.js' %}"></script>
     <!-- Js propio -->
-    <script src="/js/productos.js"></script>
-    <script src="/js/formularios.js"></script>
+    <script src="{% static '/js/productos.js' %}"></script>
+    <script src="{% static '/js/formularios.js' %}"></script>
     <!-- Bootstrap -->
-    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
   </body>
 </html>

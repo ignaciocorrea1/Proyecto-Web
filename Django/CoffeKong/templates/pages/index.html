@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {% load static %}
+
     <!-- Link bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static '/css/bootstrap/bootstrap.min.css' %}" />
     <!-- Link style y responsive style-->
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
     <!-- Link iconos -->
     <link
       rel="stylesheet"
@@ -16,85 +19,9 @@
     <title>Coffe Kong</title>
   </head>
   <body>
-    <header class="container-fluid">
-      <!-- Inicio navbar -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-icon" href="/vistas/index.html">
-            <img
-              src="/images/Logo.png"
-              width="30"
-              height="30"
-              class="d-inline-block align-top"
-              alt="Cargando imagen..."
-            />
-            Coffe Kong
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- Inicio Links de acceso -->
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/vistas/index.html">INICIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/vistas/menu.html">MENÚ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/vistas/unete.html">ÚNETE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/vistas/seguimiento.html">SEGUIMIENTO</a>
-              </li>
-            </ul>
-            <!-- Fin Links de acceso -->
+    
+    {% include "base/header.html" %}
 
-            <!-- Inicio carrito mas icono para el login -->
-            <div class="right-side">
-              <div class="right-side-carro">
-                <span
-                onclick="desplegar()"
-                class="material-symbols-outlined carro"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"
-                >
-                  shopping_cart
-                </span>
-                <span id="shopping-contador">0</span>
-              </div>
-              <div class="dropdown drop-login">
-                <button class="dropdown-toggle drop-button" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="material-symbols-outlined acc">account_circle</span>
-                </button>
-                <div class="drop-menu">
-                  <ul class="dropdown-menu drop-options" aria-labelledby="dropdownMenu2">
-                    <li>
-                      <a href="/vistas/ingreso.html">Iniciar sesión</a>
-                    </li>
-                    <li>
-                      <a href="/vistas/historial.html">Historial</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- Fin carrito mas icono para el login -->
-          </div>
-        </div>
-      </nav>
-      <!-- Fin navbar -->
-    </header>
     <main class="container-fluid">
       <!-- Inicio offcanva -->
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -110,10 +37,10 @@
                 <hr>
               </div>
               <div class="product-buttons">
-                <a href="/vistas/carrito.html">
+                <a href="{% url 'carrito' %}">
                   <button class="product-carro">Ir al carro</button>
                 </a>
-                <a href="/vistas/pago.html">
+                <a href="{% url 'pago' %}">
                   <button class="product-pago">Iniciar pago</button>
                 </a>
               </div>
@@ -134,14 +61,14 @@
             <div class="carousel-item active">
               <img
                 class="d-block w-100 img-carousel"
-                src="/images/carousel/carousel1.png"
+                src="{% static '/images/carousel/carousel1.png' %}"
                 alt="Cargando imagen..."
               />
             </div>
             <div class="carousel-item">
               <img
                 class="d-block w-100 img-carousel"
-                src="/images/carousel/carousel2.png"
+                src="{% static '/images/carousel/carousel2.png' %}"
                 alt="Cargando imagen..."
               />
             </div>
@@ -181,7 +108,7 @@
           <!-- Producto 1 -->
           <div class="card">
             <img
-              src="/images/bebidas/amaretto.png"
+              src="{% static '/images/bebidas/amaretto.png' %}"
               class="card-img-top"
               alt="Cargando imagen..."
             />
@@ -202,7 +129,7 @@
           <!-- Producto 2 -->
           <div class="card">
             <img
-              src="/images/comida/cheescake.png"
+              src="{% static '/images/comida/cheescake.png' %}"
               class="card-img-top"
               alt="Cargando imagen..."
             />
@@ -223,7 +150,7 @@
           <!-- Producto 3 -->
           <div class="card">
             <img
-              src="/images/bebidas/frappe.png"
+              src="{% static '/images/bebidas/frappe.png' %}"
               class="card-img-top"
               alt="Cargando imagen..."
             />
@@ -244,7 +171,7 @@
           <!-- Producto 4 -->
           <div class="card">
             <img
-              src="/images/comida/chaparritas.png"
+              src="{% static '/images/comida/chaparritas.png' %}"
               class="card-img-top"
               alt="Cargando imagen..."
             />
@@ -266,43 +193,15 @@
         <!-- Fin cards -->
       </section>
     </main>
-    <footer class="container-fluid">
-      <div class="footer-container">
-        <!-- Logo -->
-        <div class="group-1">
-          <img src="/images/Logo.png" alt="Cargando imagen..." />
-        </div>
-        <!-- Sobre nosotros -->
-        <div class="group-2">
-          <h4>Sobre Nosotros</h4>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-            corporis veniam nulla voluptatem. Saepe quibusdam nobis ea
-            cupiditate laborum placeat, ad sunt explicabo, corrupti quae
-            molestias! Adipisci enim odit eum.
-          </p>
-        </div>
-        <!-- Redes sociales -->
-        <div class="group-3">
-          <h4>Redes sociales</h4>
-          <div class="social-links">
-            <a href="#" class=""><img src="/images/rrss/instagram.svg" alt=""></a>
-            <a href="#" class=""><img src="/images/rrss/square-facebook.svg" alt=""></a>
-            <a href="#" class=""><img src="/images/rrss/x-twitter.svg" alt=""></a>
-          </div>
-        </div>
-      </div>
-      <!-- Copy -->
-      <div class="footer-copy">
-        <small>&copy; 2024. Coffe Kong - Todos los derechos reservados.</small>
-      </div>
-    </footer>
+    
+    {% include "base/footer.html" %}
+
     <!-- jquery -->
-    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="{% static '/js/jquery-3.7.1.min.js' %}"></script>
     <!-- Js propio -->
-    <script src="/js/productos.js"></script>
-    <script src="/js/formularios.js"></script>
+    <script src="{% static '/js/productos.js' %}"></script>
+    <script src="{% static '/js/formularios.js' %}"></script>
     <!-- Bootstrap -->
-    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
   </body>
 </html>
