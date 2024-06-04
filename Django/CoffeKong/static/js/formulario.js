@@ -1,11 +1,13 @@
 // Validaciones de Formulario
 
 // Validacion del registro
-function validarRegistro() {
-  let nombres = document.getElementById("nombres-r").value;
+function validaRegistro() {
   let rut = document.getElementById("rut-r").value;
+  let nombres = document.getElementById("nombres-r").value;
   let paterno = document.getElementById("paterno-r").value;
   let materno = document.getElementById("materno-r").value;
+  let telefono = document.getElementById("telefono-r").value;
+  let direccion = document.getElementById("direccion-r").value;
   let correo = document.getElementById("correo-r").value;
   let contrasenia = document.getElementById("contrasenia-r").value;
   let contrasenia2 = document.getElementById("contrasenia-2-r").value;
@@ -13,78 +15,87 @@ function validarRegistro() {
   const boton = document.getElementById("submit-r");
   const contenedor = document.getElementById("unete-r");
 
-  // Nombres
-  if (nombres.length >= 3 && nombres.length <= 30 && validarTexto(nombres)) {
-    let input = document.getElementById("nombres-r");
+  // Rut
+  if (validarRut(rut)) {
+    let input = document.getElementById("rut-r");
     correcto(input, contenedor, boton);
-    // Rut
-    if (validarRut(rut)) {
-      let input = document.getElementById("rut-r");
+    // Nombres
+    if (nombres.length >= 3 && nombres.length <= 30 && validarTexto(nombres)) {
+      let input = document.getElementById("nombres-r");
       correcto(input, contenedor, boton);
       // Apellido paterno
-      if (
-        paterno.length >= 3 &&
-        paterno.length <= 30 &&
-        validarTexto(paterno)
-      ) {
+      if (paterno.length >= 3 && paterno.length <= 30 && validarTexto(paterno)) {
         let input = document.getElementById("paterno-r");
         correcto(input, contenedor, boton);
         // Apellido materno
-        if (
-          materno.length >= 3 &&
-          materno.length <= 30 &&
-          validarTexto(materno)
-        ) {
+        if (materno.length >= 3 && materno.length <= 30 && validarTexto(materno)) {
           let input = document.getElementById("materno-r");
           correcto(input, contenedor, boton);
-          // Correo
-          if (validarCorreo(correo)) {
-            let input = document.getElementById("correo-r");
+          // Telefono
+          if (validarTelefono(telefono)) {
+            let input = document.getElementById("telefono-r");
             correcto(input, contenedor, boton);
-            // Contraseña
-            if (validarContrasenia(contrasenia)) {
-              let input = document.getElementById("contrasenia-r");
+            // Dirección
+            if (direccion.length >= 5 && direccion.length <= 100) {
+              let input = document.getElementById("direccion-r");
               correcto(input, contenedor, boton);
-              // Confirmacion contraseña
-              if (contrasenia2 === contrasenia) {
-                let input = document.getElementById("contrasenia-2-r");
+              // Correo
+              if (validarCorreo(correo)) {
+                let input = document.getElementById("correo-r");
                 correcto(input, contenedor, boton);
+                // Contraseña
+                if (validarContrasenia(contrasenia)) {
+                  let input = document.getElementById("contrasenia-r");
+                  correcto(input, contenedor, boton);
+                  // Confirmacion contraseña
+                  if (contrasenia2 === contrasenia) {
+                    let input = document.getElementById("contrasenia-2-r");
+                    correcto(input, contenedor, boton);
+                  } else {
+                    let input = document.getElementById("contrasenia-2-r");
+                    let texto = "Las contraseñas no coinciden.";
+                    error(input, contenedor, texto, boton);
+                  }
+                } else {
+                  let input = document.getElementById("contrasenia-r");
+                  let texto = "Contraseña no valida. Minimo 8 caracteres y debe contener letras y numeros.";
+                  error(input, contenedor, texto, boton);
+                }
               } else {
-                let input = document.getElementById("contrasenia-2-r");
-                let texto = "Las contraseñas no coinciden.";
+                let input = document.getElementById("correo-r");
+                let texto = "Formato de correo no valido. Debe contener '@' y una direccion valida.";
                 error(input, contenedor, texto, boton);
               }
-            } else {
-              let input = document.getElementById("contrasenia-r");
-              let texto =
-                "Contraseña no valida. Minimo 8 caracteres y debe contener letras y numeros.";
+            }
+            else {
+              let input = document.getElementById("direccion-r");
+              let texto = "Dirección no válida. Mínimo 5 carácteres y máximo 100.";
               error(input, contenedor, texto, boton);
             }
-          } else {
-            let input = document.getElementById("correo-r");
-            let texto =
-              "Formato de correo no valido. Debe contener '@' y una direccion valida.";
+          }
+          else {
+            let input = document.getElementById("telefono-r");
+            let texto = "Teléfono no válido. Mínimo 8 digitos y recuerda agregar el 9 al principio.";
             error(input, contenedor, texto, boton);
           }
         } else {
           let input = document.getElementById("materno-r");
-          let texto = "Apellido no valido. Minimo 3 letras y maximo 30.";
+          let texto = "Apellido no válido. Mínimo 3 letras y máximo 30.";
           error(input, contenedor, texto, boton);
         }
       } else {
         let input = document.getElementById("paterno-r");
-        let texto = "Apellido no valido. Minimo 3 letras y maximo 30.";
+        let texto = "Apellido no válido. Mínimo 3 letras y máximo 30.";
         error(input, contenedor, texto, boton);
       }
     } else {
-      let input = document.getElementById("rut-r");
-      let texto =
-        "Formato de rut no valido. Ingrese el rut sin puntos y con guión.";
+      let input = document.getElementById("nombres-r");
+      let texto = "Nombre no válido. Mínimo 3 letras y máximo 30.";
       error(input, contenedor, texto, boton);
     }
   } else {
-    let input = document.getElementById("nombres-r");
-    let texto = "Nombre no valido. Minimo 3 letras y maximo 30.";
+    let input = document.getElementById("rut-r");
+    let texto = "Formato de rut no válido. Ingrese el rut sin puntos y con guión.";
     error(input, contenedor, texto, boton);
   }
 }
@@ -196,6 +207,11 @@ function validarContrasenia(contrasenia) {
 function validarCorreo(correo) {
   let re = /^[a-zA-Z0-9._%+-]+@(gmail\.com|outlook\.com)$/i;
   return re.test(correo);
+}
+
+function validarTelefono(telefono) {
+  let re = /^\+?[9]\d{8,}$/;
+  return re.test(telefono);
 }
 
 // Permite solo numeros - min 1 digito - max 4 digitos

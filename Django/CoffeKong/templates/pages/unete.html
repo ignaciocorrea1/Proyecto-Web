@@ -54,15 +54,15 @@
           <legend>Información Personal</legend>
           <input
             type="text"
-            id="nombres-r"
-            placeholder="Nombre(s) (*)"
+            id="rut-r"
+            placeholder="Rut (*)"
             class="form-input"
             required
           />
           <input
             type="text"
-            id="rut-r"
-            placeholder="Rut (*)"
+            id="nombres-r"
+            placeholder="Nombre(s) (*)"
             class="form-input"
             required
           />
@@ -77,6 +77,20 @@
             type="text"
             id="materno-r"
             placeholder="Apellido Materno (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="telefono-r"
+            placeholder="Teléfono (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="direccion-r"
+            placeholder="Dirección (*)"
             class="form-input"
             required
           />
@@ -103,7 +117,7 @@
           />
           <div id="unete-r"></div>
           <input
-            onclick="validarRegistro()"
+            onclick="validaRegistro()" 
             id="submit-r"
             type="submit"
             value="Registrarme"
@@ -119,7 +133,7 @@
     <script src="{% static '/js/jquery-3.7.1.min.js' %}"></script>
     <!-- Js propio -->
     <script src="{% static '/js/productos.js' %}"></script>
-    <script src="{% static '/js/formularios.js' %}"></script>
+    <script src="{% static '/js/formulario.js' %}"></script>
     <!-- Bootstrap -->
     <script src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
   </body>
