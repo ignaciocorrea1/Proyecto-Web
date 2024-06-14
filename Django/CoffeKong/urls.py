@@ -14,4 +14,5 @@ urlpatterns = [
     path("contrasenia", views.contrasenia, name="contrasenia"),
     path("historial", views.historial, name="historial"),
     path("detalle", views.detalle, name="detalle"),
+    path("crud", views.crud, name="crud"),
 ]

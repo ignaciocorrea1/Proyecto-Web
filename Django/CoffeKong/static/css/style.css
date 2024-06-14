@@ -1362,3 +1362,54 @@ hr {
     margin-left: 3vw;
 }
 
+/* Vistas de administrador */
+.header-crud {
+    display: flex;
+    background-color: #436A6F;
+    height: 15vh;
+}
+
+.header-crud .crud-img {
+    width: 5vw;
+    height: 10vh;
+    margin-left: 0;
+    margin-top: 1vw;
+    position: absolute;
+}
+
+.header-crud .crud-title {
+    position: relative;
+    text-align: center;
+    margin: auto;
+}
+.main-crud .table-crud .table-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #436A6F;
+    height: 6vh;
+}
+
+.main-crud .table-crud {
+    border: 0.1em solid #436A6F;
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+    width: 80vw;
+    color: #436A6F;
+    text-align: center;
+    padding: 0;
+}
+
+.main-crud .table-crud .th-crud,
+.main-crud .table-crud .td-crud {
+    height: 8vh;
+}
+
+.main-crud .table-crud .td-crud .crud-a {
+    text-decoration: none;
+    color: #436A6F;
+}
+
+.main-crud .table-crud .td-crud .crud-a:hover {
+    color: white;
+}

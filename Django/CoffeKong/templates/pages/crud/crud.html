@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+
+    <!-- Link style -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <!-- Link iconos -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Administrador</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-crud">
+        <img src="{% static '/images/logo.png' %}" alt="" class="crud-img">
+        <h1 class="crud-title">Administrador - CoffeKong</h1>
+    </div>
+    <!-- Lista de todas las entidades para su propio crud -->
+    <div class="main-crud">
+        <!-- Vendedores -->
+        <table class="table-crud">
+            <caption class="table-title">Vendedores</caption>
+            <thead>
+                <th class="th-crud">Rut</th>
+                <th class="th-crud">Nombres</th>
+                <th class="th-crud">Apellidos</th>
+                <th class="th-crud">Agregar</th>
+                <th class="th-crud">Modificar</th>
+                <th class="th-crud">Eliminar</th>
+            </thead>
+            <tbody>
+                {% if vendedores %}
+                    {% for tmp in vendedores %}
+                        <tr>
+                            <td class="td-crud">{{tmp.run}}</td>
+                            <td class="td-crud">{{tmp.nombres}}</td>
+                            <td class="td-crud">{{tmp.apaterno}} {{tmp.amaterno}}</td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-add">
+                                    <span class="material-symbols-outlined"> add_box </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-upd">
+                                    <span class="material-symbols-outlined"> edit </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-del">
+                                    <span class="material-symbols-outlined"> delete </span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+
+        <!-- Cliente -->
+        <table class="table-crud">
+            <caption class="table-title">Clientes</caption>
+            <thead>
+                <th class="th-crud">Rut</th>
+                <th class="th-crud">Nombres</th>
+                <th class="th-crud">Apellidos</th>
+                <th class="th-crud">Agregar</th>
+                <th class="th-crud">Modificar</th>
+                <th class="th-crud">Eliminar</th>
+            </thead>
+            <tbody>
+                {% if clientes %}
+                    {% for tmp in clientes %}
+                        <tr>
+                            <td class="td-crud">{{tmp.run}}</td>
+                            <td class="td-crud">{{tmp.nombres}}</td>
+                            <td class="td-crud">{{tmp.apaterno}} {{tmp.amaterno}}</td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-add">
+                                    <span class="material-symbols-outlined"> add_box </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-upd">
+                                    <span class="material-symbols-outlined"> edit </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-del">
+                                    <span class="material-symbols-outlined"> delete </span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        
+        <!-- Tarjetas de clientes -->
+        <table class="table-crud">
+            <caption class="table-title">Tarjetas de clientes</caption>
+            <thead>
+                <th class="th-crud">Rut cliente</th>
+                <th class="th-crud">Numero de tarjeta</th>
+                <th class="th-crud">Agregar</th>
+                <th class="th-crud">Modificar</th>
+                <th class="th-crud">Eliminar</th>
+            </thead>
+            <tbody>
+                {% if tarjetas %}
+                    {% for tmp in tarjetas %}
+                        <tr>
+                            <td class="td-crud">{{tmp.nro_tarjeta}}</td>
+                            <td class="td-crud">{{tmp.run}}</td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-add">
+                                    <span class="material-symbols-outlined"> add_box </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-upd">
+                                    <span class="material-symbols-outlined"> edit </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-del">
+                                    <span class="material-symbols-outlined"> delete </span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        
+        <!-- Pedidos -->
+        <table class="table-crud">
+            <caption class="table-title">Pedidos</caption>
+            <thead>
+                <th class="th-crud">Id</th>
+                <th class="th-crud">Fecha</th>
+                <th class="th-crud">Rut Cliente</th>
+                <th class="th-crud">Agregar</th>
+                <th class="th-crud">Modificar</th>
+                <th class="th-crud">Eliminar</th>
+            </thead>
+            <tbody>
+                {% if pedidos %}
+                    {% for tmp in pedidos %}
+                        <tr>
+                            <td class="td-crud">{{tmp.id_pedido}}</td>
+                            <td class="td-crud">{{tmp.fecha}}</td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-add">
+                                    <span class="material-symbols-outlined"> add_box </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-upd">
+                                    <span class="material-symbols-outlined"> edit </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-del">
+                                    <span class="material-symbols-outlined"> delete </span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        
+        <!-- Detalles de pedidos -->
+        <table class="table-crud">
+            <caption class="table-title">Detalles de pedidos</caption>
+            <thead>
+                <th class="th-crud">Id del Pedido</th>
+                <th class="th-crud">Total</th>
+                <th class="th-crud">Cantidad</th>
+                <th class="th-crud">Agregar</th>
+                <th class="th-crud">Modificar</th>
+                <th class="th-crud">Eliminar</th>
+            </thead>
+            <tbody>
+                {% if detallePedidos %}
+                    {% for tmp in detallePedidos %}
+                        <tr>
+                            <td class="td-crud">{{tmp.id_pedido}}</td>
+                            <td class="td-crud">{{tmp.total}}</td>
+                            <td class="td-crud">{{tmp.cantidad}}</td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-add">
+                                    <span class="material-symbols-outlined"> add_box </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-upd">
+                                    <span class="material-symbols-outlined"> edit </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-del">
+                                    <span class="material-symbols-outlined"> delete </span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        
+        <!-- Productos -->
+        <table class="table-crud">
+            <caption class="table-title">Productos</caption>
+            <thead>
+                <th class="th-crud">Id</th>
+                <th class="th-crud">Nombre</th>
+                <th class="th-crud">Tipo</th>
+                <th class="th-crud">Agregar</th>
+                <th class="th-crud">Modificar</th>
+                <th class="th-crud">Eliminar</th>
+            </thead>
+            <tbody>
+                {% if productos %}
+                    {% for tmp in productos %}
+                        <tr>
+                            <td class="td-crud">{{tmp.id_producto}}</td>
+                            <td class="td-crud">{{tmp.nombre}}</td>
+                            <td class="td-crud">{{tmp.tipo}}</td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-add">
+                                    <span class="material-symbols-outlined"> add_box </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-upd">
+                                    <span class="material-symbols-outlined"> edit </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-del">
+                                    <span class="material-symbols-outlined"> delete </span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        
+        <!-- Tipos de Productos -->
+        <table class="table-crud">
+            <caption class="table-title">Tipos de Productos</caption>
+            <thead>
+                <th class="th-crud">Id</th>
+                <th class="th-crud">Descripcion</th>
+                <th class="th-crud">Agregar</th>
+                <th class="th-crud">Modificar</th>
+                <th class="th-crud">Eliminar</th>
+            </thead>
+            <tbody>
+                {% if tipoProductos %}
+                    {% for tmp in tipoProductos %}
+                        <tr>
+                            <td class="td-crud">{{tmp.id_tipoproducto}}</td>
+                            <td class="td-crud">{{tmp.descripcion}}</td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-add">
+                                    <span class="material-symbols-outlined"> add_box </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-upd">
+                                    <span class="material-symbols-outlined"> edit </span>
+                                </a>
+                            </td>
+                            <td class="td-crud">
+                                <a href="#" class="crud-a crud-del">
+                                    <span class="material-symbols-outlined"> delete </span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- jquery -->
+    <script src="{% static '/js/jquery-3.7.1.min.js' %}"></script>
+    <!-- Js propio -->
+    <script src="{% static '/js/productos.js' %}"></script>
+    <script src="{% static '/js/formularios.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

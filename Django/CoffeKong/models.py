@@ -14,7 +14,7 @@ class cliente(models.Model):
     contrasenia = models.CharField(max_length=50)
 
     def __str__(self):
-        return str("Cliente: " + self.run)
+        return str(self.nombres+" "+self.apaterno+" "+self.amaterno)
 
 """ Vendedor """
 class vendedor(models.Model):
@@ -28,7 +28,7 @@ class vendedor(models.Model):
     contrasenia = models.CharField(max_length=50)
 
     def __str__(self):
-        return str("Vendedor: " + self.run)
+        return str(self.nombres+" "+self.apaterno+" "+self.amaterno)
 
 """ Tarjeta """
 class tarjeta(models.Model):
@@ -56,7 +56,7 @@ class producto(models.Model):
     tipo = models.ForeignKey("tipoProducto", on_delete=models.CASCADE, db_column="idTipoProducto")
 
     def __str__(self):
-        return str(self.nombre)
+        return str(self.id_producto)
 
 """ Pedido """
 class pedido(models.Model):
@@ -74,4 +74,4 @@ class detallePedido(models.Model):
     cantidad = models.IntegerField()
 
     def __str__(self):
-        return str("Detalle del pedido" + self.id_pedido)
+        return str(self.id_pedido)
