@@ -1,0 +1,133 @@
+<!-- Create vendedores -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% load static %}
+
+    <!-- Link bootstrap -->
+    <link
+      rel="stylesheet"
+      href="{% static '/css/bootstrap/bootstrap.min.css' %}"
+    />
+    <!-- Link style y responsive style-->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}" />
+    <!-- Link iconos -->
+    <title>Vendedores add</title>
+  </head>
+  <body>
+    <!-- Header -->
+    {% include "base/header_adm.html" %}
+
+    <!-- Main -->
+    <main>
+      <h1>Registro de Vendedores</h1>
+      <section class="form-container">
+        <form action="{% url 'v_add' %}" method="POST">
+          {% csrf_token %}
+
+          <legend>Vendedor</legend>
+          <input
+            type="text"
+            id="rut-r"
+            name="rut"
+            placeholder="Rut (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="nombres-r"
+            name="nombres"
+            placeholder="Nombre(s) (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="paterno-r"
+            name="paterno"
+            placeholder="Apellido Paterno (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="materno-r"
+            name="materno"
+            placeholder="Apellido Materno (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="telefono-r"
+            name="telefono"
+            placeholder="Teléfono (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="direccion-r"
+            name="direccion"
+            placeholder="Dirección (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="email"
+            id="correo-r"
+            name="correo"
+            placeholder="Correo electrónico (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="password"
+            id="contrasenia-r"
+            name="contrasenia"
+            placeholder="Contraseña (*)"
+            class="form-input"
+            required
+          />
+          <input
+            type="password"
+            id="contrasenia-2-r"
+            name="contrasenia-2"
+            placeholder="Confirmar contraseña (*)"
+            class="form-input"
+            required
+          />
+          <div id="unete-r"></div>
+          {% if mensaje %}
+            <div class="alert alert-warning w-50 mx-auto text-center">
+                {{mensaje}}
+            </div>
+          {% endif %} 
+          <div class="low-form">
+            <input
+            onclick="validaRegistro()" 
+            id="submit-r"
+            type="submit"
+            value="Registrar"
+            class="form-submit"
+            />
+            <a href="{% url 'crud' %}">
+                <button type="button" class="form-submit form-volver">Volver</button>
+            </a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Js propio -->
+    <script src="{% static '/js/productos.js' %}"></script>
+    <script src="{% static '/js/formularios.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

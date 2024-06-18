@@ -33,7 +33,7 @@ class vendedor(models.Model):
 """ Tarjeta """
 class tarjeta(models.Model):
     nro_tarjeta = models.CharField(primary_key=True, db_column="nroTarjeta", max_length=30)
-    run = models.ForeignKey("cliente", on_delete=models.CASCADE, db_column="run")
+    cliente = models.ForeignKey("cliente", on_delete=models.CASCADE, db_column="run")
 
     def __str__(self):
         return str(self.nro_tarjeta)
@@ -61,6 +61,7 @@ class producto(models.Model):
 """ Pedido """
 class pedido(models.Model):
     id_pedido = models.IntegerField(primary_key=True, db_column="idPedido")
+    cliente = models.ForeignKey("cliente", on_delete=models.CASCADE, db_column="run")
     fecha = models.DateField()
 
     def __str__(self):

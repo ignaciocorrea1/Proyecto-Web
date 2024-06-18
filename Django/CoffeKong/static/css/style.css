@@ -1382,34 +1382,75 @@ hr {
     text-align: center;
     margin: auto;
 }
-.main-crud .table-crud .table-title {
+
+.main-crud .ct-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+.main-crud .ct-container .table-crud .table-title {
     font-size: 1.5em;
     font-weight: bold;
     color: #436A6F;
     height: 6vh;
 }
 
-.main-crud .table-crud {
+.main-crud .ct-container .table-crud {
     border: 0.1em solid #436A6F;
     margin: auto;
     margin-top: 10vh;
-    margin-bottom: 20vh;
     width: 80vw;
     color: #436A6F;
     text-align: center;
     padding: 0;
 }
 
-.main-crud .table-crud .th-crud,
-.main-crud .table-crud .td-crud {
+.main-crud .ct-container .table-crud .th-crud,
+.main-crud .ct-container .table-crud .td-crud {
     height: 8vh;
 }
 
-.main-crud .table-crud .td-crud .crud-a {
+.main-crud .ct-container .table-crud .td-crud .crud-a {
     text-decoration: none;
     color: #436A6F;
 }
 
-.main-crud .table-crud .td-crud .crud-a:hover {
+.main-crud .ct-container .table-crud .td-crud .crud-a:hover {
     color: white;
+}
+
+.main-crud .ct-container .crud-add {
+    margin-top: 2.5vh;
+}
+
+.main-crud .ct-container .crud-add .crud-badd {
+    width: 20vw;
+    height: 6vh;
+    background-color: #61888C;
+    color: white;
+    font-size: 1em;
+    font-weight: 800;
+    border: 0.188rem solid #436A6F;
+    border-radius: 2.5rem;
+}
+
+.main-crud .ct-container .crud-add .crud-badd:hover {
+    border: 0.188rem solid white;
+}
+
+/* Form del crud - Registro */
+.form-container form {
+    margin-bottom: 20vh;
+}
+
+.form-container form .low-form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-container form .low-form .form-submit {
+    margin-top: 2vh;
+    margin: 0;
 }
