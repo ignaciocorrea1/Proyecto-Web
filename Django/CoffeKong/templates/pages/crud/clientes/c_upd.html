@@ -1,4 +1,4 @@
-<!-- Create vendedores -->
+<!-- Update clientes -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,16 +24,17 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Vendedores</h1>
+      <h1>Modificación de Clientes</h1>
       <section class="form-container">
-        <form action="{% url 'v_add' %}" method="POST">
+        <form action="{% url 'c_upd' %}" method="POST">
           {% csrf_token %}
 
-          <legend>Vendedor</legend>
+          <legend>Cliente</legend>
           <input
             type="text"
             id="rut-r"
             name="rut"
+            value={{cliente.run}} 
             placeholder="Rut (*)"
             class="form-input"
             required
@@ -42,6 +43,7 @@
             type="text"
             id="nombres-r"
             name="nombres"
+            value={{cliente.nombres}} 
             placeholder="Nombre(s) (*)"
             class="form-input"
             required
@@ -50,6 +52,7 @@
             type="text"
             id="paterno-r"
             name="paterno"
+            value={{cliente.apaterno}} 
             placeholder="Apellido Paterno (*)"
             class="form-input"
             required
@@ -58,6 +61,7 @@
             type="text"
             id="materno-r"
             name="materno"
+            value={{cliente.amaterno}} 
             placeholder="Apellido Materno (*)"
             class="form-input"
             required
@@ -66,6 +70,7 @@
             type="text"
             id="telefono-r"
             name="telefono"
+            value={{cliente.telefono}} 
             placeholder="Teléfono (*)"
             class="form-input"
             required
@@ -74,6 +79,7 @@
             type="text"
             id="direccion-r"
             name="direccion"
+            value={{cliente.direccion}} 
             placeholder="Dirección (*)"
             class="form-input"
             required
@@ -82,6 +88,7 @@
             type="email"
             id="correo-r"
             name="correo"
+            value={{cliente.correo}} 
             placeholder="Correo electrónico (*)"
             class="form-input"
             required
@@ -90,6 +97,7 @@
             type="password"
             id="contrasenia-r"
             name="contrasenia"
+            value={{cliente.contrasenia}} 
             placeholder="Contraseña (*)"
             class="form-input"
             required
@@ -98,6 +106,7 @@
             type="password"
             id="contrasenia-2-r"
             name="contrasenia-2"
+            value={{cliente.contrasenia}} 
             placeholder="Confirmar contraseña (*)"
             class="form-input"
             required
@@ -113,7 +122,7 @@
             onclick="validaRegistro()" 
             id="submit-r"
             type="submit"
-            value="Registrar"
+            value="Modificar"
             class="form-submit"
             />
             <a href="{% url 'crud' %}">

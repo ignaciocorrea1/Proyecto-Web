@@ -1,0 +1,75 @@
+<!-- Create tarjetas de clientes -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% load static %}
+
+    <!-- Link bootstrap -->
+    <link
+      rel="stylesheet"
+      href="{% static '/css/bootstrap/bootstrap.min.css' %}"
+    />
+    <!-- Link style y responsive style-->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}" />
+    <!-- Link iconos -->
+    <title>Administrador</title>
+  </head>
+  <body>
+    <!-- Header -->
+    {% include "base/header_adm.html" %}
+
+    <!-- Main -->
+    <main>
+      <h1>Registro de Tarjetas de clientes</h1>
+      <section class="form-container">
+        <form action="{% url 'tc_add' %}" method="POST">
+          {% csrf_token %}
+
+          <legend>Tarjetas de clientes</legend>
+          
+          <input
+            type="text"
+            id="tarjeta"
+            name="tarjeta"
+            placeholder="Número de tarjeta"
+            class="form-input"
+            required
+          />
+          <select name="cliente" id="cliente" class="form-sele" required>
+            <option value="">Selecciona un cliente</option>
+            {% for tmp in clientes%}
+                <option value="{{tmp.run}}">{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
+            {% endfor %}
+          </select>
+          <div id="unete-r"></div>
+          {% if mensaje %}
+            <div class="alert alert-warning w-50 mx-auto text-center">
+                {{mensaje}}
+            </div>
+          {% endif %} 
+          <div class="low-form">
+            <input
+            id="submit-r"
+            type="submit"
+            value="Registrar"
+            class="form-submit"
+            />
+            <a href="{% url 'crud' %}">
+                <button type="button" class="form-submit form-volver">Volver</button>
+            </a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Js propio -->
+    <script src="{% static '/js/productos.js' %}"></script>
+    <script src="{% static '/js/formularios.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

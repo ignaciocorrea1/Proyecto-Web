@@ -14,9 +14,19 @@ urlpatterns = [
     path("contrasenia/", views.contrasenia, name="contrasenia"),
     path("historial/", views.historial, name="historial"),
     path("detalle/", views.detalle, name="detalle"),
+    # Crud
     path("crud/", views.crud, name="crud"),
+    # Vendedores
     path("v_add/", views.v_add, name="v_add"),
     path("v_find/<str:pk>", views.v_find, name="v_find"),
     path("v_upd/", views.v_upd, name="v_upd"),
     path("v_del/<str:pk>", views.v_del, name="v_del"),
+    # Clientes
+    path("c_add/", views.c_add, name="c_add"),
+    path("c_find/<str:pk>", views.c_find, name="c_find"),
+    path("c_upd/", views.c_upd, name="c_upd"),
+    path("c_del/<str:pk>", views.c_del, name="c_del"),
+    # Tarjetas de clientes
+    path("tc_add/", views.tc_add, name="tc_add"),
+    path("tc_find/<str:pk>", views.tc_find, name="tc_find"),
 ]

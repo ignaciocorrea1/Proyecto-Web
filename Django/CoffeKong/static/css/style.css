@@ -659,6 +659,18 @@ hr {
     padding: 1.125rem;
 }
 
+
+.form-container form .form-sele {
+    width: 28vw;
+    height: 6vh;
+    border: 0.188rem solid #436A6F;
+    border-radius: 1.875rem;
+    background-color: #F3EAC9;
+    margin: 0.625em;
+    padding-left: 1em;
+    appearance: none;
+}
+
 .form-container form .form-submit {
     width: 10vw;
     height: 6vh;

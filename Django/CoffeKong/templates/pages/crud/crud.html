@@ -80,12 +80,12 @@
                                 <td class="td-crud">{{tmp.nombres}}</td>
                                 <td class="td-crud">{{tmp.apaterno}} {{tmp.amaterno}}</td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-upd">
+                                    <a href="{% url 'c_find' pk=tmp.run %}" class="crud-a crud-upd">
                                         <span class="material-symbols-outlined"> edit </span>
                                     </a>
                                 </td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-del">
+                                    <a href="{% url 'c_del' pk=tmp.run %}" class="crud-a crud-del">
                                         <span class="material-symbols-outlined"> delete </span>
                                     </a>
                                 </td>
@@ -94,7 +94,7 @@
                     {% endif %}
                 </tbody>
             </table>
-            <a href="#" class="crud-a crud-add">
+            <a href="{% url 'c_add' %}" class="crud-a crud-add">
                 <button type="button" class="crud-badd">
                     Agregar cliente
                 </button>
@@ -106,7 +106,7 @@
             <table class="table-crud">
                 <caption class="table-title">Tarjetas de clientes</caption>
                 <thead>
-                    <th class="th-crud">Numero de tarjeta</th>
+                    <th class="th-crud">Número de tarjeta</th>
                     <th class="th-crud">Cliente</th>
                     <th class="th-crud">Modificar</th>
                     <th class="th-crud">Eliminar</th>
@@ -118,7 +118,7 @@
                                 <td class="td-crud">{{tmp.nro_tarjeta}}</td>
                                 <td class="td-crud">{{tmp.cliente}}</td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-upd">
+                                    <a href="{% url 'tc_find' pk=tmp.nro_tarjeta %}" class="crud-a crud-upd">
                                         <span class="material-symbols-outlined"> edit </span>
                                     </a>
                                 </td>
@@ -132,7 +132,7 @@
                     {% endif %}
                 </tbody>
             </table>
-            <a href="#" class="crud-a crud-add">
+            <a href="{% url 'tc_add' %}" class="crud-a crud-add">
                 <button type="button" class="crud-badd">
                     Agregar tarjeta de cliente
                 </button>

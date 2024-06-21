@@ -1,4 +1,4 @@
-<!-- Create vendedores -->
+<!-- Update vendedores -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}" />
     <link rel="stylesheet" href="{% static '/css/responsive.css' %}" />
     <!-- Link iconos -->
-    <title>Vendedores add</title>
+    <title>Administrador</title>
   </head>
   <body>
     <!-- Header -->
@@ -24,7 +24,7 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Vendedores</h1>
+      <h1>Modificación de Vendedores</h1>
       <section class="form-container">
         <form action="{% url 'v_upd' %}" method="POST">
           {% csrf_token %}

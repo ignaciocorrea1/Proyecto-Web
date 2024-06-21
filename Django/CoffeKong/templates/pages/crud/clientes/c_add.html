@@ -1,4 +1,4 @@
-<!-- Create vendedores -->
+<!-- Create clientes -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,12 +24,12 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Vendedores</h1>
+      <h1>Registro de Clientes</h1>
       <section class="form-container">
-        <form action="{% url 'v_add' %}" method="POST">
+        <form action="{% url 'c_add' %}" method="POST">
           {% csrf_token %}
 
-          <legend>Vendedor</legend>
+          <legend>Cliente</legend>
           <input
             type="text"
             id="rut-r"
