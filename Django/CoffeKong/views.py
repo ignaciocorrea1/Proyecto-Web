@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import cliente, vendedor, tarjeta, tipoProducto, producto, detallePedido
+from .models import cliente, vendedor, tarjeta, pedido, tipoProducto, producto, detallePedido
 import json
 
 # Create your views here.
@@ -86,7 +86,7 @@ def crud(request):
     vendedores = vendedor.objects.all()
     clientes = cliente.objects.all()
     tarjetas = tarjeta.objects.all()
-    # pedidos = pedido.objects.all()
+    pedidos = pedido.objects.all()
     detallePedidos = detallePedido.objects.all()
     productos = producto.objects.all()
     tipoProductos = tipoProducto.objects.all()
@@ -94,7 +94,7 @@ def crud(request):
         "vendedores": vendedores,
         "clientes": clientes,
         "tarjetas": tarjetas,
-        # "pedidos": pedidos,
+        "pedidos": pedidos,
         "detallePedidos": detallePedidos,
         "productos": productos,
         "tipoProductos": tipoProductos,
@@ -250,7 +250,7 @@ def v_del(request, pk):
         vendedores = vendedor.objects.all();
         clientes = cliente.objects.all();
         tarjetas = tarjeta.objects.all();
-        # pedidos = pedido.objects.all();
+        pedidos = pedido.objects.all();
         detallePedidos = detallePedido.objects.all();
         productos = producto.objects.all();
         tipoProductos = tipoProducto.objects.all();
@@ -259,7 +259,7 @@ def v_del(request, pk):
             "vendedores": vendedores,
             "clientes": clientes,
             "tarjetas": tarjetas,
-            # "pedidos": pedidos,
+            "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
@@ -271,7 +271,7 @@ def v_del(request, pk):
         vendedores = vendedor.objects.all();
         clientes = cliente.objects.all();
         tarjetas = tarjeta.objects.all();
-        # pedidos = pedido.objects.all();
+        pedidos = pedido.objects.all();
         detallePedidos = detallePedido.objects.all();
         productos = producto.objects.all();
         tipoProductos = tipoProducto.objects.all();
@@ -280,7 +280,7 @@ def v_del(request, pk):
             "vendedores": vendedores,
             "clientes": clientes,
             "tarjetas": tarjetas,
-            # "pedidos": pedidos,
+            "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
@@ -436,7 +436,7 @@ def c_del(request, pk):
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
         tarjetas = tarjeta.objects.all()
-        # pedidos = pedido.objects.all()
+        pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
         tipoProductos = tipoProducto.objects.all()
@@ -445,7 +445,7 @@ def c_del(request, pk):
             "clientes": clientes,
             "vendedores": vendedores,
             "tarjetas": tarjetas,
-            # "pedidos": pedidos,
+            "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
@@ -457,7 +457,7 @@ def c_del(request, pk):
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
         tarjetas = tarjeta.objects.all()
-        # pedidos = pedido.objects.all()
+        pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
         tipoProductos = tipoProducto.objects.all()
@@ -466,7 +466,7 @@ def c_del(request, pk):
             "clientes": clientes,
             "vendedores": vendedores,
             "tarjetas": tarjetas,
-            # "pedidos": pedidos,
+            "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
@@ -513,19 +513,10 @@ def tc_find(request, pk):
         tar = tarjeta.objects.get(nro_tarjeta = pk)
         clientes = cliente.objects.all()
 
-        runes = []
-
-        for x in clientes:
-            runes.append(x.run)
-
         context = {
             "tarjeta" : tar,
             "clientes" : clientes
         }
-        # Se ve si los datos que estoy pasando son correctos
-        # Se pasan bien pero el problema es que el nombre no cambia en el select, se mantiene fijo.
-        print(tar.cliente.run+" "+tar.cliente.nombres+" "+tar.cliente.apaterno+" "+tar.cliente.amaterno)
-        print(runes)
         return render(request, "pages/crud/tarjetas/tc_upd.html", context)
     else:
         context = {
@@ -570,7 +561,7 @@ def tc_del(request, pk):
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
         tarjetas = tarjeta.objects.all()
-        # pedidos = pedido.objects.all()
+        pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
         tipoProductos = tipoProducto.objects.all()
@@ -579,7 +570,7 @@ def tc_del(request, pk):
             "tarjetas": tarjetas,
             "clientes": clientes,
             "vendedores": vendedores,
-            # "pedidos": pedidos,
+            "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
@@ -591,7 +582,7 @@ def tc_del(request, pk):
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
         tarjetas = tarjeta.objects.all()
-        # pedidos = pedido.objects.all()
+        pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
         tipoProductos = tipoProducto.objects.all()
@@ -600,7 +591,7 @@ def tc_del(request, pk):
             "tarjetas": tarjetas,
             "clientes": clientes,
             "vendedores": vendedores,
-            # "pedidos": pedidos,
+            "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
@@ -608,8 +599,18 @@ def tc_del(request, pk):
         print("No se pudo eliminar la tarjeta")
         return render(request, "pages/crud/crud.html", context)
 
+""" Pedidos """
+def p_add(request):
+    context = {
+        
+    }
+    return render(request, "pages/crud/pedidos/p_add.html", context)
+
+""" Pedidos - add"""
+
+""" Detalle de pedidos """
+
 """ Productos """
 
 """ Tipos de productos """
 
-""" Tipos de productos - add """

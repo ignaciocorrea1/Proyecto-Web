@@ -42,7 +42,7 @@
           />
           <select name="cliente" id="cliente" class="form-sele">
             {% for tmp in clientes %}
-              {% if tmp.run == tar.cliente.run %}
+              {% if tmp.run == tarjeta.cliente.run %}
                 <option value="{{tmp.run}}" selected>{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
               {% else %}
                 <option value="{{tmp.run}}">{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>

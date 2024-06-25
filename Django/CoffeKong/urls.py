@@ -31,4 +31,7 @@ urlpatterns = [
     path("tc_find/<str:pk>", views.tc_find, name="tc_find"),
     path("tc_upd/", views.tc_upd, name="tc_upd"),
     path("tc_del/<str:pk>", views.tc_del, name="tc_del"),
+    # Pedidos
+    path("p_add/", views.p_add, name="p_add"),
+
 ]

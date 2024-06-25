@@ -1,4 +1,4 @@
-<!-- Create tarjetas de clientes -->
+<!-- Create pedidos -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,27 +24,19 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Tarjetas de clientes</h1>
+      <h1>Registro de Pedidos</h1>
       <section class="form-container">
         <form action="{% url 'tc_add' %}" method="POST">
           {% csrf_token %}
 
-          <legend>Tarjetas de clientes</legend>
-          
-          <input
-            type="text"
-            id="tarjeta"
-            name="tarjeta"
-            placeholder="Número de tarjeta"
-            class="form-input"
-            required
-          />
-          <select name="cliente" id="cliente" class="form-sele" required>
-            <option value="">Selecciona un cliente</option>
-            {% for tmp in clientes%}
-                <option value="{{tmp.run}}">{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
-            {% endfor %}
-          </select>
+          <legend>Pedidos</legend>
+        
+          <!-- 
+              Campos: 
+                - Cliente - select
+                - 
+          -->
+
           <div id="unete-r"></div>
           {% if mensaje %}
             <div class="alert alert-warning w-50 mx-auto text-center">
