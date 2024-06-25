@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import cliente, vendedor, tarjeta, tipoProducto, producto, pedido, detallePedido
+from .models import cliente, vendedor, tarjeta, tipoProducto, producto, detallePedido
 import json
 
 # Create your views here.
@@ -83,18 +83,18 @@ def detalle(request):
 
 """ Crud """
 def crud(request):
-    vendedores = vendedor.objects.all();
-    clientes = cliente.objects.all();
-    tarjetas = tarjeta.objects.all();
-    pedidos = pedido.objects.all();
-    detallePedidos = detallePedido.objects.all();
-    productos = producto.objects.all();
-    tipoProductos = tipoProducto.objects.all();
+    vendedores = vendedor.objects.all()
+    clientes = cliente.objects.all()
+    tarjetas = tarjeta.objects.all()
+    # pedidos = pedido.objects.all()
+    detallePedidos = detallePedido.objects.all()
+    productos = producto.objects.all()
+    tipoProductos = tipoProducto.objects.all()
     context = {
         "vendedores": vendedores,
         "clientes": clientes,
         "tarjetas": tarjetas,
-        "pedidos": pedidos,
+        # "pedidos": pedidos,
         "detallePedidos": detallePedidos,
         "productos": productos,
         "tipoProductos": tipoProductos,
@@ -250,7 +250,7 @@ def v_del(request, pk):
         vendedores = vendedor.objects.all();
         clientes = cliente.objects.all();
         tarjetas = tarjeta.objects.all();
-        pedidos = pedido.objects.all();
+        # pedidos = pedido.objects.all();
         detallePedidos = detallePedido.objects.all();
         productos = producto.objects.all();
         tipoProductos = tipoProducto.objects.all();
@@ -259,18 +259,19 @@ def v_del(request, pk):
             "vendedores": vendedores,
             "clientes": clientes,
             "tarjetas": tarjetas,
-            "pedidos": pedidos,
+            # "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
         }
+        print("Vendedor eliminado")
         return render(request, "pages/crud/crud.html", context)
     except:
         # Se recuperan los datos de la BD y se mandan 
         vendedores = vendedor.objects.all();
         clientes = cliente.objects.all();
         tarjetas = tarjeta.objects.all();
-        pedidos = pedido.objects.all();
+        # pedidos = pedido.objects.all();
         detallePedidos = detallePedido.objects.all();
         productos = producto.objects.all();
         tipoProductos = tipoProducto.objects.all();
@@ -279,11 +280,12 @@ def v_del(request, pk):
             "vendedores": vendedores,
             "clientes": clientes,
             "tarjetas": tarjetas,
-            "pedidos": pedidos,
+            # "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
         }
+        print("No se pudo eliminar el vendedor")
         return render(request, "pages/crud/crud.html", context)
     
 """ Clientes """
@@ -423,7 +425,7 @@ def c_upd(request):
                 "mensaje": "Las contraseñas no coinciden."
             }
             return render(request, "pages/crud/clientes/c_upd.html", context)
-
+""" Clientes - delete """
 def c_del(request, pk):
     try:
         # Se elimina el cliente asociado a la pk
@@ -431,43 +433,45 @@ def c_del(request, pk):
         c_encontrado.delete()
 
         # Se recuperan los datos de la BD y se mandan 
-        clientes = cliente.objects.all();
-        vendedores = vendedor.objects.all();
-        tarjetas = tarjeta.objects.all();
-        pedidos = pedido.objects.all();
-        detallePedidos = detallePedido.objects.all();
-        productos = producto.objects.all();
-        tipoProductos = tipoProducto.objects.all();
+        clientes = cliente.objects.all()
+        vendedores = vendedor.objects.all()
+        tarjetas = tarjeta.objects.all()
+        # pedidos = pedido.objects.all()
+        detallePedidos = detallePedido.objects.all()
+        productos = producto.objects.all()
+        tipoProductos = tipoProducto.objects.all()
 
         context = {
             "clientes": clientes,
             "vendedores": vendedores,
             "tarjetas": tarjetas,
-            "pedidos": pedidos,
+            # "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
         }
+        print("Cliente eliminado")
         return render(request, "pages/crud/crud.html", context)
     except:
         # Se recuperan los datos de la BD y se mandan 
-        clientes = cliente.objects.all();
-        vendedores = vendedor.objects.all();
-        tarjetas = tarjeta.objects.all();
-        pedidos = pedido.objects.all();
-        detallePedidos = detallePedido.objects.all();
-        productos = producto.objects.all();
-        tipoProductos = tipoProducto.objects.all();
+        clientes = cliente.objects.all()
+        vendedores = vendedor.objects.all()
+        tarjetas = tarjeta.objects.all()
+        # pedidos = pedido.objects.all()
+        detallePedidos = detallePedido.objects.all()
+        productos = producto.objects.all()
+        tipoProductos = tipoProducto.objects.all()
 
         context = {
             "clientes": clientes,
             "vendedores": vendedores,
             "tarjetas": tarjetas,
-            "pedidos": pedidos,
+            # "pedidos": pedidos,
             "detallePedidos": detallePedidos,
             "productos": productos,
             "tipoProductos": tipoProductos,
         }
+        print("No se pudo eliminar el cliente")
         return render(request, "pages/crud/crud.html", context)
 
 """ Tarjetas de clientes """
@@ -507,25 +511,105 @@ def tc_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca la tarjeta y se traen todos los clientes
         tar = tarjeta.objects.get(nro_tarjeta = pk)
-
         clientes = cliente.objects.all()
 
-        # Lista de los nombres
-        nombres_clientes = []
+        runes = []
 
-        for tmp in clientes:
-            nombres_cli = tmp.nombres+" "+tmp.apaterno+" "+tmp.amaterno
-            nombres_clientes.append(nombres_cli)
+        for x in clientes:
+            runes.append(x.run)
 
         context = {
             "tarjeta" : tar,
-            "clientes" : clientes,
-            "nombres" : nombres_clientes
+            "clientes" : clientes
         }
-        print(nombres_clientes)
+        # Se ve si los datos que estoy pasando son correctos
+        # Se pasan bien pero el problema es que el nombre no cambia en el select, se mantiene fijo.
+        print(tar.cliente.run+" "+tar.cliente.nombres+" "+tar.cliente.apaterno+" "+tar.cliente.amaterno)
+        print(runes)
         return render(request, "pages/crud/tarjetas/tc_upd.html", context)
     else:
         context = {
             "mensaje": "No se encuentra la tarjeta buscada"
         }
         return render(request, "pages/crud/tarjetas/tc_upd.html", context)
+
+""" Tarjetas de clientes - update """
+def tc_upd(request):
+    if request.method == "POST":
+        # Datos de la tarjeta
+        tar = request.POST["tarjeta"]
+        cli = request.POST["cliente"]
+
+        # Se recupera el run del cliente
+        objCli = cliente.objects.get(run = cli)
+
+        # Se crea el objeto y se manda a la BD
+        obj = tarjeta(
+            nro_tarjeta = tar,
+            cliente = objCli
+        )
+
+        obj.save()
+
+        # Se manda un mensaje de modificacion exitosa al usuario
+        clientes = cliente.objects.all()
+        context = {
+            "mensaje": "Modificación exitosa!",
+            "tarjeta": obj,
+            "clientes": clientes
+        }
+        return render(request, "pages/crud/tarjetas/tc_upd.html", context)
+
+""" Tarjetas de cliente - delete """
+def tc_del(request, pk):
+    try:
+        tc_encontrada = tarjeta.objects.get(nro_tarjeta = pk)
+        tc_encontrada.delete()
+
+        # Se recuperan los datos de la BD y se mandan 
+        clientes = cliente.objects.all()
+        vendedores = vendedor.objects.all()
+        tarjetas = tarjeta.objects.all()
+        # pedidos = pedido.objects.all()
+        detallePedidos = detallePedido.objects.all()
+        productos = producto.objects.all()
+        tipoProductos = tipoProducto.objects.all()
+
+        context = {
+            "tarjetas": tarjetas,
+            "clientes": clientes,
+            "vendedores": vendedores,
+            # "pedidos": pedidos,
+            "detallePedidos": detallePedidos,
+            "productos": productos,
+            "tipoProductos": tipoProductos,
+        }
+        print("Tarjeta eliminada")
+        return render(request, "pages/crud/crud.html", context)
+    except:
+        # Se recuperan los datos de la BD y se mandan 
+        clientes = cliente.objects.all()
+        vendedores = vendedor.objects.all()
+        tarjetas = tarjeta.objects.all()
+        # pedidos = pedido.objects.all()
+        detallePedidos = detallePedido.objects.all()
+        productos = producto.objects.all()
+        tipoProductos = tipoProducto.objects.all()
+
+        context = {
+            "tarjetas": tarjetas,
+            "clientes": clientes,
+            "vendedores": vendedores,
+            # "pedidos": pedidos,
+            "detallePedidos": detallePedidos,
+            "productos": productos,
+            "tipoProductos": tipoProductos,
+        }
+        print("No se pudo eliminar la tarjeta")
+        return render(request, "pages/crud/crud.html", context)
+
+""" Productos """
+
+""" Tipos de productos """
+
+""" Tipos de productos - add """

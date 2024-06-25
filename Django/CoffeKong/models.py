@@ -45,24 +45,21 @@ class tipoProducto(models.Model):
 
     def __str__(self):
         return str(self.descripcion)
-
-""" Producto """
-class producto(models.Model):
-    id_producto = models.IntegerField(primary_key=True, db_column="idProducto")
-    nombre = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=300)
-    precio = models.IntegerField()
-    imagen = models.CharField(max_length=100)
-    tipo = models.ForeignKey("tipoProducto", on_delete=models.CASCADE, db_column="idTipoProducto")
+    
+""" Estado del pedido """
+class estado(models.Model):
+    id_estado = models.IntegerField(primary_key=True, db_column="idEstado")
+    descripcion = models.CharField(max_length=50)
 
     def __str__(self):
-        return str(self.id_producto)
+        return str(self.descripcion)
 
 """ Pedido """
 class pedido(models.Model):
     id_pedido = models.IntegerField(primary_key=True, db_column="idPedido")
-    cliente = models.ForeignKey("cliente", on_delete=models.CASCADE, db_column="run")
+    cliente = models.ForeignKey("cliente", on_delete=models.CASCADE, db_column="run", default="Vacio")
     fecha = models.DateField()
+    estado = models.ForeignKey("estado", on_delete=models.CASCADE, db_column="idEstado", default="Vacio")
 
     def __str__(self):
         return str(self.id_pedido)
@@ -76,3 +73,15 @@ class detallePedido(models.Model):
 
     def __str__(self):
         return str(self.id_pedido)
+
+""" Producto """
+class producto(models.Model):
+    id_producto = models.IntegerField(primary_key=True, db_column="idProducto")
+    nombre = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=300)
+    precio = models.IntegerField()
+    imagen = models.CharField(max_length=100)
+    tipo = models.ForeignKey("tipoProducto", on_delete=models.CASCADE, db_column="idTipoProducto")
+
+    def __str__(self):
+        return str(self.id_producto)

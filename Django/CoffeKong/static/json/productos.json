@@ -4,7 +4,7 @@
         "nombre": "Té chai",
         "descripcion": "lorem",
         "precio": 2900,
-        "imagen": "/images/bebidas/te-chai.png",
+        "imagen": "/static/images/bebidas/te-chai.png",
         "tipo": "b"
     },
     {
@@ -12,7 +12,7 @@
         "nombre": "Té de bergamota",
         "descripcion": "lorem",
         "precio": 2790,
-        "imagen": "/images/bebidas/te-bergamota.png",
+        "imagen": "/static/images/bebidas/te-bergamota.png",
         "tipo": "b"
     },
     {
@@ -20,7 +20,7 @@
         "nombre": "Café irlandes",
         "descripcion": "lorem",
         "precio": 4690,
-        "imagen": "/images/bebidas/irlandes.png",
+        "imagen": "/static/images/bebidas/irlandes.png",
         "tipo": "b"
     },
     {
@@ -28,7 +28,7 @@
         "nombre": "Frappé",
         "descripcion": "lorem",
         "precio": 4200,
-        "imagen": "/images/bebidas/frappe.png",
+        "imagen": "/static/images/bebidas/frappe.png",
         "tipo": "b"
     },
     {
@@ -36,7 +36,7 @@
         "nombre": "Expresso",
         "descripcion": "lorem",
         "precio": 3100,
-        "imagen": "/images/bebidas/expresso.png",
+        "imagen": "/static/images/bebidas/expresso.png",
         "tipo": "b"
     },
     {
@@ -44,7 +44,7 @@
         "nombre": "Café + galletas",
         "descripcion": "lorem",
         "precio": 4800,
-        "imagen": "/images/bebidas/cafe+galletas.png",
+        "imagen": "/static/images/bebidas/cafe+galletas.png",
         "tipo": "b"
     },
     {
@@ -52,7 +52,7 @@
         "nombre": "Capuchino",
         "descripcion": "lorem",
         "precio": 3000,
-        "imagen": "/images/bebidas/capuchino.png",
+        "imagen": "/static/images/bebidas/capuchino.png",
         "tipo": "b"
     },
     {
@@ -60,7 +60,7 @@
         "nombre": "Café latte",
         "descripcion": "lorem",
         "precio": 2800,
-        "imagen": "/images/bebidas/latte.png",
+        "imagen": "/static/images/bebidas/latte.png",
         "tipo": "b"
     },
     {
@@ -68,7 +68,7 @@
         "nombre": "Jugo natural",
         "descripcion": "lorem",
         "precio": 3200,
-        "imagen": "/images/bebidas/jugos.png",
+        "imagen": "/static/images/bebidas/jugos.png",
         "tipo": "b"
     },
     {
@@ -76,7 +76,7 @@
         "nombre": "Café amaretto",
         "descripcion": "lorem",
         "precio": 3500,
-        "imagen": "/images/bebidas/amaretto.png",
+        "imagen": "/static/images/bebidas/amaretto.png",
         "tipo": "b"
     },
     
@@ -85,7 +85,7 @@
         "nombre": "Cachitos de manjar",
         "descripcion": "lorem",
         "precio": 1790,
-        "imagen": "/images/comida/cachitos.png",
+        "imagen": "/static/images/comida/cachitos.png",
         "tipo": "c"
     },
     {
@@ -93,7 +93,7 @@
         "nombre": "Chaparritas",
         "descripcion": "lorem",
         "precio": 2190,
-        "imagen": "/images/comida/chaparritas.png",
+        "imagen": "/static/images/comida/chaparritas.png",
         "tipo": "c"
     },
     {
@@ -101,7 +101,7 @@
         "nombre": "Cocadas",
         "descripcion": "lorem",
         "precio": 1000,
-        "imagen": "/images/comida/cocadas.png",
+        "imagen": "/static/images/comida/cocadas.png",
         "tipo": "c"
     },
     {
@@ -109,7 +109,7 @@
         "nombre": "Croissant",
         "descripcion": "lorem",
         "precio": 1800,
-        "imagen": "/images/comida/croissant.png",
+        "imagen": "/static/images/comida/croissant.png",
         "tipo": "c"
     },
     {
@@ -117,7 +117,7 @@
         "nombre": "Chilenitos",
         "descripcion": "lorem",
         "precio": 1500,
-        "imagen": "/images/comida/chilenitos.png",
+        "imagen": "/static/images/comida/chilenitos.png",
         "tipo": "c"
     },
     {
@@ -125,7 +125,7 @@
         "nombre": "Donas",
         "descripcion": "lorem",
         "precio": 2090,
-        "imagen": "/images/comida/donas.png",
+        "imagen": "/static/images/comida/donas.png",
         "tipo": "c"
     },
     {
@@ -133,7 +133,7 @@
         "nombre": "Sandwich",
         "descripcion": "lorem",
         "precio": 1500,
-        "imagen": "/images/comida/sandwich.png",
+        "imagen": "/static/images/comida/sandwich.png",
         "tipo": "c"
     },
     {
@@ -141,7 +141,7 @@
         "nombre": "Pie de limon",
         "descripcion": "lorem",
         "precio": 3200,
-        "imagen": "/images/comida/piedelimon.png",
+        "imagen": "/static/images/comida/piedelimon.png",
         "tipo": "c"
     },
     {
@@ -149,7 +149,7 @@
         "nombre": "Cheescake",
         "descripcion": "lorem",
         "precio": 3200,
-        "imagen": "/images/comida/cheescake.png",
+        "imagen": "/static/images/comida/cheescake.png",
         "tipo": "c"
     },
     {
@@ -157,7 +157,7 @@
         "nombre": "Kuchen de nuez",
         "descripcion": "lorem",
         "precio": 2990,
-        "imagen": "/images/comida/amaretto.png",
+        "imagen": "/static/images/comida/amaretto.png",
         "tipo": "c"
     }
 ]

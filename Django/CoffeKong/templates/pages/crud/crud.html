@@ -123,7 +123,7 @@
                                     </a>
                                 </td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-del">
+                                    <a href="{% url 'tc_del' pk=tmp.nro_tarjeta %}" class="crud-a crud-del">
                                         <span class="material-symbols-outlined"> delete </span>
                                     </a>
                                 </td>
@@ -140,7 +140,7 @@
         </article>
         
         <!-- Pedidos -->
-        <article class="ct-container">
+        <!--<article class="ct-container">
             <table class="table-crud">
                 <caption class="table-title">Pedidos</caption>
                 <thead>
@@ -177,7 +177,7 @@
                     Agregar pedido
                 </button>
             </a>
-        </article>
+        </article> -->
         
         <!-- Detalles de pedidos -->
         <article class="ct-container">

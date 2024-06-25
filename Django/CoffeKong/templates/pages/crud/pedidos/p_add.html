@@ -1,4 +1,4 @@
-<!-- Update tarjetas de clientes -->
+<!-- Create tarjetas de clientes -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,9 +24,9 @@
 
     <!-- Main -->
     <main>
-      <h1>Modificación de Tarjetas de clientes</h1>
+      <h1>Registro de Tarjetas de clientes</h1>
       <section class="form-container">
-        <form action="{% url 'tc_upd' %}" method="POST">
+        <form action="{% url 'tc_add' %}" method="POST">
           {% csrf_token %}
 
           <legend>Tarjetas de clientes</legend>
@@ -37,16 +37,12 @@
             name="tarjeta"
             placeholder="Número de tarjeta"
             class="form-input"
-            value="{{tarjeta.nro_tarjeta}}"
             required
           />
-          <select name="cliente" id="cliente" class="form-sele">
-            {% for tmp in clientes %}
-              {% if tmp.run == tar.cliente.run %}
-                <option value="{{tmp.run}}" selected>{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
-              {% else %}
+          <select name="cliente" id="cliente" class="form-sele" required>
+            <option value="">Selecciona un cliente</option>
+            {% for tmp in clientes%}
                 <option value="{{tmp.run}}">{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
-              {% endif %}
             {% endfor %}
           </select>
           <div id="unete-r"></div>
@@ -59,7 +55,7 @@
             <input
             id="submit-r"
             type="submit"
-            value="Modificar"
+            value="Registrar"
             class="form-submit"
             />
             <a href="{% url 'crud' %}">

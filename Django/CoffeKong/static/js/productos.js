@@ -2,7 +2,7 @@
 let productos = [];
 
 // Se recuperan los datos de productos.json y se replican en el array
-fetch("/json/productos.json")
+fetch("/static/json/productos.json")
   .then((response) => response.json())
   .then((data) => {
     productos = data;

@@ -29,4 +29,6 @@ urlpatterns = [
     # Tarjetas de clientes
     path("tc_add/", views.tc_add, name="tc_add"),
     path("tc_find/<str:pk>", views.tc_find, name="tc_find"),
+    path("tc_upd/", views.tc_upd, name="tc_upd"),
+    path("tc_del/<str:pk>", views.tc_del, name="tc_del"),
 ]
