@@ -49,7 +49,7 @@ urlpatterns = [
     path("p_del/<str:pk>", views.p_del, name="p_del"),
     # Detalle de pedidos
     path("dt_add/", views.dt_add, name="dt_add"),
-    # path("dt_find/<str:pk>", views.dt_find, name="dt_find"),
+    #path("dt_find/<str:pk>/<str:pk>", views.dt_find, name="dt_find"),
 
     # Productos
     path("pr_add/", views.pr_add, name="pr_add"),

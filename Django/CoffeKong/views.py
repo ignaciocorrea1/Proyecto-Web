@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import cliente, vendedor, tarjeta, estado, pedido, tipoProducto, producto, detallePedido
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 import json
@@ -213,6 +214,18 @@ def v_add(request):
                     )
 
                     obj.save()
+
+                    v_apellido = v_paterno+" "+v_materno
+
+                    # Se crea un usuario en el modelo de Users
+                    user = User(
+                        username = v_correo,
+                        password = v_contrasenia,
+                        first_name = v_nombres,
+                        last_name = v_apellido,
+                        email = v_correo
+                    )
+                    user.save()
 
                     # Se manda un mensaje de registro exitoso al usuario
                     print("Se registro")
