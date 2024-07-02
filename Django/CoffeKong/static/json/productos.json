@@ -5,7 +5,7 @@
         "descripcion": "lorem",
         "precio": 2900,
         "imagen": "/static/images/bebidas/te-chai.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "2",
@@ -13,7 +13,7 @@
         "descripcion": "lorem",
         "precio": 2790,
         "imagen": "/static/images/bebidas/te-bergamota.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "3",
@@ -21,7 +21,7 @@
         "descripcion": "lorem",
         "precio": 4690,
         "imagen": "/static/images/bebidas/irlandes.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "4",
@@ -29,7 +29,7 @@
         "descripcion": "lorem",
         "precio": 4200,
         "imagen": "/static/images/bebidas/frappe.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "5",
@@ -37,7 +37,7 @@
         "descripcion": "lorem",
         "precio": 3100,
         "imagen": "/static/images/bebidas/expresso.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "6",
@@ -45,7 +45,7 @@
         "descripcion": "lorem",
         "precio": 4800,
         "imagen": "/static/images/bebidas/cafe+galletas.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "7",
@@ -53,7 +53,7 @@
         "descripcion": "lorem",
         "precio": 3000,
         "imagen": "/static/images/bebidas/capuchino.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "8",
@@ -61,7 +61,7 @@
         "descripcion": "lorem",
         "precio": 2800,
         "imagen": "/static/images/bebidas/latte.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "9",
@@ -69,7 +69,7 @@
         "descripcion": "lorem",
         "precio": 3200,
         "imagen": "/static/images/bebidas/jugos.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     {
         "id": "10",
@@ -77,7 +77,7 @@
         "descripcion": "lorem",
         "precio": 3500,
         "imagen": "/static/images/bebidas/amaretto.png",
-        "tipo": "b"
+        "tipo": "B"
     },
     
     {
@@ -86,7 +86,7 @@
         "descripcion": "lorem",
         "precio": 1790,
         "imagen": "/static/images/comida/cachitos.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "12",
@@ -94,7 +94,7 @@
         "descripcion": "lorem",
         "precio": 2190,
         "imagen": "/static/images/comida/chaparritas.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "13",
@@ -102,7 +102,7 @@
         "descripcion": "lorem",
         "precio": 1000,
         "imagen": "/static/images/comida/cocadas.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "14",
@@ -110,7 +110,7 @@
         "descripcion": "lorem",
         "precio": 1800,
         "imagen": "/static/images/comida/croissant.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "15",
@@ -118,7 +118,7 @@
         "descripcion": "lorem",
         "precio": 1500,
         "imagen": "/static/images/comida/chilenitos.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "16",
@@ -126,7 +126,7 @@
         "descripcion": "lorem",
         "precio": 2090,
         "imagen": "/static/images/comida/donas.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "17",
@@ -134,7 +134,7 @@
         "descripcion": "lorem",
         "precio": 1500,
         "imagen": "/static/images/comida/sandwich.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "18",
@@ -142,7 +142,7 @@
         "descripcion": "lorem",
         "precio": 3200,
         "imagen": "/static/images/comida/piedelimon.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "19",
@@ -150,14 +150,14 @@
         "descripcion": "lorem",
         "precio": 3200,
         "imagen": "/static/images/comida/cheescake.png",
-        "tipo": "c"
+        "tipo": "C"
     },
     {
         "id": "20",
         "nombre": "Kuchen de nuez",
         "descripcion": "lorem",
         "precio": 2990,
-        "imagen": "/static/images/comida/amaretto.png",
-        "tipo": "c"
+        "imagen": "/static/images/comida/kuchen-nuez.png",
+        "tipo": "C"
     }
 ]

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}" />
     <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
     <!-- Link iconos -->
-    <!-- Link iconos -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -24,1767 +23,197 @@
     {% include "base/header.html" %}
 
     <main class="container-fluid">
+      
       <!-- Inicio offcanva -->
-      <div
-        class="offcanvas offcanvas-end"
-        tabindex="-1"
-        id="offcanvasRight"
-        aria-labelledby="offcanvasRightLabel"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasRightLabel">
-            Carro de compras
-          </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="offcanvas-body">
-          <div class="products" id="d-products"></div>
-          <div class="carro-bottom">
-            <div class="product-total">
-              <span id="producto-total">Total a pagar: $</span>
-              <hr />
-            </div>
-            <div class="product-buttons">
-              <a href="{% url 'carrito' %}">
-                <button class="product-carro">Ir al carro</button>
-              </a>
-              <a href="{% url 'pago' %}">
-                <button class="product-pago">Iniciar pago</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      
+      {% include "base/offcanva.html" %}
+
       <!-- Fin offcanva -->
+
       <!-- Section bebidas -->
       <section class="group-b">
+
         <h1>Bebidas</h1>
+
         <div class="menu-container">
-          <!-- Inicio - Producto - 1 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-1">
-            <figure class="product">
-              <img src="{% static '/images/bebidas/te-chai.png' %}" alt="Cargando imagen..." />
-              <figcaption>Té chai</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 1 -->
-          <div
-            class="modal fade"
-            id="modal-1"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Té chai</h1>
-                  <button
-                    onclick="reestablecer('modal-1')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/te-chai.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-1">$2900</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-1', 'h-precio-1')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-1"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-1', 'h-precio-1')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-1')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 1 -->
-          <!-- Fin - Producto - 1 -->
 
-          <!-- Inicio - Producto - 2 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-2">
-            <figure class="product">
-              <img
-                src="{% static '/images/bebidas/te-bergamota.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Té de bergamota</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 2 -->
-          <div
-            class="modal fade"
-            id="modal-2"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Té de bergamota
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-2')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/te-bergamota.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-2">$2790</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-2', 'h-precio-2')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-2"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-2', 'h-precio-2')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
+          {% for tmp in productos %}
+            {% if tmp.tipo.id_tipoproducto == 'B' %}
+              <!-- Inicio - Producto -->
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{tmp.id_producto}}">
+                <figure class="product">
+                  <img src={{tmp.imagen}} alt="Cargando imagen..." />
+                  <figcaption>{{tmp.nombre}}</figcaption>
+                </figure>
+              </a>
+              <!-- Inicio modal -->
+              <div
+                class="modal fade"
+                id="modal-{{tmp.id_producto}}"
+                tabindex="-1"
+                aria-labelledby="modal-1Label"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title" id="exampleModalLabel">{{tmp.nombre}}</h1>
+                      <button
+                        onclick="reestablecer('modal-{{tmp.id_producto}}')"
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body-container">
+                        <img
+                          src={{tmp.imagen}}
+                          alt="Cargando imagen..."
+                        />
+                        <div class="modal-desc">
+                          <h2>Descripción del producto</h2>
+                          <p>
+                            {{tmp.descripcion}}
+                          </p>
+                          <div class="modal-desc-down">
+                            <div class="modal-price-container">
+                              <span class="precio">Precio: </span>
+                              <span class="precio" id="h-precio-{{tmp.id_producto}}">${{tmp.precio}}</span>
+                            </div>
+                            <div class="modal-buttons">
+                              <button
+                                onclick="menos('h-contador-{{tmp.id_producto}}', 'h-precio-{{tmp.id_producto}}')"
+                                class="modal-carro-menos"
+                              >
+                                -
+                              </button>
+                              <span class="modal-carro-contador" id="h-contador-{{tmp.id_producto}}"
+                                >1</span
+                              >
+                              <button
+                                onclick="mas('h-contador-{{tmp.id_producto}}', 'h-precio-{{tmp.id_producto}}')"
+                                class="modal-carro-mas"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <div class="modal-footer">
+                      <button
+                        onclick="agregar('add-{{tmp.id_producto}}')"
+                        type="button"
+                        class="modal-button-add"
+                      >
+                        Agregar
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-2')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
               </div>
-            </div>
-          </div>
-          <!-- Fin modal 2 -->
-          <!-- Fin - Producto - 2 -->
+              <!-- Fin modal -->
+              <!-- Fin Producto -->
+            {% endif %}
+          {% endfor %}
 
-          <!-- Inicio - Producto - 3 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-3">
-            <figure class="product">
-              <img
-                src="{% static '/images/bebidas/irlandes.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Café irlandes</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 3 -->
-          <div
-            class="modal fade"
-            id="modal-3"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Café irlandes
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-3')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/irlandes.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-3">$4690</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-3', 'h-precio-3')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-3"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-3', 'h-precio-3')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-3')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 3 -->
-          <!-- Fin - Producto - 3 -->
-
-          <!-- Inicio - Producto - 4 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-4">
-            <figure class="product">
-              <img src="{% static '/images/bebidas/frappe.png' %}" alt="Cargando imagen..." />
-              <figcaption>Frappé</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 4 -->
-          <div
-            class="modal fade"
-            id="modal-4"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Frappé</h1>
-                  <button
-                    onclick="reestablecer('modal-4')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/frappe.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-4">$4200</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-4', 'h-precio-4')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-4"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-4', 'h-precio-4')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-4')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 4 -->
-          <!-- Fin - Producto - 4 -->
-
-          <!-- Inicio - Producto - 5 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-5">
-            <figure class="product">
-              <img
-                src="{% static '/images/bebidas/expresso.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Expresso</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 5 -->
-          <div
-            class="modal fade"
-            id="modal-5"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Expresso</h1>
-                  <button
-                    onclick="reestablecer('modal-5')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/expresso.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-5">$3100</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-5', 'h-precio-5')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-5"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-5', 'h-precio-5')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-5')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 5 -->
-          <!-- Fin - Producto - 5 -->
-
-          <!-- Inicio - Producto - 6 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-6">
-            <figure class="product">
-              <img
-                src="{% static '/images/bebidas/cafe+galletas.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Café + galletas</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 6 -->
-          <div
-            class="modal fade"
-            id="modal-6"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Café + galletas
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-6')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/cafe+galletas.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-6">$4800</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-6', 'h-precio-6')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-6"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-6', 'h-precio-6')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-6')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 6 -->
-          <!-- Fin - Producto - 6 -->
-
-          <!-- Inicio - Producto - 7 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-7">
-            <figure class="product">
-              <img
-                src="{% static '/images/bebidas/capuchino.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Capuchino</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 7 -->
-          <div
-            class="modal fade"
-            id="modal-7"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Capuchino</h1>
-                  <button
-                    onclick="reestablecer('modal-7')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/capuchino.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-7">$3000</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-7', 'h-precio-7')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-7"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-7', 'h-precio-7')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-7')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 7 -->
-          <!-- Fin - Producto - 7 -->
-
-          <!-- Inicio - Producto - 8 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-8">
-            <figure class="product">
-              <img src="{% static '/images/bebidas/latte.png' %}" alt="Cargando imagen..." />
-              <figcaption>Café latte</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 8 -->
-          <div
-            class="modal fade"
-            id="modal-8"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Café latte</h1>
-                  <button
-                    onclick="reestablecer('modal-8')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/latte.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-8">$2800</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-8', 'h-precio-8')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-8"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-8', 'h-precio-8')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-8')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 8 -->
-          <!-- Fin - Producto - 8 -->
-
-          <!-- Inicio - Producto - 9 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-9">
-            <figure class="product">
-              <img src="{% static '/images/bebidas/jugos.png' %}" alt="Cargando imagen..." />
-              <figcaption>Jugo natural</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 9 -->
-          <div
-            class="modal fade"
-            id="modal-9"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Jugo natural
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-9')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/jugos.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-9">$3200</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-9', 'h-precio-9')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-9"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-9', 'h-precio-9')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-9')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 9 -->
-          <!-- Fin - Producto - 9 -->
-
-          <!-- Inicio - Producto - 10 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-10">
-            <figure class="product">
-              <img
-                src="{% static '/images/bebidas/amaretto.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Café amaretto</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 10 -->
-          <div
-            class="modal fade"
-            id="modal-10"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Café amaretto
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-10')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/bebidas/amaretto.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-10">$3500</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-10', 'h-precio-10')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-10"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-10', 'h-precio-10')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-10')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 10 -->
-          <!-- Fin - Producto - 10 -->
         </div>
+
       </section>
       <hr />
       <!-- Section comida -->
       <section class="group-c">
+
         <h1>Comida</h1>
+
         <div class="menu-container">
-          <!-- Inicio - Producto - 11 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-11">
-            <figure class="product">
-              <img src="{% static '/images/comida/cachitos.png' %}" alt="Cargando imagen..." />
-              <figcaption>Cachitos de manjar</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 11 -->
-          <div
-            class="modal fade"
-            id="modal-11"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Cachitos de manjar
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-11')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/cachitos.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-11">$1790</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-11', 'h-precio-11')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-11"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-11', 'h-precio-11')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-11')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 11 -->
-          <!-- Fin - Producto - 11 -->
 
-          <!-- Inicio - Producto - 12 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-12">
-            <figure class="product">
-              <img
-                src="{% static '/images/comida/chaparritas.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Chaparritas</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 12 -->
-          <div
-            class="modal fade"
-            id="modal-12"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Chaparritas
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-12')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/chaparritas.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-12">$2190</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-12', 'h-precio-12')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-12"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-12', 'h-precio-12')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
+          {% for tmp in productos %}
+            {% if tmp.tipo.id_tipoproducto == 'C' %}
+              <!-- Inicio - Producto -->
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{tmp.id_producto}}">
+                <figure class="product">
+                  <img src={{tmp.imagen}} alt="Cargando imagen..." />
+                  <figcaption>{{tmp.nombre}}</figcaption>
+                </figure>
+              </a>
+              <!-- Inicio modal -->
+              <div
+                class="modal fade"
+                id="modal-{{tmp.id_producto}}"
+                tabindex="-1"
+                aria-labelledby="modal-1Label"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title" id="exampleModalLabel">{{tmp.nombre}}</h1>
+                      <button
+                        onclick="reestablecer('modal-{{tmp.id_producto}}')"
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body-container">
+                        <img
+                          src={{tmp.imagen}}
+                          alt="Cargando imagen..."
+                        />
+                        <div class="modal-desc">
+                          <h2>Descripción del producto</h2>
+                          <p>
+                            {{tmp.descripcion}}
+                          </p>
+                          <div class="modal-desc-down">
+                            <div class="modal-price-container">
+                              <span class="precio">Precio: </span>
+                              <span class="precio" id="h-precio-{{tmp.id_producto}}">${{tmp.precio}}</span>
+                            </div>
+                            <div class="modal-buttons">
+                              <button
+                                onclick="menos('h-contador-{{tmp.id_producto}}', 'h-precio-{{tmp.id_producto}}')"
+                                class="modal-carro-menos"
+                              >
+                                -
+                              </button>
+                              <span class="modal-carro-contador" id="h-contador-{{tmp.id_producto}}"
+                                >1</span
+                              >
+                              <button
+                                onclick="mas('h-contador-{{tmp.id_producto}}', 'h-precio-{{tmp.id_producto}}')"
+                                class="modal-carro-mas"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-12')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 12 -->
-          <!-- Fin - Producto - 12 -->
-
-          <!-- Inicio - Producto - 13 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-13">
-            <figure class="product">
-              <img src="{% static '/images/comida/cocadas.png' %}" alt="Cargando imagen..." />
-              <figcaption>Cocadas</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 13 -->
-          <div
-            class="modal fade"
-            id="modal-13"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Cocadas</h1>
-                  <button
-                    onclick="reestablecer('modal-13')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/cocadas.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-13">$1000</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-13', 'h-precio-13')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-13"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-13', 'h-precio-13')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
+                    <div class="modal-footer">
+                      <button
+                        onclick="agregar('add-{{tmp.id_producto}}')"
+                        type="button"
+                        class="modal-button-add"
+                      >
+                        Agregar
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-13')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
               </div>
-            </div>
-          </div>
-          <!-- Fin modal 13 -->
-          <!-- Fin - Producto - 13 -->
-
-          <!-- Inicio - Producto - 14 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-14">
-            <figure class="product">
-              <img
-                src="{% static '/images/comida/croissant.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Croissant</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 14 -->
-          <div
-            class="modal fade"
-            id="modal-14"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Croissant</h1>
-                  <button
-                    onclick="reestablecer('modal-14')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/croissant.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-14">$1800</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-14', 'h-precio-14')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-14"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-14', 'h-precio-14')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-14')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 14 -->
-          <!-- Fin - Producto - 14 -->
-
-          <!-- Inicio - Producto - 15 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-15">
-            <figure class="product">
-              <img
-                src="{% static '/images/comida/chilenitos.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Chilenitos</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 15 -->
-          <div
-            class="modal fade"
-            id="modal-15"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Chilenitos</h1>
-                  <button
-                    onclick="reestablecer('modal-15')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/chilenitos.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-15">$1500</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-15', 'h-precio-15')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-15"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-15', 'h-precio-15')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-15')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 15 -->
-          <!-- Fin - Producto - 15 -->
-
-          <!-- Inicio - Producto - 16 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-16">
-            <figure class="product">
-              <img src="{% static '/images/comida/donas.png' %}" alt="Cargando imagen..." />
-              <figcaption>Donas</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 16 -->
-          <div
-            class="modal fade"
-            id="modal-16"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Donas</h1>
-                  <button
-                    onclick="reestablecer('modal-16')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/donas.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-16">$2090</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-16', 'h-precio-16')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-16"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-16', 'h-precio-16')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-16')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 16 -->
-          <!-- Fin - Producto - 16 -->
-
-          <!-- Inicio - Producto - 17 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-17">
-            <figure class="product">
-              <img src="{% static '/images/comida/sandwich.png' %}" alt="Cargando imagen..." />
-              <figcaption>Sandwich</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 17 -->
-          <div
-            class="modal fade"
-            id="modal-17"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Sandwich</h1>
-                  <button
-                    onclick="reestablecer('modal-17')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/sandwich.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-17">$1500</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-17', 'h-precio-17')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-17"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-17', 'h-precio-17')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-17')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 17 -->
-          <!-- Fin - Producto - 17 -->
-
-          <!-- Inicio - Producto - 18 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-18">
-            <figure class="product">
-              <img
-                src="{% static '/images/comida/piedelimon.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Pie de limon</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 18 -->
-          <div
-            class="modal fade"
-            id="modal-18"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Pie de limon
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-18')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/piedelimon.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-18">$3200</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-18', 'h-precio-18')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-18"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-18', 'h-precio-18')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-18')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 18 -->
-          <!-- Fin - Producto - 18 -->
-
-          <!-- Inicio - Producto - 19 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-19">
-            <figure class="product">
-              <img
-                src="{% static '/images/comida/cheescake.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Cheescake</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 19 -->
-          <div
-            class="modal fade"
-            id="modal-19"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Cheescake</h1>
-                  <button
-                    onclick="reestablecer('modal-19')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/cheescake.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-19">$3200</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-19', 'h-precio-19')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-19"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-19', 'h-precio-19')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-19')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 19 -->
-          <!-- Fin - Producto - 19 -->
-
-          <!-- Inicio - Producto - 20 -->
-          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-20">
-            <figure class="product">
-              <img
-                src="{% static '/images/comida/kuchen-nuez.png' %}"
-                alt="Cargando imagen..."
-              />
-              <figcaption>Kuchen de nuez</figcaption>
-            </figure>
-          </a>
-          <!-- Inicio modal 20 -->
-          <div
-            class="modal fade"
-            id="modal-20"
-            tabindex="-1"
-            aria-labelledby="modal-1Label"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">
-                    Kuchen de nuez
-                  </h1>
-                  <button
-                    onclick="reestablecer('modal-20')"
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-container">
-                    <img
-                      src="{% static '/images/comida/kuchen-nuez.png' %}"
-                      alt="Cargando imagen..."
-                    />
-                    <div class="modal-desc">
-                      <h2>Descripción del producto</h2>
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Aliquam suscipit, veritatis dolore maxime nam in
-                        architecto neque iusto blanditiis doloribus aspernatur
-                        recusandae molestias laudantium quo illo rerum.
-                        Corporis, tenetur nemo!
-                      </p>
-                      <div class="modal-desc-down">
-                        <div class="modal-price-container">
-                          <span class="precio">Precio: </span>
-                          <span class="precio" id="h-precio-20">$2990</span>
-                        </div>
-                        <div class="modal-buttons">
-                          <button
-                            onclick="menos('h-contador-20', 'h-precio-20')"
-                            class="modal-carro-menos"
-                          >
-                            -
-                          </button>
-                          <span class="modal-carro-contador" id="h-contador-20"
-                            >1</span
-                          >
-                          <button
-                            onclick="mas('h-contador-20', 'h-precio-20')"
-                            class="modal-carro-mas"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    onclick="agregar('add-20')"
-                    type="button"
-                    class="modal-button-add"
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin modal 20 -->
-          <!-- Fin - Producto - 20 -->
-        </div>
+              <!-- Fin modal -->
+              <!-- Fin Producto -->
+            {% endif %}
+          {% endfor %}
+          
       </section>
     </main>
     

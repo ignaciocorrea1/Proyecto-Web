@@ -1,4 +1,4 @@
-<!-- Create pedidos -->
+<!-- Update pedidos -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,17 +24,28 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Pedidos</h1>
+      <h1>Modificación de Pedidos</h1>
       <section class="form-container">
-        <form action="{% url 'p_add' %}" method="POST">
+        <form action="{% url 'p_upd' %}" method="POST">
           
           {% csrf_token %}
 
           <legend>Pedidos</legend>
           <input
+            type="text"
+            id="id_pedido"
+            name="id_pedido"
+            value={{pedido.id_pedido}}
+            placeholder="Id del pedido"
+            class="form-input"
+            readonly 
+            required
+          />
+          <input
             type="date"
             id="fecha"
             name="fecha"
+            value={{pedido.fecha|date:"Y-m-d"}}
             placeholder="Fecha del pedido"
             class="form-input"
             required
@@ -42,13 +53,21 @@
           <select name="cliente" id="cliente" class="form-sele" required>
             <option value="">Selecciona un cliente</option>
             {% for tmp in clientes %}
-                <option value="{{tmp.run}}">{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
+                {% if tmp.run == pedido.cliente.run %}
+                    <option value="{{tmp.run}}" selected>{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
+                {% else %}
+                    <option value="{{tmp.run}}">{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
+                {% endif %}
             {% endfor %}
           </select>
           <select name="estado" id="estado" class="form-sele" required>
             <option value="">Selecciona un estado</option>
             {% for tmp in estados %}
-                <option value="{{tmp.id_estado}}">{{tmp.descripcion}}</option>
+                {% if tmp.id_estado == pedido.estado.id_estado %}
+                    <option value="{{tmp.id_estado}}" selected>{{tmp.descripcion}}</option>
+                {% else %}
+                    <option value="{{tmp.id_estado}}">{{tmp.descripcion}}</option>
+                {% endif %}
             {% endfor %}
           </select>
 
@@ -62,7 +81,7 @@
             <input
             id="submit-r"
             type="submit"
-            value="Registrar"
+            value="Modificar"
             class="form-submit"
             />
             <a href="{% url 'crud' %}">

@@ -1,4 +1,4 @@
-<!-- Create clientes -->
+<!-- Update productos -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,85 +24,70 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Clientes</h1>
+      <h1>Modificación de Productos</h1>
       <section class="form-container">
-        <form action="{% url 'c_add' %}" method="POST">
+        <form action="{% url 'pr_upd' %}" method="POST">
           
           {% csrf_token %}
 
-          <legend>Cliente</legend>
+          <legend>Productos</legend>
+          
           <input
-            type="text"
-            id="rut-r"
-            name="rut"
-            placeholder="Rut (*)"
-            class="form-input"
+            type="number"
+            id="id"
+            name="id"
+            value={{producto.id_producto}}
+            placeholder="Id"
+            class="form-input" 
+            readonly 
             required
           />
           <input
             type="text"
-            id="nombres-r"
-            name="nombres"
-            placeholder="Nombre(s) (*)"
-            class="form-input"
-            required
-          />
-          <input
-            type="text"
-            id="paterno-r"
-            name="paterno"
-            placeholder="Apellido Paterno (*)"
+            id="nombre"
+            name="nombre"
+            value={{producto.nombre}}
+            placeholder="Nombre"
             class="form-input"
             required
           />
           <input
             type="text"
-            id="materno-r"
-            name="materno"
-            placeholder="Apellido Materno (*)"
+            id="descripcionp"
+            name="descripcionp"
+            value={{producto.descripcion}}
+            placeholder="Descripcion"
+            class="form-input"
+            required
+          />
+          <input
+            type="number"
+            id="precio"
+            name="precio"
+            value={{producto.precio}}
+            placeholder="Precio: $"
             class="form-input"
             required
           />
           <input
             type="text"
-            id="telefono-r"
-            name="telefono"
-            placeholder="Teléfono (*)"
+            id="imagen"
+            name="imagen"
+            value={{producto.imagen}}
+            placeholder="Ruta: /static/images/"
             class="form-input"
             required
           />
-          <input
-            type="text"
-            id="direccion-r"
-            name="direccion"
-            placeholder="Dirección (*)"
-            class="form-input"
-            required
-          />
-          <input
-            type="email"
-            id="correo-r"
-            name="correo"
-            placeholder="Correo electrónico (*)"
-            class="form-input"
-            required
-          />
-          <input
-            type="password"
-            id="contrasenia-r"
-            name="contrasenia"
-            placeholder="Contraseña (*)"
-            class="form-input"
-            required
-          />
-          <input
-            type="password"
-            id="contrasenia-2-r"
-            name="contrasenia-2"
-            placeholder="Confirmar contraseña (*)"
-            class="form-input"
-            required
-          />
+          <select name="tipo" id="tipo" class="form-sele" required>
+            {% for tmp in tipoProductos %}
+                {% if tmp.id_tipoproducto == producto.tipo.id_tipoproducto %}
+                    <option value="{{tmp.id_tipoproducto}}" selected>{{tmp.descripcion}}</option> 
+                {% else %}
+                    <option value="{{tmp.id_tipoproducto}}">{{tmp.descripcion}}</option>
+                {% endif %}  
+            {% endfor %}
+          </select>
+
           <div id="unete-r"></div>
           {% if mensaje %}
             <div class="alert alert-warning w-50 mx-auto text-center">
@@ -111,10 +96,9 @@
           {% endif %} 
           <div class="low-form">
             <input
-            onclick="validaRegistro()" 
             id="submit-r"
             type="submit"
-            value="Registrar"
+            value="Modificar"
             class="form-submit"
             />
             <a href="{% url 'crud' %}">

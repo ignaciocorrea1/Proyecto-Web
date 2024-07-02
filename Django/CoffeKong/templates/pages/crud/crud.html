@@ -139,6 +139,44 @@
             </a>
         </article>
         
+        <!-- Estados de pedido -->
+        <article class="ct-container">
+            <table class="table-crud">
+                <caption class="table-title">Estados de pedido</caption>
+                <thead>
+                    <th class="th-crud">Id</th>
+                    <th class="th-crud">Descripcion</th>
+                    <th class="th-crud">Modificar</th>
+                    <th class="th-crud">Eliminar</th>
+                </thead>
+                <tbody>
+                    {% if estados %}
+                        {% for tmp in estados %}
+                            <tr>
+                                <td class="td-crud">{{tmp.id_estado}}</td>
+                                <td class="td-crud">{{tmp.descripcion}}</td>
+                                <td class="td-crud">
+                                    <a href="{% url 'e_find' pk=tmp.id_estado %}" class="crud-a crud-upd">
+                                        <span class="material-symbols-outlined"> edit </span>
+                                    </a>
+                                </td>
+                                <td class="td-crud">
+                                    <a href="{% url 'e_del' pk=tmp.id_estado %}" class="crud-a crud-del">
+                                        <span class="material-symbols-outlined"> delete </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+            <a href="{% url 'e_add' %}" class="crud-a crud-add">
+                <button type="button" class="crud-badd">
+                    Agregar estado
+                </button>
+            </a>
+        </article>
+        
         <!-- Pedidos -->
         <article class="ct-container">
             <table class="table-crud">
@@ -158,12 +196,12 @@
                                 <td class="td-crud">{{tmp.fecha}}</td>
                                 <td class="td-crud">{{tmp.cliente}}</td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-upd">
+                                    <a href="{% url 'p_find' pk=tmp.id_pedido %}" class="crud-a crud-upd">
                                         <span class="material-symbols-outlined"> edit </span>
                                     </a>
                                 </td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-del">
+                                    <a href="{% url 'p_del' pk=tmp.id_pedido %}" class="crud-a crud-del">
                                         <span class="material-symbols-outlined"> delete </span>
                                     </a>
                                 </td>
@@ -185,8 +223,8 @@
                 <caption class="table-title">Detalles de pedidos</caption>
                 <thead>
                     <th class="th-crud">Id del Pedido</th>
+                    <th class="th-crud">Id del Producto</th>
                     <th class="th-crud">Total</th>
-                    <th class="th-crud">Cantidad</th>
                     <th class="th-crud">Modificar</th>
                     <th class="th-crud">Eliminar</th>
                 </thead>
@@ -195,8 +233,8 @@
                         {% for tmp in detallePedidos %}
                             <tr>
                                 <td class="td-crud">{{tmp.id_pedido}}</td>
+                                <td class="td-crud">{{tmp.id_producto}}</td>
                                 <td class="td-crud">{{tmp.total}}</td>
-                                <td class="td-crud">{{tmp.cantidad}}</td>
                                 <td class="td-crud">
                                     <a href="#" class="crud-a crud-upd">
                                         <span class="material-symbols-outlined"> edit </span>
@@ -212,7 +250,7 @@
                     {% endif %}
                 </tbody>
             </table>
-            <a href="#" class="crud-a crud-add">
+            <a href="{% url 'dt_add' %}" class="crud-a crud-add">
                 <button type="button" class="crud-badd">
                     Agregar detalle de pedido
                 </button>
@@ -238,12 +276,12 @@
                                 <td class="td-crud">{{tmp.nombre}}</td>
                                 <td class="td-crud">{{tmp.tipo}}</td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-upd">
+                                    <a href="{% url 'pr_find' pk=tmp.id_producto %}" class="crud-a crud-upd">
                                         <span class="material-symbols-outlined"> edit </span>
                                     </a>
                                 </td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-del">
+                                    <a href="{% url 'pr_del' pk=tmp.id_producto %}" class="crud-a crud-del">
                                         <span class="material-symbols-outlined"> delete </span>
                                     </a>
                                 </td>
@@ -252,7 +290,7 @@
                     {% endif %}
                 </tbody>
             </table>
-            <a href="#" class="crud-a crud-add">
+            <a href="{% url 'pr_add' %}" class="crud-a crud-add">
                 <button type="button" class="crud-badd">
                     Agregar producto
                 </button>
@@ -276,12 +314,12 @@
                                 <td class="td-crud">{{tmp.id_tipoproducto}}</td>
                                 <td class="td-crud">{{tmp.descripcion}}</td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-upd">
+                                    <a href="{% url 'tp_find' pk=tmp.id_tipoproducto %}" class="crud-a crud-upd">
                                         <span class="material-symbols-outlined"> edit </span>
                                     </a>
                                 </td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-del">
+                                    <a href="{% url 'tp_del' pk=tmp.id_tipoproducto %}" class="crud-a crud-del">
                                         <span class="material-symbols-outlined"> delete </span>
                                     </a>
                                 </td>
@@ -290,7 +328,7 @@
                     {% endif %}
                 </tbody>
             </table>
-            <a href="#" class="crud-a crud-add">
+            <a href="{% url 'tp_add' %}" class="crud-a crud-add">
                 <button type="button" class="crud-badd">
                     Agregar tipo de producto
                 </button>

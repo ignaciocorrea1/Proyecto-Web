@@ -1,4 +1,4 @@
-<!-- Create estados de pedido -->
+<!-- Create tipo de producto -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,17 +24,27 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Estados de pedido</h1>
+      <h1>Registro de Tipos de productos</h1>
       <section class="form-container">
-        <form action="{% url 'e_add' %}" method="POST">
-          {% csrf_token %}
+        <form action="{% url 'tp_add' %}" method="POST">
+          
+            {% csrf_token %}
 
-          <legend>Estados de pedido</legend>
+          <legend>Tipos de productos</legend>
+          
           <input
             type="text"
-            id="estado"
-            name="estado"
-            placeholder="Estado"
+            id="id"
+            name="id"
+            placeholder="Id"
+            class="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="descripcion"
+            name="descripcion"
+            placeholder="Descripcion"
             class="form-input"
             required
           />

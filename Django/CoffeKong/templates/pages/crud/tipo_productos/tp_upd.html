@@ -1,4 +1,4 @@
-<!-- Create estados de pedido -->
+<!-- Update tipo de producto -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,17 +24,30 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Estados de pedido</h1>
+      <h1>Modificación de Tipos de productos</h1>
       <section class="form-container">
-        <form action="{% url 'e_add' %}" method="POST">
-          {% csrf_token %}
+        <form action="{% url 'tp_upd' %}" method="POST">
+          
+            {% csrf_token %}
 
-          <legend>Estados de pedido</legend>
+          <legend>Tipos de productos</legend>
+          
           <input
             type="text"
-            id="estado"
-            name="estado"
-            placeholder="Estado"
+            id="id"
+            name="id" 
+            value={{tipo.id_tipoproducto}} 
+            placeholder="Id"
+            class="form-input"
+            readonly 
+            required
+          />
+          <input
+            type="text"
+            id="descripcion"
+            name="descripcion" 
+            value={{tipo.descripcion}} 
+            placeholder="Descripcion"
             class="form-input"
             required
           />
@@ -49,7 +62,7 @@
             <input
             id="submit-r"
             type="submit"
-            value="Registrar"
+            value="Modificar"
             class="form-submit"
             />
             <a href="{% url 'crud' %}">

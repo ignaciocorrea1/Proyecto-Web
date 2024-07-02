@@ -1,4 +1,4 @@
-<!-- Create estados de pedido -->
+<!-- Update detalles de pedidos -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,17 +24,38 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Estados de pedido</h1>
+      <h1>Modificación de Detalles de Pedidos</h1>
       <section class="form-container">
-        <form action="{% url 'e_add' %}" method="POST">
+        <form action="{% url 'dt_add' %}" method="POST">
+          
           {% csrf_token %}
 
-          <legend>Estados de pedido</legend>
+          <legend>Detalles de Pedidos</legend>
+          <select name="pedido" id="pedido" class="form-sele" required>
+            <option value="">Selecciona un pedido</option>
+            {% for tmp in pedidos %}
+                <option value="{{tmp.id_pedido}}">Pedido Nro. {{tmp.id_pedido}}</option>
+            {% endfor %}
+          </select>
+          <select name="producto" id="producto" class="form-sele" required>
+            <option value="">Selecciona un producto</option>
+            {% for tmp in productos %}
+                <option value="{{tmp.id_producto}}">{{tmp.nombre}}</option>
+            {% endfor %}
+          </select>
           <input
-            type="text"
-            id="estado"
-            name="estado"
-            placeholder="Estado"
+            type="number"
+            id="total"
+            name="total"
+            placeholder="Total: $"
+            class="form-input"
+            required
+          />
+          <input
+            type="number"
+            id="cantidad"
+            name="cantidad"
+            placeholder="Cantidad"
             class="form-input"
             required
           />

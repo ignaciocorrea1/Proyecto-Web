@@ -23,38 +23,24 @@
     {% include "base/header.html" %}
 
     <main class="container-fluid">
+      
       <!-- Inicio offcanva -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carro de compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="products" id="d-products"> </div>
-            <div class="carro-bottom">
-              <div class="product-total">
-                <span id="producto-total">Total a pagar: $</span>
-                <hr>
-              </div>
-              <div class="product-buttons">
-                <a href="{% url 'carrito' %}">
-                  <button class="product-carro">Ir al carro</button>
-                </a>
-                <a href="{% url 'pago' %}">
-                  <button class="product-pago">Iniciar pago</button>
-                </a>
-              </div>
-            </div>
-        </div>
-      </div>
+      
+      {% include "base/offcanva.html" %}
+
       <!-- Fin offcanva -->
+
       <h1>FORMULARIO DE REGISTRO</h1>
       <section class="form-container">
-        <form>
-          <legend>Información Personal</legend>
+        <form action="{% url 'unete' %}" method="POST">
+          
+          {% csrf_token %}
+
+          <legend>Información personal</legend>
           <input
             type="text"
             id="rut-r"
+            name="rut"
             placeholder="Rut (*)"
             class="form-input"
             required
@@ -62,6 +48,7 @@
           <input
             type="text"
             id="nombres-r"
+            name="nombres"
             placeholder="Nombre(s) (*)"
             class="form-input"
             required
@@ -69,6 +56,7 @@
           <input
             type="text"
             id="paterno-r"
+            name="paterno"
             placeholder="Apellido Paterno (*)"
             class="form-input"
             required
@@ -76,6 +64,7 @@
           <input
             type="text"
             id="materno-r"
+            name="materno"
             placeholder="Apellido Materno (*)"
             class="form-input"
             required
@@ -83,6 +72,7 @@
           <input
             type="text"
             id="telefono-r"
+            name="telefono"
             placeholder="Teléfono (*)"
             class="form-input"
             required
@@ -90,6 +80,7 @@
           <input
             type="text"
             id="direccion-r"
+            name="direccion"
             placeholder="Dirección (*)"
             class="form-input"
             required
@@ -97,6 +88,7 @@
           <input
             type="email"
             id="correo-r"
+            name="correo"
             placeholder="Correo electrónico (*)"
             class="form-input"
             required
@@ -104,6 +96,7 @@
           <input
             type="password"
             id="contrasenia-r"
+            name="contrasenia"
             placeholder="Contraseña (*)"
             class="form-input"
             required
@@ -111,18 +104,29 @@
           <input
             type="password"
             id="contrasenia-2-r"
+            name="contrasenia-2"
             placeholder="Confirmar contraseña (*)"
             class="form-input"
             required
           />
+
           <div id="unete-r"></div>
-          <input
+
+          {% if mensaje %}
+            <div class="alert alert-warning w-50 mx-auto text-center">
+                {{mensaje}}
+            </div>
+          {% endif %} 
+
+          <div class="low-form">
+            <input
             onclick="validaRegistro()" 
             id="submit-r"
             type="submit"
-            value="Registrarme"
+            value="Registrar"
             class="form-submit"
-          />
+            />
+          </div>
         </form>
       </section>
     </main>
