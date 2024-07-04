@@ -59,11 +59,11 @@
             <a href="{% url 'contrasenia' %}">¿Has olvidado tu contraseña?</a>
           </div>
           {% if mensaje %}
-            <div id="unete-l" class="alert alert-warning w-50 mx-auto text-center">
+            <div id="unete-l" class='{{design}}'>
                 {{mensaje}}
             </div>
           {% endif %} 
-          <input onclick="validarLogin()" id="submit-l" type="submit" value="Iniciar sesión" class="form-submit" />
+          <input id="submit-l" type="submit" value="Iniciar sesión" class="form-submit" />
         </form>
       </section>
     </main>

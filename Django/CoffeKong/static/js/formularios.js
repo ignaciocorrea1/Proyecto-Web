@@ -171,7 +171,7 @@ function validarCambio() {
   }
 }
 
-// Funcion que pasa mensajes de erorr en los formularios
+// Funcion que pasa mensajes de error en los formularios
 function error(idInput, idContenedor, textoError, idBoton) {
   idBoton.setAttribute("type", "button");
   idInput.style.border = "0.188rem solid red";

@@ -165,6 +165,7 @@ function agregar(idAdd) {
     };
     // Se añade el producto al carrito
     carrito.push(producto);
+
     // Se modifica el contador de productos del carrito
     document.getElementById("shopping-contador").textContent = shop_cont + 1;
   } else {

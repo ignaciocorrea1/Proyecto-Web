@@ -106,25 +106,29 @@ def unete(request):
 
                     # Se manda un mensaje de registro exitoso al usuario
                     context = {
-                        "mensaje": "Registro exitoso!"
+                        "mensaje": "Registro exitoso!",
+                        "design": "alert alert-success w-50 mx-auto text-center"
                     }
                     return render(request, "pages/unete.html", context)
                 else:
                     # En caso de que las contrasenias no son iguales se le manda un mensaje al usuario
                     context = {
-                        "mensaje": "Las contraseñas no coinciden."
+                        "mensaje": "Las contraseñas no coinciden.",
+                        "design": "alert alert-danger w-50 mx-auto text-center"
                     }
                     return render(request, "pages/unete.html", context)
             else:
                 # En caso de que las contrasenias no son iguales se le manda un mensaje al usuario
                 context = {
-                    "mensaje": "El correo ingresado ya esta registrado. Intente nuevamente."
+                    "mensaje": "El correo ingresado ya esta registrado. Intente nuevamente.",
+                    "design": "alert alert-danger w-50 mx-auto text-center"
                 }
                 return render(request, "pages/unete.html", context)
         else:
             # En caso de que un cliente ya exista se le manda un mensaje al usuario
             context = {
-            "mensaje": "Rut ingresado ya se encuentra registrado. Intente nuevamente."
+                "mensaje": "Rut ingresado ya se encuentra registrado. Intente nuevamente.",
+                "design": "alert alert-danger w-50 mx-auto text-center"
             }
             return render(request, "pages/unete.html", context)
     else:
@@ -169,24 +173,26 @@ def conectar(request):
         username = request.POST["username"]
         password = request.POST["password"]
         user = authenticate(request, username=username, password=password)
-        
-        # Se valida el tipo de usuario
-        if vendedor.objects.filter(correo = username).exists():
-            request.session["tipo_usuario"] = "vendedor"
-        elif cliente.objects.filter(correo = username).exists():
-            request.session["tipo_usuario"] = "cliente"
-        else:
-            request.session["tipo_usuario"] = "admin"
 
         if user is not None:
             login(request, user)
+        
+            # Se valida el tipo de usuario
+            if vendedor.objects.filter(correo = username).exists():
+                request.session["tipo_usuario"] = "vendedor"
+            elif cliente.objects.filter(correo = username).exists():
+                request.session["tipo_usuario"] = "cliente"
+            else:
+                request.session["tipo_usuario"] = "admin"
+
             context = {
                 
             }
             return render(request, "pages/index.html", context)
         else:
             context = {
-                "mensaje": "Usuario o contraseña incorrecta."
+                "mensaje": "Usuario o contraseña incorrecta.",
+                "design": "alert alert-danger w-50 mx-auto text-center"
             }
             return render(request, "pages/ingreso.html", context)
     else:
@@ -205,6 +211,7 @@ def desconectar(request):
     return render(request,"pages/ingreso.html",context)
 
 """ Crud """
+@login_required
 def crud(request):
     vendedores = vendedor.objects.all()
     clientes = cliente.objects.all()
@@ -229,6 +236,7 @@ def crud(request):
 """ Vendedores """
 
 """ Vendedores - add """
+@login_required
 def v_add(request):
     if request.method == "POST":
         # Si el metodo es POST
@@ -285,28 +293,32 @@ def v_add(request):
                     # Se manda un mensaje de registro exitoso al usuario
                     print("Se registro")
                     context = {
-                        "mensaje": "Registro exitoso!"
+                        "mensaje": "Registro exitoso!",
+                        "design": "alert alert-success w-50 mx-auto text-center"
                     }
                     return render(request, "pages/crud/vendedores/v_add.html", context)
                 else:
                     # En caso de que las contrasenias no son iguales se le manda un mensaje al usuario
                     print("Contraseñas no coinciden")
                     context = {
-                        "mensaje": "Las contraseñas no coinciden."
+                        "mensaje": "Las contraseñas no coinciden.",
+                        "design": "alert alert-danger w-50 mx-auto text-center"
                     }
                     return render(request, "pages/crud/vendedores/v_add.html", context)
             else:
                 # En caso de que las contrasenias no son iguales se le manda un mensaje al usuario
                 print("Correo ya registrado")
                 context = {
-                    "mensaje": "El correo ingresado ya esta registrado. Intente nuevamente."
+                    "mensaje": "El correo ingresado ya esta registrado. Intente nuevamente.",
+                    "design": "alert alert-danger w-50 mx-auto text-center"
                 }
                 return render(request, "pages/crud/vendedores/v_add.html", context)
         else:
             # En caso de que un vendedor ya exista se le manda un mensaje al usuario
             print("Vendedor ya registrado")
             context = {
-            "mensaje": "Vendedor ingresado ya existe. Intente nuevamente."
+                "mensaje": "Vendedor ingresado ya existe. Intente nuevamente.",
+                "design": "alert alert-danger w-50 mx-auto text-center"
             }
             return render(request, "pages/crud/vendedores/v_add.html", context)
     else:
@@ -317,6 +329,7 @@ def v_add(request):
         return render(request, "pages/crud/vendedores/v_add.html", context)
 
 """ Se busca el vendedor """
+@login_required
 def v_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca al vendedor
@@ -334,6 +347,7 @@ def v_find(request, pk):
         return render(request, "pages/crud/crud.html", context)
 
 """ Vendedores - update """
+@login_required
 def v_upd(request):
     if request.method == "POST":
         # Si el metodo es POST
@@ -381,7 +395,8 @@ def v_upd(request):
             print("Se modifico")
             context = {
                 "vendedor": obj,
-                "mensaje": "Modificacion exitosa!"
+                "mensaje": "Modificacion exitosa!",
+                "design": "alert alert-success w-50 mx-auto text-center"
             }
             return render(request, "pages/crud/vendedores/v_upd.html", context)
         else:
@@ -389,11 +404,13 @@ def v_upd(request):
             print("Contraseñas no coinciden")
             context = {
                 "vendedor": obj,
-                "mensaje": "Las contraseñas no coinciden."
+                "mensaje": "Las contraseñas no coinciden.",
+                "design": "alert alert-danger w-50 mx-auto text-center"
             }
             return render(request, "pages/crud/vendedores/v_upd.html", context)
 
 """ Vendedores - delete """
+@login_required
 def v_del(request, pk):
     try:
         # Se elimina el vendedor y su usuario asociado a la pk
@@ -451,6 +468,7 @@ def v_del(request, pk):
 """ Clientes """
 
 """ Clientes - add """
+@login_required
 def c_add(request):
     if request.method == "POST":
         # Si el metodo es POST
@@ -507,28 +525,32 @@ def c_add(request):
                     # Se manda un mensaje de registro exitoso al usuario
                     print("Se registro")
                     context = {
-                        "mensaje": "Registro exitoso!"
+                        "mensaje": "Registro exitoso!",
+                        "design": "alert alert-success w-50 mx-auto text-center"
                     }
                     return render(request, "pages/crud/clientes/c_add.html", context)
                 else:
                     # En caso de que las contrasenias no son iguales se le manda un mensaje al usuario
                     print("Contraseñas no coinciden")
                     context = {
-                        "mensaje": "Las contraseñas no coinciden."
+                        "mensaje": "Las contraseñas no coinciden.",
+                        "design": "alert alert-danger w-50 mx-auto text-center"
                     }
                     return render(request, "pages/crud/clientes/c_add.html", context)
             else:
                 # En caso de que las contrasenias no son iguales se le manda un mensaje al usuario
                 print("Correo ya registrado")
                 context = {
-                    "mensaje": "El correo ingresado ya esta registrado. Intente nuevamente."
+                    "mensaje": "El correo ingresado ya esta registrado. Intente nuevamente.",
+                    "design": "alert alert-danger w-50 mx-auto text-center"
                 }
                 return render(request, "pages/crud/clientes/c_add.html", context)
         else:
             # En caso de que un cliente ya exista se le manda un mensaje al usuario
             print("Cliente ya registrado")
             context = {
-            "mensaje": "Cliente ingresado ya existe. Intente nuevamente."
+                "mensaje": "Cliente ingresado ya existe. Intente nuevamente.",
+                "design": "alert alert-danger w-50 mx-auto text-center"
             }
             return render(request, "pages/crud/clientes/c_add.html", context)
     else:
@@ -539,6 +561,7 @@ def c_add(request):
         return render(request, "pages/crud/clientes/c_add.html", context)
 
 """ Se busca al cliente """
+@login_required
 def c_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca al cliente
@@ -556,6 +579,7 @@ def c_find(request, pk):
         return render(request, "pages/crud/clientes/c_upd.html", context)
 
 """ Clientes - update """
+@login_required
 def c_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -603,7 +627,8 @@ def c_upd(request):
             print("Se modifico")
             context = {
                 "cliente": obj,
-                "mensaje": "Modificacion exitosa!"
+                "mensaje": "Modificacion exitosa!",
+                "design": "alert alert-success w-50 mx-auto text-center"
             }
             return render(request, "pages/crud/clientes/c_upd.html", context)
         else:
@@ -611,10 +636,13 @@ def c_upd(request):
             print("Contraseñas no coinciden")
             context = {
                 "cliente": obj,
-                "mensaje": "Las contraseñas no coinciden."
+                "mensaje": "Las contraseñas no coinciden.",
+                "design": "alert alert-danger w-50 mx-auto text-center"
             }
             return render(request, "pages/crud/clientes/c_upd.html", context)
+
 """ Clientes - delete """
+@login_required
 def c_del(request, pk):
     try:
         # Se elimina el cliente y su usuario asociado a la pk
@@ -672,6 +700,7 @@ def c_del(request, pk):
 """ Tarjetas de clientes """
 
 """ Tarjetas de clientes - add """
+@login_required
 def tc_add(request):
     # Se mandan los clientes para el select
     if request.method != "POST":
@@ -697,11 +726,13 @@ def tc_add(request):
 
         # Se manda un mensaje de registro exitoso al usuario
         context = {
-            "mensaje": "Registro exitoso!"
+            "mensaje": "Registro exitoso!",
+            "design": "alert alert-success w-50 mx-auto text-center"
         }
         return render(request, "pages/crud/tarjetas/tc_add.html", context)
 
 """ Se busca la tarjeta del cliente """
+@login_required
 def tc_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca la tarjeta y se traen todos los clientes
@@ -720,6 +751,7 @@ def tc_find(request, pk):
         return render(request, "pages/crud/tarjetas/tc_upd.html", context)
 
 """ Tarjetas de clientes - update """
+@login_required
 def tc_upd(request):
     if request.method == "POST":
         # Datos de la tarjeta
@@ -741,12 +773,14 @@ def tc_upd(request):
         clientes = cliente.objects.all()
         context = {
             "mensaje": "Modificación exitosa!",
+            "design": "alert alert-success w-50 mx-auto text-center",
             "tarjeta": obj,
             "clientes": clientes
         }
         return render(request, "pages/crud/tarjetas/tc_upd.html", context)
 
 """ Tarjetas de cliente - delete """
+@login_required
 def tc_del(request, pk):
     try:
         tc_encontrada = tarjeta.objects.get(nro_tarjeta = pk)
@@ -801,6 +835,7 @@ def tc_del(request, pk):
 """ Estados de pedido """
 
 """ Estados de pedido - add """
+@login_required
 def e_add(request):
     if request.method == "POST":
         # Si el metodo es POST
@@ -815,7 +850,8 @@ def e_add(request):
 
         # Se manda un mensaje de registro exitoso al usuario
         context = {
-            "mensaje": "Registro exitoso!"        
+            "mensaje": "Registro exitoso!",
+            "design": "alert alert-success w-50 mx-auto text-center"        
         }
         return render(request, "pages/crud/estados/e_add.html", context)
     else:
@@ -825,6 +861,7 @@ def e_add(request):
         return render(request, "pages/crud/estados/e_add.html", context)
     
 """ Se busca un estado de pedido """
+@login_required
 def e_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca el estado y se mandan los datos
@@ -842,6 +879,7 @@ def e_find(request, pk):
         return render(request, "pages/crud/estados/e_upd.html", context)
 
 """ Estados de pedido - update """
+@login_required
 def e_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -860,7 +898,8 @@ def e_upd(request):
         # Se manda un mensaje de registro exitoso al usuario
         context = {
             "estado": obj,
-            "mensaje": "Modificación exitosa!"        
+            "mensaje": "Modificación exitosa!",
+            "design": "alert alert-success w-50 mx-auto text-center"        
         }
         return render(request, "pages/crud/estados/e_upd.html", context)
     else:
@@ -870,6 +909,7 @@ def e_upd(request):
         return render(request, "pages/crud/estados/e_upd.html", context)
 
 """ Estados de pedido - delete """
+@login_required
 def e_del(request, pk):
     try:
         # Se elimina el estado de pedido asociado a la pk
@@ -925,6 +965,7 @@ def e_del(request, pk):
 """ Pedidos """
 
 """ Pedidos - add"""
+@login_required
 def p_add(request):
     if request.method == "POST":
         # Datos del pedido
@@ -946,7 +987,8 @@ def p_add(request):
 
         # Se manda un mensaje de confirmacion al usuario
         context = {
-            "mensaje": "Registro exitoso!"
+            "mensaje": "Registro exitoso!",
+            "design": "alert alert-success w-50 mx-auto text-center"
         }
         print("Se registro")
         return render(request, "pages/crud/pedidos/p_add.html", context)
@@ -962,6 +1004,7 @@ def p_add(request):
         return render(request, "pages/crud/pedidos/p_add.html", context)
 
 """ Se busca el pedido """
+@login_required
 def p_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca el pedido y se traen los clientes y estados asociados
@@ -982,6 +1025,7 @@ def p_find(request, pk):
         return render(request, "pages/crud/pedidos/p_upd.html", context)
 
 """ Pedidos - update """
+@login_required
 def p_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1012,6 +1056,7 @@ def p_upd(request):
         estados = estado.objects.all()
         context = {
             "mensaje": "Modificación exitosa!",
+            "design": "alert alert-success w-50 mx-auto text-center",
             "pedido": ped,
             "clientes": clientes,
             "estados": estados
@@ -1072,6 +1117,7 @@ def p_del(request, pk):
 """ Detalle de pedidos """
 
 """ Detalle de pedidos - add """
+@login_required
 def dt_add(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1098,6 +1144,7 @@ def dt_add(request):
         productos = producto.objects.all()
         context = {
             "mensaje": "Registro exitoso!",
+            "design": "alert alert-success w-50 mx-auto text-center",
             "pedidos": pedidos,
             "productos": productos
         }
@@ -1112,6 +1159,7 @@ def dt_add(request):
         return render(request, "pages/crud/detalle/dt_add.html", context)
 
 """ Se busca un detalle de pedido """
+@login_required
 def dt_find(request, pk, pk2):
     if pk and pk2 != "":
         # Si las pks no estan vacias se busca el detalle asociado, mas todos los pedidos y productos para el select
@@ -1133,6 +1181,7 @@ def dt_find(request, pk, pk2):
         return render(request, "pages/crud/detalle/dt_upd.html", context)
 
 """ Detalle de pedidos - update """
+@login_required
 def dt_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1159,6 +1208,7 @@ def dt_upd(request):
         productos = producto.objects.all()
         context = {
             "mensaje": "Modificación exitosa!",
+            "design": "alert alert-success w-50 mx-auto text-center",
             "detalle": obj,
             "pedidos": pedidos,
             "productos": productos
@@ -1166,6 +1216,7 @@ def dt_upd(request):
         return render(request, "pages/crud/detalle/dt_upd.html", context)
     
 """ Detalle de pedidos - delete """
+@login_required
 def dt_del(request, pk, pk2):
     try:
         det = detallePedido.objects.get(id_pedido = pk, id_producto = pk2)
@@ -1221,6 +1272,7 @@ def dt_del(request, pk, pk2):
 """ Productos """
 
 """ Productos - add """
+@login_required
 def pr_add(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1250,7 +1302,8 @@ def pr_add(request):
 
             # Se manda un mensaje de registro exitoso al usuario
             context = {
-                "mensaje": "Registro exitoso!"
+                "mensaje": "Registro exitoso!",
+                "design": "alert alert-success w-50 mx-auto text-center"
             }
             return render(request, "pages/crud/productos/pr_add.html", context)
         else:
@@ -1258,7 +1311,8 @@ def pr_add(request):
             tipos = tipoProducto.objects.all()
             context = {
                 "tipoProductos": tipos, 
-                "mensaje": "La id ingresada ya se encuentra registrada. Intente nuevamente"
+                "mensaje": "La id ingresada ya se encuentra registrada. Intente nuevamente",
+                "design": "alert alert-danger w-50 mx-auto text-center"
             }
             return render(request, "pages/crud/productos/pr_add.html", context)
 
@@ -1271,6 +1325,7 @@ def pr_add(request):
         return render(request, "pages/crud/productos/pr_add.html", context)
 
 """ Se busca el producto """
+@login_required
 def pr_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca el producto y se traen los tipos de productos
@@ -1289,6 +1344,7 @@ def pr_find(request, pk):
         return render(request, "pages/crud/productos/pr_upd.html", context)
     
 """ Productos - update """
+@login_required
 def pr_upd(request):
     if request.method == "POST":
 
@@ -1317,12 +1373,14 @@ def pr_upd(request):
         tipos = tipoProducto.objects.all()
         context = {
             "mensaje": "Modificación exitosa!",
+            "design": "alert alert-success w-50 mx-auto text-center",
             "producto": obj,
             "tipoProductos": tipos
         }
         return render(request, "pages/crud/productos/pr_upd.html", context)
 
 """ Productos - delete """
+@login_required
 def pr_del(request, pk):
     try:
         pr_encontrado = producto.objects.get(id_producto = pk)
@@ -1378,6 +1436,7 @@ def pr_del(request, pk):
 """ Tipos de productos """
 
 """ Tipos de productos - add """
+@login_required
 def tp_add(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1394,7 +1453,8 @@ def tp_add(request):
 
         # Se manda un mensaje de registro exitoso al usuario
         context = {
-            "mensaje": "Registro exitoso!"
+            "mensaje": "Registro exitoso!",
+            "design": "alert alert-success w-50 mx-auto text-center"
         }
         return render(request, "pages/crud/tipo_productos/tp_add.html", context)
     else:
@@ -1404,6 +1464,7 @@ def tp_add(request):
         return render(request, "pages/crud/tipo_productos/tp_add.html", context)
     
 """ Se busca el tipo de producto """
+@login_required
 def tp_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca el tipo de producto y se mandan los datos
@@ -1420,6 +1481,7 @@ def tp_find(request, pk):
         return render(request, "pages/crud/tipo_productos/tp_upd.html", context)
     
 """ Tipo de producto - update """
+@login_required
 def tp_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1437,11 +1499,13 @@ def tp_upd(request):
         # Se manda un mensaje de registro exitoso al usuario
         context = {
             "tipo": obj,
-            "mensaje": "Modificación exitosa!"
+            "mensaje": "Modificación exitosa!",
+            "design": "alert alert-success w-50 mx-auto text-center"
         }
         return render(request, "pages/crud/tipo_productos/tp_upd.html", context)
     
 """ Tipo de producto - delete """
+@login_required
 def tp_del(request, pk):
     try:
         tp_encontrado = tipoProducto.objects.get(id_tipoproducto = pk)

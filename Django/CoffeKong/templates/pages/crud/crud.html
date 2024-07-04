@@ -23,7 +23,11 @@
     <div class="main-crud">
         <!-- Vendedores -->
         <article class="ct-container">
+            {% if request.session.tipo_usuario == "vendedor" %}
+            <table class="table-crud" hidden>
+            {% else %}
             <table class="table-crud">
+            {% endif %}
                 <caption class="table-title">Vendedores</caption>
                 <thead>
                     <th class="th-crud">Rut</th>
@@ -54,11 +58,19 @@
                     {% endif %}
                 </tbody>
             </table>
+            {% if request.session.tipo_usuario == "vendedor" %}
+            <a href="{% url 'v_add' %}" class="crud-a crud-add" hidden>
+                <button type="button" class="crud-badd" hidden>
+                    Agregar vendedor
+                </button>
+            </a>
+            {% else %}
             <a href="{% url 'v_add' %}" class="crud-a crud-add">
                 <button type="button" class="crud-badd">
                     Agregar vendedor
                 </button>
             </a>
+            {% endif %}
         </article>
 
         <!-- Cliente -->
