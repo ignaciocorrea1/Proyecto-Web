@@ -31,7 +31,10 @@
       <!-- Fin offcanva -->
 
       <section class="form-login-container">
-        <form action="{% url 'ingreso' %}" method="POST">
+        <form action="{% url 'login' %}" method="POST">
+
+          {% csrf_token %}
+
           <legend>Bienvenidos</legend>
           <div class="form-datos">
             <input
@@ -55,7 +58,11 @@
             <a href="{% url 'unete' %}">Registrate aqui</a>
             <a href="{% url 'contrasenia' %}">¿Has olvidado tu contraseña?</a>
           </div>
-          <div id="unete-l"></div>
+          {% if mensaje %}
+            <div id="unete-l" class="alert alert-warning w-50 mx-auto text-center">
+                {{mensaje}}
+            </div>
+          {% endif %} 
           <input onclick="validarLogin()" id="submit-l" type="submit" value="Iniciar sesión" class="form-submit" />
         </form>
       </section>

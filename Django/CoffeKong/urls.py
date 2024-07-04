@@ -10,10 +10,13 @@ urlpatterns = [
     path("seguimiento2/", views.seguimiento2, name="seguimiento2"),
     path("carrito/", views.carrito, name="carrito"),
     path("pago/", views.pago, name="pago"),
-    path("ingreso/", views.ingreso, name="ingreso"),
     path("contrasenia/", views.contrasenia, name="contrasenia"),
     path("historial/", views.historial, name="historial"),
     path("detalle/", views.detalle, name="detalle"),
+
+    # Login
+    path("login/", views.conectar, name="login"),
+    path("logout/", views.desconectar, name="logout"),
 
     # Crud
     path("crud/", views.crud, name="crud"),
@@ -49,7 +52,9 @@ urlpatterns = [
     path("p_del/<str:pk>", views.p_del, name="p_del"),
     # Detalle de pedidos
     path("dt_add/", views.dt_add, name="dt_add"),
-    # path("dt_find/<str:pk>", views.dt_find, name="dt_find"),
+    path("dt_find/<str:pk>/<str:pk2>", views.dt_find, name="dt_find"),
+    path("dt_upd/", views.dt_upd, name="dt_upd"),
+    path("dt_del/<str:pk>/<str:pk2>", views.dt_del, name="dt_del"),
 
     # Productos
     path("pr_add/", views.pr_add, name="pr_add"),

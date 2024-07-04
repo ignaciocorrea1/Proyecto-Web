@@ -41,6 +41,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'seguimiento' %}">SEGUIMIENTO</a>
             </li>
+
+            <li>{{request.session.tipo_usuario}}</li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'crud' %}">ADMIN</a>
+            </li>
+            {% endif %}
             </ul>
             <!-- Fin Links de acceso -->
 
@@ -65,11 +72,16 @@
                 <div class="drop-menu">
                 <ul class="dropdown-menu drop-options" aria-labelledby="dropdownMenu2">
                     <li>
-                    <a href="{% url 'ingreso' %}">Iniciar sesión</a>
+                    <a href="{% url 'login' %}">Iniciar sesión</a>
                     </li>
                     <li>
                     <a href="{% url 'historial' %}">Historial</a>
                     </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                    <a href="{% url 'logout' %}">Cerrar sesión</a>
+                    </li>
+                    {% endif %}
                 </ul>
                 </div>
             </div>

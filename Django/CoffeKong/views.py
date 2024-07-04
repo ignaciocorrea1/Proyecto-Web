@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import cliente, vendedor, tarjeta, estado, pedido, tipoProducto, producto, detallePedido
+from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 import json
@@ -84,6 +85,24 @@ def unete(request):
                     )
 
                     obj.save()
+                    
+                    c_apellido = c_paterno+" "+c_materno
+
+                    # Se crea un usuario en el modelo de Users
+                    user = User.objects.create_user(
+                        username = c_correo,
+                        password = c_contrasenia,
+                        first_name = c_nombres,
+                        last_name = c_apellido,
+                        email = c_correo
+                    )
+                    
+                    # Se obtiene el grupo del cliente
+                    cliente_group = Group.objects.get(name="cliente_group")
+
+                    # Se le asigna el grupo al usuario y despues se guarda
+                    user.groups.add(cliente_group)
+                    user.save()
 
                     # Se manda un mensaje de registro exitoso al usuario
                     context = {
@@ -131,17 +150,6 @@ def pago(request):
     context = {}
     return render(request, "pages/pago.html", context)
 
-def ingreso(request):
-    # Si el metodo es POST
-    if request.method == "POST":
-        username = request.POST["username"]
-        password = request.POST["password"]
-
-        
-    else:
-        context = {}
-        return render(request, "pages/ingreso.html", context)
-
 def contrasenia(request):
     context = {}
     return render(request, "pages/contrasenia.html", context)
@@ -153,6 +161,48 @@ def historial(request):
 def detalle(request):
     context = {}
     return render(request, "pages/detalle.html", context)
+
+""" Login """
+def conectar(request):
+    # Si el metodo es POST
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+        
+        # Se valida el tipo de usuario
+        if vendedor.objects.filter(correo = username).exists():
+            request.session["tipo_usuario"] = "vendedor"
+        elif cliente.objects.filter(correo = username).exists():
+            request.session["tipo_usuario"] = "cliente"
+        else:
+            request.session["tipo_usuario"] = "admin"
+
+        if user is not None:
+            login(request, user)
+            context = {
+                
+            }
+            return render(request, "pages/index.html", context)
+        else:
+            context = {
+                "mensaje": "Usuario o contraseña incorrecta."
+            }
+            return render(request, "pages/ingreso.html", context)
+    else:
+        context = {
+            
+        }
+        return render(request, "pages/ingreso.html", context)
+    
+def desconectar(request):
+    if request.user.is_authenticated:
+        logout(request)
+    
+    context = {
+
+    }
+    return render(request,"pages/ingreso.html",context)
 
 """ Crud """
 def crud(request):
@@ -213,7 +263,25 @@ def v_add(request):
                     )
 
                     obj.save()
+                    
+                    v_apellido = v_paterno+" "+v_materno
 
+                    # Se crea un usuario en el modelo de Users
+                    user = User.objects.create_user(
+                        username = v_correo,
+                        password = v_contrasenia,
+                        first_name = v_nombres,
+                        last_name = v_apellido,
+                        email = v_correo
+                    )
+                    
+                    # Se obtiene el grupo del vendedor
+                    vendedor_group = Group.objects.get(name="vendedor_group")
+
+                    # Se le asigna el grupo al usuario y despues se guarda
+                    user.groups.add(vendedor_group)
+                    user.save()
+                    
                     # Se manda un mensaje de registro exitoso al usuario
                     print("Se registro")
                     context = {
@@ -298,6 +366,17 @@ def v_upd(request):
             # Si son iguales se crea el objeto y se manda a la BD
             obj.save()
 
+            v_apellido = v_paterno+" "+v_materno
+
+            # Se modifica el usuario
+            user = User.objects.get(email = v_correo)
+
+            user.first_name = v_nombres
+            user.last_name = v_apellido
+            user.set_password = v_contrasenia
+
+            user.save()
+
             # Se manda un mensaje de registro exitoso al usuario
             print("Se modifico")
             context = {
@@ -317,9 +396,11 @@ def v_upd(request):
 """ Vendedores - delete """
 def v_del(request, pk):
     try:
-        # Se elimina el vendedor asociado a la pk
+        # Se elimina el vendedor y su usuario asociado a la pk
         v_encontrado = vendedor.objects.get(run = pk)
+        user = User.objects.get(email = v_encontrado.correo)
         v_encontrado.delete()
+        user.delete()
 
         # Se recuperan los datos de la BD y se mandan 
         vendedores = vendedor.objects.all()
@@ -404,6 +485,24 @@ def c_add(request):
                     )
 
                     obj.save()
+                    
+                    c_apellido = c_paterno+" "+c_materno
+
+                    # Se crea un usuario en el modelo de Users
+                    user = User.objects.create_user(
+                        username = c_correo,
+                        password = c_contrasenia,
+                        first_name = c_nombres,
+                        last_name = c_apellido,
+                        email = c_correo
+                    )
+                    
+                    # Se obtiene el grupo del cliente
+                    cliente_group = Group.objects.get(name="cliente_group")
+
+                    # Se le asigna el grupo al usuario y despues se guarda
+                    user.groups.add(cliente_group)
+                    user.save()
 
                     # Se manda un mensaje de registro exitoso al usuario
                     print("Se registro")
@@ -489,6 +588,17 @@ def c_upd(request):
             # Si son iguales se crea el objeto y se manda a la BD
             obj.save()
 
+            c_apellido = c_paterno+" "+c_materno
+
+            # Se modifica el usuario
+            user = User.objects.get(email = c_correo)
+
+            user.first_name = c_nombres
+            user.last_name = c_apellido
+            user.set_password = c_contrasenia
+
+            user.save()
+
             # Se manda un mensaje de registro exitoso al usuario
             print("Se modifico")
             context = {
@@ -507,9 +617,11 @@ def c_upd(request):
 """ Clientes - delete """
 def c_del(request, pk):
     try:
-        # Se elimina el cliente asociado a la pk
+        # Se elimina el cliente y su usuario asociado a la pk
         c_encontrado = cliente.objects.get(run = pk)
+        user = User.objects.get(email = c_encontrado.correo)
         c_encontrado.delete()
+        user.delete()
 
         # Se recuperan los datos de la BD y se mandan 
         clientes = cliente.objects.all()
@@ -871,7 +983,9 @@ def p_find(request, pk):
 
 """ Pedidos - update """
 def p_upd(request):
+    # Si el metodo es POST
     if request.method == "POST":
+
         # Datos del pedido
         p_id = request.POST["id_pedido"]
         p_fecha = request.POST["fecha"]
@@ -979,9 +1093,13 @@ def dt_add(request):
             cantidad = dt_cantidad
         )
         obj.save()
-
+        
+        pedidos = pedido.objects.all()
+        productos = producto.objects.all()
         context = {
-            "mensaje": "Registro exitoso!"
+            "mensaje": "Registro exitoso!",
+            "pedidos": pedidos,
+            "productos": productos
         }
         return render(request, "pages/crud/detalle/dt_add.html", context)
     else:
@@ -993,17 +1111,112 @@ def dt_add(request):
         }
         return render(request, "pages/crud/detalle/dt_add.html", context)
 
-""" Se busca un detalle de pedido
-def dt_find(request, pk):
-    if pk != "":
-        # Si la pk no esta vacia se busca el detalle y se traen los pedidos y productos
-        det = 
+""" Se busca un detalle de pedido """
+def dt_find(request, pk, pk2):
+    if pk and pk2 != "":
+        # Si las pks no estan vacias se busca el detalle asociado, mas todos los pedidos y productos para el select
+        detalles = detallePedido.objects.get(id_pedido = pk, id_producto = pk2)
+        pedidos = pedido.objects.all()
+        productos = producto.objects.all()
 
+        context = {
+            "detalle": detalles,
+            "pedidos": pedidos,
+            "productos": productos
+        }
+        return render(request, "pages/crud/detalle/dt_upd.html", context)
     else:
         context = {
+            "mensaje": "No se encuentra el detalle de pedido buscado"
 
         }
-        return render(request, "pages/crud/detalle/dt_upd.html", context) """
+        return render(request, "pages/crud/detalle/dt_upd.html", context)
+
+""" Detalle de pedidos - update """
+def dt_upd(request):
+    # Si el metodo es POST
+    if request.method == "POST":
+
+        # Datos del detalle
+        dt_pedido = request.POST["pedido"]
+        dt_producto = request.POST["producto"]
+        dt_total = request.POST["total"]
+        dt_cantidad = request.POST["cantidad"]
+
+        objPed = pedido.objects.get(id_pedido = dt_pedido)
+        objPro = producto.objects.get(id_producto = dt_producto)
+
+        # Se crea el objeto y se manda a la BD
+        obj = detallePedido(
+            id_pedido = objPed,
+            id_producto = objPro,
+            total = dt_total,
+            cantidad = dt_cantidad
+        )
+        obj.save()
+        
+        pedidos = pedido.objects.all()
+        productos = producto.objects.all()
+        context = {
+            "mensaje": "Modificación exitosa!",
+            "detalle": obj,
+            "pedidos": pedidos,
+            "productos": productos
+        }
+        return render(request, "pages/crud/detalle/dt_upd.html", context)
+    
+""" Detalle de pedidos - delete """
+def dt_del(request, pk, pk2):
+    try:
+        det = detallePedido.objects.get(id_pedido = pk, id_producto = pk2)
+        det.delete()
+
+        # Se recuperan los datos de la BD y se mandan 
+        detallePedidos = detallePedido.objects.all()
+        productos = producto.objects.all()
+        tarjetas = tarjeta.objects.all()
+        clientes = cliente.objects.all()
+        vendedores = vendedor.objects.all()
+        estados = estado.objects.all()
+        pedidos = pedido.objects.all()
+        tipoProductos = tipoProducto.objects.all()
+
+        context = {
+            "detallePedidos": detallePedidos,
+            "productos": productos,
+            "tarjetas": tarjetas,
+            "clientes": clientes,
+            "vendedores": vendedores,
+            "estados": estados,
+            "pedidos": pedidos,
+            "tipoProductos": tipoProductos,
+        }
+        print("Detalle eliminado")
+        return render(request, "pages/crud/crud.html", context)
+    except Exception as e:
+
+        # Se recuperan los datos de la BD y se mandan 
+        detallePedidos = detallePedido.objects.all()
+        productos = producto.objects.all()
+        tarjetas = tarjeta.objects.all()
+        clientes = cliente.objects.all()
+        vendedores = vendedor.objects.all()
+        estados = estado.objects.all()
+        pedidos = pedido.objects.all()
+        tipoProductos = tipoProducto.objects.all()
+
+        context = {
+            "detallePedidos": detallePedidos,
+            "productos": productos,
+            "tarjetas": tarjetas,
+            "clientes": clientes,
+            "vendedores": vendedores,
+            "estados": estados,
+            "pedidos": pedidos,
+            "tipoProductos": tipoProductos,
+        }
+        print(e)
+        return render(request, "pages/crud/crud.html", context)
 
 """ Productos """
 

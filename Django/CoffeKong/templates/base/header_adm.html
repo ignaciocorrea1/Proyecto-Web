@@ -1,8 +1,12 @@
 {% load static %}
 
 <div class="header-crud">
-    <a href="{% url 'crud' %}">
+    <a href="{% url 'index' %}" class="nav-adm">
         <img src="{% static '/images/logo.png' %}" alt="" class="crud-img">
+        Inicio
     </a>
+
     <h1 class="crud-title">Administrador - CoffeKong</h1>
+
+    <a href="{% url 'logout' %}" class="nav-logout">Cerrar sesión</a>
 </div>

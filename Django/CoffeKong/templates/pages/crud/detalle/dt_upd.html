@@ -26,35 +26,55 @@
     <main>
       <h1>Modificación de Detalles de Pedidos</h1>
       <section class="form-container">
-        <form action="{% url 'dt_add' %}" method="POST">
+        <form action="{% url 'dt_upd' %}" method="POST">
           
           {% csrf_token %}
 
           <legend>Detalles de Pedidos</legend>
+
           <select name="pedido" id="pedido" class="form-sele" required>
             <option value="">Selecciona un pedido</option>
             {% for tmp in pedidos %}
+              <!-- detalle.id_pedido.id_pedido en si deberia ser detalle.pedido.id_pedido pero, 
+                   en el modelo puse id_pedido y no pedido para referenciar el pedido asociado...
+              -->
+              {% if tmp.id_pedido == detalle.id_pedido.id_pedido %}
+                <option value="{{tmp.id_pedido}}" selected>Pedido Nro. {{tmp.id_pedido}}</option>
+              {% else %}
                 <option value="{{tmp.id_pedido}}">Pedido Nro. {{tmp.id_pedido}}</option>
+              {% endif %}
             {% endfor %}
           </select>
+
           <select name="producto" id="producto" class="form-sele" required>
             <option value="">Selecciona un producto</option>
             {% for tmp in productos %}
+            <!-- detalle.id_producto.id_producto en si deberia ser detalle.producto.id_producto pero, 
+                 en el modelo puse id_producto y no pedido para referenciar el producto asociado...
+            -->
+              {% if tmp.id_producto == detalle.id_producto.id_producto %}
+                <option value="{{tmp.id_producto}}" selected>{{tmp.nombre}}</option>
+              {% else %}
                 <option value="{{tmp.id_producto}}">{{tmp.nombre}}</option>
+              {% endif %}    
             {% endfor %}
           </select>
+
           <input
             type="number"
             id="total"
             name="total"
+            value={{detalle.total}} 
             placeholder="Total: $"
             class="form-input"
             required
           />
+
           <input
             type="number"
             id="cantidad"
             name="cantidad"
+            value={{detalle.cantidad}}  
             placeholder="Cantidad"
             class="form-input"
             required
@@ -70,7 +90,7 @@
             <input
             id="submit-r"
             type="submit"
-            value="Registrar"
+            value="Modificar"
             class="form-submit"
             />
             <a href="{% url 'crud' %}">

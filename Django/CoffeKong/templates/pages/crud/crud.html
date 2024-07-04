@@ -236,12 +236,12 @@
                                 <td class="td-crud">{{tmp.id_producto}}</td>
                                 <td class="td-crud">{{tmp.total}}</td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-upd">
+                                    <a href="{% url 'dt_find' pk=tmp.id_pedido pk2=tmp.id_producto %}" class="crud-a crud-upd">
                                         <span class="material-symbols-outlined"> edit </span>
                                     </a>
                                 </td>
                                 <td class="td-crud">
-                                    <a href="#" class="crud-a crud-del">
+                                    <a href="{% url 'dt_del' pk=tmp.id_pedido pk2=tmp.id_producto %}" class="crud-a crud-del">
                                         <span class="material-symbols-outlined"> delete </span>
                                     </a>
                                 </td>

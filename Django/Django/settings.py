@@ -68,6 +68,10 @@ TEMPLATES = [
     },
 ]
 
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "logout"
+
 WSGI_APPLICATION = 'Django.wsgi.application'
 
 

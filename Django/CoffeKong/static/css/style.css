@@ -1377,20 +1377,41 @@ hr {
 /* Vistas de administrador */
 .header-crud {
     display: flex;
-    background-color: #436A6F;
-    height: 15vh;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #61888C;
 }
 
-.header-crud .crud-img {
-    width: 5vw;
-    height: 10vh;
-    margin-left: 0;
-    margin-top: 1vw;
-    position: absolute;
+.header-crud .nav-logout {
+    text-decoration: none; 
+    color: #BFA980;  
+    font-weight: 900;
+    margin-right: 0.5em;
 }
+
+.header-crud .nav-adm {
+    display: flex;
+    align-items: center;
+    margin-left: 0.313em;
+    font-weight: 900;
+    font-size: 2em;
+    text-decoration: none;  
+    color: #BFA980;  
+}
+
+.header-crud .nav-adm:hover,
+.header-crud .nav-logout:hover { 
+    color: white;  
+}
+
+.header-crud .nav-adm .crud-img {
+    width: 7.5vw; 
+    height: 14vh;
+    margin-left: 0;
+}
+
 
 .header-crud .crud-title {
-    position: relative;
     text-align: center;
     margin: auto;
 }
