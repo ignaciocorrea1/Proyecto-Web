@@ -165,7 +165,7 @@ def historial(request):
 def detalle(request):
     context = {}
     return render(request, "pages/detalle.html", context)
-
+        
 """ Login """
 def conectar(request):
     # Si el metodo es POST
@@ -213,25 +213,42 @@ def desconectar(request):
 """ Crud """
 @login_required
 def crud(request):
-    vendedores = vendedor.objects.all()
-    clientes = cliente.objects.all()
-    tarjetas = tarjeta.objects.all()
-    estados = estado.objects.all()
-    pedidos = pedido.objects.all()
-    detallePedidos = detallePedido.objects.all()
-    productos = producto.objects.all()
-    tipoProductos = tipoProducto.objects.all()
-    context = {
-        "vendedores": vendedores,
-        "clientes": clientes,
-        "tarjetas": tarjetas,
-        "estados": estados,
-        "pedidos": pedidos,
-        "detallePedidos": detallePedidos,
-        "productos": productos,
-        "tipoProductos": tipoProductos,
-    }
-    return render(request, "pages/crud/crud.html", context)
+    # Se valida el grupo de usuario
+    if request.user.is_authenticated:
+        if request.user.groups.filter(name='vendedor_group').exists() or request.user.groups.filter(name='admin_group').exists():
+            vendedores = vendedor.objects.all()
+            clientes = cliente.objects.all()
+            tarjetas = tarjeta.objects.all()
+            estados = estado.objects.all()
+            pedidos = pedido.objects.all()
+            detallePedidos = detallePedido.objects.all()
+            productos = producto.objects.all()
+            tipoProductos = tipoProducto.objects.all()
+
+            context = {
+                "vendedores": vendedores,
+                "clientes": clientes,
+                "tarjetas": tarjetas,
+                "estados": estados,
+                "pedidos": pedidos,
+                "detallePedidos": detallePedidos,
+                "productos": productos,
+                "tipoProductos": tipoProductos,
+            }
+            print("Permitido")
+            return render(request, "pages/crud/crud.html", context)
+        else:
+            context = {
+
+            }
+            print("No permitido")
+            return render(request, "pages/index.html", context)
+    else:
+        print("No autentificado")
+        context = {
+
+        }
+        return render(request, "pages/index.html", context)
 
 """ Vendedores """
 
