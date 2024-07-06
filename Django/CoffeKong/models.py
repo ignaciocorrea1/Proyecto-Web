@@ -79,6 +79,7 @@ class producto(models.Model):
 
 """ Detalle pedido """
 class detallePedido(models.Model):
+    id_detalle = models.AutoField(primary_key=True, db_column="idDetalle")
     id_pedido = models.ForeignKey("pedido", on_delete=models.CASCADE, db_column="idPedido")
     id_producto = models.ForeignKey("producto", on_delete=models.CASCADE, db_column="idProducto")
     total = models.IntegerField()

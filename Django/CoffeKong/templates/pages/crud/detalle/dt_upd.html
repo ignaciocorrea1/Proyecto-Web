@@ -32,6 +32,17 @@
 
           <legend>Detalles de Pedidos</legend>
 
+          <input
+            type="text"
+            id="id_detalle"
+            name="id_detalle"
+            value={{detalle.id_detalle}}
+            placeholder="Id del detalle de pedido"
+            class="form-input"
+            readonly 
+            required
+          />
+
           <select name="pedido" id="pedido" class="form-sele" required>
             <option value="">Selecciona un pedido</option>
             {% for tmp in pedidos %}

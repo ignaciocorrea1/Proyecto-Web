@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import cliente, vendedor, tarjeta, estado, pedido, tipoProducto, producto, detallePedido
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate,login,logout
@@ -6,6 +6,27 @@ from django.contrib.auth.decorators import login_required
 import json
 
 # Create your views here.
+
+""" Credenciales para pruebas: 
+    - Vendedor: 
+        testv@gmail.com
+        testven1
+    - Cliente:
+        testc@gmail.com  
+        testcli1
+
+    * El vendedor no podrá ver su tabla en el crud, solo el admin.
+"""
+
+""" Decorador para saber el grupo al que pertenece el usuario """
+def check_group(group1, group2):
+    def decorator(function):
+        def wrapper(request, *args, **kwargs):
+            if request.user.groups.filter(name=group1).exists() or request.user.groups.filter(name=group2).exists() :
+                return function(request, *args, **kwargs)
+            return redirect('login')
+        return wrapper
+    return decorator
 
 """ Función para importar los productos del Json a la BD
 def import_data():
@@ -168,38 +189,48 @@ def detalle(request):
         
 """ Login """
 def conectar(request):
-    # Si el metodo es POST
-    if request.method == "POST":
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = authenticate(request, username=username, password=password)
+    # Si el usuario no esta logeado puede logearse, sino los campos estarán en readonly
+    if not request.user.is_authenticated:
+        # Si el metodo es POST
+        if request.method == "POST":
+            username = request.POST["username"]
+            password = request.POST["password"]
+            usuario = authenticate(request, username=username, password=password)
 
-        if user is not None:
-            login(request, user)
-        
-            # Se valida el tipo de usuario
-            if vendedor.objects.filter(correo = username).exists():
-                request.session["tipo_usuario"] = "vendedor"
-            elif cliente.objects.filter(correo = username).exists():
-                request.session["tipo_usuario"] = "cliente"
+            if usuario is not None:
+                login(request, usuario)
+            
+                # Se valida el tipo de usuario
+                if vendedor.objects.filter(correo = username).exists():
+                    request.session["tipo_usuario"] = "vendedor"
+                elif cliente.objects.filter(correo = username).exists():
+                    request.session["tipo_usuario"] = "cliente"
+                else:
+                    request.session["tipo_usuario"] = "admin"
+
+                context = {
+                    
+                }
+                return render(request, "pages/index.html", context)
             else:
-                request.session["tipo_usuario"] = "admin"
-
-            context = {
-                
-            }
-            return render(request, "pages/index.html", context)
+                context = {
+                    "mensaje": "Usuario o contraseña incorrecta.",
+                    "design": "alert alert-danger w-50 mx-auto text-center"
+                }
+                return render(request, "pages/ingreso.html", context)
         else:
             context = {
-                "mensaje": "Usuario o contraseña incorrecta.",
-                "design": "alert alert-danger w-50 mx-auto text-center"
+                "estado": ""
             }
             return render(request, "pages/ingreso.html", context)
     else:
         context = {
-            
+            "mensaje": "Ya se encuentra logeado",
+            "design": "alert alert-info w-50 mx-auto text-center",
+            "estado": "readonly",
         }
         return render(request, "pages/ingreso.html", context)
+
     
 def desconectar(request):
     if request.user.is_authenticated:
@@ -212,48 +243,34 @@ def desconectar(request):
 
 """ Crud """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def crud(request):
-    # Se valida el grupo de usuario
-    if request.user.is_authenticated:
-        if request.user.groups.filter(name='vendedor_group').exists() or request.user.groups.filter(name='admin_group').exists():
-            vendedores = vendedor.objects.all()
-            clientes = cliente.objects.all()
-            tarjetas = tarjeta.objects.all()
-            estados = estado.objects.all()
-            pedidos = pedido.objects.all()
-            detallePedidos = detallePedido.objects.all()
-            productos = producto.objects.all()
-            tipoProductos = tipoProducto.objects.all()
+    vendedores = vendedor.objects.all()
+    clientes = cliente.objects.all()
+    tarjetas = tarjeta.objects.all()
+    estados = estado.objects.all()
+    pedidos = pedido.objects.all()
+    detallePedidos = detallePedido.objects.all()
+    productos = producto.objects.all()
+    tipoProductos = tipoProducto.objects.all()
 
-            context = {
-                "vendedores": vendedores,
-                "clientes": clientes,
-                "tarjetas": tarjetas,
-                "estados": estados,
-                "pedidos": pedidos,
-                "detallePedidos": detallePedidos,
-                "productos": productos,
-                "tipoProductos": tipoProductos,
-            }
-            print("Permitido")
-            return render(request, "pages/crud/crud.html", context)
-        else:
-            context = {
-
-            }
-            print("No permitido")
-            return render(request, "pages/index.html", context)
-    else:
-        print("No autentificado")
-        context = {
-
-        }
-        return render(request, "pages/index.html", context)
+    context = {
+        "vendedores": vendedores,
+        "clientes": clientes,
+        "tarjetas": tarjetas,
+        "estados": estados,
+        "pedidos": pedidos,
+        "detallePedidos": detallePedidos,
+        "productos": productos,
+        "tipoProductos": tipoProductos,
+    }
+    return render(request, "pages/crud/crud.html", context)
 
 """ Vendedores """
 
 """ Vendedores - add """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def v_add(request):
     if request.method == "POST":
         # Si el metodo es POST
@@ -347,6 +364,7 @@ def v_add(request):
 
 """ Se busca el vendedor """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def v_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca al vendedor
@@ -365,6 +383,7 @@ def v_find(request, pk):
 
 """ Vendedores - update """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def v_upd(request):
     if request.method == "POST":
         # Si el metodo es POST
@@ -404,10 +423,10 @@ def v_upd(request):
 
             user.first_name = v_nombres
             user.last_name = v_apellido
-            user.set_password = v_contrasenia
+            user.set_password(v_contrasenia)
 
             user.save()
-
+            print(v_contrasenia)
             # Se manda un mensaje de registro exitoso al usuario
             print("Se modifico")
             context = {
@@ -428,6 +447,7 @@ def v_upd(request):
 
 """ Vendedores - delete """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def v_del(request, pk):
     try:
         # Se elimina el vendedor y su usuario asociado a la pk
@@ -486,6 +506,7 @@ def v_del(request, pk):
 
 """ Clientes - add """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def c_add(request):
     if request.method == "POST":
         # Si el metodo es POST
@@ -579,6 +600,7 @@ def c_add(request):
 
 """ Se busca al cliente """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def c_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca al cliente
@@ -597,6 +619,7 @@ def c_find(request, pk):
 
 """ Clientes - update """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def c_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -636,7 +659,7 @@ def c_upd(request):
 
             user.first_name = c_nombres
             user.last_name = c_apellido
-            user.set_password = c_contrasenia
+            user.set_password(c_contrasenia)
 
             user.save()
 
@@ -660,6 +683,7 @@ def c_upd(request):
 
 """ Clientes - delete """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def c_del(request, pk):
     try:
         # Se elimina el cliente y su usuario asociado a la pk
@@ -718,6 +742,7 @@ def c_del(request, pk):
 
 """ Tarjetas de clientes - add """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def tc_add(request):
     # Se mandan los clientes para el select
     if request.method != "POST":
@@ -750,6 +775,7 @@ def tc_add(request):
 
 """ Se busca la tarjeta del cliente """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def tc_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca la tarjeta y se traen todos los clientes
@@ -769,6 +795,7 @@ def tc_find(request, pk):
 
 """ Tarjetas de clientes - update """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def tc_upd(request):
     if request.method == "POST":
         # Datos de la tarjeta
@@ -798,6 +825,7 @@ def tc_upd(request):
 
 """ Tarjetas de cliente - delete """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def tc_del(request, pk):
     try:
         tc_encontrada = tarjeta.objects.get(nro_tarjeta = pk)
@@ -853,6 +881,7 @@ def tc_del(request, pk):
 
 """ Estados de pedido - add """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def e_add(request):
     if request.method == "POST":
         # Si el metodo es POST
@@ -879,6 +908,7 @@ def e_add(request):
     
 """ Se busca un estado de pedido """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def e_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca el estado y se mandan los datos
@@ -897,6 +927,7 @@ def e_find(request, pk):
 
 """ Estados de pedido - update """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def e_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -927,6 +958,7 @@ def e_upd(request):
 
 """ Estados de pedido - delete """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def e_del(request, pk):
     try:
         # Se elimina el estado de pedido asociado a la pk
@@ -983,6 +1015,7 @@ def e_del(request, pk):
 
 """ Pedidos - add"""
 @login_required
+@check_group("vendedor_group", "admin_group")
 def p_add(request):
     if request.method == "POST":
         # Datos del pedido
@@ -1022,6 +1055,7 @@ def p_add(request):
 
 """ Se busca el pedido """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def p_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca el pedido y se traen los clientes y estados asociados
@@ -1043,6 +1077,7 @@ def p_find(request, pk):
 
 """ Pedidos - update """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def p_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1080,6 +1115,9 @@ def p_upd(request):
         }
         return render(request, "pages/crud/pedidos/p_upd.html", context)
 
+""" Pedidos - delete """
+@login_required
+@check_group("vendedor_group", "admin_group")
 def p_del(request, pk):
     try:
         p_encontrado = pedido.objects.get(id_pedido = pk)
@@ -1135,6 +1173,7 @@ def p_del(request, pk):
 
 """ Detalle de pedidos - add """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def dt_add(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1177,10 +1216,11 @@ def dt_add(request):
 
 """ Se busca un detalle de pedido """
 @login_required
-def dt_find(request, pk, pk2):
-    if pk and pk2 != "":
+@check_group("vendedor_group", "admin_group")
+def dt_find(request, pk):
+    if pk != "":
         # Si las pks no estan vacias se busca el detalle asociado, mas todos los pedidos y productos para el select
-        detalles = detallePedido.objects.get(id_pedido = pk, id_producto = pk2)
+        detalles = detallePedido.objects.get(id_pedido = pk)
         pedidos = pedido.objects.all()
         productos = producto.objects.all()
 
@@ -1199,11 +1239,13 @@ def dt_find(request, pk, pk2):
 
 """ Detalle de pedidos - update """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def dt_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
 
         # Datos del detalle
+        dt_id = request.POST["id_detalle"]
         dt_pedido = request.POST["pedido"]
         dt_producto = request.POST["producto"]
         dt_total = request.POST["total"]
@@ -1214,6 +1256,7 @@ def dt_upd(request):
 
         # Se crea el objeto y se manda a la BD
         obj = detallePedido(
+            id_detalle = dt_id,
             id_pedido = objPed,
             id_producto = objPro,
             total = dt_total,
@@ -1234,9 +1277,10 @@ def dt_upd(request):
     
 """ Detalle de pedidos - delete """
 @login_required
-def dt_del(request, pk, pk2):
+@check_group("vendedor_group", "admin_group")
+def dt_del(request, pk):
     try:
-        det = detallePedido.objects.get(id_pedido = pk, id_producto = pk2)
+        det = detallePedido.objects.get(id_pedido = pk)
         det.delete()
 
         # Se recuperan los datos de la BD y se mandan 
@@ -1262,7 +1306,6 @@ def dt_del(request, pk, pk2):
         print("Detalle eliminado")
         return render(request, "pages/crud/crud.html", context)
     except Exception as e:
-
         # Se recuperan los datos de la BD y se mandan 
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
@@ -1290,6 +1333,7 @@ def dt_del(request, pk, pk2):
 
 """ Productos - add """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def pr_add(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1343,6 +1387,7 @@ def pr_add(request):
 
 """ Se busca el producto """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def pr_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca el producto y se traen los tipos de productos
@@ -1362,6 +1407,7 @@ def pr_find(request, pk):
     
 """ Productos - update """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def pr_upd(request):
     if request.method == "POST":
 
@@ -1398,6 +1444,7 @@ def pr_upd(request):
 
 """ Productos - delete """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def pr_del(request, pk):
     try:
         pr_encontrado = producto.objects.get(id_producto = pk)
@@ -1454,6 +1501,7 @@ def pr_del(request, pk):
 
 """ Tipos de productos - add """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def tp_add(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1482,6 +1530,7 @@ def tp_add(request):
     
 """ Se busca el tipo de producto """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def tp_find(request, pk):
     if pk != "":
         # Si la pk no esta vacia se busca el tipo de producto y se mandan los datos
@@ -1499,6 +1548,7 @@ def tp_find(request, pk):
     
 """ Tipo de producto - update """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def tp_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
@@ -1523,6 +1573,7 @@ def tp_upd(request):
     
 """ Tipo de producto - delete """
 @login_required
+@check_group("vendedor_group", "admin_group")
 def tp_del(request, pk):
     try:
         tp_encontrado = tipoProducto.objects.get(id_tipoproducto = pk)

@@ -72,9 +72,15 @@
                 </button>
                 <div class="drop-menu">
                 <ul class="dropdown-menu drop-options" aria-labelledby="dropdownMenu2">
+                    {% if not request.user.is_authenticated %}
                     <li>
-                    <a href="{% url 'login' %}">Iniciar sesión</a>
+                    <a href="{% url 'logout' %}">Iniciar sesión</a>
                     </li>
+                    {% else %}
+                    <li>
+                    <a href="#">Ver perfil</a>
+                    </li>
+                    {% endif %}
                     <li>
                     <a href="{% url 'historial' %}">Historial</a>
                     </li>

@@ -50,11 +50,12 @@ urlpatterns = [
     path("p_find/<str:pk>", views.p_find, name="p_find"),
     path("p_upd/", views.p_upd, name="p_upd"),
     path("p_del/<str:pk>", views.p_del, name="p_del"),
+
     # Detalle de pedidos
     path("dt_add/", views.dt_add, name="dt_add"),
-    path("dt_find/<str:pk>/<str:pk2>", views.dt_find, name="dt_find"),
+    path("dt_find/<str:pk>", views.dt_find, name="dt_find"),
     path("dt_upd/", views.dt_upd, name="dt_upd"),
-    path("dt_del/<str:pk>/<str:pk2>", views.dt_del, name="dt_del"),
+    path("dt_del/<str:pk>", views.dt_del, name="dt_del"),
 
     # Productos
     path("pr_add/", views.pr_add, name="pr_add"),
