@@ -109,20 +109,76 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Funciones del carrito
 
-// Array del carrito
-let carrito = [];
+// Funcion que añade el contador del carrito a localStorage
+function add_Update_Contador(){
+  // Se obtiene el contador desde el localStorage. En caso de no existir devolverá 0
+  let contLocal = JSON.parse(localStorage.getItem("carrito_contador")) || 0;
 
-// Funcion para ver si existe el producto en el carrito, devuelve true si lo encuentra
-function exist(id) {
-  return carrito.some(tmp => tmp.id === id);
+  let contAct = contLocal + 1; 
+  // Se actualiza el localStorage
+  localStorage.setItem("carrito_contador", JSON.stringify(contAct));
+}
+
+// Funcion que añade el contador del carrito a localStorage
+function del_Contador(){
+  // Se obtiene el contador desde el localStorage. En caso de no existir devolverá 0
+  let contLocal = JSON.parse(localStorage.getItem("carrito_contador")) || 0;
+
+  let contAct = contLocal - 1; 
+  // Se actualiza el localStorage
+  localStorage.setItem("carrito_contador", JSON.stringify(contAct));
+}
+
+// Funcion que retorna el contador de productos del carrito
+function returnContador(){
+  return contador = JSON.parse(localStorage.getItem("carrito_contador")) || 0;
+}
+
+// Funcion que carga el contador
+function loadContador(){
+  let contador = returnContador();
+  document.getElementById("shopping-contador").textContent = contador;
+}
+
+// Se actualiza en el HTML el contador
+document.addEventListener('DOMContentLoaded', () => {
+  loadContador();
+});
+
+// Funcion que añade los productos del carrito a localStorage
+function add_Update_Carrito(producto){
+  // Se obtiene el carrito desde localStorage. En caso de no existir se un array vacio
+  let carrito = JSON.parse(localStorage.getItem("carrito_local")) || [];
+
+  // Se verifica que el producto en el carrito no exista
+  let proExiste = carrito.find(tmp => tmp.id === producto.id);
+
+  // En caso de existir se acutliza la cantidad y el precio
+  if (proExiste){
+    proExiste.precio += producto.precio;
+    proExiste.cantidad += producto.cantidad;
+  } else {
+    // Se actualiza el contador
+    add_Update_Contador();
+    loadContador();
+    carrito.push(producto);
+  }
+
+  // Se actualiza el localStorage
+  localStorage.setItem("carrito_local", JSON.stringify(carrito));
 };
+
+// Funcion que retorna el carrito
+function returnCarrito(){
+  return JSON.parse(localStorage.getItem("carrito_local")) || [];
+}
 
 // Funcion para agregar productos desde el menu al carrito
 function agregar(idAdd) {
   let id;
   let pre;
   let pre2;
-  let con;
+  let con; 
   let nom;
   let img;
 
@@ -133,14 +189,13 @@ function agregar(idAdd) {
     pre = document.querySelector("#i-precio-" + id).textContent;
     pre2 = parseInt(pre.substring(1));
     con = 1;
-  }
-  else {
-    id = idAdd.substring(4);
-    // Obtencion del precio y la cantidad del producto elegido
-    pre = document.querySelector("#h-precio-" + id).textContent;
-    pre2 = parseInt(pre.substring(1));
-    con = parseInt(document.querySelector("#h-contador-" + id).textContent);
-  }
+  } else {
+      id = idAdd.substring(4);
+      // Obtencion del precio y la cantidad del producto elegido
+      pre = document.querySelector("#h-precio-" + id).textContent;
+      pre2 = parseInt(pre.substring(1));
+      con = parseInt(document.querySelector("#h-contador-" + id).textContent);
+  };
 
   // Iteracion para obtener los datos faltantes del producto a traves del json
   productos.forEach((tmp) => {
@@ -149,38 +204,25 @@ function agregar(idAdd) {
       img = tmp.imagen;
     }
   });
-  
-  // Obtencion del contador de productos del carrito
-  shop_cont = parseInt(document.getElementById("shopping-contador").textContent);
 
-  // Condicion que valida la existencia del producto en el carrito
-  if (!exist(id)) {
-    // Si no lo encuentra se crea un producto (Objeto)
-    let producto = {
-      id: id,
-      nombre: nom,
-      imagen: img,
-      precio: pre2,
-      cantidad: con
-    };
-    // Se añade el producto al carrito
-    carrito.push(producto);
-
-    // Se modifica el contador de productos del carrito
-    document.getElementById("shopping-contador").textContent = shop_cont + 1;
-  } else {
-    // Si existe el producto en el carrito se le suma el precio y la cantidad elegida
-    carrito.forEach((tmp) => {
-      if (tmp.id === id) {
-        tmp.precio += pre2;
-        tmp.cantidad += con;
-      };
-    });
+  // Se crea el producto
+  let producto = {
+    id: id,
+    nombre: nom,
+    imagen: img,
+    precio: pre2,
+    cantidad: con
   };
+
+  // Se añade al carrito
+  add_Update_Carrito(producto);
 };
 
 // Funcion que despliega los productos agregados al carrito
 function desplegar() {
+  // Se trae el carrito
+  let carrito = returnCarrito();
+
   // Se limpia el carrito
   let contenedor = document.getElementById("d-products");
   contenedor.innerHTML = "";
@@ -227,7 +269,7 @@ function desplegar() {
 // Funcion que calcula el precio total de los productos que hay en el carrito
 function totalCarrito() {
   let total = 0;
-
+  let carrito = returnCarrito();
   // Se itera sobre el carrito y se obtiene el precio total de los productos en el carrito
   carrito.forEach(tmp => {
     total += tmp.precio;
@@ -236,68 +278,72 @@ function totalCarrito() {
   document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
 };
 
-// Funcion que calcula el precio total cuando se descuentan productos desde el carrito
+// Funcion que reduce el total y la cantidad de un producto del carrito
 function reducirTotal(idP) {
-  let total = 0;
-  let precio;
-  
-  // Se itera sobre los productos para obtener el precio base del producto
+  let pre;
+
+  // Se obtiene el carrito desde localStorage. En caso de no existir se un array vacio
+  let carrito = JSON.parse(localStorage.getItem("carrito_local")) || [];
+
+  // Se busca el precio base del producto
   productos.forEach(tmp => {
-    if (tmp.id === idP) {
-      precio = parseInt(tmp.precio);
-    };
+    if (tmp.id === idP){
+      pre = tmp.precio;
+    }
   });
 
-  // Se itera sobre el carrito y se reduce el precio y la cantidad del producto en el carrito
+  // Se busca el producto y se reduce su precio y cantidad si hay mas de 1 producto
   carrito.forEach(tmp => {
     if (tmp.id === idP) {
       if (tmp.cantidad > 1) {
+        tmp.precio -= pre;
         tmp.cantidad -= 1;
-
-        if (tmp.precio > precio) {
-          tmp.precio -= precio;
-        };
-      };
-    };
-
-    // Se calcula el precio total de los productos en el carrito y se pasa al HTML
-    total += tmp.precio;
-    document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
+      }
+    }
   });
-};
 
-// Funcion que calcula el precio total cuando se aumentan productos desde el carrito
-function aumentarTotal(idP) {
-  let total = 0;
-  let precio;
+  // Se actualiza el localStorage
+  localStorage.setItem("carrito_local", JSON.stringify(carrito));
   
-  // Se itera sobre los productos para obtener el precio base del producto
+  // Se actualiza el total del carrito
+  totalCarrito();
+}
+
+// Funcion que aumenta el total y la cantidad de un producto del carrito
+function aumentarTotal(idP) {
+  let pre;
+
+  // Se obtiene el carrito desde localStorage. En caso de no existir se un array vacio
+  let carrito = JSON.parse(localStorage.getItem("carrito_local")) || [];
+
+  // Se busca el precio base del producto
   productos.forEach(tmp => {
-    if (tmp.id === idP) {
-      precio = parseInt(tmp.precio);
-    };
+    if (tmp.id === idP){
+      pre = tmp.precio;
+    }
   });
 
-  // Se itera sobre el carrito y se aumenta el precio y la cantidad del producto en el carrito
+  // Se busca el producto y se aumenta su precio y cantidad si hay menos de 100 producto
   carrito.forEach(tmp => {
     if (tmp.id === idP) {
       if (tmp.cantidad < 100) {
+        tmp.precio += pre;
         tmp.cantidad += 1;
-
-        if (tmp.precio < precio * 100) {
-          tmp.precio += precio;
-        };
-      };
-    };
-
-    // Se calcula el precio total de los productos en el carrito y se pasa al HTML
-    total += tmp.precio;
-    document.getElementById("producto-total").textContent = "Total a pagar: $" + total;
+      }
+    }
   });
-};
+
+  // Se actualiza el localStorage
+  localStorage.setItem("carrito_local", JSON.stringify(carrito));
+  
+  // Se actualiza el total del carrito
+  totalCarrito();
+}
 
 // Funcion que elimina un producto del carrito
 function eliminar(idE) { 
+  let carrito = returnCarrito();
+
   // Se obtiene la id
   let id = idE.substring(11);
 
@@ -313,17 +359,17 @@ function eliminar(idE) {
     let contenedor = document.getElementById("d-products");
     contenedor.removeChild(producto);
 
-    // Obtencion del contador de productos del carrito
-    shop_cont = parseInt(document.getElementById("shopping-contador").textContent);
-    // Se modifica el contador de productos del carrito
-    document.getElementById("shopping-contador").textContent = shop_cont - 1;
+    // Se actualiza el contador del carrito
+    del_Contador();
+    loadContador();
+    
+    // Se actualiza el localStorage
+    localStorage.setItem("carrito_local", JSON.stringify(carrito));
   };
   
   // Se actualiza el total
   totalCarrito();
-}
-
-
+};
 
 
 
