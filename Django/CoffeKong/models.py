@@ -63,7 +63,6 @@ class pedido(models.Model):
 
     def __str__(self):
         return str(self.id_pedido)
-    
 
 """ Producto """
 class producto(models.Model):

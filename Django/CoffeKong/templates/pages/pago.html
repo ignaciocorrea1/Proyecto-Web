@@ -36,17 +36,17 @@
             <div class="steps-desc">
               <div class="union"></div>
             
-              <div class="circle circle-1">
+              <div class="circle circle-1" id="paso-indicador-1">
                 <span class="material-symbols-outlined done">
                   done
                 </span>
               </div>
               
-              <div class="circle circle-2">
+              <div class="circle circle-2" id="paso-indicador-2">
   
               </div>
               
-              <div class="circle circle-3">
+              <div class="circle circle-3" id="paso-indicador-3">
   
               </div>
             </div>
@@ -57,135 +57,106 @@
             </div>
           </div>
       </section>
-      <h2 class="pago-datos">Datos</h2>
-      <!-- <h2 class="pago-datos">Método de pago</h2> -->
-      <!-- <h2 class="pago-datos">Confirmación</h2> -->
+      <h2 class="pago-datos" id="title-paso">Datos</h2>
       <section class="pago-container-2">
         
-        <!-- Paso 1 -->
-        
-       <div class="pago-datos">
-          <form action="">
-                <input 
-                    class="form-input" 
-                    type="text" 
-                    id="nombre" 
-                    placeholder="Nombre (*)" 
-                    required
-                >
-                <input 
-                    class="form-input" 
-                    type="text" 
-                    id="rut" 
-                    placeholder="Rut (*)" 
-                    required
-                >
-                <input 
-                    class="form-input" 
-                    type="email" 
-                    id="correo" 
-                    placeholder="Correo (*)" 
-                    required
-                >
-                <input 
-                    class="form-input" 
-                    type="text" 
-                    id="telefono" 
-                    placeholder="Teléfono (*)" 
-                    required
-                >
-                <input 
-                    class="form-input" 
-                    type="text" 
-                    id="direccion" 
-                    placeholder="Dirección de entrega (*)" 
-                    required
-                >
-                <input class="form-submit" type="submit" value="Aceptar">
-          </form>
-        </div>
-        
-        <!-- Paso 2 -->
+        <form id="pasos-container" action="{% url 'procesa_pedido' %}" method="POST">
 
-        {% comment %} <div class="pago-metodo">
-          <div class="pago-option">
-            <button class="m-pago">Transferencia o depósito bancario</button>
-            <button class="m-pago">Botón de pago Banco Estado</button>
-            <button class="m-pago">Botón de pago Banco Santander</button>
-            <button class="m-pago">Webpay</button>
-            <button class="m-pago">Mercado Pago</button>
+          {% csrf_token %}
+
+          <!-- Primer paso - Datos del cliente -->
+          <div class="pago-datos" id='paso-compra-1'>
+             <div class="form">
+                   <input class="form-input" type="text" name='nombres' id="nombre-paso" value={{cliente.nombres}} placeholder="Nombre (*)" required >
+                   <input class="form-input" type="text" name='rut' id="rut-paso" value={{cliente.run}} placeholder="Rut (*)" required >
+                   <input class="form-input" type="email" name='correo' id="correo-paso" value={{cliente.correo}} placeholder="Correo (*)" required >
+                   <input class="form-input" type="text"  name='telefono' id="telefono-paso" value={{cliente.telefono}} placeholder="Teléfono (*)" required >
+                   <input class="form-input" type="text" name='direccion' id="direccion-paso" value={{cliente.direccion}} placeholder="Dirección de entrega (*)" required >
+                   <div id="paso-msg-1"></div>
+                   <input class="form-submit" type="button" value="Aceptar" onclick="validaPasos(1)">
+             </div>
           </div>
-          <button class="m-pago-cont">Aceptar</button>
-        </div>   {% endcomment %}
-        
-        <!-- Paso 3 -->
 
-        {% comment %} <div class="pago-details">
-          <table class="table-detail">
-            <tr>
-              <th>Dirección de entrega</th> <th class="dos-p">:</th> <td>dato</td>
-            </tr>
-            
-            <tr>
-              <th>Destinatario</th> <th class="dos-p">:</th> <td>dato</td>
-            </tr>
-            
-            <tr>
-              <th>Rut</th> <th class="dos-p">:</th> <td>dato</td>
-            </tr>
-            
-            <tr>
-              <th>Teléfono</th> <th class="dos-p">:</th> <td>dato</td>
-            </tr>
-            
-            <tr>
-              <th>Método de pago</th> <th class="dos-p">:</th> <td>dato</td>
-            </tr>
-          </table>
-          <button class="button-pagar">Pagar</button>
-        </div>  {% endcomment %}
+          <!-- Segundo paso - Eleccion metodo de pago -->
+          <div class='pago-metodo' id='paso-compra-2' hidden>
+            <div class='pago-option'>
+              <div class='pago-group'>
+                <input type='radio' class='m-radio' id='metodo-1' name='metodo' ></input>
+                <label for='metodo-1' class='m-pago' >Transferencia o depósito bancario</label>
+              </div>
+
+              <div class='pago-group'>
+                <input type='radio' class='m-radio' id='metodo-2' name='metodo' ></input>
+                <label for='metodo-2' class='m-pago' >Botón de pago Banco Estado</label>
+              </div>
+
+              <div class='pago-group'>
+                <input type='radio' class='m-radio' id='metodo-3' name='metodo' ></input>
+                <label for='metodo-3' class='m-pago' >Botón de pago Banco Santander</label>
+              </div>
+
+              <div class='pago-group'>
+                <input type='radio' class='m-radio' id='metodo-4' name='metodo' ></input>
+                <label for='metodo-4' class='m-pago' >Webpay</label>
+              </div>
+
+              <div class='pago-group'>
+                <input type='radio' class='m-radio' id='metodo-5' name='metodo' ></input>
+                <label for='metodo-5' class='m-pago' >Mercado Pago</label>
+              </div>
+              
+            </div>
+            <div id='paso-msg-2'></div>
+            <input type='button' class='m-pago-cont' value='Aceptar' onclick='validaPasos(2)' ></input>
+          </div>
+
+          <!-- Tercer paso - Ingreso de la tarjeta -->
+          <div class='pago-datos' id='paso-compra-3' hidden>
+            <div class='form'>
+                <input class='form-input' type='number' name='tarjeta' id='tarjeta-paso' placeholder='Nro. de tarjeta (*)' required >
+                <div id='paso-msg-3'></div>
+                <input class='form-submit' type='button' value='Aceptar' onclick='validaPasos(3)' >
+            </div>
+          </div>
+          
+          <!-- Cuarto paso - Confirmacion del pago -->
+          <div class='pago-details' id='paso-compra-4' hidden>
+            <table class='table-detail'>
+              <tr>
+                <th>Dirección de entrega</th> <th class='dos-p'>:</th> <td>{{cliente.direccion}}</td>
+              </tr>
+              
+              <tr>
+                <th>Destinatario</th> <th class='dos-p'>:</th> <td>{{cliente.nombres}} {{cliente.paterno}} {{cliente.materno}}</td>
+              </tr>
+              
+              <tr>
+                <th>Rut</th> <th class='dos-p'>:</th> <td>{{cliente.run}}</td>
+              </tr>
+              
+              <tr>
+                <th>Teléfono</th> <th class='dos-p'>:</th> <td>{{cliente.telefono}}</td>  
+              </tr>
+
+            </table>
+            {% if mensaje %}
+              <div class='{{design}}'>{{mensaje}}</div>
+            {% endif %}
+            <input type='submit' value='Pagar' class='button-pagar' onclick='importCarro()'></input>
+          </div>
+
+        </form>
         
         <!-- Resumen del pedido -->
         <div class="pago-resumen">
             <h2>Resumen del pedido</h2>
             <hr>
-            <div class="product">
-                <div class="product-desc">
-                  <h3>Nombre Producto</h3>
-                  <img src="/images/producto.jpg" alt="Cargando imagen...">
-                </div>
-                <div class="product-desc-2">
-                  <div class="product-price">
-                    <span class="precio">Precio:</span>
-                    <span class="precio-2">$999</span>
-                  </div>
-                  <div class="product-count">
-                    <span class="product-condesc">Cantidad:</span>
-                    <span class="product-contador">1</span>
-                  </div>
-                </div>
-                <hr>
-            </div>
-            <div class="product">
-                <div class="product-desc">
-                  <h3>Nombre Producto</h3>
-                  <img src="/images/producto2.jpg" alt="Cargando imagen...">
-                </div>
-                <div class="product-desc-2">
-                  <div class="product-price">
-                    <span class="precio">Precio:</span>
-                    <span class="precio-2">$999</span>
-                  </div>
-                  <div class="product-count">
-                    <span class="product-condesc">Cantidad:</span>
-                    <span class="product-contador">1</span>
-                  </div>
-                </div>
-                <hr>
+            <div class="productos-container" id="productos-container">
+              
             </div>
             <div class="pago-total">
                 <span>Total a pagar:</span>
-                <span>$1998</span>
+                <span id="resumen-total">$</span>
             </div>
         </div>
       </section>

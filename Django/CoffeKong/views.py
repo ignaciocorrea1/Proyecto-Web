@@ -3,6 +3,8 @@ from .models import cliente, vendedor, tarjeta, estado, pedido, tipoProducto, pr
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from datetime import date
 import json
 
 # Create your views here.
@@ -172,8 +174,100 @@ def carrito(request):
     return render(request, "pages/carrito.html", context)
 
 def pago(request):
-    context = {}
-    return render(request, "pages/pago.html", context)
+    # Si el usuario esta logeado puede iniciar el pago sino tendra que logearse
+    if request.user.is_authenticated:
+        usuario = cliente.objects.get(correo = request.user.username)
+        context = {
+            "cliente": usuario
+        }
+        return render(request, "pages/pago.html", context)
+    
+    else:
+        context = {}
+        return render(request, "pages/ingreso.html", context)
+
+""" Proceso de compra """
+
+""" Se carga los productos seleccionados del usuario """
+def load_carrito(request):
+    if request.method == "POST":
+        try:
+            # Se carga el carrito
+            data = json.loads(request.body)
+            #print("Data recibida", data)
+            request.session['carrito_data'] = data
+            return JsonResponse({"message": "Productos recibidos correctamente"})
+        except Exception as e:
+            print("Error al recuperar el carrito", e)
+    else:
+        return JsonResponse({"message": "Metodo no es POST"})
+
+""" Se procesa el pedido """
+def procesa_pedido(request):
+    if request.method == "POST":
+        # Se crea al destinatario - por temas de tiempo se usó al cliente
+        rutCli = request.POST["rut"]
+
+        # Se busca al cliente
+        objCli = cliente.objects.get(run = rutCli)
+
+        # Se ingresa la tarjeta del cliente
+        nroTar = request.POST["tarjeta"]
+
+        tar = tarjeta.objects.create(
+            nro_tarjeta = nroTar,
+            cliente = objCli
+        )
+        tar.save()
+
+        # Se genera el estado por defecto de un pedido
+        objEst = estado.objects.get(id_estado = 1)
+
+        # Se genera el pedido
+        ped = pedido.objects.create(
+            cliente = objCli,
+            fecha = date.today(),
+            estado = objEst
+        )
+        ped.save()
+
+        # Se recupera el carrito
+        carrito_data = request.session.get('carrito_data')
+        
+        # Se itera sobre los productos del carrito para poder crear los detalles de la compra
+        for p in carrito_data:
+            print(p["id"])
+            print(p["cantidad"])
+            print(p["precio"])    
+            # Se crea un objeto de producto
+            objPro = producto.objects.get(id_producto = p["id"])
+            
+            # Se obtiene la cantidad
+            cantidad = p["cantidad"]
+            # Se obtiene el total
+            total = p["precio"]
+
+            # Se crea el detalle
+            det = detallePedido.objects.create(
+                id_pedido = ped,
+                id_producto = objPro,
+                total = total,
+                cantidad = cantidad
+            )
+            det.save()
+            print("Detalle exitoso")
+        
+        context = {
+            "mensaje": "Compra realiza!",
+            "design": "alert alert-success w-80 mx-auto text-center"}
+        return render(request, "pages/pago.html", context)
+    else:
+        print("Pedido erroneo")
+        context = {
+            "mensaje": "Error al procesar la compra",
+            "design": "alert alert-danger w-80 mx-auto text-center"
+        }
+        return render(request, "pages/pago.html", context)
 
 def contrasenia(request):
     context = {}
@@ -182,6 +276,10 @@ def contrasenia(request):
 def historial(request):
     context = {}
     return render(request, "pages/historial.html", context)
+
+def perfil(request):
+    context = {}
+    return render(request, "pages/perfil.html", context)
 
 def detalle(request):
     context = {}
@@ -231,7 +329,6 @@ def conectar(request):
         }
         return render(request, "pages/ingreso.html", context)
 
-    
 def desconectar(request):
     if request.user.is_authenticated:
         logout(request)
@@ -1495,7 +1592,6 @@ def pr_del(request, pk):
         }
         print("No se pudo eliminar el producto")
         return render(request, "pages/crud/crud.html", context)
-
 
 """ Tipos de productos """
 

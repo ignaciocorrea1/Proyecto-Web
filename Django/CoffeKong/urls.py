@@ -12,6 +12,7 @@ urlpatterns = [
     path("pago/", views.pago, name="pago"),
     path("contrasenia/", views.contrasenia, name="contrasenia"),
     path("historial/", views.historial, name="historial"),
+    path("perfil/", views.perfil, name="perfil"),
     path("detalle/", views.detalle, name="detalle"),
 
     # Login
@@ -68,4 +69,8 @@ urlpatterns = [
     path("tp_find/<str:pk>", views.tp_find, name="tp_find"),
     path("tp_upd/", views.tp_upd, name="tp_upd"),
     path("tp_del/<str:pk>", views.tp_del, name="tp_del"),
+
+    # Proceso de compra
+    path("load_carrito", views.load_carrito, name="load_carrito"),
+    path("procesa_pedido", views.procesa_pedido, name="procesa_pedido"),
 ]

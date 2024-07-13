@@ -19,17 +19,18 @@
     <div class="products" id="d-products"></div>
     <div class="carro-bottom">
       <div class="product-total">
-        <span id="producto-total">Total a pagar: $</span>
+        <span id="producto-total">Total a pagar: $0</span>
         <hr />
       </div>
       <div class="product-buttons">
-        <a href="{% url 'carrito' %}">
-          <button class="product-carro">Ir al carro</button>
+        <a href="{% url 'carrito' %}" id="carrito-link">
+          <button class="product-carro" type="button" id="carrito-desplegado">Ir al carro</button>
         </a>
-        <a href="{% url 'pago' %}">
-          <button class="product-pago">Iniciar pago</button>
+        <a href="{% url 'pago' %}" id="o-inipago">
+          <button class="product-pago" onclick="validaCarro('offcanva')">Iniciar pago</button>
         </a>
       </div>
     </div>
   </div>
 </div>
+

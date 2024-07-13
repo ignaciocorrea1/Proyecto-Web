@@ -19,9 +19,9 @@
     <title>Coffe Kong</title>
   </head>
   <body>
-
-    {% include "base/header.html" %}
     
+    {% include "base/header.html" %}
+
     <main class="container-fluid">
       
       <!-- Inicio offcanva -->
@@ -30,36 +30,13 @@
 
       <!-- Fin offcanva -->
 
-      <h1>Carro de compras</h1>
-
-      <!-- Productos -->
-
-      <div class="carrod-product" id="dd-products"></div>
-
-      <!-- Total a pagar -->
-       
-      <div class="carro-pay">
-        <hr>
-        <div class="carro-pay-container">
-          <span class="carro-pagar">Total a pagar</span>
-          <span class="carro-pagar" id="carro-total">$0</span>
-        </div>
-        <hr>
-      </div>
-
-      <!-- Pagar, seguir comprando -->
-      <div class="carro-end">
-        <div class="carro-end-container">
-          <a href="{% url 'menu' %}">
-            <button class="option-1">Seguir Comprando</button>
-          </a>
-          <a href="{% url 'pago' %}" id="a-inipago">
-            <button type="button" class="option-2" id="btn-inipago" onclick="validaCarro('vista')">Iniciar Pago</button>
-          </a>
-        </div>
-      </div>
+      <!-- Tabla de detalles del historial -->
+      <h1>Perfil</h1>
+      <section class="perfil-container">
+        
+      </section>
     </main>
-
+    
     {% include "base/footer.html" %}
 
     <!-- jquery -->

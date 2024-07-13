@@ -431,34 +431,34 @@
         font-size: 1.4em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc h3 {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
         font-size: 1.3em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc img {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
         width: 9vw;
         height: 14vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 1em;
     }
 
     /* Primer paso del pago */
-    .pago-container-2 .pago-datos form {
+    .pago-container-2 .pago-datos .form {
         margin: auto;
         margin-right: 1vw;
     }
 
-    .pago-container-2 .pago-datos form .form-input {
+    .pago-container-2 .pago-datos .form .form-input {
         width: 35vw;
         font-size: 0.6em;
     }
 
-    .pago-container-2 .pago-datos form .form-submit {
+    .pago-container-2 .pago-datos .form .form-submit {
         width: 15vw;
         height: 5vh;
         font-size: 0.75em;
@@ -1003,34 +1003,34 @@
         font-size: 1.3em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc h3 {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
         font-size: 1.1em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc img {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
         width: 9vw;
         height: 12vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 1em;
     }
 
     /* Primer paso del pago */
-    .pago-container-2 .pago-datos form {
+    .pago-container-2 .pago-datos .form {
         margin: auto;
         margin-right: 2vw;
     }
 
-    .pago-container-2 .pago-datos form .form-input {
+    .pago-container-2 .pago-datos .form .form-input {
         width: 40vw;
         font-size: 0.6em;
     }
 
-    .pago-container-2 .pago-datos form .form-submit {
+    .pago-container-2 .pago-datos .form .form-submit {
         width: 15vw;
         height: 4.5vh;
         font-size: 0.6em;
@@ -1579,34 +1579,34 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc h3 {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
         font-size: 1em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc img {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
         width: 11vw;
         height: 14vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.9em;
     }
 
     /* Primer paso del pago */
-    .pago-container-2 .pago-datos form {
+    .pago-container-2 .pago-datos .form {
         margin: auto;
         margin-right: 2vw;
     }
 
-    .pago-container-2 .pago-datos form .form-input {
+    .pago-container-2 .pago-datos .form .form-input {
         width: 40vw;
         font-size: 0.6em;
     }
 
-    .pago-container-2 .pago-datos form .form-submit {
+    .pago-container-2 .pago-datos .form .form-submit {
         width: 15vw;
         height: 5vh;
         font-size: 0.75em;
@@ -2163,34 +2163,34 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc h3 {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
         font-size: 1.1em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc img {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
         width: 13vw;
         height: 13vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.9em;
     }
 
     /* Primer paso del pago */
-    .pago-container-2 .pago-datos form {
+    .pago-container-2 .pago-datos .form {
         margin: auto;
         margin-right: 2vw;
     }
 
-    .pago-container-2 .pago-datos form .form-input {
+    .pago-container-2 .pago-datos .form .form-input {
         width: 55vw;
         font-size: 0.65em;
     }
 
-    .pago-container-2 .pago-datos form .form-submit {
+    .pago-container-2 .pago-datos .form .form-submit {
         width: 25vw;
         height: 5vh;
         font-size: 0.75em;
@@ -2747,34 +2747,34 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc h3 {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
         font-size: 1.1em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc img {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
         width: 21vw;
         height: 15vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.9em;
     }
 
     /* Primer paso del pago */
-    .pago-container-2 .pago-datos form {
+    .pago-container-2 .pago-datos .form {
         margin: auto;
         margin-right: 4vw;
     }
 
-    .pago-container-2 .pago-datos form .form-input {
+    .pago-container-2 .pago-datos .form .form-input {
         width: 60vw;
         font-size: 0.7em;
     }
 
-    .pago-container-2 .pago-datos form .form-submit {
+    .pago-container-2 .pago-datos .form .form-submit {
         width: 30vw;
         height: 5vh;
         font-size: 0.75em;
@@ -3336,34 +3336,34 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc h3 {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
         font-size: 1.1em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc img {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
         width: 25vw;
         height: 15vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.9em;
     }
 
     /* Primer paso del pago */
-    .pago-container-2 .pago-datos form {
+    .pago-container-2 .pago-datos .form {
         margin: auto;
         margin-right: 4vw;
     }
 
-    .pago-container-2 .pago-datos form .form-input {
+    .pago-container-2 .pago-datos .form .form-input {
         width: 80vw;
         font-size: 0.7em;
     }
 
-    .pago-container-2 .pago-datos form .form-submit {
+    .pago-container-2 .pago-datos .form .form-submit {
         width: 40vw;
         height: 5vh;
         font-size: 0.75em;
@@ -3924,34 +3924,34 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc h3 {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
         font-size: 1em;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc img {
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
         width: 25vw;
         height: 10vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .product .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.8em;
     }
 
     /* Primer paso del pago */
-    .pago-container-2 .pago-datos form {
+    .pago-container-2 .pago-datos .form {
         margin: auto;
         margin-right: 4vw;
     }
 
-    .pago-container-2 .pago-datos form .form-input {
+    .pago-container-2 .pago-datos .form .form-input {
         width: 80vw;
         font-size: 0.6em;
     }
 
-    .pago-container-2 .pago-datos form .form-submit {
+    .pago-container-2 .pago-datos .form .form-submit {
         width: 40vw;
         height: 5vh;
         font-size: 0.7em;
