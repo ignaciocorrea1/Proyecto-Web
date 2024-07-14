@@ -15,6 +15,9 @@ urlpatterns = [
     path("perfil/", views.perfil, name="perfil"),
     path("detalle/<str:pk>", views.detalle, name="detalle"),
 
+    # Eliminar cuenta
+    path("cli_del/<str:pk>", views.cli_del, name="cli_del"),
+
     # Login
     path("login/", views.conectar, name="login"),
     path("logout/", views.desconectar, name="logout"),

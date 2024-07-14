@@ -32,8 +32,67 @@
 
       <!-- Tabla de detalles del historial -->
       <h1>Perfil</h1>
-      <section class="perfil-container">
-        
+      <section class="perfil-container detail-container">
+        <img src="{% static '/images/Logo.png' %}" alt="Cargando imagen...">
+        <table class="table-detail">
+            {% if request.session.tipo_usuario == "cliente" or request.session.tipo_usuario == "vendedor" %}
+              <tr>
+                <th>Rut</th> <th class="dos-p">:</th> <td class="dato-us">{{usuario.run}}</td>
+              </tr>
+
+              <tr>
+                <th>Nombre</th> <th class="dos-p">:</th> <td class="dato-us">{{usuario.nombres}} {{usuario.apaterno}} {{usuario.amaterno}}</td>
+              </tr>
+    
+              <tr>
+                <th>Correo</th> <th class="dos-p">:</th> <td class="dato-us">{{usuario.correo}}</td>
+              </tr>
+
+              <tr>
+                <th>Dirección</th> <th class="dos-p">:</th> <td class="dato-us">{{usuario.direccion}}</td>
+              </tr>
+    
+              <tr>
+                <th>Teléfono</th> <th class="dos-p">:</th> <td class="dato-us">{{usuario.telefono}}</td>
+              </tr>
+            {% else %}
+              <tr>
+                <th>Nombre</th> <th class="dos-p">:</th> <td class="dato-us">Admin</td>
+              </tr>
+    
+              <tr>
+                <th>Correo</th> <th class="dos-p">:</th> <td class="dato-us">{{usuario.username}}</td>
+              </tr>
+            {% endif %}
+          </table>
+
+          {% if mensaje %}
+            <div class='{{design}}'>{{mensaje}}</div>
+          {% endif %}
+
+          {% if request.session.tipo_usuario == "cliente" %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-prim-conf btn-conf">Eliminar cuenta</button>
+
+            <!-- Confimarcion -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmación</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <span class="msg-conf">¿Estás seguro de que deseas eliminar tu cuenta? Esta acción es irreversible.</span>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="{% url 'cli_del' pk=usuario.run %}">
+                      <button type="button" class="btn-conf btn-modal" data-bs-dismiss="modal">Confirmar</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
       </section>
     </main>
     

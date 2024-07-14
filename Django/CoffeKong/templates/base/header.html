@@ -43,7 +43,7 @@
                 </li>
 
                 {% if request.user.is_authenticated %}
-                    {% if request.session.tipo_usuario == "vendedor" or request.session.tipo_usuario == "admin"  %}
+                    {% if request.session.tipo_usuario == "vendedor" or request.session.tipo_usuario == "admin" %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'crud' %}">ADMIN</a>
                         </li>    

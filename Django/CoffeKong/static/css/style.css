@@ -294,6 +294,36 @@ body{
     margin-right: 1.25em;
 }
 
+/* Main perfil */
+
+.perfil-container .btn-conf {
+    height: 5vh;
+    border: 0.218rem solid #436A6F;
+    border-radius: 1em;
+    color: white;
+    font-weight: 700;
+}
+
+.perfil-container .btn-prim-conf {
+    margin-top: 15vh;
+    width: 12vw;
+    background-color: #61888C;
+}
+
+.perfil-container .modal .btn-modal {
+    width: 10vw;
+    background-color: #BFA980;
+}
+
+.perfil-container .btn-conf:hover,
+.perfil-container .modal .btn-modal:hover {
+    border: 0.218rem solid white;
+}
+
+.perfil-container .modal .msg-conf {
+    color: white;
+}
+
 /* Footer */
 
 footer {

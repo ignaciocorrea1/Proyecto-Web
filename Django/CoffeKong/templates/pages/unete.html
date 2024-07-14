@@ -119,13 +119,11 @@
           {% endif %} 
 
           <div class="low-form">
-            <input
-            onclick="validaRegistro()" 
-            id="submit-r"
-            type="submit"
-            value="Registrar"
-            class="form-submit"
-            />
+            {% if request.session.tipo_usuario == "cliente" %}
+              <input onclick="validaRegistro()" id="submit-r" type="submit" value="Registrar" class="form-submit" disabled/>
+            {% else %}
+              <input onclick="validaRegistro()" id="submit-r" type="submit" value="Registrar" class="form-submit"/>
+              {% endif %}
           </div>
         </form>
       </section>

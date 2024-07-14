@@ -163,8 +163,34 @@ def unete(request):
 
 @login_required
 def perfil(request):
-    context = {}
+    if request.session.get("tipo_usuario") == "cliente":
+        usuario = cliente.objects.get(correo = request.user.username)
+    elif request.session.get("tipo_usuario") == "vendedor":
+        usuario = vendedor.objects.get(correo = request.user.username)
+    else:
+        usuario = User.objects.get(username = request.user.username)
+    context = {
+        "usuario": usuario,
+    }
     return render(request, "pages/perfil.html", context)
+
+""" Eliminar cuenta de cliente """
+def cli_del(request, pk):
+    if pk != "":
+        cli_encontrado = cliente.objects.get(run = pk)
+        user = User.objects.get(email = cli_encontrado.correo)
+        cli_encontrado.delete()
+        user.delete()
+
+        logout(request)
+
+        return redirect("index")
+    else:
+        context = {
+            "mensaje": "Error al eliminar la cuenta",
+            "design": "alert alert-danger w-50 mx-auto text-center"
+        }
+        return render(request, "pages/perfil.html", context)
 
 def contrasenia(request):
     context = {}
