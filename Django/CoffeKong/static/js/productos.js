@@ -388,7 +388,7 @@ function reducirTotal(idP, zona) {
   
   // Se actualiza el total del carrito
   totalCarrito(zona);
-}
+};
 
 // Funcion que aumenta el total y la cantidad de un producto del carrito
 function aumentarTotal(idP, zona) {
@@ -419,7 +419,7 @@ function aumentarTotal(idP, zona) {
   
   // Se actualiza el total del carrito
   totalCarrito(zona);
-}
+};
 
 // Funcion que elimina un producto del carrito
 function eliminar(idE, zona) { 
@@ -509,7 +509,7 @@ function resumenPedido(){
   } catch (error) {
     
   }
-}
+};
 
 // Se carga el resumen - por la misma razon que con desplegado(), la funcion resumenPedido() tambien se encierra en un trycatch
 document.addEventListener("DOMContentLoaded", () => {
@@ -568,7 +568,7 @@ function validaCarro(zona) {
       a.setAttribute("href", "/accounts/pago");
     }
   }
-}
+};
 
 // Funcion para validar los pasos del proceso de pago
 function validaPasos(paso) {
@@ -672,7 +672,7 @@ function validaPaso3() {
     errorPaso(3, "El Nro. de tarjeta esta vacio");
     return false;
   }
-}
+};
 
 // Funcion que envia los productos del carrito a un json externo
 function importCarro() {
@@ -691,7 +691,10 @@ function importCarro() {
     },
     // Convierte el carrito en una cadena Json
     body: JSON.stringify(carrito)
-  })
+  });
+
+  // Se vacia el carrito al finalizar la compra
+  vaciarCarro();
 };
 
 // Funcion para obtener el token de las cookies
@@ -708,6 +711,15 @@ function getToken() {
   }
   // Si no lo encuentra devolvera null
   return null;
+};
+
+// Funcion para vaciar el localStorage al completar la compra
+function vaciarCarro() {
+  // Se elimina el carrito del localStorage
+  localStorage.removeItem("carrito_local");
+
+  // Se actualiza el contador
+  localStorage.removeItem("carrito_contador");
 };
 
 // Funcion que mostrara un mensaje de error al usuario

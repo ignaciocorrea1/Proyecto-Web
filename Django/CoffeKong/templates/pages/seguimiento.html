@@ -36,19 +36,23 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Reiciendis quos totam ducimus eligendi libero ipsum quaerat.
         </p>
-        <form>
-            <input
-                type="text"
-                id="seguimiento-s"
-                placeholder="Id del pedido (*)"
-                class="form-input"
-            />
-            <input onclick="validarSeguimiento()" id="submit-s" type="button" value="Buscar" class="form-submit"/> 
+        
+        <form action="{% url 'seguimiento' %}" method="POST">
+
+          {% csrf_token %}
+
+          <input
+              type="number"
+              name="id_pedido"
+              id="seguimiento-s"
+              placeholder="Id del pedido (*)"
+              class="form-input"
+          />
+          <input type="submit" id="submit-s" value="Buscar" class="form-submit"></input>
         </form>
-        <div id="c-seguimiento-s"></div>
-        <a href="{% url 'seguimiento2' %}">
-          <button class="form-submit">(Ver sig)</button> 
-        </a>
+        {% if mensaje %}
+          <div id="c-seguimiento-s" class='{{design}}'>{{mensaje}}</div>
+        {% endif %}
       </section>
     </main>
     

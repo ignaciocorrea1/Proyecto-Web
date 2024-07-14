@@ -59,6 +59,7 @@ class pedido(models.Model):
     id_pedido = models.AutoField(primary_key=True, db_column="idPedido")
     cliente = models.ForeignKey("cliente", on_delete=models.CASCADE, db_column="run")
     fecha = models.DateField()
+    total_ped = models.IntegerField()
     estado = models.ForeignKey("estado", on_delete=models.CASCADE, db_column="idEstado")
 
     def __str__(self):
@@ -85,4 +86,4 @@ class detallePedido(models.Model):
     cantidad = models.IntegerField()
 
     def __str__(self):
-        return str(self.id_pedido)
+        return str(self.id_detalle)

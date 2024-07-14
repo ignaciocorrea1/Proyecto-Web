@@ -67,11 +67,11 @@
           <!-- Primer paso - Datos del cliente -->
           <div class="pago-datos" id='paso-compra-1'>
              <div class="form">
-                   <input class="form-input" type="text" name='nombres' id="nombre-paso" value={{cliente.nombres}} placeholder="Nombre (*)" required >
-                   <input class="form-input" type="text" name='rut' id="rut-paso" value={{cliente.run}} placeholder="Rut (*)" required >
-                   <input class="form-input" type="email" name='correo' id="correo-paso" value={{cliente.correo}} placeholder="Correo (*)" required >
-                   <input class="form-input" type="text"  name='telefono' id="telefono-paso" value={{cliente.telefono}} placeholder="Teléfono (*)" required >
-                   <input class="form-input" type="text" name='direccion' id="direccion-paso" value={{cliente.direccion}} placeholder="Dirección de entrega (*)" required >
+                   <input class="form-input" type="text" name='nombres' id="nombre-paso" value={{cliente.nombres}} placeholder="Nombre (*)" readonly required >
+                   <input class="form-input" type="text" name='rut' id="rut-paso" value={{cliente.run}} placeholder="Rut (*)" readonly required >
+                   <input class="form-input" type="email" name='correo' id="correo-paso" value={{cliente.correo}} placeholder="Correo (*)" readonly required >
+                   <input class="form-input" type="text"  name='telefono' id="telefono-paso" value={{cliente.telefono}} placeholder="Teléfono (*)" readonly required >
+                   <input class="form-input" type="text" name='direccion' id="direccion-paso" value={{cliente.direccion}} placeholder="Dirección de entrega (*)" readonly required >
                    <div id="paso-msg-1"></div>
                    <input class="form-submit" type="button" value="Aceptar" onclick="validaPasos(1)">
              </div>

@@ -135,21 +135,15 @@ function validarSeguimiento() {
   let idS = document.getElementById("seguimiento-s").value;
   const boton = document.getElementById("submit-s");
 
-  if (!validarIdSeguimiento(idS)) {
+  if (idS > 0) {
     let input = document.getElementById("seguimiento-s");
     let contenedor = document.getElementById("c-seguimiento-s");
     let texto =
       "Id del seguimiento debe contener solo numeros y estar entre 1 y 4 digitos.";
 
     error(input, contenedor, texto, boton);
-  } else {
-    document.getElementById("seguimiento-s").style.border =
-      "0.188rem solid #436A6F";
-    document.getElementById("c-seguimiento-s").innerHTML =
-      "<div class='alert alert-success w-100 mx-auto text-center'> " +
-      "Pedido encontrado (Mensaje provisorio) </div>";
-  }
-}
+  } 
+};
 
 // Validacion del correo para el cambio de contraseña
 function validarCambio() {

@@ -38,17 +38,16 @@
                 <th>Id</th> <th>Fecha</th> <th>Dirección</th> <th>Total</th> <th>Detalle</th>
             </tr>
 
-            <tr>
-                <td>dato</td> <td>dato</td> <td>dato</td> <td>dato</td> <td><a href="{% url 'detalle' %}">Ver</a></td>
-            </tr>
-
-            <tr>
-                <td>dato</td> <td>dato</td> <td>dato</td> <td>dato</td> <td><a href="{% url 'detalle' %}">Ver</a></td>
-            </tr>
-
-            <tr>
-                <td>dato</td> <td>dato</td> <td>dato</td> <td>dato</td> <td><a href="{% url 'detalle' %}">Ver</a></td>
-            </tr>
+            {% for pedido in pedidos %}
+              <tr>
+                  <td>{{pedido.id_pedido}}</td> 
+                  <td>{{pedido.fecha}}</td> 
+                  <td>{{cliente.direccion}}</td>
+                  <td>${{pedido.total_ped}}</td> 
+                  <td><a href="{% url 'detalle' pk=pedido.id_pedido %}">Ver</a></td>
+              </tr>
+            {% endfor %}
+            
         </table>
       </section>
     </main>

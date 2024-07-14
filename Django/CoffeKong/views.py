@@ -161,32 +161,136 @@ def unete(request):
         }
         return render(request, "pages/unete.html", context)
 
-def seguimiento(request):
+@login_required
+def perfil(request):
     context = {}
-    return render(request, "pages/seguimiento.html", context)
+    return render(request, "pages/perfil.html", context)
 
-def seguimiento2(request):
+def contrasenia(request):
     context = {}
-    return render(request, "pages/seguimiento2.html", context)
+    return render(request, "pages/contrasenia.html", context)
 
 def carrito(request):
     context = {}
     return render(request, "pages/carrito.html", context)
 
-def pago(request):
-    # Si el usuario esta logeado puede iniciar el pago sino tendra que logearse
-    if request.user.is_authenticated:
-        usuario = cliente.objects.get(correo = request.user.username)
+@login_required
+def seguimiento(request):
+    if request.session.get("tipo_usuario") == "cliente":
+        if request.method == "POST":
+            # Usuario
+            usuario = cliente.objects.get(correo = request.user.username)
+
+            # Se recupera la id ingresada
+            p_buscado = request.POST["id_pedido"]
+
+            # Se valida que la id ingresada no venga vacia
+            if p_buscado != "":
+                # Se valida que la id del pedido ingresada pertenezca al cliente que lo busca
+                if pedido.objects.filter(id_pedido = p_buscado, cliente= usuario ).exists():
+                    # Se recupera el pedido buscado
+                    ped = pedido.objects.get(id_pedido = p_buscado)
+
+                    # Se buscan los detalles asociados a la pk del pedido
+                    detalles = detallePedido.objects.filter(id_pedido = ped)
+
+                    # Se pasan los datos obtenidos
+                    context = {
+                        "pedido": ped,
+                        "detalle": detalles,
+                        "cliente": usuario
+                    }
+                    return render(request, "pages/seguimiento2.html", context)
+                else:
+                    context = {
+                        "mensaje": "Pedido no encontrado.",
+                        "design": "alert alert-danger w-20 mx-auto text-center"
+                    }
+                    return render(request, "pages/seguimiento.html", context)
+            else:
+                context = {
+                    "mensaje": "No se ingreso ninguna Id",
+                    "design": "alert alert-danger w-20 mx-auto text-center"
+                }
+                return render(request, "pages/seguimiento.html", context)
+        else:
+            context = {}
+            return render(request, "pages/seguimiento.html", context)
+    else:
         context = {
+            "mensaje": "Solo los clientes pueden realizar el seguimiento.",
+            "design": "alert alert-info w-50 mx-auto text-center",
+            "estado": "readonly",
+        }
+        return render(request, "pages/ingreso.html", context)
+                
+# def seguimiento2(request):
+#     context = {}
+#     return render(request, "pages/seguimiento2.html", context)
+
+@login_required
+def historial(request):
+    if request.session.get("tipo_usuario") == "cliente":
+        # Usuario
+        usuario = cliente.objects.get(correo = request.user.username)
+
+        # Se traen los pedidos del usuario
+        pedidos = pedido.objects.filter(cliente = usuario)
+        
+        # Se pasan los datos obtenidos
+        context = {
+            "pedidos": pedidos,
             "cliente": usuario
         }
-        return render(request, "pages/pago.html", context)
-    
+        return render(request, "pages/historial.html", context)
     else:
-        context = {}
+        context = {
+            "mensaje": "Solo los clientes pueden ver su historial de compras.",
+            "design": "alert alert-info w-50 mx-auto text-center",
+            "estado": "readonly",
+        }
+        return render(request, "pages/ingreso.html", context)
+
+@login_required
+def detalle(request, pk):
+    if request.session.get("tipo_usuario") == "cliente":
+        if pk != "":
+            # Usuario
+            usuario = cliente.objects.get(correo = request.user.username)
+
+            # Se trae el pedido para poder obtener su fecha y el total
+            ped = pedido.objects.get(id_pedido = pk)
+
+            # Se buscan los detalles asociados a la pk del pedido
+            detalles = detallePedido.objects.filter(id_pedido = pk)
+
+            # Se pasan los datos obtenidos
+            context = {
+                "pedido": ped,
+                "detalle": detalles,
+                "cliente": usuario
+            }
+            return render(request, "pages/detalle.html", context)
+        else:
+            context = {}
+            return render(request, "pages/historial.html", context)
+    else:
+        context = {
+            "mensaje": "Solo los clientes pueden ver el detalle de su pedido.",
+            "design": "alert alert-info w-50 mx-auto text-center",
+            "estado": "readonly",
+        }
         return render(request, "pages/ingreso.html", context)
 
 """ Proceso de compra """
+
+@login_required   
+def pago(request):
+    usuario = cliente.objects.get(correo = request.user.username)
+    context = {
+        "cliente": usuario
+    }
+    return render(request, "pages/pago.html", context)
 
 """ Se carga los productos seleccionados del usuario """
 def load_carrito(request):
@@ -205,6 +309,8 @@ def load_carrito(request):
 """ Se procesa el pedido """
 def procesa_pedido(request):
     if request.method == "POST":
+        totalP = 0
+        
         # Se crea al destinatario - por temas de tiempo se usó al cliente
         rutCli = request.POST["rut"]
 
@@ -214,19 +320,30 @@ def procesa_pedido(request):
         # Se ingresa la tarjeta del cliente
         nroTar = request.POST["tarjeta"]
 
-        tar = tarjeta.objects.create(
-            nro_tarjeta = nroTar,
-            cliente = objCli
-        )
-        tar.save()
+        # Se valida que la tarjeta ingresada no exista
+        if not tarjeta.objects.filter(nro_tarjeta = nroTar).exists():
+            tar = tarjeta.objects.create(
+                nro_tarjeta = nroTar,
+                cliente = objCli
+            )
+            tar.save()
+        else:
+            print("Tarjeta ya existe")
 
         # Se genera el estado por defecto de un pedido
         objEst = estado.objects.get(id_estado = 1)
+
+        # Se recorre el carrito para calcular el total
+        carrito_total = request.session.get('carrito_data')
+
+        for t in carrito_total:
+            totalP += int(t["precio"])
 
         # Se genera el pedido
         ped = pedido.objects.create(
             cliente = objCli,
             fecha = date.today(),
+            total_ped = totalP,
             estado = objEst
         )
         ped.save()
@@ -235,10 +352,7 @@ def procesa_pedido(request):
         carrito_data = request.session.get('carrito_data')
         
         # Se itera sobre los productos del carrito para poder crear los detalles de la compra
-        for p in carrito_data:
-            print(p["id"])
-            print(p["cantidad"])
-            print(p["precio"])    
+        for p in carrito_data:  
             # Se crea un objeto de producto
             objPro = producto.objects.get(id_producto = p["id"])
             
@@ -256,35 +370,15 @@ def procesa_pedido(request):
             )
             det.save()
             print("Detalle exitoso")
-        
-        context = {
-            "mensaje": "Compra realiza!",
-            "design": "alert alert-success w-80 mx-auto text-center"}
-        return render(request, "pages/pago.html", context)
+
+        return redirect('historial')
     else:
-        print("Pedido erroneo")
         context = {
             "mensaje": "Error al procesar la compra",
             "design": "alert alert-danger w-80 mx-auto text-center"
         }
         return render(request, "pages/pago.html", context)
-
-def contrasenia(request):
-    context = {}
-    return render(request, "pages/contrasenia.html", context)
-
-def historial(request):
-    context = {}
-    return render(request, "pages/historial.html", context)
-
-def perfil(request):
-    context = {}
-    return render(request, "pages/perfil.html", context)
-
-def detalle(request):
-    context = {}
-    return render(request, "pages/detalle.html", context)
-        
+     
 """ Login """
 def conectar(request):
     # Si el usuario no esta logeado puede logearse, sino los campos estarán en readonly
@@ -339,6 +433,7 @@ def desconectar(request):
     return render(request,"pages/ingreso.html",context)
 
 """ Crud """
+
 @login_required
 @check_group("vendedor_group", "admin_group")
 def crud(request):
@@ -1117,6 +1212,7 @@ def p_add(request):
     if request.method == "POST":
         # Datos del pedido
         p_fecha = request.POST["fecha"]
+        p_total = request.POST["total"]
         p_cliente = request.POST["cliente"]
         p_estado = request.POST["estado"]
 
@@ -1128,6 +1224,7 @@ def p_add(request):
         obj = pedido.objects.create(
             cliente = objCli,
             fecha = p_fecha,
+            total_ped = p_total,
             estado = objEst
         )
         obj.save()
@@ -1182,6 +1279,7 @@ def p_upd(request):
         # Datos del pedido
         p_id = request.POST["id_pedido"]
         p_fecha = request.POST["fecha"]
+        p_total = request.POST["total"]
         p_cliente = request.POST["cliente"]
         p_estado = request.POST["estado"]
 
@@ -1194,6 +1292,7 @@ def p_upd(request):
             id_pedido = p_id,
             cliente = objCli,
             fecha = p_fecha,
+            total_ped = p_total,
             estado = objEst
         )
         obj.save()
@@ -1317,7 +1416,7 @@ def dt_add(request):
 def dt_find(request, pk):
     if pk != "":
         # Si las pks no estan vacias se busca el detalle asociado, mas todos los pedidos y productos para el select
-        detalles = detallePedido.objects.get(id_pedido = pk)
+        detalles = detallePedido.objects.get(id_detalle = pk)
         pedidos = pedido.objects.all()
         productos = producto.objects.all()
 
@@ -1377,7 +1476,7 @@ def dt_upd(request):
 @check_group("vendedor_group", "admin_group")
 def dt_del(request, pk):
     try:
-        det = detallePedido.objects.get(id_pedido = pk)
+        det = detallePedido.objects.get(id_detalle = pk)
         det.delete()
 
         # Se recuperan los datos de la BD y se mandan 

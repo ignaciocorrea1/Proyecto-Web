@@ -36,34 +36,30 @@
         <a href="{% url 'historial' %}">Volver al historial</a>
       </div>
       <section class="detail-container">
-        <img src="/images/producto.jpg" alt="Cargando imagen...">
+        <img src="{% static '/images/Logo.png' %}" alt="Cargando imagen...">
         <table class="table-detail">
             <tr>
-              <th>Id del pedido</th> <th class="dos-p">:</th> <td>dato</td>
+              <th>Id del pedido</th> <th class="dos-p">:</th> <td>{{pedido.id_pedido}}</td>
             </tr>
 
             <tr>
-              <th>Fecha</th> <th class="dos-p">:</th> <td>dato</td>
+              <th>Fecha</th> <th class="dos-p">:</th> <td>{{pedido.fecha}}</td>
+            </tr>
+
+            <tr>
+              <th>Rut</th> <th class="dos-p">:</th> <td>{{cliente.run}}</td>
             </tr>
   
             <tr>
-              <th>Nombre</th> <th class="dos-p">:</th> <td>dato</td>
+              <th>Dirección</th> <th class="dos-p">:</th> <td>{{cliente.direccion}}</td>
             </tr>
   
             <tr>
-              <th>Rut</th> <th class="dos-p">:</th> <td>dato</td>
+              <th>Productos</th> <th class="dos-p">:</th> <td>{% for tmp in detalle %}{{tmp.id_producto.nombre}}; {% endfor %}</td>
             </tr>
   
             <tr>
-              <th>Teléfono</th> <th class="dos-p">:</th> <td>dato</td>
-            </tr>
-  
-            <tr>
-              <th>Dirección</th> <th class="dos-p">:</th> <td>dato</td>
-            </tr>
-  
-            <tr>
-              <th>Total</th> <th class="dos-p">:</th> <td>dato</td>
+              <th>Total</th> <th class="dos-p">:</th> <td>${{pedido.total_ped}}</td>
             </tr>
           </table>
       </section>

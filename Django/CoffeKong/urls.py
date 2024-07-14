@@ -7,13 +7,13 @@ urlpatterns = [
     path("menu/", views.menu, name="menu"),
     path("unete/", views.unete, name="unete"),
     path("seguimiento/", views.seguimiento, name="seguimiento"),
-    path("seguimiento2/", views.seguimiento2, name="seguimiento2"),
+    #path("seguimiento2/", views.seguimiento2, name="seguimiento2"),
     path("carrito/", views.carrito, name="carrito"),
     path("pago/", views.pago, name="pago"),
     path("contrasenia/", views.contrasenia, name="contrasenia"),
     path("historial/", views.historial, name="historial"),
     path("perfil/", views.perfil, name="perfil"),
-    path("detalle/", views.detalle, name="detalle"),
+    path("detalle/<str:pk>", views.detalle, name="detalle"),
 
     # Login
     path("login/", views.conectar, name="login"),
