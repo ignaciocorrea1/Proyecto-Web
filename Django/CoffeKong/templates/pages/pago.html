@@ -67,13 +67,33 @@
           <!-- Primer paso - Datos del cliente -->
           <div class="pago-datos" id='paso-compra-1'>
              <div class="form">
-                   <input class="form-input" type="text" name='nombres' id="nombre-paso" value={{cliente.nombres}} placeholder="Nombre (*)" readonly required >
-                   <input class="form-input" type="text" name='rut' id="rut-paso" value={{cliente.run}} placeholder="Rut (*)" readonly required >
-                   <input class="form-input" type="email" name='correo' id="correo-paso" value={{cliente.correo}} placeholder="Correo (*)" readonly required >
-                   <input class="form-input" type="text"  name='telefono' id="telefono-paso" value={{cliente.telefono}} placeholder="Teléfono (*)" readonly required >
-                   <input class="form-input" type="text" name='direccion' id="direccion-paso" value={{cliente.direccion}} placeholder="Dirección de entrega (*)" readonly required >
-                   <div id="paso-msg-1"></div>
-                   <input class="form-submit" type="button" value="Aceptar" onclick="validaPasos(1)">
+                  {% if not request.session.tipo_usuario == "cliente" %}
+                    <select name="cliente" id="cliente" class="form-input" required>
+                      <option value="">Selecciona un cliente</option>
+                      {% for tmp in clientes %}
+                          {% if tmp.run == pedido.cliente.run %}
+                              <option value="{{tmp.run}}" selected>{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
+                          {% else %}
+                              <option value="{{tmp.run}}">{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
+                          {% endif %}
+                      {% endfor %}
+                    </select>
+                     <input class="form-input" type="text" name='nombre' id="nombre-paso"  placeholder="Nombre (*)" required >
+                     <input class="form-input" type="text" name='rut' id="rut-paso"placeholder="Rut (*)" required >
+                     <input class="form-input" type="email" name='correo' id="correo-paso"  placeholder="Correo (*)" required >
+                     <input class="form-input" type="text"  name='telefono' id="telefono-paso"placeholder="Teléfono (*)" required >
+                     <input class="form-input" type="text" name='direccion' id="direccion-paso"  placeholder="Dirección de entrega (*)" required >
+                     <div id="paso-msg-1"></div>
+                     <input class="form-submit" type="button" value="Aceptar" onclick="validaPasos(1)">
+                  {% else %}
+                    <input class="form-input" type="text" name='nombre' id="nombre-paso" value={{cliente.nombres}} placeholder="Nombre (*)" required >
+                    <input class="form-input" type="text" name='rut' id="rut-paso" value={{cliente.run}} placeholder="Rut (*)" required >
+                    <input class="form-input" type="email" name='correo' id="correo-paso" value={{cliente.correo}} placeholder="Correo (*)" required >
+                    <input class="form-input" type="text"  name='telefono' id="telefono-paso" value={{cliente.telefono}} placeholder="Teléfono (*)" required >
+                    <input class="form-input" type="text" name='direccion' id="direccion-paso" value={{cliente.direccion}} placeholder="Dirección de entrega (*)" required >
+                    <div id="paso-msg-1"></div>
+                    <input class="form-submit" type="button" value="Aceptar" onclick="validaPasos(1)">
+                   {% endif %}
              </div>
           </div>
 
@@ -121,28 +141,35 @@
           
           <!-- Cuarto paso - Confirmacion del pago -->
           <div class='pago-details' id='paso-compra-4' hidden>
-            <table class='table-detail'>
-              <tr>
-                <th>Dirección de entrega</th> <th class='dos-p'>:</th> <td>{{cliente.direccion}}</td>
-              </tr>
-              
-              <tr>
-                <th>Destinatario</th> <th class='dos-p'>:</th> <td>{{cliente.nombres}} {{cliente.paterno}} {{cliente.materno}}</td>
-              </tr>
-              
-              <tr>
-                <th>Rut</th> <th class='dos-p'>:</th> <td>{{cliente.run}}</td>
-              </tr>
-              
-              <tr>
-                <th>Teléfono</th> <th class='dos-p'>:</th> <td>{{cliente.telefono}}</td>  
-              </tr>
+            {% if request.session.tipo_usuario == "cliente" %}
+              <table class='table-detail'>
+                <tr>
+                  <th>Dirección de entrega</th> <th class='dos-p'>:</th> <td>{{cliente.direccion}}</td>
+                </tr>
+                
+                <tr>
+                  <th>Destinatario</th> <th class='dos-p'>:</th> <td>{{cliente.nombres}} {{cliente.paterno}} {{cliente.materno}}</td>
+                </tr>
+                
+                <tr>
+                  <th>Rut</th> <th class='dos-p'>:</th> <td>{{cliente.run}}</td>
+                </tr>
+                
+                <tr>
+                  <th>Teléfono</th> <th class='dos-p'>:</th> <td>{{cliente.telefono}}</td>  
+                </tr>
 
-            </table>
-            {% if mensaje %}
-              <div class='{{design}}'>{{mensaje}}</div>
+              </table>
+              {% if mensaje %}
+                <div class='{{design}}'>{{mensaje}}</div>
+              {% endif %}
+              <input type='submit' value='Pagar' class='button-pagar' onclick='importCarro()'></input>
+            {% else %}
+              {% if mensaje %}
+                <div class='{{design}}'>{{mensaje}}</div>
+              {% endif %}
+              <input type='submit' value='Pagar' class='button-pagar' onclick='importCarro()'></input>
             {% endif %}
-            <input type='submit' value='Pagar' class='button-pagar' onclick='importCarro()'></input>
           </div>
 
         </form>

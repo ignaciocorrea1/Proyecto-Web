@@ -1,9 +1,10 @@
 from django.contrib import admin
-from .models import cliente, vendedor, tarjeta, tipoProducto, producto, pedido, detallePedido,estado
+from .models import cliente, vendedor, destinatario, tarjeta, tipoProducto, producto, pedido, detallePedido,estado
 
 # Register your models here.
 admin.site.register(cliente)
 admin.site.register(vendedor)
+admin.site.register(destinatario)
 admin.site.register(tarjeta)
 admin.site.register(tipoProducto)
 admin.site.register(producto)

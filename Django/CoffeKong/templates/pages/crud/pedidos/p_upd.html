@@ -69,6 +69,16 @@
                 {% endif %}
             {% endfor %}
           </select>
+          <select name="destinatario" id="destinatario" class="form-sele" required>
+            <option value="">Selecciona un destinatario</option>
+            {% for tmp in destinatarios %}
+                {% if tmp.run_d == pedido.destinatario.run_d %}
+                    <option value="{{tmp.run_d}}" selected>{{tmp.nombre}}</option>
+                {% else %}
+                    <option value="{{tmp.run_d}}">{{tmp.nombre}}</option>
+                {% endif %}
+            {% endfor %}
+          </select>
           <select name="estado" id="estado" class="form-sele" required>
             <option value="">Selecciona un estado</option>
             {% for tmp in estados %}

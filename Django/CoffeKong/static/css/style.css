@@ -735,6 +735,7 @@ hr {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 30vh;
 }
 
 .form-forgot-container p,
@@ -1371,6 +1372,7 @@ hr {
 
 .historial-detail-container .table-detail {
     margin: auto;
+    margin-bottom: 40vh;
     text-align: center;
 }
 

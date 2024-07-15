@@ -37,6 +37,12 @@ urlpatterns = [
     path("c_upd/", views.c_upd, name="c_upd"),
     path("c_del/<str:pk>", views.c_del, name="c_del"),
 
+    # Destinatarios
+    path("de_add/", views.de_add, name="de_add"),
+    path("de_find/<str:pk>", views.de_find, name="de_find"),
+    path("de_upd/", views.de_upd, name="de_upd"),
+    path("de_del/<str:pk>", views.de_del, name="de_del"),
+
     # Tarjetas de clientes
     path("tc_add/", views.tc_add, name="tc_add"),
     path("tc_find/<str:pk>", views.tc_find, name="tc_find"),

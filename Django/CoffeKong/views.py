@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import cliente, vendedor, tarjeta, estado, pedido, tipoProducto, producto, detallePedido
+from .models import cliente, vendedor, destinatario, tarjeta, estado, pedido, tipoProducto, producto, detallePedido
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -182,6 +182,12 @@ def cli_del(request, pk):
         cli_encontrado.delete()
         user.delete()
 
+        # En caso de existir como destinatario tambien se borra
+        #if destinatario.objects.filter(run_d = pk).exists():
+            #des_encontrado = destinatario.objects.get(run_d = pk)
+            #des_encontrado.delete()
+            #print("No existia como destinatario")
+
         logout(request)
 
         return redirect("index")
@@ -312,36 +318,101 @@ def detalle(request, pk):
 
 @login_required   
 def pago(request):
-    usuario = cliente.objects.get(correo = request.user.username)
-    context = {
-        "cliente": usuario
-    }
-    return render(request, "pages/pago.html", context)
+    if request.session.get("tipo_usuario") == "cliente":
+        usuario = cliente.objects.get(correo = request.user.username)
+        context = {
+            "cliente": usuario
+        }
+        return render(request, "pages/pago.html", context)
+    else:
+        clientes = cliente.objects.all()
+        context = {
+            "clientes": clientes
+        }
+        return render(request, "pages/pago.html", context)
 
 """ Se carga los productos seleccionados del usuario """
 def load_carrito(request):
     if request.method == "POST":
         try:
             # Se carga el carrito
+            data = []
             data = json.loads(request.body)
-            #print("Data recibida", data)
+            print("Data recibida", data)
             request.session['carrito_data'] = data
+            
+            # Se comprueban los datos
+            datosObtenidos = request.session.get('carrito_data')
+            print("Datos obtenidos: ", datosObtenidos)
             return JsonResponse({"message": "Productos recibidos correctamente"})
         except Exception as e:
             print("Error al recuperar el carrito", e)
     else:
         return JsonResponse({"message": "Metodo no es POST"})
 
+
 """ Se procesa el pedido """
 def procesa_pedido(request):
     if request.method == "POST":
         totalP = 0
         
-        # Se crea al destinatario - por temas de tiempo se usó al cliente
-        rutCli = request.POST["rut"]
+        # Se recupera el carrito
+        carrito_data = request.session.get('carrito_data')
+        print("Carrito data recuperada:", carrito_data)
 
-        # Se busca al cliente
-        objCli = cliente.objects.get(run = rutCli)
+        # Inicio - Obtencion del cliente y destinatario #
+
+        # Si el usuario que esta realizando la compra es un cliente
+        if request.session.get("tipo_usuario") == "cliente":
+            # Se busca al cliente
+            objCli = cliente.objects.get(correo = request.user.username)
+
+            # Se crea al destinatario
+            nombreC = request.POST["nombre"]
+            rutC = request.POST["rut"]
+            correoC = request.POST["correo"]
+            telefonoC = request.POST["telefono"]
+            direccionC = request.POST["direccion"]
+
+            # Si el destinatario ingresado ya existe no se crea
+            if not destinatario.objects.filter(run_d = rutC).exists():
+                objDes = destinatario.objects.create(
+                    run_d = rutC,
+                    nombre = nombreC,
+                    direccion = direccionC,
+                    telefono = telefonoC,
+                    correo = correoC
+                )
+                objDes.save()
+            else:
+                objDes = destinatario.objects.get(run_d = rutC)
+        else:
+            # Si el usuario que esta realizando la compra es el admin o un vendedor
+            objCli = cliente.objects.get(run = request.POST["cliente"])
+
+            # Se crea al destinatario
+            nombreAV = request.POST["nombre"]
+            rutAV = request.POST["rut"]
+            correoAV = request.POST["correo"]
+            telefonoAV = request.POST["telefono"]
+            direccionAV = request.POST["direccion"]
+
+            # Si el destinatario ingresado ya existe no se crea
+            if not destinatario.objects.filter(run_d = rutAV).exists():
+                objDes = destinatario.objects.create(
+                    run_d = rutAV,
+                    nombre = nombreAV,
+                    direccion = direccionAV,
+                    telefono = telefonoAV,
+                    correo = correoAV
+                )
+                objDes.save()
+            else:
+                objDes = destinatario.objects.get(run_d = rutAV)
+
+        # Fin - Obtencion del cliente y destinatario #
+
+        # Inicio - Obtencion de la tarjeta #
 
         # Se ingresa la tarjeta del cliente
         nroTar = request.POST["tarjeta"]
@@ -356,26 +427,32 @@ def procesa_pedido(request):
         else:
             print("Tarjeta ya existe")
 
-        # Se genera el estado por defecto de un pedido
+        # Fin - Obtencion de la tarjeta #
+
+        # Inicio - Obtencion del estado por defecto del pedido #
+
         objEst = estado.objects.get(id_estado = 1)
 
-        # Se recorre el carrito para calcular el total
-        carrito_total = request.session.get('carrito_data')
+        # Fin - Obtencion del estado por defecto del pedido #
 
-        for t in carrito_total:
-            totalP += int(t["precio"])
+        # Inicio - Generacion del pedido #
+
+        for t in carrito_data:
+            totalP += t["precio"]
 
         # Se genera el pedido
         ped = pedido.objects.create(
             cliente = objCli,
+            destinatario = objDes,
             fecha = date.today(),
             total_ped = totalP,
             estado = objEst
         )
         ped.save()
 
-        # Se recupera el carrito
-        carrito_data = request.session.get('carrito_data')
+        # Fin - Generacion del pedido #
+
+        # Inicio - Generacion de los detalles #
         
         # Se itera sobre los productos del carrito para poder crear los detalles de la compra
         for p in carrito_data:  
@@ -397,7 +474,8 @@ def procesa_pedido(request):
             det.save()
             print("Detalle exitoso")
 
-        return redirect('historial')
+        # Fin - Generacion de los detalles #
+        return redirect('index')
     else:
         context = {
             "mensaje": "Error al procesar la compra",
@@ -465,6 +543,7 @@ def desconectar(request):
 def crud(request):
     vendedores = vendedor.objects.all()
     clientes = cliente.objects.all()
+    destinatarios = destinatario.objects.all()
     tarjetas = tarjeta.objects.all()
     estados = estado.objects.all()
     pedidos = pedido.objects.all()
@@ -475,6 +554,7 @@ def crud(request):
     context = {
         "vendedores": vendedores,
         "clientes": clientes,
+        "destinatarios": destinatarios,
         "tarjetas": tarjetas,
         "estados": estados,
         "pedidos": pedidos,
@@ -677,6 +757,7 @@ def v_del(request, pk):
         # Se recuperan los datos de la BD y se mandan 
         vendedores = vendedor.objects.all()
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         tarjetas = tarjeta.objects.all()
         estados = estado.objects.all()
         pedidos = pedido.objects.all()
@@ -687,6 +768,7 @@ def v_del(request, pk):
         context = {
             "vendedores": vendedores,
             "clientes": clientes,
+            "destinatarios": destinatarios,
             "tarjetas": tarjetas,
             "estados": estados,
             "pedidos": pedidos,
@@ -700,16 +782,18 @@ def v_del(request, pk):
         # Se recuperan los datos de la BD y se mandan 
         vendedores = vendedor.objects.all()
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         tarjetas = tarjeta.objects.all()
         estados = estado.objects.all()
         pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
         tipoProductos = tipoProducto.objects.all()
-        
+
         context = {
             "vendedores": vendedores,
             "clientes": clientes,
+            "destinatarios": destinatarios,
             "tarjetas": tarjetas,
             "estados": estados,
             "pedidos": pedidos,
@@ -842,7 +926,7 @@ def c_upd(request):
     # Si el metodo es POST
     if request.method == "POST":
 
-        # Datos del vendedor
+        # Datos del cliente
         c_rut = request.POST["rut"]
         c_nombres = request.POST["nombres"]
         c_paterno = request.POST["paterno"]
@@ -913,6 +997,7 @@ def c_del(request, pk):
         # Se recuperan los datos de la BD y se mandan 
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
+        destinatarios = destinatario.objects.all()
         tarjetas = tarjeta.objects.all()
         estados = estado.objects.all()
         pedidos = pedido.objects.all()
@@ -923,6 +1008,7 @@ def c_del(request, pk):
         context = {
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "tarjetas": tarjetas,
             "estados": estados,
             "pedidos": pedidos,
@@ -931,6 +1017,173 @@ def c_del(request, pk):
             "tipoProductos": tipoProductos,
         }
         print("Cliente eliminado")
+        return render(request, "pages/crud/crud.html", context)
+    except:
+        # Se recuperan los datos de la BD y se mandan 
+        clientes = cliente.objects.all()
+        vendedores = vendedor.objects.all()
+        destinatarios = destinatario.objects.all()
+        tarjetas = tarjeta.objects.all()
+        estados = estado.objects.all()
+        pedidos = pedido.objects.all()
+        detallePedidos = detallePedido.objects.all()
+        productos = producto.objects.all()
+        tipoProductos = tipoProducto.objects.all()
+
+        context = {
+            "clientes": clientes,
+            "vendedores": vendedores,
+            "destinatarios": destinatarios,
+            "tarjetas": tarjetas,
+            "estados": estados,
+            "pedidos": pedidos,
+            "detallePedidos": detallePedidos,
+            "productos": productos,
+            "tipoProductos": tipoProductos,
+        }
+        print("No se pudo eliminar el cliente")
+        return render(request, "pages/crud/crud.html", context)
+
+""" Destinatarios """
+
+""" Destinarios - add """
+@login_required
+@check_group("vendedor_group", "admin_group")
+def de_add(request):
+    if request.method == "POST":
+        # Si el metodo es POST
+
+        # Datos del destinatario
+        de_rut = request.POST["rut"]
+        de_nombre = request.POST["nombre"]
+        de_correo = request.POST["correo"]
+        de_telefono = request.POST["telefono"]
+        de_direccion = request.POST["direccion"]
+
+        # Se valida si un destinatario ya existe mediante su rut
+        if not destinatario.objects.filter(run_d = de_rut).exists():
+            # Se valida que el correo que se esta intentando registrar no exista
+            if not destinatario.objects.filter(correo = de_correo).exists():
+                # Se valida si las contrasenias son iguales
+                obj = destinatario.objects.create(
+                        run_d = de_rut,
+                        nombre = de_nombre,
+                        direccion = de_direccion,
+                        telefono = de_telefono,
+                        correo = de_correo,
+                    )
+
+                obj.save()
+                print("Se registro")
+                context = {
+                    "mensaje": "Registro exitoso!",
+                    "design": "alert alert-success w-50 mx-auto text-center"
+                }
+                return render(request, "pages/crud/destinatarios/de_add.html", context)
+            
+            else:
+                print("Correo ya registrado")
+                context = {
+                    "mensaje": "El correo ingresado ya esta registrado. Intente nuevamente.",
+                    "design": "alert alert-danger w-50 mx-auto text-center"
+                }
+                return render(request, "pages/crud/destinatarios/de_add.html", context)
+        else:
+            # En caso de que un destinatario ya exista se le manda un mensaje al usuario
+            print("Destinatario ya registrado")
+            context = {
+                "mensaje": "Destinatario ingresado ya existe. Intente nuevamente.",
+                "design": "alert alert-danger w-50 mx-auto text-center"
+            }
+            return render(request, "pages/crud/destinatarios/de_add.html", context)
+    else:
+        # Si el metodo no es POST
+        context = {
+            
+        }
+        return render(request, "pages/crud/destinatarios/de_add.html", context)
+
+""" Se busca al destinatario """
+@login_required
+@check_group("vendedor_group", "admin_group")
+def de_find(request, pk):
+    if pk != "":
+        # Si la pk no esta vacia se busca al destinatario
+        de_econtrado = destinatario.objects.get(run_d = pk)
+
+        # Se le pasan los datos del destinatario encontrado al usuario en la vista de update
+        context = {
+            "destinatario": de_econtrado
+        }
+        return render(request, "pages/crud/destinatarios/de_upd.html", context)
+    else:
+        context = {
+            "mensaje": "No se encuentra el destinatario buscado"
+        }
+        return render(request, "pages/crud/destinatarios/de_upd.html", context)
+
+""" Destinatarios - update """
+@login_required
+@check_group("vendedor_group", "admin_group")
+def de_upd(request):
+# Si el metodo es POST
+    if request.method == "POST":
+
+        # Datos del destinatario
+        de_rut = request.POST["rut"]
+        de_nombre = request.POST["nombre"]
+        de_correo = request.POST["correo"]
+        de_telefono = request.POST["telefono"]
+        de_direccion = request.POST["direccion"]
+
+        # Se genera la instancia
+        obj = destinatario(
+            run_d = de_rut,
+            nombre = de_nombre,
+            direccion = de_direccion,
+            telefono = de_telefono,
+            correo = de_correo,
+        )
+        obj.save()
+        # Se manda un mensaje de registro exitoso al usuario
+        print("Se modifico")
+        context = {
+            "destinatario": obj,
+            "mensaje": "Modificacion exitosa!",
+            "design": "alert alert-success w-50 mx-auto text-center"
+        }
+        return render(request, "pages/crud/destinatarios/de_upd.html", context)
+    
+""" Destinatarios - delete """
+def de_del(request, pk):
+    try:
+        # Se elimina el destinatario y su usuario asociado a la pk
+        de_encontrado = destinatario.objects.get(run_d = pk)
+        de_encontrado.delete()
+
+        # Se recuperan los datos de la BD y se mandan 
+        clientes = cliente.objects.all()
+        vendedores = vendedor.objects.all()
+        destinatarios = destinatario.objects.all()
+        tarjetas = tarjeta.objects.all()
+        estados = estado.objects.all()
+        pedidos = pedido.objects.all()
+        detallePedidos = detallePedido.objects.all()
+        productos = producto.objects.all()
+        tipoProductos = tipoProducto.objects.all()
+
+        context = {
+            "clientes": clientes,
+            "vendedores": vendedores,
+            "destinatarios": destinatarios,
+            "tarjetas": tarjetas,
+            "estados": estados,
+            "pedidos": pedidos,
+            "detallePedidos": detallePedidos,
+            "productos": productos,
+            "tipoProductos": tipoProductos,
+        }
+        print("Destinatario eliminado")
         return render(request, "pages/crud/crud.html", context)
     except:
         # Se recuperan los datos de la BD y se mandan 
@@ -1052,6 +1305,7 @@ def tc_del(request, pk):
         # Se recuperan los datos de la BD y se mandan 
         tarjetas = tarjeta.objects.all()
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         vendedores = vendedor.objects.all()
         estados = estado.objects.all()
         pedidos = pedido.objects.all()
@@ -1063,6 +1317,7 @@ def tc_del(request, pk):
             "tarjetas": tarjetas,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "estados": estados,
             "pedidos": pedidos,
             "detallePedidos": detallePedidos,
@@ -1075,6 +1330,7 @@ def tc_del(request, pk):
         # Se recuperan los datos de la BD y se mandan 
         tarjetas = tarjeta.objects.all()
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         vendedores = vendedor.objects.all()
         estados = estado.objects.all()
         pedidos = pedido.objects.all()
@@ -1086,6 +1342,7 @@ def tc_del(request, pk):
             "tarjetas": tarjetas,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "estados": estados,
             "pedidos": pedidos,
             "detallePedidos": detallePedidos,
@@ -1186,6 +1443,7 @@ def e_del(request, pk):
         # Se recuperan los datos de la BD y se mandan
         estados = estado.objects.all()
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         vendedores = vendedor.objects.all()
         tarjetas = tarjeta.objects.all()
         pedidos = pedido.objects.all()
@@ -1197,6 +1455,7 @@ def e_del(request, pk):
             "estados": estados,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "tarjetas": tarjetas,
             "pedidos": pedidos,
             "detallePedidos": detallePedidos,
@@ -1209,17 +1468,19 @@ def e_del(request, pk):
         # Se recuperan los datos de la BD y se mandan
         estados = estado.objects.all()
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         vendedores = vendedor.objects.all()
         tarjetas = tarjeta.objects.all()
         pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
         tipoProductos = tipoProducto.objects.all()
-    
+
         context = {
             "estados": estados,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "tarjetas": tarjetas,
             "pedidos": pedidos,
             "detallePedidos": detallePedidos,
@@ -1240,15 +1501,18 @@ def p_add(request):
         p_fecha = request.POST["fecha"]
         p_total = request.POST["total"]
         p_cliente = request.POST["cliente"]
+        p_destinatario = request.POST["destinatario"]
         p_estado = request.POST["estado"]
 
-        # Se recupera el cliente y el estado
+        # Se recupera el cliente, destinatario y el estado
         objCli = cliente.objects.get(run = p_cliente)
+        objDes = destinatario.objects.get(run_d = p_destinatario)
         objEst = estado.objects.get(id_estado = p_estado)
 
         # Se crea el objeto y se manda a la BD
         obj = pedido.objects.create(
             cliente = objCli,
+            destinatario = objDes,
             fecha = p_fecha,
             total_ped = p_total,
             estado = objEst
@@ -1263,11 +1527,13 @@ def p_add(request):
         print("Se registro")
         return render(request, "pages/crud/pedidos/p_add.html", context)
     else:
-        # Se mandan los clientes y estados al usuario
+        # Se mandan los clientes, destinatarios y estados al usuario
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         estados = estado.objects.all()
         context = {
             "clientes": clientes,
+            "destinatarios": destinatarios,
             "estados": estados
         }
         print("No se registro")
@@ -1278,14 +1544,16 @@ def p_add(request):
 @check_group("vendedor_group", "admin_group")
 def p_find(request, pk):
     if pk != "":
-        # Si la pk no esta vacia se busca el pedido y se traen los clientes y estados asociados
+        # Si la pk no esta vacia se busca el pedido y se traen los clientes, destinatarios y estados asociados
         ped = pedido.objects.get(id_pedido = pk)
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         estados = estado.objects.all()
 
         context = {
             "pedido": ped,
             "clientes": clientes,
+            "destinatarios": destinatarios,
             "estados": estados
         }
         return render(request, "pages/crud/pedidos/p_upd.html", context)
@@ -1307,32 +1575,37 @@ def p_upd(request):
         p_fecha = request.POST["fecha"]
         p_total = request.POST["total"]
         p_cliente = request.POST["cliente"]
+        p_destinatario = request.POST["destinatario"]
         p_estado = request.POST["estado"]
 
-        # Se recupera el cliente y el estado
+        # Se recupera el cliente, destinatario y el estado
         objCli = cliente.objects.get(run = p_cliente)
         objEst = estado.objects.get(id_estado = p_estado)
+        objDes = destinatario.objects.get(run_d = p_destinatario)
 
         # Se crea el objeto y se manda a la BD
         obj = pedido(
             id_pedido = p_id,
             cliente = objCli,
+            destinatario = objDes,
             fecha = p_fecha,
             total_ped = p_total,
             estado = objEst
         )
         obj.save()
 
-        # Se mandan los datos del pedido, clientes y estados al usuario
+        # Se mandan los datos del pedido, clientes, destinatarios y estados al usuario
         # EL pedido se manda de esta forma porque al intentarlo con "obj" la fecha se formateaba
         ped = pedido.objects.get(id_pedido = p_id)
         clientes = cliente.objects.all()
+        destinatarios = destinatario.objects.all()
         estados = estado.objects.all()
         context = {
             "mensaje": "Modificación exitosa!",
             "design": "alert alert-success w-50 mx-auto text-center",
             "pedido": ped,
             "clientes": clientes,
+            "destinatarios": destinatarios,
             "estados": estados
         }
         return render(request, "pages/crud/pedidos/p_upd.html", context)
@@ -1368,8 +1641,8 @@ def p_del(request, pk):
         print("Pedido eliminado")
         return render(request, "pages/crud/crud.html", context)
     except Exception as e:
-        # Se recuperan los datos de la BD y se mandan
-        pedidos = pedido.objects.all() 
+        # Se recuperan los datos de la BD y se mandan 
+        pedidos = pedido.objects.all()
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
         tarjetas = tarjeta.objects.all()
@@ -1508,6 +1781,7 @@ def dt_del(request, pk):
         # Se recuperan los datos de la BD y se mandan 
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
+        destinatarios = destinatario.objects.all()
         tarjetas = tarjeta.objects.all()
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
@@ -1521,6 +1795,7 @@ def dt_del(request, pk):
             "tarjetas": tarjetas,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "estados": estados,
             "pedidos": pedidos,
             "tipoProductos": tipoProductos,
@@ -1531,6 +1806,7 @@ def dt_del(request, pk):
         # Se recuperan los datos de la BD y se mandan 
         detallePedidos = detallePedido.objects.all()
         productos = producto.objects.all()
+        destinatarios = destinatario.objects.all()
         tarjetas = tarjeta.objects.all()
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
@@ -1544,6 +1820,7 @@ def dt_del(request, pk):
             "tarjetas": tarjetas,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "estados": estados,
             "pedidos": pedidos,
             "tipoProductos": tipoProductos,
@@ -1677,6 +1954,7 @@ def pr_del(request, pk):
         tarjetas = tarjeta.objects.all()
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
+        destinatarios = destinatario.objects.all()
         estados = estado.objects.all()
         pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
@@ -1687,6 +1965,7 @@ def pr_del(request, pk):
             "tarjetas": tarjetas,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "estados": estados,
             "pedidos": pedidos,
             "detallePedidos": detallePedidos,
@@ -1700,6 +1979,7 @@ def pr_del(request, pk):
         tarjetas = tarjeta.objects.all()
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
+        destinatarios = destinatario.objects.all()
         estados = estado.objects.all()
         pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
@@ -1710,6 +1990,7 @@ def pr_del(request, pk):
             "tarjetas": tarjetas,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "estados": estados,
             "pedidos": pedidos,
             "detallePedidos": detallePedidos,
@@ -1804,6 +2085,7 @@ def tp_del(request, pk):
         estados = estado.objects.all()
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
+        destinatarios = destinatario.objects.all()
         tarjetas = tarjeta.objects.all()
         pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
@@ -1815,6 +2097,7 @@ def tp_del(request, pk):
             "estados": estados,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "tarjetas": tarjetas,
             "pedidos": pedidos,
             "detallePedidos": detallePedidos,
@@ -1827,6 +2110,7 @@ def tp_del(request, pk):
         estados = estado.objects.all()
         clientes = cliente.objects.all()
         vendedores = vendedor.objects.all()
+        destinatarios = destinatario.objects.all()
         tarjetas = tarjeta.objects.all()
         pedidos = pedido.objects.all()
         detallePedidos = detallePedido.objects.all()
@@ -1838,6 +2122,7 @@ def tp_del(request, pk):
             "estados": estados,
             "clientes": clientes,
             "vendedores": vendedores,
+            "destinatarios": destinatarios,
             "tarjetas": tarjetas,
             "pedidos": pedidos,
             "detallePedidos": detallePedidos,

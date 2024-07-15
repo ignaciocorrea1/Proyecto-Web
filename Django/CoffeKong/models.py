@@ -30,6 +30,17 @@ class vendedor(models.Model):
     def __str__(self):
         return str(self.nombres+" "+self.apaterno+" "+self.amaterno)
 
+""" Destinatario """
+class destinatario(models.Model):
+    run_d = models.CharField(max_length=12, primary_key=True, db_column="run_d")
+    nombre = models.CharField(max_length=80)
+    direccion = models.CharField(max_length=100)
+    telefono = models.CharField(max_length=10)
+    correo = models.CharField(max_length=50)
+
+    def __str__(self):
+        return str(self.nombre)
+
 """ Tarjeta """
 class tarjeta(models.Model):
     nro_tarjeta = models.CharField(primary_key=True, db_column="nroTarjeta", max_length=30)
@@ -58,6 +69,7 @@ class estado(models.Model):
 class pedido(models.Model):
     id_pedido = models.AutoField(primary_key=True, db_column="idPedido")
     cliente = models.ForeignKey("cliente", on_delete=models.CASCADE, db_column="run")
+    destinatario = models.ForeignKey("destinatario", on_delete=models.CASCADE, db_column="run_d")
     fecha = models.DateField()
     total_ped = models.IntegerField()
     estado = models.ForeignKey("estado", on_delete=models.CASCADE, db_column="idEstado")

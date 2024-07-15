@@ -1,4 +1,4 @@
-<!-- Create pedidos -->
+<!-- Update destinatarios -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,48 +24,59 @@
 
     <!-- Main -->
     <main>
-      <h1>Registro de Pedidos</h1>
+      <h1>Modificación de Destinatarios</h1>
       <section class="form-container">
-        <form action="{% url 'p_add' %}" method="POST">
-          
+        <form action="{% url 'de_upd' %}" method="POST">
           {% csrf_token %}
 
-          <legend>Pedidos</legend>
+          <legend>Destinatario</legend>
           <input
-            type="date"
-            id="fecha"
-            name="fecha"
-            placeholder="Fecha del pedido"
+            type="text"
+            id="rut-r"
+            name="rut"
+            value={{destinatario.run_d}} 
+            placeholder="Rut (*)"
+            class="form-input" 
+            readonly 
+            required
+          />
+          <input
+            type="text"
+            id="nombres-r"
+            name="nombre"
+            value={{destinatario.nombre}} 
+            placeholder="Nombre (*)"
             class="form-input"
             required
           />
           <input
-            type="number"
-            id="total"
-            name="total"
-            placeholder="Total del pedido"
+            type="email"
+            id="correo-r"
+            name="correo"
+            value={{destinatario.correo}} 
+            placeholder="Correo electrónico (*)"
+            class="form-input"
+            readonly 
+            required
+          />
+          <input
+            type="text"
+            id="telefono-r"
+            name="telefono"
+            value={{destinatario.telefono}} 
+            placeholder="Teléfono (*)"
             class="form-input"
             required
           />
-          <select name="cliente" id="cliente" class="form-sele" required>
-            <option value="">Selecciona un cliente</option>
-            {% for tmp in clientes %}
-                <option value="{{tmp.run}}">{{tmp.nombres}} {{tmp.apaterno}} {{tmp.amaterno}}</option>
-            {% endfor %}
-          </select>
-          <select name="destinatario" id="destinatario" class="form-sele" required>
-            <option value="">Selecciona un destinatario</option>
-            {% for tmp in destinatarios %}
-                <option value="{{tmp.run_d}}">{{tmp.nombre}}</option>
-            {% endfor %}
-          </select>
-          <select name="estado" id="estado" class="form-sele" required>
-            <option value="">Selecciona un estado</option>
-            {% for tmp in estados %}
-                <option value="{{tmp.id_estado}}">{{tmp.descripcion}}</option>
-            {% endfor %}
-          </select>
-
+          <input
+            type="text"
+            id="direccion-r"
+            name="direccion"
+            value={{destinatario.direccion}} 
+            placeholder="Dirección (*)"
+            class="form-input"
+            required
+          />
           <div id="unete-r"></div>
           {% if mensaje %}
             <div class='{{design}}'>
@@ -74,9 +85,10 @@
           {% endif %} 
           <div class="low-form">
             <input
+            onclick="validaRegistro()" 
             id="submit-r"
             type="submit"
-            value="Registrar"
+            value="Modificar"
             class="form-submit"
             />
             <a href="{% url 'crud' %}">

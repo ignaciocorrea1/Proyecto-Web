@@ -112,6 +112,44 @@
                 </button>
             </a>
         </article>
+
+        <!-- Destinatario -->
+        <article class="ct-container">
+            <table class="table-crud">
+                <caption class="table-title">Destinatarios</caption>
+                <thead>
+                    <th class="th-crud">Rut</th>
+                    <th class="th-crud">Nombre</th>
+                    <th class="th-crud">Modificar</th>
+                    <th class="th-crud">Eliminar</th>
+                </thead>
+                <tbody>
+                    {% if destinatarios %}
+                        {% for tmp in destinatarios %}
+                            <tr>
+                                <td class="td-crud">{{tmp.run_d}}</td>
+                                <td class="td-crud">{{tmp.nombre}}</td>
+                                <td class="td-crud">
+                                    <a href="{% url 'de_find' pk=tmp.run_d %}" class="crud-a crud-upd">
+                                        <span class="material-symbols-outlined"> edit </span>
+                                    </a>
+                                </td>
+                                <td class="td-crud">
+                                    <a href="{% url 'de_del' pk=tmp.run_d %}" class="crud-a crud-del">
+                                        <span class="material-symbols-outlined"> delete </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+            <a href="{% url 'de_add' %}" class="crud-a crud-add">
+                <button type="button" class="crud-badd">
+                    Agregar destinario
+                </button>
+            </a>
+        </article>
         
         <!-- Tarjetas de clientes -->
         <article class="ct-container">

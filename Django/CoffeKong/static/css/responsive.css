@@ -12,8 +12,12 @@
         height: 12vh;
     }
 
+    .navbar .navbar-nav {
+        margin-left: 8vw;
+    }
+
     .navbar .navbar-nav .nav-link {
-        font-size: 1.1em;
+        font-size: 1em;
         padding-right: 1vw;
         padding-left: 1vw;
     }
@@ -157,7 +161,7 @@
 
     .section-2 .products .card .price-section,
     .section-2 .products .card .price-section .btn {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     /* Main menu.html */
@@ -328,41 +332,41 @@
     }
 
     /* Main carrito.html */
-    .carro-container img {
+    .carrod-product .dd-product .carrod-container img {
         margin: auto;
         width: 9vw;
         height: 13vh;
     }
 
-    .carro-container  .carro-inf {
+    .carrod-product .dd-product .carrod-container  .carro-inf {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc h2 {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc h2 {
         font-size: 1.3em;
     }
 
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 1em;
         width: 4vw;
         height: 5vh;
         margin-bottom: 3vh;
     }
 
-    .carro-container .carro-total h2 {
+    .carrod-product .dd-product .carrod-container .carro-total h2 {
         font-size: 1em;
         margin-bottom: 0.5vh;
     }
 
-    .carro-container .carro-total span {
+    .carrod-product .dd-product .carrod-container .carro-total span {
         font-size: 1em;
     }
 
-    .carro-container .carro-eliminar {
+    .carrod-product .dd-product .carrod-container .carro-eliminar {
         font-size: 1.5em;
     }
 
@@ -431,18 +435,18 @@
         font-size: 1.4em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc h3 {
         font-size: 1.3em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc img {
         width: 9vw;
         height: 14vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 1em;
     }
@@ -477,7 +481,7 @@
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 15vw;
         height: 5vh;
-        margin-left: 12.5vw;
+        margin-left: 16vw;
         font-size: 1.2em;
     }
 
@@ -570,6 +574,11 @@
 /* Breakpoint 1024px */
 @media screen and (max-width: 1024px) {
     /* Header */
+
+    .navbar .navbar-nav {
+        margin-left: 5vw;
+    }
+
     .navbar .navbar-icon {
         font-size: 1.6em;
     }
@@ -580,7 +589,7 @@
     }
 
     .navbar .navbar-nav .nav-link {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .navbar .right-side .carro,
@@ -900,41 +909,41 @@
     }
 
     /* Main carrito.html */
-    .carro-container img {
+    .carrod-product .dd-product .carrod-container img {
         margin: auto;
         width: 9vw;
         height: 11vh;
     }
 
-    .carro-container  .carro-inf {
+    .carrod-product .dd-product .carrod-container  .carro-inf {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc h2 {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc h2 {
         font-size: 1.2em;
     }
 
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 1em;
         width: 4vw;
         height: 4.5vh;
         margin-bottom: 3vh;
     }
 
-    .carro-container .carro-total h2 {
+    .carrod-product .dd-product .carrod-container .carro-total h2 {
         font-size: 0.9em;
         margin-bottom: 0.5vh;
     }
 
-    .carro-container .carro-total span {
+    .carrod-product .dd-product .carrod-container .carro-total span {
         font-size: 0.9em;
     }
 
-    .carro-container .carro-eliminar {
+    .carrod-product .dd-product .carrod-container .carro-eliminar {
         font-size: 1.4em;
     }
 
@@ -1003,18 +1012,18 @@
         font-size: 1.3em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc h3 {
         font-size: 1.1em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc img {
         width: 9vw;
         height: 12vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 1em;
     }
@@ -1049,7 +1058,7 @@
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 15vw;
         height: 4.5vh;
-        margin-left: 17.5vw;
+        margin-left: 20vw;
         font-size: 1em;
     }
 
@@ -1141,6 +1150,10 @@
 /* Breakpoin 960px */
 @media screen and (max-width: 960px) {
     /* Header */
+    .navbar .navbar-nav {
+        margin: auto;
+    }
+
     .navbar .navbar-icon {
         font-size: 1.7em;
     }
@@ -1476,41 +1489,41 @@
     }
 
     /* Main carrito.html */
-    .carro-container img {
+    .carrod-product .dd-product .carrod-container img {
         margin: auto;
         width: 9vw;
         height: 12vh;
     }
 
-    .carro-container  .carro-inf {
+    .carrod-product .dd-product .carrod-container  .carro-inf {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc h2 {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc h2 {
         font-size: 1.05em;
     }
 
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 1em;
         width: 5vw;
         height: 4vh;
         margin-bottom: 3vh;
     }
 
-    .carro-container .carro-total h2 {
+    .carrod-product .dd-product .carrod-container .carro-total h2 {
         font-size: 0.75em;
         margin-bottom: 0.5vh;
     }
 
-    .carro-container .carro-total span {
+    .carrod-product .dd-product .carrod-container .carro-total span {
         font-size: 0.75em;
     }
 
-    .carro-container .carro-eliminar {
+    .carrod-product .dd-product .carrod-container .carro-eliminar {
         font-size: 1.2em;
     }
 
@@ -1579,18 +1592,18 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc h3 {
         font-size: 1em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc img {
         width: 11vw;
         height: 14vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.9em;
     }
@@ -1625,7 +1638,7 @@
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 15vw;
         height: 5vh;
-        margin-left: 17.5vw;
+        margin-left: 20vw;
         font-size: 0.95em;
     }
 
@@ -2051,50 +2064,50 @@
     }
 
     /* Main carrito.html */
-    .carro-container {
+    .carrod-product .dd-product .carrod-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .carro-container img {
+    .carrod-product .dd-product .carrod-container img {
         margin: auto;
         width: 14vw;
         height: 15vh;
 
     }
 
-    .carro-container  .carro-inf {
+    .carrod-product .dd-product .carrod-container  .carro-inf {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc h2 {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc h2 {
         font-size: 1.1em;
     }
 
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 0.9em;
         width: 6vw;
         height: 4vh;
         margin-bottom: 3vh;
     }
 
-    .carro-container .carro-total h2 {
+    .carrod-product .dd-product .carrod-container .carro-total h2 {
         font-size: 0.8em;
         margin-bottom: 0.5vh;
     }
 
-    .carro-container .carro-total span {
+    .carrod-product .dd-product .carrod-container .carro-total span {
         font-size: 0.8em;
         margin-bottom: 4vw;
     }
 
-    .carro-container .carro-eliminar {
+    .carrod-product .dd-product .carrod-container .carro-eliminar {
         font-size: 1.2em;
     }
 
@@ -2163,18 +2176,18 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc h3 {
         font-size: 1.1em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc img {
         width: 13vw;
         height: 13vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.9em;
     }
@@ -2209,7 +2222,6 @@
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 25vw;
         height: 5vh;
-        margin-left: 17.5vw;
         font-size: 0.95em;
     }
 
@@ -2629,50 +2641,50 @@
     }
 
     /* Main carrito.html */
-    .carro-container {
+    .carrod-product .dd-product .carrod-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .carro-container img {
+    .carrod-product .dd-product .carrod-container img {
         margin: auto;
         width: 19vw;
         height: 15vh;
 
     }
 
-    .carro-container  .carro-inf {
+    .carrod-product .dd-product .carrod-container  .carro-inf {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc h2 {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc h2 {
         font-size: 1.1em;
     }
 
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 0.9em;
         width: 8vw;
         height: 4vh;
         margin-bottom: 3vh;
     }
 
-    .carro-container .carro-total h2 {
+    .carrod-product .dd-product .carrod-container .carro-total h2 {
         font-size: 0.8em;
         margin-bottom: 0.5vh;
     }
 
-    .carro-container .carro-total span {
+    .carrod-product .dd-product .carrod-container .carro-total span {
         font-size: 0.8em;
         margin-bottom: 4vw;
     }
 
-    .carro-container .carro-eliminar {
+    .carrod-product .dd-product .carrod-container .carro-eliminar {
         font-size: 1.2em;
     }
 
@@ -2747,18 +2759,18 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc h3 {
         font-size: 1.1em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc img {
         width: 21vw;
         height: 15vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.9em;
     }
@@ -2793,7 +2805,7 @@
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 30vw;
         height: 5vh;
-        margin-left: 20vw;
+        margin-left: 23.5vw;
         font-size: 0.95em;
     }
 
@@ -3218,50 +3230,50 @@
     }
 
     /* Main carrito.html */
-    .carro-container {
+    .carrod-product .dd-product .carrod-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .carro-container img {
+    .carrod-product .dd-product .carrod-container img {
         margin: auto;
         width: 20vw;
         height: 13vh;
 
     }
 
-    .carro-container  .carro-inf {
+    .carrod-product .dd-product .carrod-container  .carro-inf {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc h2 {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc h2 {
         font-size: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 0.9em;
         width: 8vw;
         height: 4vh;
         margin-bottom: 3vh;
     }
 
-    .carro-container .carro-total h2 {
+    .carrod-product .dd-product .carrod-container .carro-total h2 {
         font-size: 0.7em;
         margin-bottom: 0.5vh;
     }
 
-    .carro-container .carro-total span {
+    .carrod-product .dd-product .carrod-container .carro-total span {
         font-size: 0.7em;
         margin-bottom: 4vw;
     }
 
-    .carro-container .carro-eliminar {
+    .carrod-product .dd-product .carrod-container .carro-eliminar {
         font-size: 1.2em;
     }
 
@@ -3336,18 +3348,18 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc h3 {
         font-size: 1.1em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc img {
         width: 25vw;
         height: 15vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.9em;
     }
@@ -3382,7 +3394,7 @@
     .pago-container-2 .pago-metodo .m-pago-cont {
         width: 40vw;
         height: 5vh;
-        margin-left: 25vw;
+        margin-left: 26vw;
         font-size: 0.95em;
     }
 
@@ -3806,50 +3818,50 @@
     }
 
     /* Main carrito.html */
-    .carro-container {
+    .carrod-product .dd-product .carrod-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .carro-container img {
+    .carrod-product .dd-product .carrod-container img {
         margin: auto;
         width: 20vw;
         height: 10vh;
 
     }
 
-    .carro-container  .carro-inf {
+    .carrod-product .dd-product .carrod-container  .carro-inf {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc h2 {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc h2 {
         font-size: 1em;
     }
 
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-menos,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-contador,
-    .carro-container .carro-inf .carro-desc .carro-buttons .carro-mas {
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-menos,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-contador,
+    .carrod-product .dd-product .carrod-container .carro-inf .carro-desc .carro-buttons .carro-mas {
         font-size: 0.9em;
         width: 10vw;
         height: 4vh;
         margin-bottom: 3vh;
     }
 
-    .carro-container .carro-total h2 {
+    .carrod-product .dd-product .carrod-container .carro-total h2 {
         font-size: 0.7em;
         margin-bottom: 0.5vh;
     }
 
-    .carro-container .carro-total span {
+    .carrod-product .dd-product .carrod-container .carro-total span {
         font-size: 0.65em;
         margin-bottom: 4vw;
     }
 
-    .carro-container .carro-eliminar {
+    .carrod-product .dd-product .carrod-container .carro-eliminar {
         font-size: 1em;
     }
 
@@ -3924,18 +3936,18 @@
         font-size: 1.2em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc h3 {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc h3 {
         font-size: 1em;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc img {
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc img {
         width: 25vw;
         height: 10vh;
         margin-bottom: 4vw;
     }
 
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-price,
-    .pago-container-2 .pago-resumen .producto-res .producto-r .product-desc-2 .product-count,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-price,
+    .pago-container-2 .pago-resumen .productos-container .producto-res .producto-r .product-desc-2 .product-count,
     .pago-container-2 .pago-resumen .pago-total {
         font-size: 0.8em;
     }
